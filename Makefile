@@ -74,7 +74,7 @@ vendor_saved_apps := Bluetooth Nfc KeyChain Tag HTMLViewer UserDictionaryProvide
 # You need to decode android.policy.jar to the project directory (use apktool d android.policy.jar) first,
 # and then you can make it by:   make android.policy
 #-----------------------------------------------------------------------------
-vendor_modify_jars := android.policy framework services telephony-common wifi-service org.cyanogenmod.platform
+vendor_modify_jars := android.policy framework services telephony-common wifi-service
 
 ##############################################################################
 # The value decides which board system directory you want to save.
@@ -89,7 +89,7 @@ vendor_modify_jars := android.policy framework services telephony-common wifi-se
 # You can configure the board system file path which relative to the system directory in the board release.
 # You should add "lib64/libwebviewchromium.so" for 64 bit system.
 #-----------------------------------------------------------------------------
-#board_saved_files := lib/libwebviewchromium.so
+board_saved_files := lib/libwebviewchromium.so
 
 ##############################################################################
 # The value decides which board system apk you want to remove.
@@ -108,7 +108,7 @@ board_remove_apps := NfcNci
 # The command idtoname how to use: first use "apktool d source/system/framework/framework-res.apk other/TMP/framework-res",
 # and then use "idtoname other/TMP/framework-res/res/values/public_master.xml XXXX/smali"(XXXX is the directory where you decode board system apk).
 #-----------------------------------------------------------------------------
-board_modify_apps := TeleService SystemUI
+#board_modify_apps := TeleService
 
 ##############################################################################
 # The value decides which jar you want to modify, when the jar is based on the board framework jar.
