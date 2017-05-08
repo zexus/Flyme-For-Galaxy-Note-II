@@ -1,2 +1,1 @@
-# n7100
-Flyme-for-Galaxy-NoteII
+Flyme6 for Galaxy Note II (N7100)

@@ -52,11 +52,9 @@ vendor_modify_images := boot
 ##############################################################################
 # The value decides the vendor apk which you want to save in the vendor directory for the ota package.
 # The default value is Bluetooth.
-# You can configure the apk name in the vendor/system/app or vendor/system/pri-app directory.
+# You can configure the apk name in the vendor/system/app or vendor/system/priv-app directory.
 #-----------------------------------------------------------------------------
-vendor_saved_apps := Bluetooth Nfc KeyChain Tag HTMLViewer UserDictionaryProvider BackupRestoreConfirmation \
-                     FusedLocation PrintSpooler SharedStorageBackup  ExternalStorageProvider InputDevices \
-                     ProxyHandler Shell DefaultContainerService WAPPushManager CaptivePortalLogin webview
+vendor_saved_apps := Bluetooth BluetoothMidiService Tag HTMLViewer Nfc KeyChain PicoTts PrintSpooler UserDictionaryProvider BackupRestoreConfirmation DefaultContainerService ExternalStorageProvider FusedLocation InputDevices ProxyHandler SharedStorageBackup Shell WAPPushManager CaptivePortalLogin webview
 
 ##############################################################################
 # The value decides which vendor apk you want to modify.
@@ -74,7 +72,7 @@ vendor_saved_apps := Bluetooth Nfc KeyChain Tag HTMLViewer UserDictionaryProvide
 # You need to decode android.policy.jar to the project directory (use apktool d android.policy.jar) first,
 # and then you can make it by:   make android.policy
 #-----------------------------------------------------------------------------
-vendor_modify_jars := android.policy framework services telephony-common wifi-service
+vendor_modify_jars := framework services telephony-common wifi-service
 
 ##############################################################################
 # The value decides which board system directory you want to save.
@@ -87,16 +85,15 @@ vendor_modify_jars := android.policy framework services telephony-common wifi-se
 # The value decides which board system file you want to save.
 # The default value is nothing.
 # You can configure the board system file path which relative to the system directory in the board release.
-# You should add "lib64/libwebviewchromium.so" for 64 bit system.
 #-----------------------------------------------------------------------------
-#board_saved_files := lib/libwebviewchromium.so
+#board_saved_files :=
 
 ##############################################################################
 # The value decides which board system apk you want to remove.
 # The default value is nothing.
 # You can configure the board system apk name in the value.
 #-----------------------------------------------------------------------------
-board_remove_apps := Search
+#board_remove_apps := LogReport
 
 ##############################################################################
 # The value decides which apk you want to modify, when the apk is based on the board system apk.
@@ -108,7 +105,7 @@ board_remove_apps := Search
 # The command idtoname how to use: first use "apktool d source/system/framework/framework-res.apk other/TMP/framework-res",
 # and then use "idtoname other/TMP/framework-res/res/values/public_master.xml XXXX/smali"(XXXX is the directory where you decode board system apk).
 #-----------------------------------------------------------------------------
-board_modify_apps := MzCallSetting
+#board_modify_apps := TeleService
 
 ##############################################################################
 # The value decides which jar you want to modify, when the jar is based on the board framework jar.
@@ -119,7 +116,7 @@ board_modify_apps := MzCallSetting
 # The command idtoname how to use: first use "apktool d source/system/framework/framework-res.apk other/TMP/framework-res",
 # and then use "idtoname other/TMP/framework-res/res/values/public_master.xml XXXX/smali"(XXXX is the directory where you decode board system jar).
 #-----------------------------------------------------------------------------
-#board_modify_jars := android.policy
+#board_modify_jars :=
 
 ##############################################################################
 # The value decides which property you will override in the build.prop.
@@ -138,8 +135,8 @@ override_property += \
 # The default value is Unofficial.
 # You should configure the property according to your ID, ie, replace "Unofficial" with your ID.
 # The property ro.product.model_romer decide your ID on the backend server which statistical data for your device.
-# The default value is Nexus-5_Unofficial.
-# You should configure the property according to your device and your ID with replace the "Nexus-5_Unofficial".
+# The default value is Nexus-6P_Unofficial.
+# You should configure the property according to your device and your ID with replace the "Nexus-6P_Unofficial".
 override_property += \
     ro.flyme.romer=SiFooYee \
     ro.product.model_romer=GT-N7100_SiFooYee
@@ -180,5 +177,10 @@ remove_property += \
 #-----------------------------------------------------------------------------
 #PRODUCE_BLOCK_BASED_OTA := false
 
+##############################################################################
+# Defines whether build an international version of package.
+# Default: false
+#-----------------------------------------------------------------------------
+#PRODUCE_INTERNATIONAL_ROM := true
 
 include $(PORT_BUILD)/main.mk
