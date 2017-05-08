@@ -1,0 +1,9 @@
+#!/system/bin/sh
+
+cfw=/data/cfw
+if [ ! $(ls -A $cfw) ]; then
+    cp /system/vendor/firmware/SlimISP_*.bin $cfw/
+    chown system $cfw/*
+    chgrp media $cfw/*
+    chmod 0775 $cfw/*
+fi
