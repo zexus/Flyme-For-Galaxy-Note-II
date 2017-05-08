@@ -1891,25 +1891,19 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 654
     invoke-static {p4}, Landroid/location/LocationManager;->checkCriteria(Landroid/location/Criteria;)V
 
-    .line 655
     invoke-direct {p0, p5}, Landroid/location/LocationManager;->checkPendingIntent(Landroid/app/PendingIntent;)V
 
-    .line 658
     const/4 v1, 0x0
 
-    .line 657
     invoke-static {p4, p1, p2, p3, v1}, Landroid/location/LocationRequest;->createFromDeprecatedCriteria(Landroid/location/Criteria;JFZ)Landroid/location/LocationRequest;
 
     move-result-object v0
 
-    .line 659
     .local v0, "request":Landroid/location/LocationRequest;
-    invoke-direct {p0, v0, v2, v2, p5}, Landroid/location/LocationManager;->requestLocationUpdates(Landroid/location/LocationRequest;Landroid/location/LocationListener;Landroid/os/Looper;Landroid/app/PendingIntent;)V
+    invoke-direct {p0, v0, v2, v2, p5}, Landroid/location/LocationManager;->hook_requestLocationUpdates(Landroid/location/LocationRequest;Landroid/location/LocationListener;Landroid/os/Looper;Landroid/app/PendingIntent;)V
 
-    .line 653
     return-void
 .end method
 
@@ -1922,27 +1916,21 @@
     .param p6, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 524
     invoke-static {p4}, Landroid/location/LocationManager;->checkCriteria(Landroid/location/Criteria;)V
 
-    .line 525
     invoke-static {p5}, Landroid/location/LocationManager;->checkListener(Landroid/location/LocationListener;)V
 
-    .line 528
     const/4 v1, 0x0
 
-    .line 527
     invoke-static {p4, p1, p2, p3, v1}, Landroid/location/LocationRequest;->createFromDeprecatedCriteria(Landroid/location/Criteria;JFZ)Landroid/location/LocationRequest;
 
     move-result-object v0
 
-    .line 529
     .local v0, "request":Landroid/location/LocationRequest;
     const/4 v1, 0x0
 
-    invoke-direct {p0, v0, p5, p6, v1}, Landroid/location/LocationManager;->requestLocationUpdates(Landroid/location/LocationRequest;Landroid/location/LocationListener;Landroid/os/Looper;Landroid/app/PendingIntent;)V
+    invoke-direct {p0, v0, p5, p6, v1}, Landroid/location/LocationManager;->hook_requestLocationUpdates(Landroid/location/LocationRequest;Landroid/location/LocationListener;Landroid/os/Looper;Landroid/app/PendingIntent;)V
 
-    .line 523
     return-void
 .end method
 
@@ -1993,25 +1981,19 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 552
     invoke-static {p1}, Landroid/location/LocationManager;->checkProvider(Ljava/lang/String;)V
 
-    .line 553
     invoke-direct {p0, p5}, Landroid/location/LocationManager;->checkPendingIntent(Landroid/app/PendingIntent;)V
 
-    .line 556
     const/4 v1, 0x0
 
-    .line 555
     invoke-static {p1, p2, p3, p4, v1}, Landroid/location/LocationRequest;->createFromDeprecatedProvider(Ljava/lang/String;JFZ)Landroid/location/LocationRequest;
 
     move-result-object v0
 
-    .line 557
     .local v0, "request":Landroid/location/LocationRequest;
-    invoke-direct {p0, v0, v2, v2, p5}, Landroid/location/LocationManager;->requestLocationUpdates(Landroid/location/LocationRequest;Landroid/location/LocationListener;Landroid/os/Looper;Landroid/app/PendingIntent;)V
+    invoke-direct {p0, v0, v2, v2, p5}, Landroid/location/LocationManager;->hook_requestLocationUpdates(Landroid/location/LocationRequest;Landroid/location/LocationListener;Landroid/os/Looper;Landroid/app/PendingIntent;)V
 
-    .line 551
     return-void
 .end method
 
@@ -2025,25 +2007,19 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 459
     invoke-static {p1}, Landroid/location/LocationManager;->checkProvider(Ljava/lang/String;)V
 
-    .line 460
     invoke-static {p5}, Landroid/location/LocationManager;->checkListener(Landroid/location/LocationListener;)V
 
-    .line 463
     const/4 v1, 0x0
 
-    .line 462
     invoke-static {p1, p2, p3, p4, v1}, Landroid/location/LocationRequest;->createFromDeprecatedProvider(Ljava/lang/String;JFZ)Landroid/location/LocationRequest;
 
     move-result-object v0
 
-    .line 464
     .local v0, "request":Landroid/location/LocationRequest;
-    invoke-direct {p0, v0, p5, v2, v2}, Landroid/location/LocationManager;->requestLocationUpdates(Landroid/location/LocationRequest;Landroid/location/LocationListener;Landroid/os/Looper;Landroid/app/PendingIntent;)V
+    invoke-direct {p0, v0, p5, v2, v2}, Landroid/location/LocationManager;->hook_requestLocationUpdates(Landroid/location/LocationRequest;Landroid/location/LocationListener;Landroid/os/Looper;Landroid/app/PendingIntent;)V
 
-    .line 458
     return-void
 .end method
 
@@ -2056,27 +2032,21 @@
     .param p6, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 491
     invoke-static {p1}, Landroid/location/LocationManager;->checkProvider(Ljava/lang/String;)V
 
-    .line 492
     invoke-static {p5}, Landroid/location/LocationManager;->checkListener(Landroid/location/LocationListener;)V
 
-    .line 495
     const/4 v1, 0x0
 
-    .line 494
     invoke-static {p1, p2, p3, p4, v1}, Landroid/location/LocationRequest;->createFromDeprecatedProvider(Ljava/lang/String;JFZ)Landroid/location/LocationRequest;
 
     move-result-object v0
 
-    .line 496
     .local v0, "request":Landroid/location/LocationRequest;
     const/4 v1, 0x0
 
-    invoke-direct {p0, v0, p5, p6, v1}, Landroid/location/LocationManager;->requestLocationUpdates(Landroid/location/LocationRequest;Landroid/location/LocationListener;Landroid/os/Looper;Landroid/app/PendingIntent;)V
+    invoke-direct {p0, v0, p5, p6, v1}, Landroid/location/LocationManager;->hook_requestLocationUpdates(Landroid/location/LocationRequest;Landroid/location/LocationListener;Landroid/os/Looper;Landroid/app/PendingIntent;)V
 
-    .line 490
     return-void
 .end method
 
@@ -2088,29 +2058,23 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 760
     invoke-static {p1}, Landroid/location/LocationManager;->checkCriteria(Landroid/location/Criteria;)V
 
-    .line 761
     invoke-direct {p0, p2}, Landroid/location/LocationManager;->checkPendingIntent(Landroid/app/PendingIntent;)V
 
-    .line 764
     const-wide/16 v2, 0x0
 
     const/4 v1, 0x0
 
     const/4 v4, 0x1
 
-    .line 763
     invoke-static {p1, v2, v3, v1, v4}, Landroid/location/LocationRequest;->createFromDeprecatedCriteria(Landroid/location/Criteria;JFZ)Landroid/location/LocationRequest;
 
     move-result-object v0
 
-    .line 765
     .local v0, "request":Landroid/location/LocationRequest;
-    invoke-direct {p0, v0, v5, v5, p2}, Landroid/location/LocationManager;->requestLocationUpdates(Landroid/location/LocationRequest;Landroid/location/LocationListener;Landroid/os/Looper;Landroid/app/PendingIntent;)V
+    invoke-direct {p0, v0, v5, v5, p2}, Landroid/location/LocationManager;->hook_requestLocationUpdates(Landroid/location/LocationRequest;Landroid/location/LocationListener;Landroid/os/Looper;Landroid/app/PendingIntent;)V
 
-    .line 759
     return-void
 .end method
 
@@ -2121,31 +2085,25 @@
     .param p3, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 713
     invoke-static {p1}, Landroid/location/LocationManager;->checkCriteria(Landroid/location/Criteria;)V
 
-    .line 714
     invoke-static {p2}, Landroid/location/LocationManager;->checkListener(Landroid/location/LocationListener;)V
 
-    .line 717
     const-wide/16 v2, 0x0
 
     const/4 v1, 0x0
 
     const/4 v4, 0x1
 
-    .line 716
     invoke-static {p1, v2, v3, v1, v4}, Landroid/location/LocationRequest;->createFromDeprecatedCriteria(Landroid/location/Criteria;JFZ)Landroid/location/LocationRequest;
 
     move-result-object v0
 
-    .line 718
     .local v0, "request":Landroid/location/LocationRequest;
     const/4 v1, 0x0
 
-    invoke-direct {p0, v0, p2, p3, v1}, Landroid/location/LocationManager;->requestLocationUpdates(Landroid/location/LocationRequest;Landroid/location/LocationListener;Landroid/os/Looper;Landroid/app/PendingIntent;)V
+    invoke-direct {p0, v0, p2, p3, v1}, Landroid/location/LocationManager;->hook_requestLocationUpdates(Landroid/location/LocationRequest;Landroid/location/LocationListener;Landroid/os/Looper;Landroid/app/PendingIntent;)V
 
-    .line 712
     return-void
 .end method
 
@@ -2157,29 +2115,23 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 736
     invoke-static {p1}, Landroid/location/LocationManager;->checkProvider(Ljava/lang/String;)V
 
-    .line 737
     invoke-direct {p0, p2}, Landroid/location/LocationManager;->checkPendingIntent(Landroid/app/PendingIntent;)V
 
-    .line 740
     const-wide/16 v2, 0x0
 
     const/4 v1, 0x0
 
     const/4 v4, 0x1
 
-    .line 739
     invoke-static {p1, v2, v3, v1, v4}, Landroid/location/LocationRequest;->createFromDeprecatedProvider(Ljava/lang/String;JFZ)Landroid/location/LocationRequest;
 
     move-result-object v0
 
-    .line 741
     .local v0, "request":Landroid/location/LocationRequest;
-    invoke-direct {p0, v0, v5, v5, p2}, Landroid/location/LocationManager;->requestLocationUpdates(Landroid/location/LocationRequest;Landroid/location/LocationListener;Landroid/os/Looper;Landroid/app/PendingIntent;)V
+    invoke-direct {p0, v0, v5, v5, p2}, Landroid/location/LocationManager;->hook_requestLocationUpdates(Landroid/location/LocationRequest;Landroid/location/LocationListener;Landroid/os/Looper;Landroid/app/PendingIntent;)V
 
-    .line 735
     return-void
 .end method
 
@@ -2190,31 +2142,25 @@
     .param p3, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 683
     invoke-static {p1}, Landroid/location/LocationManager;->checkProvider(Ljava/lang/String;)V
 
-    .line 684
     invoke-static {p2}, Landroid/location/LocationManager;->checkListener(Landroid/location/LocationListener;)V
 
-    .line 687
     const-wide/16 v2, 0x0
 
     const/4 v1, 0x0
 
     const/4 v4, 0x1
 
-    .line 686
     invoke-static {p1, v2, v3, v1, v4}, Landroid/location/LocationRequest;->createFromDeprecatedProvider(Ljava/lang/String;JFZ)Landroid/location/LocationRequest;
 
     move-result-object v0
 
-    .line 688
     .local v0, "request":Landroid/location/LocationRequest;
     const/4 v1, 0x0
 
-    invoke-direct {p0, v0, p2, p3, v1}, Landroid/location/LocationManager;->requestLocationUpdates(Landroid/location/LocationRequest;Landroid/location/LocationListener;Landroid/os/Looper;Landroid/app/PendingIntent;)V
+    invoke-direct {p0, v0, p2, p3, v1}, Landroid/location/LocationManager;->hook_requestLocationUpdates(Landroid/location/LocationRequest;Landroid/location/LocationListener;Landroid/os/Looper;Landroid/app/PendingIntent;)V
 
-    .line 682
     return-void
 .end method
 
@@ -2480,4 +2426,26 @@
     invoke-static {v0, v1, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_0
+.end method
+
+.method private hook_requestLocationUpdates(Landroid/location/LocationRequest;Landroid/location/LocationListener;Landroid/os/Looper;Landroid/app/PendingIntent;)V
+    .locals 1
+    .param p1, "request"    # Landroid/location/LocationRequest;
+    .param p2, "listener"    # Landroid/location/LocationListener;
+    .param p3, "looper"    # Landroid/os/Looper;
+    .param p4, "intent"    # Landroid/app/PendingIntent;
+
+    .prologue
+    const/16 v0, 0x4b
+
+    invoke-static {v0}, Lmeizu/security/FlymePermissionManager;->isFlymePermissionGranted(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-direct {p0, p1, p2, p3, p4}, Landroid/location/LocationManager;->requestLocationUpdates(Landroid/location/LocationRequest;Landroid/location/LocationListener;Landroid/os/Looper;Landroid/app/PendingIntent;)V
+
+    :cond_0
+    return-void
 .end method

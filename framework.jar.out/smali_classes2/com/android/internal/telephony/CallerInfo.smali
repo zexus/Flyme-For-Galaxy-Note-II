@@ -1471,27 +1471,22 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 411
-    const v0, 0x1040266
+    const v0, #android:string@emergency_call_dialog_number_for_display#t
 
-    .line 410
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/telephony/CallerInfo;->phoneNumber:Ljava/lang/String;
 
-    .line 412
-    const v0, 0x1080537
+    const v0, #android:drawable@picture_emergency#t
 
     iput v0, p0, Lcom/android/internal/telephony/CallerInfo;->photoResource:I
 
-    .line 413
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/telephony/CallerInfo;->mIsEmergency:Z
 
-    .line 414
     return-object p0
 .end method
 
@@ -1688,4 +1683,26 @@
 
     .restart local v0    # "number":Ljava/lang/String;
     goto :goto_0
+.end method
+
+.method public markAsEmergencyMz()V
+    .locals 1
+
+    .prologue
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/android/internal/telephony/CallerInfo;->mIsEmergency:Z
+
+    return-void
+.end method
+
+.method public markAsVoiceMailMz()V
+    .locals 1
+
+    .prologue
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/android/internal/telephony/CallerInfo;->mIsVoiceMail:Z
+
+    return-void
 .end method

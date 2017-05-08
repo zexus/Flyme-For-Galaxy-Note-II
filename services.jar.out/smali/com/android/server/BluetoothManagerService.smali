@@ -1867,27 +1867,23 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 330
     iget-object v0, p0, Lcom/android/server/BluetoothManagerService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 331
-    const v1, 0x1120053
+    const v1, #android:bool@config_bluetooth_address_validation#t
 
-    .line 330
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 332
     iget-object v0, p0, Lcom/android/server/BluetoothManagerService;->mContentResolver:Landroid/content/ContentResolver;
 
-    const-string/jumbo v1, "bluetooth_addr_valid"
+    const-string v1, "bluetooth_addr_valid"
 
     invoke-static {v0, v1, v2}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
@@ -3915,42 +3911,34 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 623
-    invoke-direct {p0}, Lcom/android/server/BluetoothManagerService;->checkIfCallerIsForegroundUser()Z
+    invoke-direct {p0}, Lcom/android/server/BluetoothManagerService;->hook_checkIfCallerIsForegroundUser()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 628
     :cond_0
     iget-object v0, p0, Lcom/android/server/BluetoothManagerService;->mContext:Landroid/content/Context;
 
-    const-string/jumbo v1, "android.permission.BLUETOOTH_ADMIN"
+    const-string v1, "android.permission.BLUETOOTH_ADMIN"
 
-    .line 629
-    const-string/jumbo v2, "Need BLUETOOTH ADMIN permission"
+    const-string v2, "Need BLUETOOTH ADMIN permission"
 
-    .line 628
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 635
     iget-object v1, p0, Lcom/android/server/BluetoothManagerService;->mReceiver:Landroid/content/BroadcastReceiver;
 
     monitor-enter v1
 
-    .line 636
     const/4 v0, 0x0
 
     :try_start_0
     iput-boolean v0, p0, Lcom/android/server/BluetoothManagerService;->mQuietEnableExternal:Z
 
-    .line 637
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/BluetoothManagerService;->mEnableExternal:Z
 
-    .line 639
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/server/BluetoothManagerService;->sendEnableMsg(Z)V
@@ -5059,4 +5047,28 @@
     monitor-exit p0
 
     throw v3
+.end method
+
+.method private hook_checkIfCallerIsForegroundUser()Z
+    .locals 1
+
+    .prologue
+    const/16 v0, 0x4d
+
+    invoke-static {v0}, Lmeizu/security/FlymePermissionManager;->isFlymePermissionGranted(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-direct {p0}, Lcom/android/server/BluetoothManagerService;->checkIfCallerIsForegroundUser()Z
+
+    move-result v0
+
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    return v0
 .end method

@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/android/server/BatteryService$FlymeInjector;,
         Lcom/android/server/BatteryService$Led;,
         Lcom/android/server/BatteryService$BatteryListener;,
         Lcom/android/server/BatteryService$BinderService;,
@@ -301,48 +302,40 @@
 
     iput-object v1, p0, Lcom/android/server/BatteryService;->mLed:Lcom/android/server/BatteryService$Led;
 
-    .line 152
     invoke-static {}, Lcom/android/server/am/BatteryStatsService;->getService()Lcom/android/internal/app/IBatteryStats;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/BatteryService;->mBatteryStats:Lcom/android/internal/app/IBatteryStats;
 
-    .line 154
     iget-object v0, p0, Lcom/android/server/BatteryService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 155
-    const v1, 0x10e004d
+    const v1, #android:integer@config_criticalBatteryWarningLevel#t
 
-    .line 154
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
     move-result v0
 
     iput v0, p0, Lcom/android/server/BatteryService;->mCriticalBatteryLevel:I
 
-    .line 156
     iget-object v0, p0, Lcom/android/server/BatteryService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 157
-    const v1, 0x10e004f
+    const v1, #android:integer@config_lowBatteryWarningLevel#t
 
-    .line 156
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
     move-result v0
 
     iput v0, p0, Lcom/android/server/BatteryService;->mLowBatteryWarningLevel:I
 
-    .line 158
     iget v0, p0, Lcom/android/server/BatteryService;->mLowBatteryWarningLevel:I
 
     iget-object v1, p0, Lcom/android/server/BatteryService;->mContext:Landroid/content/Context;
@@ -351,10 +344,8 @@
 
     move-result-object v1
 
-    .line 159
-    const v2, 0x10e0050
+    const v2, #android:integer@config_lowBatteryCloseWarningBump#t
 
-    .line 158
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
     move-result v1
@@ -363,27 +354,23 @@
 
     iput v0, p0, Lcom/android/server/BatteryService;->mLowBatteryCloseWarningLevel:I
 
-    .line 160
     iget-object v0, p0, Lcom/android/server/BatteryService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 161
-    const v1, 0x10e004e
+    const v1, #android:integer@config_shutdownBatteryTemperature#t
 
-    .line 160
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
     move-result v0
 
     iput v0, p0, Lcom/android/server/BatteryService;->mShutdownBatteryTemperature:I
 
-    .line 164
     new-instance v0, Ljava/io/File;
 
-    const-string/jumbo v1, "/sys/devices/virtual/switch/invalid_charger/state"
+    const-string v1, "/sys/devices/virtual/switch/invalid_charger/state"
 
     invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
@@ -404,6 +391,8 @@
 
     .line 146
     :cond_0
+    invoke-static/range {p0 .. p0}, Lcom/android/server/BatteryService$FlymeInjector;->registerBootCompleted(Lcom/android/server/BatteryService;)V
+
     return-void
 .end method
 
@@ -1264,9 +1253,9 @@
     .param p1, "level"    # I
 
     .prologue
-    const v3, 0x1080651
+    const v3, #android:drawable@stat_sys_battery_charge#t
 
-    const v2, 0x1080643
+    const v2, #android:drawable@stat_sys_battery#t
 
     .line 602
     iget-object v0, p0, Lcom/android/server/BatteryService;->mBatteryProps:Landroid/os/BatteryProperties;
@@ -1340,7 +1329,7 @@
 
     .line 615
     :cond_4
-    const v0, 0x108065f
+    const v0, #android:drawable@stat_sys_battery_unknown#t
 
     return v0
 .end method
@@ -2490,14 +2479,14 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 471
     :cond_8
     :goto_a
+    invoke-static/range {p0 .. p0}, Lcom/android/server/BatteryService$FlymeInjector;->onBatteryLow(Lcom/android/server/BatteryService;)V
+
     iget-object v0, p0, Lcom/android/server/BatteryService;->mLed:Lcom/android/server/BatteryService$Led;
 
     invoke-virtual {v0}, Lcom/android/server/BatteryService$Led;->updateLightsLocked()V
 
-    .line 474
     if-eqz v10, :cond_9
 
     const-wide/16 v0, 0x0
@@ -3087,7 +3076,16 @@
     .locals 2
 
     .prologue
-    .line 261
+    invoke-static/range {p0 .. p0}, Lcom/android/server/BatteryService$FlymeInjector;->shutdownIfNoPowerLocked(Lcom/android/server/BatteryService;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_flyme_0
+
+    return-void
+
+    :cond_flyme_0
+
     iget-object v0, p0, Lcom/android/server/BatteryService;->mBatteryProps:Landroid/os/BatteryProperties;
 
     iget v0, v0, Landroid/os/BatteryProperties;->batteryLevel:I
@@ -3102,13 +3100,13 @@
 
     if-eqz v0, :cond_1
 
-    .line 258
     :cond_0
     :goto_0
     return-void
 
-    .line 262
     :cond_1
+    invoke-static/range {p0 .. p0}, Lcom/android/server/BatteryService$FlymeInjector;->writeMessageToFileIfNoPowerLocked(Lcom/android/server/BatteryService;)V
+
     iget-object v0, p0, Lcom/android/server/BatteryService;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/android/server/BatteryService$3;
@@ -3124,7 +3122,16 @@
     .locals 2
 
     .prologue
-    .line 280
+    invoke-static {}, Lcom/android/server/BatteryService$FlymeInjector;->shutdownIfOverTempLocked()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_flyme_0
+
+    return-void
+
+    :cond_flyme_0
+
     iget-object v0, p0, Lcom/android/server/BatteryService;->mBatteryProps:Landroid/os/BatteryProperties;
 
     iget v0, v0, Landroid/os/BatteryProperties;->batteryTemperature:I
@@ -3133,7 +3140,8 @@
 
     if-le v0, v1, :cond_0
 
-    .line 281
+    invoke-static/range {p0 .. p0}, Lcom/android/server/BatteryService$FlymeInjector;->writeMessageToFileIfOverTempLocked(Lcom/android/server/BatteryService;)V
+
     iget-object v0, p0, Lcom/android/server/BatteryService;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/android/server/BatteryService$4;
@@ -3142,7 +3150,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 276
     :cond_0
     return-void
 .end method
@@ -3152,21 +3159,17 @@
     .param p1, "props"    # Landroid/os/BatteryProperties;
 
     .prologue
-    .line 296
     iget-object v1, p0, Lcom/android/server/BatteryService;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 297
     :try_start_0
     iget-boolean v0, p0, Lcom/android/server/BatteryService;->mUpdatesStopped:Z
 
     if-nez v0, :cond_0
 
-    .line 298
     iput-object p1, p0, Lcom/android/server/BatteryService;->mBatteryProps:Landroid/os/BatteryProperties;
 
-    .line 300
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/server/BatteryService;->processValuesLocked(Z)V
@@ -3176,10 +3179,8 @@
     :goto_0
     monitor-exit v1
 
-    .line 295
     return-void
 
-    .line 302
     :cond_0
     :try_start_1
     iget-object v0, p0, Lcom/android/server/BatteryService;->mLastBatteryProps:Landroid/os/BatteryProperties;
@@ -3190,7 +3191,6 @@
 
     goto :goto_0
 
-    .line 296
     :catchall_0
     move-exception v0
 
@@ -3203,14 +3203,12 @@
     .locals 5
 
     .prologue
-    .line 208
     iget-object v2, p0, Lcom/android/server/BatteryService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    .line 209
     .local v1, "resolver":Landroid/content/ContentResolver;
     iget-object v2, p0, Lcom/android/server/BatteryService;->mContext:Landroid/content/Context;
 
@@ -3218,34 +3216,27 @@
 
     move-result-object v2
 
-    .line 210
-    const v3, 0x10e004f
+    const v3, #android:integer@config_lowBatteryWarningLevel#t
 
-    .line 209
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
     move-result v0
 
-    .line 212
     .local v0, "defWarnLevel":I
-    const-string/jumbo v2, "low_power_trigger_level"
+    const-string v2, "low_power_trigger_level"
 
-    .line 211
     invoke-static {v1, v2, v0}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v2
 
     iput v2, p0, Lcom/android/server/BatteryService;->mLowBatteryWarningLevel:I
 
-    .line 213
     iget v2, p0, Lcom/android/server/BatteryService;->mLowBatteryWarningLevel:I
 
     if-nez v2, :cond_0
 
-    .line 214
     iput v0, p0, Lcom/android/server/BatteryService;->mLowBatteryWarningLevel:I
 
-    .line 216
     :cond_0
     iget v2, p0, Lcom/android/server/BatteryService;->mLowBatteryWarningLevel:I
 
@@ -3253,12 +3244,10 @@
 
     if-ge v2, v3, :cond_1
 
-    .line 217
     iget v2, p0, Lcom/android/server/BatteryService;->mCriticalBatteryLevel:I
 
     iput v2, p0, Lcom/android/server/BatteryService;->mLowBatteryWarningLevel:I
 
-    .line 219
     :cond_1
     iget v2, p0, Lcom/android/server/BatteryService;->mLowBatteryWarningLevel:I
 
@@ -3268,10 +3257,8 @@
 
     move-result-object v3
 
-    .line 220
-    const v4, 0x10e0050
+    const v4, #android:integer@config_lowBatteryCloseWarningBump#t
 
-    .line 219
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getInteger(I)I
 
     move-result v3
@@ -3280,12 +3267,10 @@
 
     iput v2, p0, Lcom/android/server/BatteryService;->mLowBatteryCloseWarningLevel:I
 
-    .line 221
     const/4 v2, 0x1
 
     invoke-direct {p0, v2}, Lcom/android/server/BatteryService;->processValuesLocked(Z)V
 
-    .line 207
     return-void
 .end method
 
@@ -3296,17 +3281,14 @@
     .param p1, "phase"    # I
 
     .prologue
-    .line 187
     const/16 v2, 0x226
 
     if-ne p1, v2, :cond_0
 
-    .line 189
     iget-object v3, p0, Lcom/android/server/BatteryService;->mLock:Ljava/lang/Object;
 
     monitor-enter v3
 
-    .line 190
     :try_start_0
     new-instance v0, Lcom/android/server/BatteryService$2;
 
@@ -3314,7 +3296,6 @@
 
     invoke-direct {v0, p0, v2}, Lcom/android/server/BatteryService$2;-><init>(Lcom/android/server/BatteryService;Landroid/os/Handler;)V
 
-    .line 198
     .local v0, "obs":Landroid/database/ContentObserver;
     iget-object v2, p0, Lcom/android/server/BatteryService;->mContext:Landroid/content/Context;
 
@@ -3322,37 +3303,33 @@
 
     move-result-object v1
 
-    .line 200
     .local v1, "resolver":Landroid/content/ContentResolver;
-    const-string/jumbo v2, "low_power_trigger_level"
+    const-string v2, "low_power_trigger_level"
 
-    .line 199
     invoke-static {v2}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v2
 
-    .line 201
     const/4 v4, 0x0
 
     const/4 v5, -0x1
 
-    .line 199
     invoke-virtual {v1, v2, v4, v0, v5}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 202
     invoke-direct {p0}, Lcom/android/server/BatteryService;->updateBatteryWarningLevelLocked()V
+
+    invoke-static {}, Lcom/android/server/BatteryService$FlymeInjector;->onBootPhase()V
+
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit v3
 
-    .line 186
     .end local v0    # "obs":Landroid/database/ContentObserver;
     .end local v1    # "resolver":Landroid/content/ContentResolver;
     :cond_0
     return-void
 
-    .line 189
     :catchall_0
     move-exception v2
 
@@ -3367,20 +3344,17 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 172
-    const-string/jumbo v3, "batteryproperties"
+    const-string v3, "batteryproperties"
 
     invoke-static {v3}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 174
     .local v0, "b":Landroid/os/IBinder;
     invoke-static {v0}, Landroid/os/IBatteryPropertiesRegistrar$Stub;->asInterface(Landroid/os/IBinder;)Landroid/os/IBatteryPropertiesRegistrar;
 
     move-result-object v1
 
-    .line 176
     .local v1, "batteryPropertiesRegistrar":Landroid/os/IBatteryPropertiesRegistrar;
     :try_start_0
     new-instance v3, Lcom/android/server/BatteryService$BatteryListener;
@@ -3393,9 +3367,8 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 181
     :goto_0
-    const-string/jumbo v3, "battery"
+    const-string v3, "battery"
 
     new-instance v4, Lcom/android/server/BatteryService$BinderService;
 
@@ -3403,7 +3376,6 @@
 
     invoke-virtual {p0, v3, v4}, Lcom/android/server/BatteryService;->publishBinderService(Ljava/lang/String;Landroid/os/IBinder;)V
 
-    .line 182
     const-class v3, Landroid/os/BatteryManagerInternal;
 
     new-instance v4, Lcom/android/server/BatteryService$LocalService;
@@ -3412,13 +3384,67 @@
 
     invoke-virtual {p0, v3, v4}, Lcom/android/server/BatteryService;->publishLocalService(Ljava/lang/Class;Ljava/lang/Object;)V
 
-    .line 171
     return-void
 
-    .line 177
     :catch_0
     move-exception v2
 
     .local v2, "e":Landroid/os/RemoteException;
     goto :goto_0
+.end method
+
+.method flymeGetFieldBatteryProps()Landroid/os/BatteryProperties;
+    .locals 1
+
+    .prologue
+    .line 261
+    iget-object v0, p0, Lcom/android/server/BatteryService;->mBatteryProps:Landroid/os/BatteryProperties;
+
+    return-object v0
+.end method
+
+.method flymeGetFieldContext()Landroid/content/Context;
+    .locals 1
+
+    .prologue
+    iget-object v0, p0, Lcom/android/server/BatteryService;->mContext:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method flymeGetFieldCriticalBatteryLevel()I
+    .locals 1
+
+    .prologue
+    iget v0, p0, Lcom/android/server/BatteryService;->mCriticalBatteryLevel:I
+
+    return v0
+.end method
+
+.method flymeGetFieldHandler()Landroid/os/Handler;
+    .locals 1
+
+    .prologue
+    iget-object v0, p0, Lcom/android/server/BatteryService;->mHandler:Landroid/os/Handler;
+
+    return-object v0
+.end method
+
+.method flymeGetFieldPlugType()I
+    .locals 1
+
+    .prologue
+    iget v0, p0, Lcom/android/server/BatteryService;->mPlugType:I
+
+    return v0
+.end method
+
+.method flymeInvokeMethodUpdate(Landroid/os/BatteryProperties;)V
+    .locals 0
+    .param p1, "props"    # Landroid/os/BatteryProperties;
+
+    .prologue
+    invoke-direct {p0, p1}, Lcom/android/server/BatteryService;->update(Landroid/os/BatteryProperties;)V
+
+    return-void
 .end method
