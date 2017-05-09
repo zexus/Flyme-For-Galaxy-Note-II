@@ -13841,9 +13841,11 @@
     goto :goto_0
 .end method
 
-.method private flymeDrawDivider(I)Z
+.method private flymeDrawDivider(Landroid/graphics/Canvas;Landroid/graphics/Rect;I)Z
     .locals 22
-    .param p1, "childIndex"    # I
+    .param p1, "canvas"    # Landroid/graphics/Canvas;
+    .param p2, "bounds"    # Landroid/graphics/Rect;
+    .param p3, "childIndex"    # I
 
     .prologue
     move-object/from16 v0, p0
@@ -13915,7 +13917,7 @@
 
     .end local v19    # "wrappedAdapter":Landroid/widget/ListAdapter;
     :cond_0
-    move/from16 v9, p1
+    move/from16 v9, p3
 
     .local v9, "index":I
     move-object/from16 v0, p0
@@ -13987,7 +13989,7 @@
     :goto_3
     const/16 v20, -0x1
 
-    move/from16 v0, p1
+    move/from16 v0, p3
 
     move/from16 v1, v20
 
@@ -14210,7 +14212,7 @@
     :goto_4
     const/16 v20, -0x1
 
-    move/from16 v0, p1
+    move/from16 v0, p3
 
     move/from16 v1, v20
 

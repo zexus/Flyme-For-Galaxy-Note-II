@@ -10528,12 +10528,15 @@
     return v0
 .end method
 
-.method private flymeNotifyOverLimitLocked(Landroid/net/NetworkPolicy;J)V
-    .locals 4
+.method private flymeNotifyOverLimitLocked(Landroid/net/NetworkPolicy;IJ)V
+    .locals 5
     .param p1, "policy"    # Landroid/net/NetworkPolicy;
-    .param p2, "totalBytes"    # J
+    .param p2, "type"    # I
+    .param p3, "totalBytes"    # J
 
     .prologue
+    invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/server/net/NetworkPolicyManagerService;->flymeEnqueueNotification(Landroid/net/NetworkPolicy;IJ)V
+
     iget-object v1, p1, Landroid/net/NetworkPolicy;->template:Landroid/net/NetworkTemplate;
 
     .local v1, "template":Landroid/net/NetworkTemplate;
@@ -10548,7 +10551,7 @@
     :try_start_0
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
 
-    invoke-static {v1, p1, p2, p3}, Lcom/android/server/net/NetworkPolicyManagerService$FlymeInjector;->buildFlymeNetworkOverLimitIntent(Landroid/net/NetworkTemplate;Landroid/net/NetworkPolicy;J)Landroid/content/Intent;
+    invoke-static {v1, p1, p3, p4}, Lcom/android/server/net/NetworkPolicyManagerService$FlymeInjector;->buildFlymeNetworkOverLimitIntent(Landroid/net/NetworkTemplate;Landroid/net/NetworkPolicy;J)Landroid/content/Intent;
 
     move-result-object v3
 
