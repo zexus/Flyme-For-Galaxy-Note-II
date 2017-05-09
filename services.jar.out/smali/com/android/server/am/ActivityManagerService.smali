@@ -32430,12 +32430,6 @@
 
     invoke-virtual {v4, v0, v5}, Lcom/android/server/wm/WindowManagerService;->setCurrentUser(I[I)V
 
-    invoke-direct/range {p0 .. p0}, Lcom/android/server/am/ActivityManagerService;->mzIsFalse()Z
-
-    move-result v4
-
-    goto/16 :goto_flyme_0
-
     .line 19933
     move-object/from16 v0, p0
 
@@ -32443,11 +32437,10 @@
 
     const/4 v5, 0x0
 
-    invoke-virtual {v4, v5}, Lcom/android/server/wm/WindowManagerService;->lockNow(Landroid/os/Bundle;)V
+    #invoke-virtual {v4, v5}, Lcom/android/server/wm/WindowManagerService;->lockNow(Landroid/os/Bundle;)V
 
     .line 19942
     :goto_0
-    :goto_flyme_0
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/server/am/ActivityManagerService;->mStartedUsers:Landroid/util/SparseArray;
@@ -65361,6 +65354,7 @@
 
     .local v12, "i":I
     :goto_5
+    :goto_flyme_0
     if-ge v12, v15, :cond_e
 
     if-lez p1, :cond_e
@@ -65404,7 +65398,6 @@
     if-nez v2, :cond_6
 
     :cond_0
-    :goto_flyme_0
     :goto_6
     add-int/lit8 v12, v12, 0x1
 

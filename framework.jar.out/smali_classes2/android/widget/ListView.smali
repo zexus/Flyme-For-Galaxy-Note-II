@@ -8396,26 +8396,27 @@
 .end method
 
 .method drawDivider(Landroid/graphics/Canvas;Landroid/graphics/Rect;I)V
-    .locals 1
+    .locals 2
     .param p1, "canvas"    # Landroid/graphics/Canvas;
     .param p2, "bounds"    # Landroid/graphics/Rect;
     .param p3, "childIndex"    # I
 
     .prologue
-    invoke-direct {p0, p3}, Landroid/widget/ListView;->flymeDrawDivider(I)Z
-
-    move-result v0
-
-    if-nez v0, :cond_flyme_0
-
-    return-void
-
-    :cond_flyme_0
 
     iget-object v0, p0, Landroid/widget/ListView;->mDivider:Landroid/graphics/drawable/Drawable;
 
     .local v0, "divider":Landroid/graphics/drawable/Drawable;
     invoke-virtual {v0, p2}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
+
+    invoke-direct/range {p0 .. p3}, Landroid/widget/ListView;->flymeDrawDivider(Landroid/graphics/Canvas;Landroid/graphics/Rect;I)Z
+
+    move-result v1
+
+    if-nez v1, :cond_flyme_0
+
+    return-void
+
+    :cond_flyme_0
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
