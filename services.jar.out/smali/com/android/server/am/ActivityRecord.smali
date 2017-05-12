@@ -938,20 +938,16 @@
 
     move/from16 v18, v0
 
-    .line 525
     const/16 v19, 0xb
 
-    .line 524
     move/from16 v0, v18
 
     move/from16 v1, v19
 
     if-ge v0, v1, :cond_b
 
-    .line 526
-    const v18, 0x1030005
+    const v18, #android:style@Theme#t
 
-    .line 524
     :goto_3
     move/from16 v0, v18
 
@@ -1289,7 +1285,7 @@
 
     .line 562
     :cond_6
-    const v18, 0x10304ba
+    const v18, #android:style@Theme.DeviceDefault.FloatingWindow#t
 
     move/from16 v0, v18
 
@@ -1470,33 +1466,28 @@
 
     goto/16 :goto_1
 
-    .line 509
     :cond_a
     const/16 v18, 0x0
 
     goto/16 :goto_2
 
-    .line 527
     :cond_b
-    const v18, 0x103006b
+    const v18, #android:style@Theme.Holo#t
 
     goto/16 :goto_3
 
-    .line 533
     .restart local v14    # "stack":Lcom/android/server/am/ActivityStack;
     :cond_c
     const/16 v18, 0x0
 
     goto/16 :goto_4
 
-    .line 534
     :cond_d
     const/4 v5, 0x0
 
     .local v5, "baseRecord":Lcom/android/server/am/TaskRecord;
     goto/16 :goto_5
 
-    .line 537
     .end local v5    # "baseRecord":Lcom/android/server/am/TaskRecord;
     :cond_e
     const/4 v13, 0x0
@@ -6256,6 +6247,16 @@
     :cond_0
     const/4 v0, 0x1
 
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/am/ActivityRecord;->isFlymeResolverActivity()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_flyme_0
+
+    const/4 v0, 0x0
+
+    :cond_flyme_0
+
     goto :goto_0
 .end method
 
@@ -7747,4 +7748,23 @@
     invoke-virtual {v3}, Lcom/android/server/am/ActivityStackSupervisor;->scheduleIdleLocked()V
 
     goto :goto_0
+.end method
+
+.method private isFlymeResolverActivity()Z
+    .locals 2
+
+    .prologue
+    const-string v0, "com.android.internal.app.MzResolverActivity"
+
+    iget-object v1, p0, Lcom/android/server/am/ActivityRecord;->realActivity:Landroid/content/ComponentName;
+
+    invoke-virtual {v1}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    return v0
 .end method

@@ -297,7 +297,7 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    const v14, 0x10302f7
+    const v14, #android:style@PowerMenuTranslucentAnimation#t
 
     const/16 v13, 0x11
 
@@ -412,15 +412,13 @@
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_2
 
-    .line 523
     :cond_1
     :goto_0
     sget-boolean v6, Lcom/android/server/power/ShutdownThread;->mRebootUpdate:Z
 
     if-eqz v6, :cond_f
 
-    .line 524
-    const v6, 0x104019d
+    const v6, #android:string@reboot_to_update_title#t
 
     invoke-virtual {p0, v6}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -428,36 +426,28 @@
 
     invoke-virtual {v4, v6}, Landroid/app/ProgressDialog;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 526
-    const v6, 0x104019e
+    const v6, #android:string@reboot_to_update_prepare#t
 
-    .line 525
     invoke-virtual {p0, v6}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v6
 
     invoke-virtual {v4, v6}, Landroid/app/ProgressDialog;->setMessage(Ljava/lang/CharSequence;)V
 
-    .line 527
     const/16 v6, 0x64
 
     invoke-virtual {v4, v6}, Landroid/app/ProgressDialog;->setMax(I)V
 
-    .line 528
     invoke-virtual {v4, v12}, Landroid/app/ProgressDialog;->setProgressNumberFormat(Ljava/lang/String;)V
 
-    .line 529
     invoke-virtual {v4, v11}, Landroid/app/ProgressDialog;->setProgressStyle(I)V
 
-    .line 530
     invoke-virtual {v4, v10}, Landroid/app/ProgressDialog;->setProgress(I)V
 
-    .line 531
     invoke-virtual {v4, v10}, Landroid/app/ProgressDialog;->setIndeterminate(Z)V
 
-    .line 555
     :goto_1
-    const-string/jumbo v6, "audio"
+    const-string v6, "audio"
 
     invoke-virtual {p0, v6}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -523,152 +513,120 @@
 
     move-result v5
 
-    .line 570
     .local v5, "powermenuAnimations":I
     :goto_3
     if-nez v5, :cond_2
 
-    .line 573
     :cond_2
     if-ne v5, v11, :cond_3
 
-    .line 574
-    const v6, 0x10302f2
+    const v6, #android:style@PowerMenuBottomAnimation#t
 
     iput v6, v0, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
-    .line 575
     const/16 v6, 0x51
 
     iput v6, v0, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 577
     :cond_3
     const/4 v6, 0x2
 
     if-ne v5, v6, :cond_4
 
-    .line 578
-    const v6, 0x10302f3
+    const v6, #android:style@PowerMenuTopAnimation#t
 
     iput v6, v0, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
-    .line 579
     const/16 v6, 0x31
 
     iput v6, v0, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 581
     :cond_4
     const/4 v6, 0x3
 
     if-ne v5, v6, :cond_5
 
-    .line 582
-    const v6, 0x10302f4
+    const v6, #android:style@PowerMenuRotateAnimation#t
 
     iput v6, v0, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
-    .line 583
     iput v13, v0, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 585
     :cond_5
     const/4 v6, 0x4
 
     if-ne v5, v6, :cond_6
 
-    .line 586
-    const v6, 0x10302f8
+    const v6, #android:style@PowerMenuXylonAnimation#t
 
     iput v6, v0, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
-    .line 587
     iput v13, v0, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 589
     :cond_6
     const/4 v6, 0x5
 
     if-ne v5, v6, :cond_7
 
-    .line 590
     iput v14, v0, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
-    .line 591
     iput v13, v0, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 593
     :cond_7
     const/4 v6, 0x6
 
     if-ne v5, v6, :cond_8
 
-    .line 594
-    const v6, 0x10302f6
+    const v6, #android:style@PowerMenuTnAnimation#t
 
     iput v6, v0, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
-    .line 595
     iput v13, v0, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 597
     :cond_8
     const/4 v6, 0x7
 
     if-ne v5, v6, :cond_9
 
-    .line 598
-    const v6, 0x10302f5
+    const v6, #android:style@PowerMenuflyAnimation#t
 
     iput v6, v0, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
-    .line 599
     iput v13, v0, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 601
     :cond_9
     const/16 v6, 0x8
 
     if-ne v5, v6, :cond_a
 
-    .line 602
-    const v6, 0x10302f9
+    const v6, #android:style@PowerMenuCardAnimation#t
 
     iput v6, v0, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
-    .line 603
     iput v13, v0, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 605
     :cond_a
     const/16 v6, 0x9
 
     if-ne v5, v6, :cond_b
 
-    .line 606
     iput v14, v0, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
-    .line 607
     const/16 v6, 0x31
 
     iput v6, v0, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 609
     :cond_b
     const/16 v6, 0xa
 
     if-ne v5, v6, :cond_c
 
-    .line 610
     iput v14, v0, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
-    .line 611
     const/16 v6, 0x51
 
     iput v6, v0, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 614
     :cond_c
     invoke-static {p0}, Lcom/android/server/power/ShutdownThread;->setRebootDialogAlpha(Landroid/content/Context;)F
 
@@ -843,15 +801,13 @@
 
     throw v6
 
-    .line 532
     .restart local v4    # "pd":Landroid/app/ProgressDialog;
     :cond_f
     sget-boolean v6, Lcom/android/server/power/ShutdownThread;->mRebootWipe:Z
 
     if-eqz v6, :cond_10
 
-    .line 534
-    const v6, 0x10401a1
+    const v6, #android:string@reboot_to_reset_title#t
 
     invoke-virtual {p0, v6}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -859,24 +815,20 @@
 
     invoke-virtual {v4, v6}, Landroid/app/ProgressDialog;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 536
-    const v6, 0x10401a2
+    const v6, #android:string@reboot_to_reset_message#t
 
-    .line 535
     invoke-virtual {p0, v6}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v6
 
     invoke-virtual {v4, v6}, Landroid/app/ProgressDialog;->setMessage(Ljava/lang/CharSequence;)V
 
-    .line 537
     invoke-virtual {v4, v11}, Landroid/app/ProgressDialog;->setIndeterminate(Z)V
 
     goto/16 :goto_1
 
-    .line 539
     :cond_10
-    const v6, 0x104002e
+    const v6, #android:string@reboot_title#t
 
     invoke-virtual {p0, v6}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -884,8 +836,7 @@
 
     invoke-virtual {v4, v6}, Landroid/app/ProgressDialog;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 540
-    const v6, 0x1040030
+    const v6, #android:string@reboot_progress#t
 
     invoke-virtual {p0, v6}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -893,19 +844,16 @@
 
     invoke-virtual {v4, v6}, Landroid/app/ProgressDialog;->setMessage(Ljava/lang/CharSequence;)V
 
-    .line 541
     invoke-virtual {v4, v11}, Landroid/app/ProgressDialog;->setIndeterminate(Z)V
 
     goto/16 :goto_1
 
-    .line 544
     :cond_11
     sget-boolean v6, Lcom/android/server/power/ShutdownThread;->mReboot:Z
 
     if-eqz v6, :cond_12
 
-    .line 545
-    const v6, 0x104002e
+    const v6, #android:string@reboot_title#t
 
     invoke-virtual {p0, v6}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -913,8 +861,7 @@
 
     invoke-virtual {v4, v6}, Landroid/app/ProgressDialog;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 546
-    const v6, 0x1040030
+    const v6, #android:string@reboot_progress#t
 
     invoke-virtual {p0, v6}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -930,7 +877,7 @@
 
     .line 548
     :cond_12
-    const v6, 0x1040199
+    const v6, #android:string@power_off#t
 
     invoke-virtual {p0, v6}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -938,8 +885,7 @@
 
     invoke-virtual {v4, v6}, Landroid/app/ProgressDialog;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 549
-    const v6, 0x10401a3
+    const v6, #android:string@shutdown_progress#t
 
     invoke-virtual {p0, v6}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -1432,12 +1378,10 @@
 
     if-eqz v1, :cond_1
 
-    .line 1171
-    const v1, 0x10304cc
+    const v1, #android:style@Theme.Leanback.Dialog.Alert#t
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->setTheme(I)V
 
-    .line 1176
     .end local v0    # "uiContext":Landroid/content/Context;
     :cond_0
     :goto_0
@@ -1449,7 +1393,7 @@
     .line 1173
     .restart local v0    # "uiContext":Landroid/content/Context;
     :cond_1
-    const v1, 0x10302ef
+    const v1, #android:style@Theme.Power.Dialog#t
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->setTheme(I)V
 
@@ -1470,32 +1414,26 @@
     .param p2, "advancedReboot"    # Z
 
     .prologue
-    .line 370
     if-eqz p2, :cond_2
 
-    .line 372
     const/4 v1, -0x1
 
     if-eq p1, v1, :cond_1
 
-    .line 373
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    .line 374
-    const v2, 0x107000d
+    const v2, #android:array@shutdown_reboot_actions#t
 
-    .line 373
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 375
     .local v0, "actions":[Ljava/lang/String;
     aget-object v1, v0, p1
 
-    const-string/jumbo v2, "systemui_reboot"
+    const-string v2, "systemui_reboot"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2095,49 +2033,39 @@
 
     monitor-exit v18
 
-    .line 194
     return-void
 
     :cond_0
     monitor-exit v18
 
-    .line 198
     const/4 v15, 0x0
 
-    .line 201
     .local v15, "showRebootOption":Z
     invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v17
 
-    .line 202
-    const-string/jumbo v18, "power_menu_actions"
+    const-string v18, "power_menu_actions"
 
     const/16 v19, -0x2
 
-    .line 201
     invoke-static/range {v17 .. v19}, Lcyanogenmod/providers/CMSettings$Secure;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 203
     .local v3, "actions":Ljava/lang/String;
     if-nez v3, :cond_13
 
-    .line 204
     invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v17
 
-    .line 205
-    const v18, 0x1070041
+    const v18, #android:array@config_globalActionsList#t
 
-    .line 204
     invoke-virtual/range {v17 .. v18}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
     move-result-object v4
 
-    .line 210
     .local v4, "actionsArray":[Ljava/lang/String;
     :goto_0
     const/4 v9, 0x0
@@ -2163,33 +2091,26 @@
 
     if-eqz v17, :cond_14
 
-    .line 212
     const/4 v15, 0x1
 
-    .line 216
     :cond_1
     invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v17
 
-    .line 217
-    const v18, 0x10e004f
+    const v18, #android:integer@config_longPressOnPowerBehavior#t
 
-    .line 216
     invoke-virtual/range {v17 .. v18}, Landroid/content/res/Resources;->getInteger(I)I
 
     move-result v12
 
-    .line 218
     .local v12, "longPressBehavior":I
     sget-boolean v17, Lcom/android/server/power/ShutdownThread;->mRebootSafeMode:Z
 
     if-eqz v17, :cond_15
 
-    .line 219
-    const v14, 0x10401a7
+    const v14, #android:string@reboot_safemode_confirm#t
 
-    .line 223
     .local v14, "resourceId":I
     :goto_2
     if-eqz v15, :cond_2
@@ -2302,15 +2223,12 @@
 
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 241
     sget-boolean v17, Lcom/android/server/power/ShutdownThread;->mRebootSafeMode:Z
 
     if-eqz v17, :cond_19
 
-    .line 242
-    const v17, 0x10401a6
+    const v17, #android:string@reboot_safemode_title#t
 
-    .line 240
     :goto_5
     move-object/from16 v0, v18
 
@@ -2345,8 +2263,7 @@
 
     invoke-direct {v0, v1, v5}, Lcom/android/server/power/ShutdownThread$3;-><init>(Landroid/content/Context;Z)V
 
-    .line 265
-    const v18, 0x1040013
+    const v18, #android:string@yes#t
 
     move/from16 v0, v18
 
@@ -2354,8 +2271,7 @@
 
     invoke-virtual {v8, v0, v1}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 275
-    const v17, 0x1040009
+    const v17, #android:string@no#t
 
     const/16 v18, 0x0
 
@@ -2430,21 +2346,18 @@
 
     if-ne v13, v0, :cond_7
 
-    .line 291
-    const v17, 0x10302f2
+    const v17, #android:style@PowerMenuBottomAnimation#t
 
     move/from16 v0, v17
 
     iput v0, v6, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
-    .line 292
     const/16 v17, 0x51
 
     move/from16 v0, v17
 
     iput v0, v6, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 294
     :cond_7
     const/16 v17, 0x2
 
@@ -2452,21 +2365,18 @@
 
     if-ne v13, v0, :cond_8
 
-    .line 295
-    const v17, 0x10302f3
+    const v17, #android:style@PowerMenuTopAnimation#t
 
     move/from16 v0, v17
 
     iput v0, v6, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
-    .line 296
     const/16 v17, 0x31
 
     move/from16 v0, v17
 
     iput v0, v6, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 298
     :cond_8
     const/16 v17, 0x3
 
@@ -2474,21 +2384,18 @@
 
     if-ne v13, v0, :cond_9
 
-    .line 299
-    const v17, 0x10302f4
+    const v17, #android:style@PowerMenuRotateAnimation#t
 
     move/from16 v0, v17
 
     iput v0, v6, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
-    .line 300
     const/16 v17, 0x11
 
     move/from16 v0, v17
 
     iput v0, v6, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 302
     :cond_9
     const/16 v17, 0x4
 
@@ -2496,21 +2403,18 @@
 
     if-ne v13, v0, :cond_a
 
-    .line 303
-    const v17, 0x10302f8
+    const v17, #android:style@PowerMenuXylonAnimation#t
 
     move/from16 v0, v17
 
     iput v0, v6, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
-    .line 304
     const/16 v17, 0x11
 
     move/from16 v0, v17
 
     iput v0, v6, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 306
     :cond_a
     const/16 v17, 0x5
 
@@ -2518,21 +2422,18 @@
 
     if-ne v13, v0, :cond_b
 
-    .line 307
-    const v17, 0x10302f7
+    const v17, #android:style@PowerMenuTranslucentAnimation#t
 
     move/from16 v0, v17
 
     iput v0, v6, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
-    .line 308
     const/16 v17, 0x11
 
     move/from16 v0, v17
 
     iput v0, v6, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 310
     :cond_b
     const/16 v17, 0x6
 
@@ -2540,21 +2441,18 @@
 
     if-ne v13, v0, :cond_c
 
-    .line 311
-    const v17, 0x10302f6
+    const v17, #android:style@PowerMenuTnAnimation#t
 
     move/from16 v0, v17
 
     iput v0, v6, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
-    .line 312
     const/16 v17, 0x11
 
     move/from16 v0, v17
 
     iput v0, v6, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 314
     :cond_c
     const/16 v17, 0x7
 
@@ -2562,21 +2460,18 @@
 
     if-ne v13, v0, :cond_d
 
-    .line 315
-    const v17, 0x10302f5
+    const v17, #android:style@PowerMenuflyAnimation#t
 
     move/from16 v0, v17
 
     iput v0, v6, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
-    .line 316
     const/16 v17, 0x11
 
     move/from16 v0, v17
 
     iput v0, v6, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 318
     :cond_d
     const/16 v17, 0x8
 
@@ -2584,21 +2479,18 @@
 
     if-ne v13, v0, :cond_e
 
-    .line 319
-    const v17, 0x10302f9
+    const v17, #android:style@PowerMenuCardAnimation#t
 
     move/from16 v0, v17
 
     iput v0, v6, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
-    .line 320
     const/16 v17, 0x11
 
     move/from16 v0, v17
 
     iput v0, v6, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 322
     :cond_e
     const/16 v17, 0x9
 
@@ -2606,21 +2498,18 @@
 
     if-ne v13, v0, :cond_f
 
-    .line 323
-    const v17, 0x10302f7
+    const v17, #android:style@PowerMenuTranslucentAnimation#t
 
     move/from16 v0, v17
 
     iput v0, v6, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
-    .line 324
     const/16 v17, 0x31
 
     move/from16 v0, v17
 
     iput v0, v6, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 326
     :cond_f
     const/16 v17, 0xa
 
@@ -2628,47 +2517,39 @@
 
     if-ne v13, v0, :cond_10
 
-    .line 327
-    const v17, 0x10302f7
+    const v17, #android:style@PowerMenuTranslucentAnimation#t
 
     move/from16 v0, v17
 
     iput v0, v6, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
-    .line 328
     const/16 v17, 0x51
 
     move/from16 v0, v17
 
     iput v0, v6, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 331
     :cond_10
     invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v17
 
-    .line 332
-    const-string/jumbo v18, "transparent_power_menu"
+    const-string v18, "transparent_power_menu"
 
     const/16 v19, 0x64
 
-    .line 331
     invoke-static/range {v17 .. v19}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v17
 
-    .line 332
     const/16 v18, 0x64
 
-    .line 331
     move/from16 v0, v17
 
     move/from16 v1, v18
 
     if-eq v0, v1, :cond_11
 
-    .line 333
     invoke-static/range {p0 .. p0}, Lcom/android/server/power/ShutdownThread;->setRebootDialogAlpha(Landroid/content/Context;)F
 
     move-result v17
@@ -2790,27 +2671,23 @@
 
     if-ne v12, v0, :cond_16
 
-    .line 221
-    const v14, 0x10401a5
+    const v14, #android:string@shutdown_confirm_question#t
 
     .restart local v14    # "resourceId":I
     goto/16 :goto_2
 
-    .line 222
     .end local v14    # "resourceId":I
     :cond_16
-    const v14, 0x10401a4
+    const v14, #android:string@shutdown_confirm#t
 
     .restart local v14    # "resourceId":I
     goto/16 :goto_2
 
-    .line 224
     :cond_17
-    const v14, 0x104002f
+    const v14, #android:string@reboot_confirm#t
 
     goto/16 :goto_3
 
-    .line 232
     .restart local v5    # "advancedReboot":Z
     .restart local v7    # "closer":Lcom/android/server/power/ShutdownThread$CloseDialogReceiver;
     :cond_18
@@ -2819,28 +2696,23 @@
     .restart local v10    # "instant":Z
     goto/16 :goto_4
 
-    .line 243
     .restart local v16    # "uiContext":Landroid/content/Context;
     :cond_19
     if-eqz v15, :cond_1a
 
-    .line 244
-    const v17, 0x104002e
+    const v17, #android:string@reboot_title#t
 
     goto/16 :goto_5
 
-    .line 245
     :cond_1a
-    const v17, 0x1040199
+    const v17, #android:string@power_off#t
 
     goto/16 :goto_5
 
-    .line 250
     .restart local v8    # "confirmDialogBuilder":Landroid/app/AlertDialog$Builder;
     :cond_1b
     if-eqz v10, :cond_1c
 
-    .line 253
     new-instance v17, Lcom/android/server/power/ShutdownThread$2;
 
     move-object/from16 v0, v17
@@ -2849,10 +2721,8 @@
 
     invoke-direct {v0, v1, v5}, Lcom/android/server/power/ShutdownThread$2;-><init>(Landroid/content/Context;Z)V
 
-    .line 252
-    const v18, 0x107000c
+    const v18, #android:array@shutdown_reboot_options#t
 
-    .line 251
     move/from16 v0, v18
 
     move-object/from16 v1, v17
@@ -2863,7 +2733,7 @@
 
     .line 260
     :cond_1c
-    const v17, 0x107000c
+    const v17, #android:array@shutdown_reboot_options#t
 
     const/16 v18, 0x0
 

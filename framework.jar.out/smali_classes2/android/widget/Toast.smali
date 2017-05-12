@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/widget/Toast$FlymeInjector;,
         Landroid/widget/Toast$TN;
     }
 .end annotation
@@ -41,57 +42,46 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 109
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 110
     iput-object p1, p0, Landroid/widget/Toast;->mContext:Landroid/content/Context;
 
-    .line 111
     sput-object p1, Landroid/widget/Toast;->tContext:Landroid/content/Context;
 
-    .line 112
     new-instance v0, Landroid/widget/Toast$TN;
 
     invoke-direct {v0}, Landroid/widget/Toast$TN;-><init>()V
 
     iput-object v0, p0, Landroid/widget/Toast;->mTN:Landroid/widget/Toast$TN;
 
-    .line 113
     iget-object v0, p0, Landroid/widget/Toast;->mTN:Landroid/widget/Toast$TN;
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    .line 114
-    const v2, 0x1050016
+    const v2, #android:dimen@toast_y_offset#t
 
-    .line 113
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v1
 
     iput v1, v0, Landroid/widget/Toast$TN;->mY:I
 
-    .line 115
     iget-object v0, p0, Landroid/widget/Toast;->mTN:Landroid/widget/Toast$TN;
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    .line 116
-    const v2, 0x10e0097
+    const v2, #android:integer@config_toastDefaultGravity#t
 
-    .line 115
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
     move-result v1
 
     iput v1, v0, Landroid/widget/Toast$TN;->mGravity:I
 
-    .line 109
     return-void
 .end method
 
@@ -190,7 +180,7 @@
 
     .line 275
     .local v0, "inflate":Landroid/view/LayoutInflater;
-    const v5, 0x10900f9
+    const v5, #android:layout@transient_notification#t
 
     const/4 v6, 0x0
 
@@ -200,7 +190,7 @@
 
     .line 276
     .local v4, "v":Landroid/view/View;
-    const v5, 0x102000b
+    const v5, #android:id@message#t
 
     invoke-virtual {v4, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -459,7 +449,7 @@
     :cond_0
     iget-object v1, p0, Landroid/widget/Toast;->mNextView:Landroid/view/View;
 
-    const v2, 0x102000b
+    const v2, #android:id@message#t
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -532,17 +522,24 @@
 
     move-result-object v1
 
-    .line 129
     .local v1, "pkg":Ljava/lang/String;
     iget-object v3, p0, Landroid/widget/Toast;->mTN:Landroid/widget/Toast$TN;
 
-    .line 130
     .local v3, "tn":Landroid/widget/Toast$TN;
     iget-object v4, p0, Landroid/widget/Toast;->mNextView:Landroid/view/View;
 
     iput-object v4, v3, Landroid/widget/Toast$TN;->mNextView:Landroid/view/View;
 
-    .line 133
+    invoke-static/range {p0 .. p0}, Landroid/widget/Toast$FlymeInjector;->checkSameMsg(Landroid/widget/Toast;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_flyme_0
+
+    return-void
+
+    :cond_flyme_0
+
     :try_start_0
     iget v4, p0, Landroid/widget/Toast;->mDuration:I
 
@@ -560,4 +557,16 @@
 
     .local v0, "e":Landroid/os/RemoteException;
     goto :goto_0
+.end method
+
+.method public setType(I)V
+    .locals 1
+    .param p1, "type"    # I
+
+    .prologue
+    iget-object v0, p0, Landroid/widget/Toast;->mTN:Landroid/widget/Toast$TN;
+
+    iput p1, v0, Landroid/widget/Toast$TN;->mFlymeToastType:I
+
+    return-void
 .end method

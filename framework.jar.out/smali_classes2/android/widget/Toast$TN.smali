@@ -22,6 +22,8 @@
 
 
 # instance fields
+.field mFlymeToastType:I
+
 .field mGravity:I
 
 .field final mHandler:Landroid/os/Handler;
@@ -62,73 +64,61 @@
     .prologue
     const/4 v2, -0x2
 
-    .line 371
     invoke-direct {p0}, Landroid/app/ITransientNotification$Stub;-><init>()V
 
-    .line 341
     new-instance v1, Landroid/widget/Toast$TN$1;
 
     invoke-direct {v1, p0}, Landroid/widget/Toast$TN$1;-><init>(Landroid/widget/Toast$TN;)V
 
     iput-object v1, p0, Landroid/widget/Toast$TN;->mShow:Ljava/lang/Runnable;
 
-    .line 348
     new-instance v1, Landroid/widget/Toast$TN$2;
 
     invoke-direct {v1, p0}, Landroid/widget/Toast$TN$2;-><init>(Landroid/widget/Toast$TN;)V
 
     iput-object v1, p0, Landroid/widget/Toast$TN;->mHide:Ljava/lang/Runnable;
 
-    .line 357
     new-instance v1, Landroid/view/WindowManager$LayoutParams;
 
     invoke-direct {v1}, Landroid/view/WindowManager$LayoutParams;-><init>()V
 
     iput-object v1, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
 
-    .line 358
     new-instance v1, Landroid/os/Handler;
 
     invoke-direct {v1}, Landroid/os/Handler;-><init>()V
 
     iput-object v1, p0, Landroid/widget/Toast$TN;->mHandler:Landroid/os/Handler;
 
-    .line 374
     iget-object v0, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
 
-    .line 375
     .local v0, "params":Landroid/view/WindowManager$LayoutParams;
     iput v2, v0, Landroid/view/WindowManager$LayoutParams;->height:I
 
-    .line 376
     iput v2, v0, Landroid/view/WindowManager$LayoutParams;->width:I
 
-    .line 377
     const/4 v1, -0x3
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->format:I
 
-    .line 378
-    const v1, 0x1030004
+    const v1, #android:style@Animation.Toast#t
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
-    .line 379
     const/16 v1, 0x7d5
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->type:I
 
-    .line 380
-    const-string/jumbo v1, "Toast"
+    const-string v1, "Toast"
 
     invoke-virtual {v0, v1}, Landroid/view/WindowManager$LayoutParams;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 381
     const/16 v1, 0x98
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
 
-    .line 371
+    invoke-direct {p0, v0}, Landroid/widget/Toast$TN;->initFlymeExtraFields(Landroid/view/WindowManager$LayoutParams;)V
+
     return-void
 .end method
 
@@ -239,6 +229,8 @@
 
     .line 528
     :cond_1
+    invoke-static {}, Landroid/widget/Toast$FlymeInjector;->resetFlymeExtraFields()V
+
     return-void
 .end method
 
@@ -303,7 +295,7 @@
     :cond_0
     iget-object v9, p0, Landroid/widget/Toast$TN;->mView:Landroid/view/View;
 
-    const v10, 0x1020006
+    const v10, #android:id@icon#t
 
     invoke-virtual {v9, v10}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -460,33 +452,28 @@
 
     iput v10, v9, Landroid/view/WindowManager$LayoutParams;->x:I
 
-    .line 498
     iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
 
     iget v10, p0, Landroid/widget/Toast$TN;->mY:I
 
     iput v10, v9, Landroid/view/WindowManager$LayoutParams;->y:I
 
-    .line 499
     iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
 
     iget v10, p0, Landroid/widget/Toast$TN;->mVerticalMargin:F
 
     iput v10, v9, Landroid/view/WindowManager$LayoutParams;->verticalMargin:F
 
-    .line 500
     iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
 
     iget v10, p0, Landroid/widget/Toast$TN;->mHorizontalMargin:F
 
     iput v10, v9, Landroid/view/WindowManager$LayoutParams;->horizontalMargin:F
 
-    .line 501
     iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
 
     iput-object v7, v9, Landroid/view/WindowManager$LayoutParams;->packageName:Ljava/lang/String;
 
-    .line 502
     iget-object v9, p0, Landroid/widget/Toast$TN;->mView:Landroid/view/View;
 
     invoke-virtual {v9}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
@@ -557,7 +544,7 @@
     :pswitch_1
     iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
 
-    const v10, 0x1030004
+    const v10, #android:style@Animation.Toast#t
 
     iput v10, v9, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
@@ -567,7 +554,7 @@
     :pswitch_2
     iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
 
-    const v10, 0x1030305
+    const v10, #android:style@Animation.Toast.Fade#t
 
     iput v10, v9, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
@@ -577,7 +564,7 @@
     :pswitch_3
     iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
 
-    const v10, 0x1030306
+    const v10, #android:style@Animation.Toast.SlideRight#t
 
     iput v10, v9, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
@@ -587,7 +574,7 @@
     :pswitch_4
     iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
 
-    const v10, 0x1030307
+    const v10, #android:style@Animation.Toast.SlideLeft#t
 
     iput v10, v9, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
@@ -597,7 +584,7 @@
     :pswitch_5
     iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
 
-    const v10, 0x103030a
+    const v10, #android:style@Animation.Toast.Xylon#t
 
     iput v10, v9, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
@@ -607,7 +594,7 @@
     :pswitch_6
     iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
 
-    const v10, 0x103030b
+    const v10, #android:style@Animation.Toast.Toko#t
 
     iput v10, v9, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
@@ -617,7 +604,7 @@
     :pswitch_7
     iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
 
-    const v10, 0x103030c
+    const v10, #android:style@Animation.Toast.Tn#t
 
     iput v10, v9, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
@@ -627,7 +614,7 @@
     :pswitch_8
     iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
 
-    const v10, 0x103030d
+    const v10, #android:style@Animation.Toast.Honami#t
 
     iput v10, v9, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
@@ -637,7 +624,7 @@
     :pswitch_9
     iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
 
-    const v10, 0x103030e
+    const v10, #android:style@Animation.Toast.FastFade#t
 
     iput v10, v9, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
@@ -647,7 +634,7 @@
     :pswitch_a
     iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
 
-    const v10, 0x103030f
+    const v10, #android:style@Animation.Toast.GrowFade#t
 
     iput v10, v9, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
@@ -657,7 +644,7 @@
     :pswitch_b
     iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
 
-    const v10, 0x1030310
+    const v10, #android:style@Animation.Toast.GrowFadeCenter#t
 
     iput v10, v9, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
@@ -667,7 +654,7 @@
     :pswitch_c
     iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
 
-    const v10, 0x1030311
+    const v10, #android:style@Animation.Toast.GrowFadeBottom#t
 
     iput v10, v9, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
@@ -677,7 +664,7 @@
     :pswitch_d
     iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
 
-    const v10, 0x1030312
+    const v10, #android:style@Animation.Toast.Translucent#t
 
     iput v10, v9, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
@@ -687,7 +674,7 @@
     :pswitch_e
     iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
 
-    const v10, 0x1030309
+    const v10, #android:style@Animation.Toast.SlideLeftRight#t
 
     iput v10, v9, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
@@ -697,7 +684,7 @@
     :pswitch_f
     iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
 
-    const v10, 0x1030308
+    const v10, #android:style@Animation.Toast.SlideRightLeft#t
 
     iput v10, v9, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
@@ -754,5 +741,42 @@
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     .line 390
+    return-void
+.end method
+
+.method private hookFlymeToastType()V
+    .locals 2
+
+    .prologue
+    iget-object v0, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
+
+    iget v1, p0, Landroid/widget/Toast$TN;->mFlymeToastType:I
+
+    iput v1, v0, Landroid/view/WindowManager$LayoutParams;->type:I
+
+    return-void
+.end method
+
+.method private initFlymeExtraFields(Landroid/view/WindowManager$LayoutParams;)V
+    .locals 2
+    .param p1, "params"    # Landroid/view/WindowManager$LayoutParams;
+
+    .prologue
+    const/16 v0, 0x7d5
+
+    iput v0, p0, Landroid/widget/Toast$TN;->mFlymeToastType:I
+
+    sget v0, Lcom/flyme/internal/R$style;->Animation_Flyme_MzToast:I
+
+    iput v0, p1, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
+
+    iget-object v0, p1, Landroid/view/WindowManager$LayoutParams;->meizuParams:Landroid/view/MeizuLayoutParams;
+
+    iget v1, v0, Landroid/view/MeizuLayoutParams;->flags:I
+
+    or-int/lit8 v1, v1, 0x40
+
+    iput v1, v0, Landroid/view/MeizuLayoutParams;->flags:I
+
     return-void
 .end method
