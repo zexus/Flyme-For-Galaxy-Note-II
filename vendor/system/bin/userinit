@@ -1,6 +1,0 @@
-#!/system/bin/sh
-
-userinit=/data/local/userinit.sh
-if [ -e $userinit ]; then 
-    $userinit
-fi
