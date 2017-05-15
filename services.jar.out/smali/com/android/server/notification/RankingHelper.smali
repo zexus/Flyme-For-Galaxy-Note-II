@@ -1663,8 +1663,11 @@
     iput-boolean v1, v7, Lcom/android/server/notification/RankingHelper$Record;->halo:Z
 
     :cond_flyme_0
+    move-object/from16 v0, p0
 
-    invoke-direct {p0, p1, v5}, Lcom/android/server/notification/RankingHelper;->readFlymeExtraFields(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/server/notification/RankingHelper$Record;)V
+    move-object/from16 v1, p1
+
+    invoke-direct {v0, v1, v7}, Lcom/android/server/notification/RankingHelper;->readFlymeExtraFields(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/server/notification/RankingHelper$Record;)V
 
     goto/16 :goto_0
 

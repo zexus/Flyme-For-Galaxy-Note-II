@@ -33388,3 +33388,10 @@
 
     return v2
 .end method
+
+.method public showBootMessage(Ljava/lang/CharSequence;Z)V
+    .locals 0
+
+    .prologue
+    return-void
+.end method
