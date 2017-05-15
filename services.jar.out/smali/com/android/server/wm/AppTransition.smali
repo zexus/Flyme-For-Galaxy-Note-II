@@ -9,6 +9,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/android/server/wm/AppTransition$FlymeInjector;,
         Lcom/android/server/wm/AppTransition$SettingsObserver;
     }
 .end annotation
@@ -5312,7 +5313,7 @@
     if-eqz v0, :cond_2
 
     .line 431
-    invoke-static {v1, v0}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
+    invoke-static {v1, v0}, Lcom/android/server/wm/AppTransition$FlymeInjector;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
     move-result-object v3
 

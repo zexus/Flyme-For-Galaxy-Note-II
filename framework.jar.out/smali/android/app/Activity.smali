@@ -523,6 +523,12 @@
 
     iput-object v0, p0, Landroid/app/Activity;->mScaleGestureListener:Landroid/view/ScaleGestureDetector$OnScaleGestureListener;
 
+    new-instance v0, Landroid/app/Activity$TintBarInject;
+
+    invoke-direct {v0, p0}, Landroid/app/Activity$TintBarInject;-><init>(Landroid/app/Activity;)V
+
+    iput-object v0, p0, Landroid/app/Activity;->mInject:Landroid/app/Activity$TintBarInject;
+
     return-void
 .end method
 
@@ -7605,6 +7611,10 @@
     invoke-virtual {v4, p1}, Landroid/app/ActionBar;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
     :cond_2
+    iget-object v4, p0, Landroid/app/Activity;->mInject:Landroid/app/Activity$TintBarInject;
+
+    invoke-virtual {v4, p1}, Landroid/app/Activity$TintBarInject;->onConfigurationChanged(Landroid/content/res/Configuration;)V
+
     return-void
 
     .restart local v0    # "config":Landroid/content/res/Configuration;
@@ -7895,6 +7905,10 @@
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Landroid/view/ScaleGestureDetector;->setQuickScaleEnabled(Z)V
+
+    iget-object v1, p0, Landroid/app/Activity;->mInject:Landroid/app/Activity$TintBarInject;
+
+    invoke-virtual {v1}, Landroid/app/Activity$TintBarInject;->onCreate()V
 
     return-void
 

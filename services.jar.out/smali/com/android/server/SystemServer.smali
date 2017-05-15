@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/android/server/SystemServer$FlymeInjector;,
         Lcom/android/server/SystemServer$AdbPortObserver;
     }
 .end annotation
@@ -1528,7 +1529,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    new-instance v72, Lcom/android/server/InputMethodManagerService;
+    new-instance v72, Lcom/android/server/MzInputMethodManagerService;
 
     move-object/from16 v0, v72
 
@@ -1673,7 +1674,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    new-instance v79, Lcom/android/server/LockSettingsService;
+    new-instance v79, Lcom/android/server/FlymeExtLockSettingsService;
 
     move-object/from16 v0, v79
 
@@ -1750,7 +1751,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    new-instance v99, Lcom/android/server/statusbar/StatusBarManagerService;
+    new-instance v99, Lcom/android/server/statusbar/FlymeExtStatusBarManagerService;
 
     move-object/from16 v0, v99
 
@@ -3145,6 +3146,15 @@
     check-cast v84, Lcom/android/server/MmsServiceBroker;
 
     .local v84, "mmsService":Lcom/android/server/MmsServiceBroker;
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v4, v112
+
+    move-object/from16 v5, v109
+
+    invoke-static {v0, v4, v5}, Lcom/android/server/SystemServer$FlymeInjector;->addFlymeServices(Lcom/android/server/SystemServer;Lcom/android/server/wm/WindowManagerService;Lcom/android/server/wallpaper/WallpaperManagerService;)V
+
     :try_start_3c
     invoke-static/range {v67 .. v67}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 

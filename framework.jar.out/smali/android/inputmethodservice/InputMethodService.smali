@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/inputmethodservice/InputMethodService$FlymeInjector;,
         Landroid/inputmethodservice/InputMethodService$SettingsObserver;,
         Landroid/inputmethodservice/InputMethodService$InputMethodImpl;,
         Landroid/inputmethodservice/InputMethodService$InputMethodSessionImpl;,
@@ -2432,6 +2433,8 @@
 
     iput-object v0, p0, Landroid/inputmethodservice/InputMethodService;->mHandler:Landroid/os/Handler;
 
+    invoke-static/range {p0 .. p0}, Landroid/inputmethodservice/InputMethodService$FlymeInjector;->initFlymeCoverViews(Landroid/inputmethodservice/InputMethodService;)V
+
     return-void
 .end method
 
@@ -3054,6 +3057,8 @@
 
     invoke-direct {p0}, Landroid/inputmethodservice/InputMethodService;->updateSettings()V
 
+    invoke-static/range {p0 .. p0}, Landroid/inputmethodservice/InputMethodService$FlymeInjector;->initFlymeExtraFields(Landroid/inputmethodservice/InputMethodService;)V
+
     return-void
 
     :cond_1
@@ -3606,6 +3611,21 @@
     return v6
 
     :cond_0
+
+    invoke-static/range {p0 .. p0}, Landroid/inputmethodservice/InputMethodService$FlymeInjector;->isImeInterceptBackKey(Landroid/inputmethodservice/InputMethodService;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_flyme_0
+
+    invoke-static/range {p0 .. p0}, Landroid/inputmethodservice/InputMethodService$FlymeInjector;->handleBack(Landroid/inputmethodservice/InputMethodService;)Z
+
+    move-result v1
+
+    return v1
+
+    :cond_flyme_0
+
     invoke-direct {p0, v5}, Landroid/inputmethodservice/InputMethodService;->handleBack(Z)Z
 
     move-result v1

@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/android/server/power/ShutdownThread$FlymeInjector;,
         Lcom/android/server/power/ShutdownThread$CloseDialogReceiver;,
         Lcom/android/server/power/ShutdownThread$1;
     }
@@ -646,7 +647,7 @@
     invoke-virtual {v6, v7}, Landroid/view/Window;->setDimAmount(F)V
 
     .line 617
-    invoke-virtual {v4}, Landroid/app/ProgressDialog;->show()V
+    invoke-static {p0}, Lcom/android/server/power/ShutdownThread$FlymeInjector;->showShutDownAnimation(Landroid/content/Context;)V
 
     .line 620
     .end local v0    # "attrs":Landroid/view/WindowManager$LayoutParams;

@@ -4986,6 +4986,11 @@
     .end local v4    # "summary":Ljava/lang/CharSequence;
     .end local v5    # "title":Ljava/lang/CharSequence;
     :cond_4
+
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/InputMethodManagerService;->showFlymeImeSwitcherNotificationIfNeeded()V
+
+    :cond_flyme_0
+
     :goto_1
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
@@ -5006,11 +5011,11 @@
     :try_start_1
     iget-boolean v7, p0, Lcom/android/server/InputMethodManagerService;->mNotificationShown:Z
 
-    if-eqz v7, :cond_7
+    if-eqz v7, :cond_flyme_0
 
     iget-object v7, p0, Lcom/android/server/InputMethodManagerService;->mNotificationManager:Landroid/app/NotificationManager;
 
-    if-eqz v7, :cond_7
+    if-eqz v7, :cond_flyme_0
 
     iget-object v7, p0, Lcom/android/server/InputMethodManagerService;->mNotificationManager:Landroid/app/NotificationManager;
 

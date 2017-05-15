@@ -3192,6 +3192,8 @@
 
     invoke-virtual {v0, v2}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
+    invoke-static/range {v30 .. v30}, Lcom/android/server/pm/PackageManagerService$FlymePackageManagerServiceInjector;->addFlymeAlreadyDexOpted(Landroid/util/ArraySet;)V
+
     invoke-virtual/range {v52 .. v52}, Ljava/io/File;->list()[Ljava/lang/String;
 
     move-result-object v53
@@ -7518,7 +7520,10 @@
 
     .end local v11    # "N":I
     :cond_a
-    const/4 v1, 0x0
+
+    invoke-static/range {p0 .. p5}, Lcom/android/server/pm/PackageManagerService$FlymePackageManagerServiceInjector;->getResolveInfo(Lcom/android/server/pm/PackageManagerService;Landroid/content/Intent;Ljava/lang/String;ILjava/util/List;I)Landroid/content/pm/ResolveInfo;
+
+    move-result-object v1
 
     return-object v1
 .end method
@@ -23125,6 +23130,17 @@
     .param p3, "total"    # I
 
     .prologue
+
+    invoke-static/range {p0 .. p3}, Lcom/android/server/pm/PackageManagerService$FlymePackageManagerServiceInjector;->performFlymeBootDexOpt(Lcom/android/server/pm/PackageManagerService;Landroid/content/pm/PackageParser$Package;II)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_flyme_0
+
+    return-void
+
+    :cond_flyme_0
+
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService;->mContext:Landroid/content/Context;
 
