@@ -5264,7 +5264,7 @@
 
     iget-object v1, v0, Lcom/android/server/display/DisplayPowerController;->mKeyguardService:Lcom/android/server/policy/keyguard/KeyguardServiceWrapper;
 
-    invoke-virtual {v1, v8}, Lcom/android/server/policy/keyguard/KeyguardServiceWrapper;->setBackgroundBitmap(Landroid/graphics/Bitmap;)V
+    #invoke-virtual {v1, v8}, Lcom/android/server/policy/keyguard/KeyguardServiceWrapper;->setBackgroundBitmap(Landroid/graphics/Bitmap;)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 

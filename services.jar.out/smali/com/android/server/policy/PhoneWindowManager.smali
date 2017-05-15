@@ -3070,7 +3070,7 @@
     .line 7066
     :cond_2
     :goto_1
-    invoke-direct {p0, v5}, Lcom/android/server/policy/PhoneWindowManager;->toggleOrientationListener(Z)V
+    #invoke-direct {p0, v5}, Lcom/android/server/policy/PhoneWindowManager;->toggleOrientationListener(Z)V
 
     .line 7019
     return-void
