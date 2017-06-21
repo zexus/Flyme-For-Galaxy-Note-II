@@ -13,6 +13,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/widget/AbsListView$FlymeInjector;,
         Landroid/widget/AbsListView$OnItemDragListener;,
         Landroid/widget/AbsListView$onTouchOutOfItemListener;,
         Landroid/widget/AbsListView$HoldView;,
@@ -58,34 +59,6 @@
 .field public static final CHOICE_MODE_MULTIPLE_MODAL_MZ:I = 0x4
 
 .field public static final CHOICE_MODE_MULTIPLE_MODAL_MZ_ALWAYS:I = 0x5
-
-.field protected mCenterContent:Z
-
-.field protected mCheckRegionRect:Landroid/graphics/Rect;
-
-.field protected mChoiceModeMZ:I
-
-.field protected mDefaultCheckWidth:I
-
-.field protected mEnableForEditTextPreference:Z
-
-.field protected mEnableHoldPress:Z
-
-.field mEnableLoadAllItems:Z
-
-.field mEnableOverScroll:Z
-
-.field protected mHoldView:Landroid/widget/AbsListView$HoldView;
-
-.field mIsThemeLight:Z
-
-.field protected mItemDragListener:Landroid/widget/AbsListView$OnItemDragListener;
-
-.field protected mListItemHeight:I
-
-.field mMultiChoiceDelayRunnable:Ljava/lang/Runnable;
-
-.field protected mOnTouchOutOfItemListener:Landroid/widget/AbsListView$onTouchOutOfItemListener;
 
 .field private static final CHECK_POSITION_SEARCH_DISTANCE:I = 0x14
 
@@ -153,6 +126,46 @@
 
 
 # instance fields
+.field protected mCenterContent:Z
+
+.field protected mCheckRegionRect:Landroid/graphics/Rect;
+
+.field protected mChoiceModeMZ:I
+
+.field protected mDefaultCheckWidth:I
+
+.field protected mEnableForEditTextPreference:Z
+
+.field protected mEnableHoldPress:Z
+
+.field mFlymeCheckForLittleTap:Landroid/widget/AbsListView$FlymeInjector$MzCheckForLittleTap;
+
+.field mFlymeEnableLoadAllItems:Z
+
+.field mFlymeEnableOverScroll:Z
+
+.field mFlymeEnablePressStateOnCheck:Z
+
+.field mFlymeFirstInit:Z
+
+.field mFlymeHoldPressDrawable:Landroid/graphics/drawable/StateListDrawable;
+
+.field mFlymeInCheckRegion:Z
+
+.field mFlymeMultiChoiceDelayRunnable:Ljava/lang/Runnable;
+
+.field mFlymeShowPressed:Z
+
+.field protected mHoldView:Landroid/widget/AbsListView$HoldView;
+
+.field mIsFlymeThemeLight:Z
+
+.field protected mItemDragListener:Landroid/widget/AbsListView$OnItemDragListener;
+
+.field protected mListItemHeight:I
+
+.field protected mOnTouchOutOfItemListener:Landroid/widget/AbsListView$onTouchOutOfItemListener;
+
 .field private mAccessibilityDelegate:Landroid/widget/AbsListView$ListItemAccessibilityDelegate;
 
 .field private mActivePointerId:I
@@ -1488,6 +1501,12 @@
 
     .line 1260
     :cond_1
+    invoke-static/range {p0 .. p0}, Landroid/widget/AbsListView$FlymeInjector;->flymeContentFits(Landroid/widget/AbsListView;)Z
+
+    move-result v3
+
+    return v3
+
     invoke-virtual {p0, v2}, Landroid/widget/AbsListView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
@@ -2226,6 +2245,8 @@
 
     invoke-virtual {p0, v1}, Landroid/widget/AbsListView;->setPersistentDrawingCache(I)V
 
+    invoke-static/range {p0 .. p0}, Landroid/widget/AbsListView$FlymeInjector;->initFlymeExtraFields(Landroid/widget/AbsListView;)V
+
     .line 875
     return-void
 .end method
@@ -2756,6 +2777,8 @@
 
     .line 3949
     :goto_0
+    invoke-static/range {p0 .. p0}, Landroid/widget/AbsListView$FlymeInjector;->mzOnTouchDown(Landroid/widget/AbsListView;)V
+
     iget v4, p0, Landroid/widget/AbsListView;->mTouchMode:I
 
     if-nez v4, :cond_1
@@ -4787,6 +4810,9 @@
 
     .line 2701
     :cond_6
+
+    invoke-static/range {p0 .. p2}, Landroid/widget/AbsListView$FlymeInjector;->mzPositionSelector(Landroid/widget/AbsListView;ILandroid/view/View;)Z
+
     return-void
 
     .line 2702
@@ -8007,6 +8033,14 @@
     .line 4325
     invoke-super {p0, p1}, Landroid/widget/AdapterView;->draw(Landroid/graphics/Canvas;)V
 
+    iget-boolean v0, p0, Landroid/widget/AbsListView;->mIsFlymeThemeLight:Z
+
+    if-eqz v0, :cond_flyme_0
+
+    return-void
+
+    :cond_flyme_0
+
     .line 4326
     iget-object v10, p0, Landroid/widget/AbsListView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
 
@@ -8871,6 +8905,12 @@
     .locals 1
 
     .prologue
+    invoke-static/range {p0 .. p0}, Landroid/widget/AbsListView$FlymeInjector;->getFlymeChoiceMode(Landroid/widget/AbsListView;)I
+
+    move-result v0
+
+    return v0
+
     .line 1203
     iget v0, p0, Landroid/widget/AbsListView;->mChoiceMode:I
 
@@ -9446,6 +9486,8 @@
 
     .line 5528
     :cond_0
+    invoke-static/range {p0 .. p0}, Landroid/widget/AbsListView$FlymeInjector;->updateFlymeHoldView(Landroid/widget/AbsListView;)V
+
     iget-object v10, p0, Landroid/widget/AbsListView;->mRecycler:Landroid/widget/AbsListView$RecycleBin;
 
     invoke-virtual {v10}, Landroid/widget/AbsListView$RecycleBin;->clearTransientStateViews()V
@@ -10431,6 +10473,8 @@
     .line 2367
     invoke-virtual {v3}, Landroid/view/View;->dispatchFinishTemporaryDetach()V
 
+    invoke-static {p0, v3}, Landroid/widget/AbsListView$FlymeInjector;->setFlymeHoldViewBackground(Landroid/widget/AbsListView;Landroid/view/View;)V
+
     .line 2368
     return-object v3
 
@@ -10543,6 +10587,8 @@
     :cond_7
     invoke-static {v10, v11}, Landroid/os/Trace;->traceEnd(J)V
 
+    invoke-static {p0, p1, v0}, Landroid/widget/AbsListView$FlymeInjector;->setFlymeHoldViewBackground(Landroid/widget/AbsListView;ILandroid/view/View;)V
+
     .line 2411
     return-object v0
 
@@ -10639,6 +10685,9 @@
 
     .line 3009
     :cond_1
+
+    invoke-static/range {p0 .. p0}, Landroid/widget/AbsListView$FlymeInjector;->setFlymeDrawDuringWindowsAnimating(Landroid/widget/AbsListView;)V
+
     return-void
 
     .line 3015
@@ -11952,6 +12001,8 @@
 
     iput-boolean v2, p0, Landroid/widget/AbsListView;->mInLayout:Z
 
+    invoke-static/range {p0 .. p0}, Landroid/widget/AbsListView$FlymeInjector;->mzOnLayout(Landroid/widget/AbsListView;)V
+
     .line 2164
     invoke-virtual {p0}, Landroid/widget/AbsListView;->getChildCount()I
 
@@ -12035,6 +12086,9 @@
 
     .line 2159
     :cond_2
+
+    invoke-static/range {p0 .. p0}, Landroid/widget/AbsListView$FlymeInjector;->mzOnLayout2(Landroid/widget/AbsListView;)V
+
     return-void
 .end method
 
@@ -12416,6 +12470,8 @@
 
     .line 4224
     invoke-virtual {p0}, Landroid/widget/AbsListView;->awakenScrollBars()Z
+
+    invoke-static/range {p0 .. p0}, Landroid/widget/AbsListView$FlymeInjector;->mzOnOverScrolled(Landroid/widget/AbsListView;)V
 
     .line 4218
     :cond_0
@@ -13183,6 +13239,9 @@
 
     .line 2804
     :cond_1
+
+    invoke-static/range {p0 .. p4}, Landroid/widget/AbsListView$FlymeInjector;->mzOnSizeChanged(Landroid/widget/AbsListView;IIII)V
+
     return-void
 .end method
 
@@ -13402,6 +13461,8 @@
 
     .line 3821
     .local v5, "vtev":Landroid/view/MotionEvent;
+    invoke-static/range {p0 .. p1}, Landroid/widget/AbsListView$FlymeInjector;->mzOnTouchEvent(Landroid/widget/AbsListView;Landroid/view/MotionEvent;)V
+
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
@@ -13731,6 +13792,8 @@
     .line 3093
     .local v0, "touchMode":I
     :goto_0
+    invoke-static/range {p0 .. p1}, Landroid/widget/AbsListView$FlymeInjector;->mzOnWindowFocusChanged(Landroid/widget/AbsListView;Z)V
+
     if-nez p1, :cond_4
 
     .line 3094
@@ -14147,6 +14210,17 @@
     .line 1172
     .end local v8    # "handled":Z
     :cond_5
+
+    move-object/from16 v2, p0
+
+    move-object/from16 v3, p1
+
+    move/from16 v4, p2
+
+    move-wide/from16 v5, p3
+
+    invoke-static/range {v2 .. v7}, Landroid/widget/AbsListView$FlymeInjector;->performItemHold(Landroid/widget/AbsListView;Landroid/view/View;IJZ)V
+
     return v8
 
     .line 1127
@@ -14299,6 +14373,18 @@
     .param p3, "longPressId"    # J
 
     .prologue
+    invoke-static/range {p0 .. p4}, Landroid/widget/AbsListView$FlymeInjector;->mzPerformLongPress(Landroid/widget/AbsListView;Landroid/view/View;IJ)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_flyme_0
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_flyme_0
+
     const/4 v2, 0x1
 
     const/4 v7, 0x0
@@ -15905,6 +15991,10 @@
     .param p1, "choiceMode"    # I
 
     .prologue
+    invoke-static/range {p0 .. p1}, Landroid/widget/AbsListView$FlymeInjector;->setFlymeChoiceMode(Landroid/widget/AbsListView;I)I
+
+    move-result p1
+
     const/4 v2, 0x0
 
     const/4 v1, 0x0
@@ -17074,6 +17164,8 @@
 
     .line 2886
     invoke-virtual {p0}, Landroid/widget/AbsListView;->updateSelectorState()V
+
+    invoke-static/range {p0 .. p0}, Landroid/widget/AbsListView$FlymeInjector;->setFlymeSelector(Landroid/widget/AbsListView;)V
 
     .line 2873
     return-void
@@ -18460,7 +18552,7 @@
     .local v3, "absIncrementalDeltaY":I
     move/from16 v0, v25
 
-    if-lt v0, v3, :cond_13
+    if-le v0, v3, :cond_13
 
     move/from16 v0, v26
 
@@ -18542,6 +18634,8 @@
     .end local v9    # "childIndex":I
     :cond_15
     :goto_9
+    invoke-static/range {p0 .. p2}, Landroid/widget/AbsListView$FlymeInjector;->mzTrackMotionScroll(Landroid/widget/AbsListView;II)V
+
     const/16 v29, 0x0
 
     move/from16 v0, v29
@@ -18941,17 +19035,11 @@
     goto :goto_0
 .end method
 
-.method public disableQuickClick()V
-    .locals 0
-
-    .prologue
-    return-void
-.end method
-
 .method public dispatchStatusBarTap()Z
     .locals 1
 
     .prologue
+    .line 8213
     invoke-virtual {p0}, Landroid/widget/AbsListView;->onStatusBarTapScrollTop()Z
 
     move-result v0
@@ -18959,17 +19047,22 @@
     return v0
 .end method
 
-.method public enableQuickClick()V
-    .locals 0
-
-    .prologue
-    return-void
-.end method
-
 .method public finishMultiChoice()V
-    .locals 0
+    .locals 1
 
     .prologue
+    .line 8164
+    iget-object v0, p0, Landroid/widget/AbsListView;->mChoiceActionMode:Landroid/view/ActionMode;
+
+    if-eqz v0, :cond_0
+
+    .line 8165
+    iget-object v0, p0, Landroid/widget/AbsListView;->mChoiceActionMode:Landroid/view/ActionMode;
+
+    invoke-virtual {v0}, Landroid/view/ActionMode;->finish()V
+
+    .line 8163
+    :cond_0
     return-void
 .end method
 
@@ -18977,6 +19070,7 @@
     .locals 1
 
     .prologue
+    .line 8183
     iget-object v0, p0, Landroid/widget/AbsListView;->mItemDragListener:Landroid/widget/AbsListView$OnItemDragListener;
 
     return-object v0
@@ -18986,6 +19080,7 @@
     .locals 1
 
     .prologue
+    .line 8379
     iget v0, p0, Landroid/widget/AbsListView;->mOverscrollDistance:I
 
     return v0
@@ -18995,6 +19090,7 @@
     .locals 1
 
     .prologue
+    .line 8283
     const/4 v0, 0x0
 
     return v0
@@ -19004,7 +19100,8 @@
     .locals 1
 
     .prologue
-    iget-boolean v0, p0, Landroid/widget/AbsListView;->mEnableLoadAllItems:Z
+    .line 8198
+    iget-boolean v0, p0, Landroid/widget/AbsListView;->mFlymeEnableLoadAllItems:Z
 
     return v0
 .end method
@@ -19017,13 +19114,16 @@
 
     const/4 v2, 0x0
 
+    .line 8247
     invoke-virtual {p0}, Landroid/widget/AbsListView;->getOverScrollMode()I
 
     move-result v0
 
+    .line 8248
     .local v0, "overscrollMode":I
     if-eqz v0, :cond_1
 
+    .line 8249
     if-ne v0, v3, :cond_0
 
     invoke-direct {p0}, Landroid/widget/AbsListView;->contentFits()Z
@@ -19032,9 +19132,11 @@
 
     if-eqz v1, :cond_1
 
+    .line 8252
     :cond_0
     return v2
 
+    .line 8250
     :cond_1
     return v3
 .end method
@@ -19046,17 +19148,21 @@
     .prologue
     const/4 v10, 0x0
 
+    .line 8384
     invoke-virtual {p0}, Landroid/widget/AbsListView;->getChildCount()I
 
     move-result v4
 
+    .line 8385
     .local v4, "childCount":I
     if-lez v4, :cond_8
 
+    .line 8386
     iget-object v7, p0, Landroid/widget/AbsListView;->mListPadding:Landroid/graphics/Rect;
 
     iget v6, v7, Landroid/graphics/Rect;->top:I
 
+    .line 8387
     .local v6, "listTop":I
     invoke-virtual {p0}, Landroid/widget/AbsListView;->getHeight()I
 
@@ -19068,6 +19174,7 @@
 
     sub-int v5, v7, v8
 
+    .line 8388
     .local v5, "listBottom":I
     iget v7, p0, Landroid/widget/AbsListView;->mFirstPosition:I
 
@@ -19089,6 +19196,7 @@
 
     const/4 v2, 0x1
 
+    .line 8389
     .local v2, "atListTop":Z
     :goto_0
     iget v7, p0, Landroid/widget/AbsListView;->mListItemHeight:I
@@ -19099,14 +19207,17 @@
 
     const/4 v3, 0x1
 
+    .line 8390
     .local v3, "atTopRegion":Z
     :goto_1
     if-eqz v2, :cond_2
 
     if-eqz v3, :cond_2
 
+    .line 8391
     return v10
 
+    .line 8388
     .end local v2    # "atListTop":Z
     .end local v3    # "atTopRegion":Z
     :cond_0
@@ -19115,12 +19226,14 @@
     .restart local v2    # "atListTop":Z
     goto :goto_0
 
+    .line 8389
     :cond_1
     const/4 v3, 0x0
 
     .restart local v3    # "atTopRegion":Z
     goto :goto_1
 
+    .line 8394
     :cond_2
     iget v7, p0, Landroid/widget/AbsListView;->mFirstPosition:I
 
@@ -19132,6 +19245,7 @@
 
     if-ne v7, v8, :cond_4
 
+    .line 8395
     add-int/lit8 v7, v4, -0x1
 
     invoke-virtual {p0, v7}, Landroid/widget/AbsListView;->getChildAt(I)Landroid/view/View;
@@ -19156,6 +19270,7 @@
 
     const/4 v1, 0x1
 
+    .line 8396
     .local v1, "atListBottom":Z
     :goto_2
     iget v7, p0, Landroid/widget/AbsListView;->mListItemHeight:I
@@ -19166,14 +19281,17 @@
 
     const/4 v0, 0x1
 
+    .line 8397
     .local v0, "atBottomRegion":Z
     :goto_3
     if-eqz v1, :cond_6
 
     if-eqz v0, :cond_6
 
+    .line 8398
     return v10
 
+    .line 8395
     .end local v0    # "atBottomRegion":Z
     .end local v1    # "atListBottom":Z
     :cond_3
@@ -19182,6 +19300,7 @@
     .restart local v1    # "atListBottom":Z
     goto :goto_2
 
+    .line 8394
     .end local v1    # "atListBottom":Z
     :cond_4
     const/4 v1, 0x0
@@ -19189,12 +19308,14 @@
     .restart local v1    # "atListBottom":Z
     goto :goto_2
 
+    .line 8396
     :cond_5
     const/4 v0, 0x0
 
     .restart local v0    # "atBottomRegion":Z
     goto :goto_3
 
+    .line 8401
     :cond_6
     if-nez v3, :cond_7
 
@@ -19208,6 +19329,7 @@
 
     goto :goto_4
 
+    .line 8403
     .end local v0    # "atBottomRegion":Z
     .end local v1    # "atListBottom":Z
     .end local v2    # "atListTop":Z
@@ -19222,8 +19344,10 @@
     .locals 0
 
     .prologue
+    .line 8266
     invoke-direct {p0}, Landroid/widget/AbsListView;->createScrollingCache()V
 
+    .line 8265
     return-void
 .end method
 
@@ -19232,20 +19356,24 @@
     .param p1, "forceUpdate"    # Z
 
     .prologue
+    .line 8292
     iget-object v0, p0, Landroid/widget/AbsListView;->mCheckRegionRect:Landroid/graphics/Rect;
 
     if-nez v0, :cond_0
 
+    .line 8293
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/widget/AbsListView;->mCheckRegionRect:Landroid/graphics/Rect;
 
+    .line 8294
     iget-object v0, p0, Landroid/widget/AbsListView;->mCheckRegionRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->setEmpty()V
 
+    .line 8296
     :cond_0
     iget v0, p0, Landroid/widget/AbsListView;->mChoiceModeMZ:I
 
@@ -19259,12 +19387,15 @@
 
     if-eq v0, v1, :cond_1
 
+    .line 8297
     iget-object v0, p0, Landroid/widget/AbsListView;->mCheckRegionRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->setEmpty()V
 
+    .line 8298
     return-void
 
+    .line 8300
     :cond_1
     iget-object v0, p0, Landroid/widget/AbsListView;->mCheckRegionRect:Landroid/graphics/Rect;
 
@@ -19276,6 +19407,7 @@
 
     if-eqz p1, :cond_3
 
+    .line 8304
     :cond_2
     iget-object v0, p0, Landroid/widget/AbsListView;->mCheckRegionRect:Landroid/graphics/Rect;
 
@@ -19289,6 +19421,7 @@
 
     iput v1, v0, Landroid/graphics/Rect;->right:I
 
+    .line 8305
     iget-object v0, p0, Landroid/widget/AbsListView;->mCheckRegionRect:Landroid/graphics/Rect;
 
     iget-object v1, p0, Landroid/widget/AbsListView;->mCheckRegionRect:Landroid/graphics/Rect;
@@ -19301,6 +19434,7 @@
 
     iput v1, v0, Landroid/graphics/Rect;->left:I
 
+    .line 8306
     iget-object v0, p0, Landroid/widget/AbsListView;->mCheckRegionRect:Landroid/graphics/Rect;
 
     iget v1, p0, Landroid/widget/AbsListView;->mPaddingTop:I
@@ -19315,6 +19449,7 @@
 
     iput v1, v0, Landroid/graphics/Rect;->top:I
 
+    .line 8307
     iget-object v0, p0, Landroid/widget/AbsListView;->mCheckRegionRect:Landroid/graphics/Rect;
 
     invoke-virtual {p0}, Landroid/widget/AbsListView;->getHeight()I
@@ -19327,8 +19462,10 @@
 
     iput v1, v0, Landroid/graphics/Rect;->bottom:I
 
+    .line 8291
     return-void
 
+    .line 8301
     :cond_3
     return-void
 .end method
@@ -19342,6 +19479,7 @@
     .prologue
     const/4 v0, 0x1
 
+    .line 8208
     if-nez p1, :cond_1
 
     :cond_0
@@ -19367,39 +19505,185 @@
 .end method
 
 .method protected mzIsHeaderOrFooter(I)Z
-    .locals 1
+    .locals 4
     .param p1, "position"    # I
-
-    .prologue
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method protected mzIsItemSelectable(I)Z
-    .locals 1
-    .param p1, "position"    # I
-
-    .prologue
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method mzOnCreateActionMode(Landroid/view/ActionMode;)Z
-    .locals 1
-    .param p1, "mode"    # Landroid/view/ActionMode;
 
     .prologue
     const/4 v0, 0x1
 
+    const/4 v1, 0x0
+
+    .line 8158
+    if-ltz p1, :cond_2
+
+    .line 8159
+    invoke-virtual {p0}, Landroid/widget/AbsListView;->getHeaderViewsCount()I
+
+    move-result v2
+
+    if-lt p1, v2, :cond_0
+
+    iget v2, p0, Landroid/widget/AbsListView;->mItemCount:I
+
+    invoke-virtual {p0}, Landroid/widget/AbsListView;->getFooterViewsCount()I
+
+    move-result v3
+
+    sub-int/2addr v2, v3
+
+    if-lt p1, v2, :cond_1
+
+    .line 8158
+    :cond_0
+    :goto_0
     return v0
+
+    :cond_1
+    move v0, v1
+
+    .line 8159
+    goto :goto_0
+
+    :cond_2
+    move v0, v1
+
+    .line 8158
+    goto :goto_0
+.end method
+
+.method protected mzIsItemSelectable(I)Z
+    .locals 3
+    .param p1, "position"    # I
+
+    .prologue
+    .line 8135
+    iget-object v0, p0, Landroid/widget/AbsListView;->mAdapter:Landroid/widget/ListAdapter;
+
+    .line 8136
+    .local v0, "adapter":Landroid/widget/ListAdapter;
+    move v1, p1
+
+    .line 8137
+    .local v1, "pos":I
+    iget-object v2, p0, Landroid/widget/AbsListView;->mAdapter:Landroid/widget/ListAdapter;
+
+    instance-of v2, v2, Landroid/widget/HeaderViewListAdapter;
+
+    if-eqz v2, :cond_0
+
+    .line 8138
+    iget-object v2, p0, Landroid/widget/AbsListView;->mAdapter:Landroid/widget/ListAdapter;
+
+    check-cast v2, Landroid/widget/HeaderViewListAdapter;
+
+    invoke-virtual {v2}, Landroid/widget/HeaderViewListAdapter;->getWrappedAdapter()Landroid/widget/ListAdapter;
+
+    move-result-object v0
+
+    .line 8139
+    invoke-virtual {p0}, Landroid/widget/AbsListView;->getHeaderViewsCount()I
+
+    move-result v2
+
+    sub-int v1, p1, v2
+
+    .line 8142
+    :cond_0
+    instance-of v2, v0, Lcom/meizu/widget/ListSelectFilter;
+
+    if-eqz v2, :cond_1
+
+    .line 8143
+    check-cast v0, Lcom/meizu/widget/ListSelectFilter;
+
+    .end local v0    # "adapter":Landroid/widget/ListAdapter;
+    invoke-interface {v0, v1}, Lcom/meizu/widget/ListSelectFilter;->isSelectable(I)Z
+
+    move-result v2
+
+    return v2
+
+    .line 8146
+    .restart local v0    # "adapter":Landroid/widget/ListAdapter;
+    :cond_1
+    if-nez v0, :cond_2
+
+    .line 8147
+    const/4 v2, 0x0
+
+    return v2
+
+    .line 8149
+    :cond_2
+    invoke-interface {v0, v1}, Landroid/widget/ListAdapter;->isEnabled(I)Z
+
+    move-result v2
+
+    return v2
+.end method
+
+.method mzOnCreateActionMode(Landroid/view/ActionMode;)Z
+    .locals 3
+    .param p1, "mode"    # Landroid/view/ActionMode;
+
+    .prologue
+    const/4 v2, 0x1
+
+    .line 8115
+    iget v0, p0, Landroid/widget/AbsListView;->mChoiceModeMZ:I
+
+    const/4 v1, 0x4
+
+    if-eq v0, v1, :cond_0
+
+    .line 8116
+    iget v0, p0, Landroid/widget/AbsListView;->mChoiceModeMZ:I
+
+    const/4 v1, 0x5
+
+    if-ne v0, v1, :cond_1
+
+    .line 8118
+    :cond_0
+    invoke-virtual {p0, v2}, Landroid/widget/AbsListView;->setLongClickable(Z)V
+
+    .line 8123
+    :goto_0
+    return v2
+
+    .line 8120
+    :cond_1
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Landroid/widget/AbsListView;->setLongClickable(Z)V
+
+    goto :goto_0
 .end method
 
 .method mzOnDestroyActionMode()V
-    .locals 0
+    .locals 3
 
     .prologue
+    const/4 v2, 0x0
+
+    .line 8127
+    iget v0, p0, Landroid/widget/AbsListView;->mChoiceModeMZ:I
+
+    const/4 v1, 0x5
+
+    if-ne v0, v1, :cond_0
+
+    iget-object v0, p0, Landroid/widget/AbsListView;->mChoiceActionMode:Landroid/view/ActionMode;
+
+    if-eqz v0, :cond_0
+
+    .line 8128
+    iget-object v0, p0, Landroid/widget/AbsListView;->mChoiceActionMode:Landroid/view/ActionMode;
+
+    invoke-virtual {v0, v2}, Landroid/view/ActionMode;->setBackPressListener(Landroid/view/ActionMode$BackPressedListener;)V
+
+    .line 8126
+    :cond_0
     return-void
 .end method
 
@@ -19409,8 +19693,10 @@
     .prologue
     const/4 v3, 0x0
 
+    .line 8363
     iget v0, p0, Landroid/widget/AbsListView;->mMotionPosition:I
 
+    .line 8364
     .local v0, "motionPosition":I
     iget-boolean v1, p0, Landroid/widget/AbsListView;->mDataChanged:Z
 
@@ -19422,6 +19708,7 @@
 
     if-eqz v1, :cond_2
 
+    .line 8365
     iget v1, p0, Landroid/widget/AbsListView;->mChoiceModeMZ:I
 
     const/4 v2, 0x4
@@ -19432,6 +19719,7 @@
 
     if-eqz v1, :cond_0
 
+    .line 8366
     invoke-virtual {p0, v0}, Landroid/widget/AbsListView;->mzIsHeaderOrFooter(I)Z
 
     move-result v1
@@ -19444,14 +19732,17 @@
 
     if-eqz v1, :cond_1
 
+    .line 8371
     :cond_0
     return v3
 
+    .line 8369
     :cond_1
     const/4 v1, 0x1
 
     return v1
 
+    .line 8374
     :cond_2
     return v3
 .end method
@@ -19468,18 +19759,23 @@
     .prologue
     const/4 v3, 0x0
 
+    .line 8313
     invoke-virtual {p0}, Landroid/widget/AbsListView;->getChildCount()I
 
     move-result v8
 
+    .line 8315
     .local v8, "count":I
     const/4 v7, 0x0
 
+    .line 8316
     .local v7, "contentFits":Z
     if-nez v8, :cond_0
 
+    .line 8317
     const/4 v7, 0x1
 
+    .line 8328
     :goto_0
     if-eqz v7, :cond_5
 
@@ -19495,20 +19791,25 @@
 
     move v6, v3
 
+    .line 8329
     invoke-super/range {v0 .. v6}, Landroid/widget/AdapterView;->onDrawVerticalScrollBar(Landroid/graphics/Canvas;Landroid/graphics/drawable/Drawable;IIII)V
 
+    .line 8312
     :goto_1
     return-void
 
+    .line 8318
     :cond_0
     iget v0, p0, Landroid/widget/AbsListView;->mItemCount:I
 
     if-eq v8, v0, :cond_1
 
+    .line 8319
     const/4 v7, 0x0
 
     goto :goto_0
 
+    .line 8320
     :cond_1
     iget v0, p0, Landroid/widget/AbsListView;->mGroupFlags:I
 
@@ -19518,6 +19819,7 @@
 
     if-ne v0, v1, :cond_3
 
+    .line 8321
     add-int/lit8 v0, v8, -0x1
 
     invoke-virtual {p0, v0}, Landroid/widget/AbsListView;->getChildAt(I)Landroid/view/View;
@@ -19538,6 +19840,7 @@
 
     sub-int/2addr v0, v1
 
+    .line 8322
     invoke-virtual {p0}, Landroid/widget/AbsListView;->getHeight()I
 
     move-result v1
@@ -19554,6 +19857,7 @@
 
     sub-int/2addr v1, v2
 
+    .line 8321
     if-gt v0, v1, :cond_2
 
     const/4 v7, 0x1
@@ -19565,6 +19869,7 @@
 
     goto :goto_0
 
+    .line 8324
     :cond_3
     add-int/lit8 v0, v8, -0x1
 
@@ -19586,10 +19891,12 @@
 
     sub-int/2addr v0, v1
 
+    .line 8325
     invoke-virtual {p0}, Landroid/widget/AbsListView;->getHeight()I
 
     move-result v1
 
+    .line 8324
     if-gt v0, v1, :cond_4
 
     const/4 v7, 0x1
@@ -19601,6 +19908,7 @@
 
     goto :goto_0
 
+    .line 8331
     :cond_5
     invoke-super/range {p0 .. p6}, Landroid/widget/AdapterView;->onDrawVerticalScrollBar(Landroid/graphics/Canvas;Landroid/graphics/drawable/Drawable;IIII)V
 
@@ -19615,24 +19923,30 @@
 
     const/4 v3, 0x0
 
+    .line 8218
     iget v1, p0, Landroid/widget/AbsListView;->mItemCount:I
 
     if-nez v1, :cond_0
 
+    .line 8219
     return v3
 
+    .line 8221
     :cond_0
     iget v1, p0, Landroid/widget/AbsListView;->mFirstPosition:I
 
     if-nez v1, :cond_1
 
+    .line 8222
     invoke-virtual {p0, v3}, Landroid/widget/AbsListView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
+    .line 8223
     .local v0, "child":Landroid/view/View;
     if-eqz v0, :cond_1
 
+    .line 8224
     invoke-virtual {v0}, Landroid/view/View;->getTop()I
 
     move-result v1
@@ -19641,8 +19955,10 @@
 
     if-lt v1, v2, :cond_1
 
+    .line 8225
     return v3
 
+    .line 8230
     .end local v0    # "child":Landroid/view/View;
     :cond_1
     invoke-virtual {p0}, Landroid/widget/AbsListView;->getCount()I
@@ -19653,19 +19969,24 @@
 
     if-ne v1, v2, :cond_2
 
+    .line 8231
     return v3
 
+    .line 8234
     :cond_2
     iget-object v1, p0, Landroid/widget/AbsListView;->mFlingRunnable:Landroid/widget/AbsListView$FlingRunnable;
 
     if-eqz v1, :cond_3
 
+    .line 8235
     iget-object v1, p0, Landroid/widget/AbsListView;->mFlingRunnable:Landroid/widget/AbsListView$FlingRunnable;
 
     invoke-virtual {v1}, Landroid/widget/AbsListView$FlingRunnable;->endFling()V
 
+    .line 8236
     iput-object v4, p0, Landroid/widget/AbsListView;->mFlingRunnable:Landroid/widget/AbsListView$FlingRunnable;
 
+    .line 8238
     :cond_3
     iget v1, p0, Landroid/widget/AbsListView;->mFirstPosition:I
 
@@ -19677,6 +19998,7 @@
 
     if-le v1, v2, :cond_4
 
+    .line 8239
     invoke-virtual {p0}, Landroid/widget/AbsListView;->getChildCount()I
 
     move-result v1
@@ -19685,9 +20007,11 @@
 
     invoke-virtual {p0, v1}, Landroid/widget/AbsListView;->setSelection(I)V
 
+    .line 8241
     :cond_4
     invoke-virtual {p0, v3}, Landroid/widget/AbsListView;->smoothScrollToPosition(I)V
 
+    .line 8242
     const/4 v1, 0x1
 
     return v1
@@ -19698,10 +20022,12 @@
     .param p1, "event"    # Landroid/view/MotionEvent;
 
     .prologue
+    .line 8410
     invoke-super {p0, p1}, Landroid/widget/AdapterView;->performButtonActionOnTouchDown(Landroid/view/MotionEvent;)Z
 
     move-result v0
 
+    .line 8411
     .local v0, "flag":Z
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getButtonState()I
 
@@ -19711,13 +20037,16 @@
 
     if-eqz v1, :cond_0
 
+    .line 8412
     const/4 v0, 0x1
 
+    .line 8413
     .local v0, "flag":Z
     const/4 v1, -0x1
 
     iput v1, p0, Landroid/widget/AbsListView;->mTouchMode:I
 
+    .line 8415
     .end local v0    # "flag":Z
     :cond_0
     return v0
@@ -19730,6 +20059,7 @@
     .param p3, "longPressId"    # J
 
     .prologue
+    .line 8188
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/widget/AbsListView;->performLongPress(Landroid/view/View;IJ)Z
 
     move-result v0
@@ -19742,8 +20072,10 @@
     .param p1, "centerContent"    # Z
 
     .prologue
+    .line 8260
     iput-boolean p1, p0, Landroid/widget/AbsListView;->mCenterContent:Z
 
+    .line 8259
     return-void
 .end method
 
@@ -19754,6 +20086,7 @@
     .end annotation
 
     .prologue
+    .line 8271
     return-void
 .end method
 
@@ -19762,6 +20095,7 @@
     .param p1, "offset"    # I
 
     .prologue
+    .line 8276
     return-void
 .end method
 
@@ -19770,16 +20104,33 @@
     .param p1, "enable"    # Z
 
     .prologue
+    .line 8193
     iput-boolean p1, p0, Landroid/widget/AbsListView;->mEnableForEditTextPreference:Z
 
+    .line 8192
     return-void
 .end method
 
 .method public setEnableHoldPress(Z)V
-    .locals 0
+    .locals 1
     .param p1, "enable"    # Z
 
     .prologue
+    .line 8425
+    iput-boolean p1, p0, Landroid/widget/AbsListView;->mEnableHoldPress:Z
+
+    .line 8426
+    iget-boolean v0, p0, Landroid/widget/AbsListView;->mEnableHoldPress:Z
+
+    if-eqz v0, :cond_0
+
+    .line 8427
+    iget-object v0, p0, Landroid/widget/AbsListView;->mSelector:Landroid/graphics/drawable/Drawable;
+
+    invoke-static {p0, v0}, Landroid/widget/AbsListView$FlymeInjector;->getHoldBackground(Landroid/widget/AbsListView;Landroid/graphics/drawable/Drawable;)V
+
+    .line 8424
+    :cond_0
     return-void
 .end method
 
@@ -19788,8 +20139,10 @@
     .param p1, "enable"    # Z
 
     .prologue
-    iput-boolean p1, p0, Landroid/widget/AbsListView;->mEnableLoadAllItems:Z
+    .line 8203
+    iput-boolean p1, p0, Landroid/widget/AbsListView;->mFlymeEnableLoadAllItems:Z
 
+    .line 8202
     return-void
 .end method
 
@@ -19798,6 +20151,10 @@
     .param p1, "flag"    # Z
 
     .prologue
+    .line 8453
+    iput-boolean p1, p0, Landroid/widget/AbsListView;->mFlymeEnableOverScroll:Z
+
+    .line 8452
     return-void
 .end method
 
@@ -19806,6 +20163,10 @@
     .param p1, "enabled"    # Z
 
     .prologue
+    .line 8288
+    iput-boolean p1, p0, Landroid/widget/AbsListView;->mFlymeEnablePressStateOnCheck:Z
+
+    .line 8287
     return-void
 .end method
 
@@ -19814,8 +20175,10 @@
     .param p1, "listener"    # Landroid/widget/AbsListView$OnItemDragListener;
 
     .prologue
+    .line 8178
     iput-object p1, p0, Landroid/widget/AbsListView;->mItemDragListener:Landroid/widget/AbsListView$OnItemDragListener;
 
+    .line 8177
     return-void
 .end method
 
@@ -19824,16 +20187,112 @@
     .param p1, "listener"    # Landroid/widget/AbsListView$onTouchOutOfItemListener;
 
     .prologue
+    .line 8342
     iput-object p1, p0, Landroid/widget/AbsListView;->mOnTouchOutOfItemListener:Landroid/widget/AbsListView$onTouchOutOfItemListener;
 
+    .line 8341
     return-void
 .end method
 
 .method public startMultiChoice()Z
+    .locals 4
+
+    .prologue
+    const/4 v3, 0x5
+
+    const/4 v2, 0x0
+
+    .line 8347
+    iget v0, p0, Landroid/widget/AbsListView;->mChoiceModeMZ:I
+
+    if-eq v0, v3, :cond_0
+
+    iget v0, p0, Landroid/widget/AbsListView;->mChoiceModeMZ:I
+
+    const/4 v1, 0x4
+
+    if-ne v0, v1, :cond_3
+
+    .line 8348
+    :cond_0
+    iget-object v0, p0, Landroid/widget/AbsListView;->mChoiceActionMode:Landroid/view/ActionMode;
+
+    if-nez v0, :cond_3
+
+    .line 8349
+    iget-object v0, p0, Landroid/widget/AbsListView;->mMultiChoiceModeCallback:Landroid/widget/AbsListView$MultiChoiceModeWrapper;
+
+    invoke-virtual {p0, v0}, Landroid/widget/AbsListView;->startActionMode(Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode;
+
+    move-result-object v0
+
+    iput-object v0, p0, Landroid/widget/AbsListView;->mChoiceActionMode:Landroid/view/ActionMode;
+
+    .line 8350
+    iget-object v0, p0, Landroid/widget/AbsListView;->mChoiceActionMode:Landroid/view/ActionMode;
+
+    if-nez v0, :cond_1
+
+    return v2
+
+    .line 8351
+    :cond_1
+    iget v0, p0, Landroid/widget/AbsListView;->mChoiceModeMZ:I
+
+    if-ne v0, v3, :cond_2
+
+    .line 8352
+    iget-object v0, p0, Landroid/widget/AbsListView;->mChoiceActionMode:Landroid/view/ActionMode;
+
+    invoke-virtual {v0}, Landroid/view/ActionMode;->getBackPressListener()Landroid/view/ActionMode$BackPressedListener;
+
+    move-result-object v0
+
+    if-nez v0, :cond_2
+
+    .line 8353
+    iget-object v0, p0, Landroid/widget/AbsListView;->mChoiceActionMode:Landroid/view/ActionMode;
+
+    new-instance v1, Landroid/widget/AbsListView$FlymeInjector$FlymeBackPressedListener;
+
+    invoke-direct {v1, p0}, Landroid/widget/AbsListView$FlymeInjector$FlymeBackPressedListener;-><init>(Landroid/widget/AbsListView;)V
+
+    invoke-virtual {v0, v1}, Landroid/view/ActionMode;->setBackPressListener(Landroid/view/ActionMode$BackPressedListener;)V
+
+    .line 8355
+    :cond_2
+    new-instance v0, Landroid/widget/AbsListView$FlymeInjector$FlymeMultiChoiceRunnable;
+
+    invoke-direct {v0, p0}, Landroid/widget/AbsListView$FlymeInjector$FlymeMultiChoiceRunnable;-><init>(Landroid/widget/AbsListView;)V
+
+    invoke-virtual {p0, v0}, Landroid/widget/AbsListView;->post(Ljava/lang/Runnable;)Z
+
+    .line 8356
+    const/4 v0, 0x1
+
+    return v0
+
+    .line 8358
+    :cond_3
+    return v2
+.end method
+
+.method flymeGetFieldContext()Landroid/content/Context;
     .locals 1
 
     .prologue
-    const/4 v0, 0x0
+    .line 7623
+    iget-object v0, p0, Landroid/widget/AbsListView;->mContext:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method flymeGetFieldScrollY()I
+    .locals 1
+
+    .prologue
+    .line 7627
+    iget v0, p0, Landroid/widget/AbsListView;->mScrollY:I
 
     return v0
 .end method
