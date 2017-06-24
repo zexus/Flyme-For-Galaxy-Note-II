@@ -851,11 +851,11 @@
     iput-boolean v2, p0, Landroid/widget/AbsListView;->mIsTap:Z
 
     .line 3786
-    new-instance v1, Landroid/widget/AbsListView$1;
+    #new-instance v1, Landroid/widget/AbsListView$1;
 
-    invoke-direct {v1, p0}, Landroid/widget/AbsListView$1;-><init>(Landroid/widget/AbsListView;)V
+    #invoke-direct {v1, p0}, Landroid/widget/AbsListView$1;-><init>(Landroid/widget/AbsListView;)V
 
-    iput-object v1, p0, Landroid/widget/AbsListView;->mInverse:Landroid/os/Handler;
+    #iput-object v1, p0, Landroid/widget/AbsListView;->mInverse:Landroid/os/Handler;
 
     .line 816
     invoke-direct {p0}, Landroid/widget/AbsListView;->initAbsListView()V
@@ -1072,11 +1072,11 @@
     iput-boolean v3, p0, Landroid/widget/AbsListView;->mIsTap:Z
 
     .line 3786
-    new-instance v2, Landroid/widget/AbsListView$1;
+    #new-instance v2, Landroid/widget/AbsListView$1;
 
-    invoke-direct {v2, p0}, Landroid/widget/AbsListView$1;-><init>(Landroid/widget/AbsListView;)V
+    #invoke-direct {v2, p0}, Landroid/widget/AbsListView$1;-><init>(Landroid/widget/AbsListView;)V
 
-    iput-object v2, p0, Landroid/widget/AbsListView;->mInverse:Landroid/os/Handler;
+    #iput-object v2, p0, Landroid/widget/AbsListView;->mInverse:Landroid/os/Handler;
 
     .line 836
     invoke-direct {p0}, Landroid/widget/AbsListView;->initAbsListView()V
@@ -2712,11 +2712,11 @@
     iput v4, p0, Landroid/widget/AbsListView;->mActivePointerId:I
 
     .line 3894
-    iget-object v4, p0, Landroid/widget/AbsListView;->mInverse:Landroid/os/Handler;
+    #iget-object v4, p0, Landroid/widget/AbsListView;->mInverse:Landroid/os/Handler;
 
-    const-wide/16 v6, 0x64
+    #const-wide/16 v6, 0x64
 
-    invoke-virtual {v4, v8, v6, v7}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
+    #invoke-virtual {v4, v8, v6, v7}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
     .line 3895
     iget v4, p0, Landroid/widget/AbsListView;->mTouchMode:I
