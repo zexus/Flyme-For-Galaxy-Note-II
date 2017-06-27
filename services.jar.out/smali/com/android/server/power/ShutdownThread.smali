@@ -647,7 +647,7 @@
     invoke-virtual {v6, v7}, Landroid/view/Window;->setDimAmount(F)V
 
     .line 617
-    invoke-static {p0}, Lcom/android/server/power/ShutdownThread$FlymeInjector;->showShutDownAnimation(Landroid/content/Context;)V
+    invoke-static/range {p0 .. p0}, Lcom/android/server/power/ShutdownThread$FlymeInjector;->showShutDownAnimation(Landroid/content/Context;)V
 
     .line 620
     .end local v0    # "attrs":Landroid/view/WindowManager$LayoutParams;
