@@ -30769,44 +30769,16 @@
     .param p4, "always"    # Z
 
     .prologue
-    new-instance v0, Ljava/lang/StringBuilder;
+    invoke-static {p0, p2, p3}, Lcom/android/server/policy/PhoneWindowManager$FlymeInjector;->showBootMessage(Lcom/android/server/policy/PhoneWindowManager;II)Z
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    move-result v0
 
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    if-eqz v0, :cond_flyme_0
 
-    move-result-object v0
-
-    const-string v1, ","
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    invoke-virtual {p0, v0, v1}, Lcom/android/server/policy/PhoneWindowManager;->showBootMessage(Ljava/lang/CharSequence;Z)V
-
-    .line 6151
     return-void
-.end method
 
-.method public showBootMessage_extend(Landroid/content/pm/ApplicationInfo;IIZ)V
-    .locals 2
-    .param p1, "info"    # Landroid/content/pm/ApplicationInfo;
-    .param p2, "current"    # I
-    .param p3, "total"    # I
-    .param p4, "always"    # Z
+    :cond_flyme_0
 
-    .prologue
     .line 7520
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager;->mHandler:Landroid/os/Handler;
 
@@ -33427,11 +33399,4 @@
     const/4 v2, 0x1
 
     return v2
-.end method
-
-.method public showBootMessage(Ljava/lang/CharSequence;Z)V
-    .locals 0
-
-    .prologue
-    return-void
 .end method

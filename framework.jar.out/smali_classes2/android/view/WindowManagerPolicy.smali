@@ -353,9 +353,6 @@
 .method public abstract systemReady()V
 .end method
 
-.method public abstract showBootMessage(Ljava/lang/CharSequence;Z)V
-.end method
-
 .method public abstract userActivity()V
 .end method
 
