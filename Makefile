@@ -141,7 +141,8 @@ override_property += \
     ro.flyme.romer=SiFooYee \
     ro.product.model_romer=GT-N7100_SiFooYee \
     config.disable_atlas=true \
-    persist.adb.notify=0
+    persist.adb.notify=0 \
+    persist.screenshot.need_blur=false
 
 ##############################################################################
 # The value decides which property you will remove from the build.prop.
