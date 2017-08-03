@@ -2018,7 +2018,7 @@
     .line 525
     const-string/jumbo v0, "unknown"
 
-    const-string/jumbo v1, "ro.cm.version"
+    const-string/jumbo v1, "ro.rr.version"
 
     invoke-static {v1}, Landroid/os/BuildExt;->getString(Ljava/lang/String;)Ljava/lang/String;
 
