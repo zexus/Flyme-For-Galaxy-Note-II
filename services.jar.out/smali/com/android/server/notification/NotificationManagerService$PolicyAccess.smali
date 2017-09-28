@@ -30,27 +30,27 @@
     .param p1, "this$0"    # Lcom/android/server/notification/NotificationManagerService;
 
     .prologue
-    .line 4131
+    .line 4083
     iput-object p1, p0, Lcom/android/server/notification/NotificationManagerService$PolicyAccess;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4133
+    .line 4085
     const/4 v0, 0x1
 
     new-array v0, v0, [Ljava/lang/String;
 
-    .line 4134
+    .line 4086
     const-string/jumbo v1, "android.permission.ACCESS_NOTIFICATION_POLICY"
 
     const/4 v2, 0x0
 
     aput-object v1, v0, v2
 
-    .line 4133
+    .line 4085
     iput-object v0, p0, Lcom/android/server/notification/NotificationManagerService$PolicyAccess;->PERM:[Ljava/lang/String;
 
-    .line 4131
+    .line 4083
     return-void
 .end method
 
@@ -79,18 +79,18 @@
     .end annotation
 
     .prologue
-    .line 4164
+    .line 4116
     new-instance v1, Landroid/util/ArraySet;
 
     invoke-direct {v1}, Landroid/util/ArraySet;-><init>()V
 
-    .line 4166
+    .line 4118
     .local v1, "pkgs":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Ljava/lang/String;>;"
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v2
 
-    .line 4169
+    .line 4121
     .local v2, "identity":J
     :try_start_0
     iget-object v7, p0, Lcom/android/server/notification/NotificationManagerService$PolicyAccess;->this$0:Lcom/android/server/notification/NotificationManagerService;
@@ -103,31 +103,31 @@
 
     move-result-object v7
 
-    .line 4170
+    .line 4122
     const-string/jumbo v8, "enabled_notification_policy_access_packages"
 
-    .line 4171
+    .line 4123
     invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
 
     move-result v9
 
-    .line 4168
+    .line 4120
     invoke-static {v7, v8, v9}, Landroid/provider/Settings$Secure;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 4172
+    .line 4124
     .local v4, "setting":Ljava/lang/String;
     if-eqz v4, :cond_2
 
-    .line 4173
+    .line 4125
     const-string/jumbo v7, ":"
 
     invoke-virtual {v4, v7}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v6
 
-    .line 4174
+    .line 4126
     .local v6, "tokens":[Ljava/lang/String;
     const/4 v0, 0x0
 
@@ -137,17 +137,17 @@
 
     if-ge v0, v7, :cond_2
 
-    .line 4175
+    .line 4127
     aget-object v5, v6, v0
 
-    .line 4176
+    .line 4128
     .local v5, "token":Ljava/lang/String;
     if-eqz v5, :cond_0
 
-    .line 4177
+    .line 4129
     invoke-virtual {v5}, Ljava/lang/String;->trim()Ljava/lang/String;
 
-    .line 4179
+    .line 4131
     :cond_0
     invoke-static {v5}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -155,13 +155,13 @@
 
     if-eqz v7, :cond_1
 
-    .line 4174
+    .line 4126
     :goto_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 4182
+    .line 4134
     :cond_1
     invoke-virtual {v1, v5}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
     :try_end_0
@@ -169,7 +169,7 @@
 
     goto :goto_1
 
-    .line 4185
+    .line 4137
     .end local v0    # "i":I
     .end local v4    # "setting":Ljava/lang/String;
     .end local v5    # "token":Ljava/lang/String;
@@ -177,18 +177,18 @@
     :catchall_0
     move-exception v7
 
-    .line 4186
+    .line 4138
     invoke-static {v2, v3}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 4185
+    .line 4137
     throw v7
 
-    .line 4186
+    .line 4138
     .restart local v4    # "setting":Ljava/lang/String;
     :cond_2
     invoke-static {v2, v3}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 4188
+    .line 4140
     return-object v1
 .end method
 
@@ -203,31 +203,31 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 4192
+    .line 4144
     invoke-static {}, Landroid/app/AppGlobals;->getPackageManager()Landroid/content/pm/IPackageManager;
 
     move-result-object v5
 
-    .line 4193
+    .line 4145
     iget-object v6, p0, Lcom/android/server/notification/NotificationManagerService$PolicyAccess;->PERM:[Ljava/lang/String;
 
-    .line 4194
+    .line 4146
     invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
 
     move-result v7
 
-    .line 4192
+    .line 4144
     invoke-interface {v5, v6, v8, v7}, Landroid/content/pm/IPackageManager;->getPackagesHoldingPermissions([Ljava/lang/String;II)Landroid/content/pm/ParceledListSlice;
 
     move-result-object v2
 
-    .line 4195
+    .line 4147
     .local v2, "list":Landroid/content/pm/ParceledListSlice;
     invoke-virtual {v2}, Landroid/content/pm/ParceledListSlice;->getList()Ljava/util/List;
 
     move-result-object v3
 
-    .line 4196
+    .line 4148
     .local v3, "pkgs":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/PackageInfo;>;"
     if-eqz v3, :cond_0
 
@@ -242,17 +242,17 @@
 
     return-object v5
 
-    .line 4197
+    .line 4149
     :cond_1
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v0
 
-    .line 4198
+    .line 4150
     .local v0, "N":I
     new-array v4, v0, [Ljava/lang/String;
 
-    .line 4199
+    .line 4151
     .local v4, "rt":[Ljava/lang/String;
     const/4 v1, 0x0
 
@@ -260,7 +260,7 @@
     :goto_0
     if-ge v1, v0, :cond_2
 
-    .line 4200
+    .line 4152
     invoke-interface {v3, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v5
@@ -271,12 +271,12 @@
 
     aput-object v5, v4, v1
 
-    .line 4199
+    .line 4151
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 4202
+    .line 4154
     :cond_2
     return-object v4
 .end method
@@ -286,7 +286,7 @@
     .param p1, "pkg"    # Ljava/lang/String;
 
     .prologue
-    .line 4138
+    .line 4090
     if-eqz p1, :cond_0
 
     invoke-virtual {p0}, Lcom/android/server/notification/NotificationManagerService$PolicyAccess;->getGrantedPackages()Landroid/util/ArraySet;
@@ -314,34 +314,34 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 4142
+    .line 4094
     if-nez p1, :cond_0
 
     return-void
 
-    .line 4143
+    .line 4095
     :cond_0
     invoke-virtual {p0}, Lcom/android/server/notification/NotificationManagerService$PolicyAccess;->getGrantedPackages()Landroid/util/ArraySet;
 
     move-result-object v2
 
-    .line 4145
+    .line 4097
     .local v2, "pkgs":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Ljava/lang/String;>;"
     if-eqz p2, :cond_1
 
-    .line 4146
+    .line 4098
     invoke-virtual {v2, p1}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
     move-result v0
 
-    .line 4150
+    .line 4102
     .local v0, "changed":Z
     :goto_0
     if-nez v0, :cond_2
 
     return-void
 
-    .line 4148
+    .line 4100
     .end local v0    # "changed":Z
     :cond_1
     invoke-virtual {v2, p1}, Landroid/util/ArraySet;->remove(Ljava/lang/Object;)Z
@@ -351,7 +351,7 @@
     .restart local v0    # "changed":Z
     goto :goto_0
 
-    .line 4151
+    .line 4103
     :cond_2
     const-string/jumbo v4, ":"
 
@@ -359,13 +359,13 @@
 
     move-result-object v3
 
-    .line 4152
+    .line 4104
     .local v3, "setting":Ljava/lang/String;
     invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
 
     move-result v1
 
-    .line 4153
+    .line 4105
     .local v1, "currentUser":I
     iget-object v4, p0, Lcom/android/server/notification/NotificationManagerService$PolicyAccess;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
@@ -377,13 +377,13 @@
 
     move-result-object v4
 
-    .line 4154
+    .line 4106
     const-string/jumbo v5, "enabled_notification_policy_access_packages"
 
-    .line 4153
+    .line 4105
     invoke-static {v4, v5, v3, v1}, Landroid/provider/Settings$Secure;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
 
-    .line 4157
+    .line 4109
     iget-object v4, p0, Lcom/android/server/notification/NotificationManagerService$PolicyAccess;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
     invoke-virtual {v4}, Lcom/android/server/notification/NotificationManagerService;->getContext()Landroid/content/Context;
@@ -400,22 +400,22 @@
 
     move-result-object v5
 
-    .line 4160
+    .line 4112
     const/high16 v6, 0x40000000    # 2.0f
 
-    .line 4157
+    .line 4109
     invoke-virtual {v5, v6}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
     move-result-object v5
 
-    .line 4160
+    .line 4112
     new-instance v6, Landroid/os/UserHandle;
 
     invoke-direct {v6, v1}, Landroid/os/UserHandle;-><init>(I)V
 
-    .line 4157
+    .line 4109
     invoke-virtual {v4, v5, v6, v7}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;Ljava/lang/String;)V
 
-    .line 4141
+    .line 4093
     return-void
 .end method

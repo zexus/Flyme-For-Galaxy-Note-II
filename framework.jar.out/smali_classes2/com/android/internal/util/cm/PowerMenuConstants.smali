@@ -18,15 +18,11 @@
 
 .field public static final GLOBAL_ACTION_KEY_REBOOT:Ljava/lang/String; = "reboot"
 
-.field public static final GLOBAL_ACTION_KEY_SCREENRECORD:Ljava/lang/String; = "screenrecord"
-
 .field public static final GLOBAL_ACTION_KEY_SCREENSHOT:Ljava/lang/String; = "screenshot"
 
 .field public static final GLOBAL_ACTION_KEY_SETTINGS:Ljava/lang/String; = "settings"
 
 .field public static final GLOBAL_ACTION_KEY_SILENT:Ljava/lang/String; = "silent"
-
-.field public static final GLOBAL_ACTION_KEY_TORCH:Ljava/lang/String; = "torch"
 
 .field public static final GLOBAL_ACTION_KEY_USERS:Ljava/lang/String; = "users"
 
@@ -38,103 +34,89 @@
     .locals 3
 
     .prologue
-    .line 35
-    const/16 v0, 0xd
+    .line 33
+    const/16 v0, 0xb
 
     new-array v0, v0, [Ljava/lang/String;
 
-    .line 36
+    .line 34
     const-string/jumbo v1, "power"
 
     const/4 v2, 0x0
 
     aput-object v1, v0, v2
 
-    .line 37
+    .line 35
     const-string/jumbo v1, "reboot"
 
     const/4 v2, 0x1
 
     aput-object v1, v0, v2
 
-    .line 38
+    .line 36
     const-string/jumbo v1, "screenshot"
 
     const/4 v2, 0x2
 
     aput-object v1, v0, v2
 
-    .line 39
-    const-string/jumbo v1, "screenrecord"
+    .line 37
+    const-string/jumbo v1, "airplane"
 
     const/4 v2, 0x3
 
     aput-object v1, v0, v2
 
-    .line 40
-    const-string/jumbo v1, "airplane"
+    .line 38
+    const-string/jumbo v1, "users"
 
     const/4 v2, 0x4
 
     aput-object v1, v0, v2
 
-    .line 41
-    const-string/jumbo v1, "users"
+    .line 39
+    const-string/jumbo v1, "settings"
 
     const/4 v2, 0x5
 
     aput-object v1, v0, v2
 
-    .line 42
-    const-string/jumbo v1, "settings"
+    .line 40
+    const-string/jumbo v1, "lockdown"
 
     const/4 v2, 0x6
 
     aput-object v1, v0, v2
 
-    .line 43
-    const-string/jumbo v1, "lockdown"
+    .line 41
+    const-string/jumbo v1, "bugreport"
 
     const/4 v2, 0x7
 
     aput-object v1, v0, v2
 
-    .line 44
-    const-string/jumbo v1, "bugreport"
+    .line 42
+    const-string/jumbo v1, "silent"
 
     const/16 v2, 0x8
 
     aput-object v1, v0, v2
 
-    .line 45
-    const-string/jumbo v1, "torch"
+    .line 43
+    const-string/jumbo v1, "voiceassist"
 
     const/16 v2, 0x9
 
     aput-object v1, v0, v2
 
-    .line 46
-    const-string/jumbo v1, "silent"
+    .line 44
+    const-string/jumbo v1, "assist"
 
     const/16 v2, 0xa
 
     aput-object v1, v0, v2
 
-    .line 47
-    const-string/jumbo v1, "voiceassist"
-
-    const/16 v2, 0xb
-
-    aput-object v1, v0, v2
-
-    .line 48
-    const-string/jumbo v1, "assist"
-
-    const/16 v2, 0xc
-
-    aput-object v1, v0, v2
-
-    .line 35
+    .line 33
     sput-object v0, Lcom/android/internal/util/cm/PowerMenuConstants;->ALL_ACTIONS:[Ljava/lang/String;
 
     .line 20
@@ -155,7 +137,7 @@
     .locals 1
 
     .prologue
-    .line 52
+    .line 48
     sget-object v0, Lcom/android/internal/util/cm/PowerMenuConstants;->ALL_ACTIONS:[Ljava/lang/String;
 
     return-object v0

@@ -759,7 +759,7 @@
     move v4, p3
 
     .line 17382
-    invoke-interface {v0, v2, v3, v4, v5}, Landroid/app/IActivityManager;->showBootMessage(Landroid/content/pm/ApplicationInfo;IIZ)V
+    invoke-interface/range {v0 .. v5}, Landroid/app/IActivityManager;->updateBootProgress(ILandroid/content/pm/ApplicationInfo;IIZ)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 

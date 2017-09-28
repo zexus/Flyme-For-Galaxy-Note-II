@@ -29,7 +29,7 @@
     .param p1, "this$0"    # Lcom/android/server/statusbar/StatusBarManagerService;
 
     .prologue
-    .line 109
+    .line 108
     iput-object p1, p0, Lcom/android/server/statusbar/StatusBarManagerService$1;->this$0:Lcom/android/server/statusbar/StatusBarManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .locals 2
 
     .prologue
-    .line 119
+    .line 118
     iget-object v1, p0, Lcom/android/server/statusbar/StatusBarManagerService$1;->this$0:Lcom/android/server/statusbar/StatusBarManagerService;
 
     invoke-static {v1}, Lcom/android/server/statusbar/StatusBarManagerService;->-get0(Lcom/android/server/statusbar/StatusBarManagerService;)Lcom/android/internal/statusbar/IStatusBar;
@@ -52,7 +52,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 121
+    .line 120
     :try_start_0
     iget-object v1, p0, Lcom/android/server/statusbar/StatusBarManagerService$1;->this$0:Lcom/android/server/statusbar/StatusBarManagerService;
 
@@ -64,12 +64,12 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 118
+    .line 117
     :cond_0
     :goto_0
     return-void
 
-    .line 122
+    .line 121
     :catch_0
     move-exception v0
 
@@ -81,17 +81,17 @@
     .locals 2
 
     .prologue
-    .line 140
+    .line 139
     iget-boolean v1, p0, Lcom/android/server/statusbar/StatusBarManagerService$1;->mNotificationLightOn:Z
 
     if-eqz v1, :cond_0
 
-    .line 141
+    .line 140
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/server/statusbar/StatusBarManagerService$1;->mNotificationLightOn:Z
 
-    .line 142
+    .line 141
     iget-object v1, p0, Lcom/android/server/statusbar/StatusBarManagerService$1;->this$0:Lcom/android/server/statusbar/StatusBarManagerService;
 
     invoke-static {v1}, Lcom/android/server/statusbar/StatusBarManagerService;->-get0(Lcom/android/server/statusbar/StatusBarManagerService;)Lcom/android/internal/statusbar/IStatusBar;
@@ -100,7 +100,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 144
+    .line 143
     :try_start_0
     iget-object v1, p0, Lcom/android/server/statusbar/StatusBarManagerService$1;->this$0:Lcom/android/server/statusbar/StatusBarManagerService;
 
@@ -112,12 +112,12 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 139
+    .line 138
     :cond_0
     :goto_0
     return-void
 
-    .line 145
+    .line 144
     :catch_0
     move-exception v0
 
@@ -132,12 +132,12 @@
     .param p3, "offMillis"    # I
 
     .prologue
-    .line 129
+    .line 128
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/android/server/statusbar/StatusBarManagerService$1;->mNotificationLightOn:Z
 
-    .line 130
+    .line 129
     iget-object v1, p0, Lcom/android/server/statusbar/StatusBarManagerService$1;->this$0:Lcom/android/server/statusbar/StatusBarManagerService;
 
     invoke-static {v1}, Lcom/android/server/statusbar/StatusBarManagerService;->-get0(Lcom/android/server/statusbar/StatusBarManagerService;)Lcom/android/internal/statusbar/IStatusBar;
@@ -146,7 +146,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 132
+    .line 131
     :try_start_0
     iget-object v1, p0, Lcom/android/server/statusbar/StatusBarManagerService$1;->this$0:Lcom/android/server/statusbar/StatusBarManagerService;
 
@@ -158,12 +158,12 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 128
+    .line 127
     :cond_0
     :goto_0
     return-void
 
-    .line 133
+    .line 132
     :catch_0
     move-exception v0
 
@@ -176,7 +176,7 @@
     .param p1, "source"    # I
 
     .prologue
-    .line 183
+    .line 182
     iget-object v1, p0, Lcom/android/server/statusbar/StatusBarManagerService$1;->this$0:Lcom/android/server/statusbar/StatusBarManagerService;
 
     invoke-static {v1}, Lcom/android/server/statusbar/StatusBarManagerService;->-get0(Lcom/android/server/statusbar/StatusBarManagerService;)Lcom/android/internal/statusbar/IStatusBar;
@@ -185,7 +185,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 185
+    .line 184
     :try_start_0
     iget-object v1, p0, Lcom/android/server/statusbar/StatusBarManagerService$1;->this$0:Lcom/android/server/statusbar/StatusBarManagerService;
 
@@ -197,12 +197,12 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 182
+    .line 181
     :cond_0
     :goto_0
     return-void
 
-    .line 186
+    .line 185
     :catch_0
     move-exception v0
 
@@ -215,12 +215,12 @@
     .param p1, "delegate"    # Lcom/android/server/notification/NotificationDelegate;
 
     .prologue
-    .line 114
+    .line 113
     iget-object v0, p0, Lcom/android/server/statusbar/StatusBarManagerService$1;->this$0:Lcom/android/server/statusbar/StatusBarManagerService;
 
     invoke-static {v0, p1}, Lcom/android/server/statusbar/StatusBarManagerService;->-set0(Lcom/android/server/statusbar/StatusBarManagerService;Lcom/android/server/notification/NotificationDelegate;)Lcom/android/server/notification/NotificationDelegate;
 
-    .line 113
+    .line 112
     return-void
 .end method
 
@@ -228,7 +228,7 @@
     .locals 2
 
     .prologue
-    .line 163
+    .line 162
     iget-object v1, p0, Lcom/android/server/statusbar/StatusBarManagerService$1;->this$0:Lcom/android/server/statusbar/StatusBarManagerService;
 
     invoke-static {v1}, Lcom/android/server/statusbar/StatusBarManagerService;->-get0(Lcom/android/server/statusbar/StatusBarManagerService;)Lcom/android/internal/statusbar/IStatusBar;
@@ -237,7 +237,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 165
+    .line 164
     :try_start_0
     iget-object v1, p0, Lcom/android/server/statusbar/StatusBarManagerService$1;->this$0:Lcom/android/server/statusbar/StatusBarManagerService;
 
@@ -249,12 +249,12 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 162
+    .line 161
     :cond_0
     :goto_0
     return-void
 
-    .line 166
+    .line 165
     :catch_0
     move-exception v0
 
@@ -266,7 +266,7 @@
     .locals 2
 
     .prologue
-    .line 153
+    .line 152
     iget-object v1, p0, Lcom/android/server/statusbar/StatusBarManagerService$1;->this$0:Lcom/android/server/statusbar/StatusBarManagerService;
 
     invoke-static {v1}, Lcom/android/server/statusbar/StatusBarManagerService;->-get0(Lcom/android/server/statusbar/StatusBarManagerService;)Lcom/android/internal/statusbar/IStatusBar;
@@ -275,7 +275,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 155
+    .line 154
     :try_start_0
     iget-object v1, p0, Lcom/android/server/statusbar/StatusBarManagerService$1;->this$0:Lcom/android/server/statusbar/StatusBarManagerService;
 
@@ -287,12 +287,12 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 152
+    .line 151
     :cond_0
     :goto_0
     return-void
 
-    .line 156
+    .line 155
     :catch_0
     move-exception v0
 
@@ -305,7 +305,7 @@
     .param p1, "args"    # Landroid/os/Bundle;
 
     .prologue
-    .line 173
+    .line 172
     iget-object v1, p0, Lcom/android/server/statusbar/StatusBarManagerService$1;->this$0:Lcom/android/server/statusbar/StatusBarManagerService;
 
     invoke-static {v1}, Lcom/android/server/statusbar/StatusBarManagerService;->-get0(Lcom/android/server/statusbar/StatusBarManagerService;)Lcom/android/internal/statusbar/IStatusBar;
@@ -314,7 +314,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 175
+    .line 174
     :try_start_0
     iget-object v1, p0, Lcom/android/server/statusbar/StatusBarManagerService$1;->this$0:Lcom/android/server/statusbar/StatusBarManagerService;
 
@@ -326,12 +326,12 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 172
+    .line 171
     :cond_0
     :goto_0
     return-void
 
-    .line 176
+    .line 175
     :catch_0
     move-exception v0
 

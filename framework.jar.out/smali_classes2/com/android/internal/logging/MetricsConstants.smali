@@ -214,11 +214,7 @@
 
 .field public static final DEVICEINFO_USB:I = 0x2d
 
-.field public static final DIRTYTWEAKS:I = 0xef
-
 .field public static final DISPLAY:I = 0x2e
-
-.field public static final DONT_TRACK_ME_BRO:I = -0x7ffffffe
 
 .field public static final DOZING:I = 0xdf
 
@@ -268,8 +264,6 @@
 
 .field public static final LOCKSCREEN:I = 0xc4
 
-.field public static final LOCKSCREEN_WEATHER_SETTINGS:I = 0xf8
-
 .field public static final MAIN_SETTINGS:I = 0x1
 
 .field public static final MANAGE_APPLICATIONS:I = 0x41
@@ -299,8 +293,6 @@
 .field public static final NOTIFICATION_ALERT:I = 0xc7
 
 .field public static final NOTIFICATION_APP_NOTIFICATION:I = 0x48
-
-.field public static final NOTIFICATION_DRAWER_SETTINGS:I = 0xf7
 
 .field public static final NOTIFICATION_ITEM:I = 0x80
 
@@ -382,15 +374,11 @@
 
 .field public static final QS_FLASHLIGHT:I = 0x77
 
-.field public static final QS_HEADSUP:I = 0xf3
-
 .field public static final QS_HOTSPOT:I = 0x78
 
 .field public static final QS_INTENT:I = 0x79
 
 .field public static final QS_LOCATION:I = 0x7a
-
-.field public static final QS_NAVBAR_TOGGLE:I = 0xef
 
 .field public static final QS_PANEL:I = 0x6f
 

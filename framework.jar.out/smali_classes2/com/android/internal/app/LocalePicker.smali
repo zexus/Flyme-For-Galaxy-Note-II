@@ -50,9 +50,9 @@
 
     .prologue
     .line 170
-    const v0, 0x109007a
+    const v0, 0x1090078
 
-    const v1, 0x10201d4
+    const v1, 0x10201d2
 
     invoke-static {p0, v0, v1}, Lcom/android/internal/app/LocalePicker;->constructAdapter(Landroid/content/Context;II)Landroid/widget/ArrayAdapter;
 
@@ -511,7 +511,7 @@
 
     .prologue
     .line 91
-    const v3, 0x10400d7
+    const v3, 0x10400d6
 
     invoke-virtual {p1, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

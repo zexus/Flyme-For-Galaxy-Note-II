@@ -27,16 +27,16 @@
     .param p1, "display"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 1970
+    .line 1969
     invoke-direct {p0, p1}, Landroid/text/Layout$Ellipsizer;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 1971
+    .line 1970
     check-cast p1, Landroid/text/Spanned;
 
     .end local p1    # "display":Ljava/lang/CharSequence;
     iput-object p1, p0, Landroid/text/Layout$SpannedEllipsizer;->mSpanned:Landroid/text/Spanned;
 
-    .line 1969
+    .line 1968
     return-void
 .end method
 
@@ -47,7 +47,7 @@
     .param p1, "tag"    # Ljava/lang/Object;
 
     .prologue
-    .line 1983
+    .line 1982
     iget-object v0, p0, Landroid/text/Layout$SpannedEllipsizer;->mSpanned:Landroid/text/Spanned;
 
     invoke-interface {v0, p1}, Landroid/text/Spanned;->getSpanEnd(Ljava/lang/Object;)I
@@ -62,7 +62,7 @@
     .param p1, "tag"    # Ljava/lang/Object;
 
     .prologue
-    .line 1987
+    .line 1986
     iget-object v0, p0, Landroid/text/Layout$SpannedEllipsizer;->mSpanned:Landroid/text/Spanned;
 
     invoke-interface {v0, p1}, Landroid/text/Spanned;->getSpanFlags(Ljava/lang/Object;)I
@@ -77,7 +77,7 @@
     .param p1, "tag"    # Ljava/lang/Object;
 
     .prologue
-    .line 1979
+    .line 1978
     iget-object v0, p0, Landroid/text/Layout$SpannedEllipsizer;->mSpanned:Landroid/text/Spanned;
 
     invoke-interface {v0, p1}, Landroid/text/Spanned;->getSpanStart(Ljava/lang/Object;)I
@@ -102,7 +102,7 @@
     .end annotation
 
     .prologue
-    .line 1975
+    .line 1974
     .local p3, "type":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     iget-object v0, p0, Landroid/text/Layout$SpannedEllipsizer;->mSpanned:Landroid/text/Spanned;
 
@@ -120,7 +120,7 @@
     .param p3, "type"    # Ljava/lang/Class;
 
     .prologue
-    .line 1992
+    .line 1991
     iget-object v0, p0, Landroid/text/Layout$SpannedEllipsizer;->mSpanned:Landroid/text/Spanned;
 
     invoke-interface {v0, p1, p2, p3}, Landroid/text/Spanned;->nextSpanTransition(IILjava/lang/Class;)I
@@ -138,16 +138,16 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 1997
+    .line 1996
     sub-int v0, p2, p1
 
     new-array v6, v0, [C
 
-    .line 1998
+    .line 1997
     .local v6, "s":[C
     invoke-virtual {p0, p1, p2, v6, v5}, Landroid/text/Layout$SpannedEllipsizer;->getChars(II[CI)V
 
-    .line 2000
+    .line 1999
     new-instance v4, Landroid/text/SpannableString;
 
     new-instance v0, Ljava/lang/String;
@@ -156,7 +156,7 @@
 
     invoke-direct {v4, v0}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 2001
+    .line 2000
     .local v4, "ss":Landroid/text/SpannableString;
     iget-object v0, p0, Landroid/text/Layout$SpannedEllipsizer;->mSpanned:Landroid/text/Spanned;
 
@@ -168,6 +168,6 @@
 
     invoke-static/range {v0 .. v5}, Landroid/text/TextUtils;->copySpansFrom(Landroid/text/Spanned;IILjava/lang/Class;Landroid/text/Spannable;I)V
 
-    .line 2002
+    .line 2001
     return-object v4
 .end method

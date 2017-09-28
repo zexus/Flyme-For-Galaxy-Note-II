@@ -27,7 +27,7 @@
     .param p1, "this$1"    # Landroid/widget/ListPopupWindow$ForwardingListener;
 
     .prologue
-    .line 1497
+    .line 1483
     iput-object p1, p0, Landroid/widget/ListPopupWindow$ForwardingListener$TriggerLongPress;->this$1:Landroid/widget/ListPopupWindow$ForwardingListener;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,11 +51,11 @@
     .locals 1
 
     .prologue
-    .line 1500
+    .line 1486
     iget-object v0, p0, Landroid/widget/ListPopupWindow$ForwardingListener$TriggerLongPress;->this$1:Landroid/widget/ListPopupWindow$ForwardingListener;
 
     invoke-static {v0}, Landroid/widget/ListPopupWindow$ForwardingListener;->-wrap0(Landroid/widget/ListPopupWindow$ForwardingListener;)V
 
-    .line 1499
+    .line 1485
     return-void
 .end method

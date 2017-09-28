@@ -44,6 +44,14 @@
 
 .field public static final BOOT_ANIMATION_COMPLETE_TRANSACTION:I = 0xee
 
+.field public static final BOOT_STAGE_COMPLETE:I = 0x4
+
+.field public static final BOOT_STAGE_FSTRIM:I = 0x2
+
+.field public static final BOOT_STAGE_PREPARING_APPS:I = 0x3
+
+.field public static final BOOT_STAGE_STARTING_APPS:I = 0x1
+
 .field public static final BROADCAST_INTENT_TRANSACTION:I = 0xe
 
 .field public static final CANCEL_INTENT_SENDER_TRANSACTION:I = 0x40
@@ -99,8 +107,6 @@
 .field public static final GET_ACTIVITY_CLASS_FOR_TOKEN_TRANSACTION:I = 0x31
 
 .field public static final GET_ACTIVITY_DISPLAY_ID_TRANSACTION:I = 0xb9
-
-.field public static final GET_ACTIVITY_FOR_TASK_TRANSACTION:I = 0xc9
 
 .field public static final GET_ACTIVITY_OPTIONS_TRANSACTION:I = 0xdc
 
@@ -223,6 +229,8 @@
 .field public static final IS_IN_HOME_STACK_TRANSACTION:I = 0xd5
 
 .field public static final IS_IN_LOCK_TASK_MODE_TRANSACTION:I = 0xd9
+
+.field public static final IS_PACKAGE_IN_FOREGROUND_TRANSACTION:I = 0x12f
 
 .field public static final IS_ROOT_VOICE_INTERACTION_TRANSACTION:I = 0x12e
 
@@ -386,8 +394,6 @@
 
 .field public static final SHOW_ASSIST_FROM_ACTIVITY_TRANSACTION:I = 0x12d
 
-.field public static final SHOW_BOOT_MESSAGE_TRANSACTION:I = 0x8a
-
 .field public static final SHOW_LOCK_TASK_ESCAPE_MESSAGE_TRANSACTION:I = 0x127
 
 .field public static final SHOW_WAITING_FOR_DEBUGGER_TRANSACTION:I = 0x3a
@@ -467,6 +473,8 @@
 .field public static final UNREGISTER_USER_SWITCH_OBSERVER_TRANSACTION:I = 0x9c
 
 .field public static final UNSTABLE_PROVIDER_DIED_TRANSACTION:I = 0x97
+
+.field public static final UPDATE_BOOT_PROGRESS_TRANSACTION:I = 0x8a
 
 .field public static final UPDATE_CONFIGURATION_TRANSACTION:I = 0x2f
 
@@ -821,14 +829,6 @@
 .end method
 
 .method public abstract getActivityDisplayId(Landroid/os/IBinder;)I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract getActivityForTask(IZ)Landroid/os/IBinder;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -1419,6 +1419,14 @@
 .end method
 
 .method public abstract isIntentSenderTargetedToPackage(Landroid/content/IIntentSender;)Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract isPackageInForeground(Ljava/lang/String;)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -2077,14 +2085,6 @@
     .end annotation
 .end method
 
-.method public abstract showBootMessage(Landroid/content/pm/ApplicationInfo;IIZ)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract showLockTaskEscapeMessage(Landroid/os/IBinder;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -2393,6 +2393,14 @@
 .end method
 
 .method public abstract unstableProviderDied(Landroid/os/IBinder;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract updateBootProgress(ILandroid/content/pm/ApplicationInfo;IIZ)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

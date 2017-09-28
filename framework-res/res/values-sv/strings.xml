@@ -151,33 +151,6 @@
     <string name="time_of_day" formatted="false">%H:%M:%S</string>
     <string name="date_and_time" formatted="false">%H:%M:%S %-e %b %Y</string>
     <string name="date_time">%2$s %1$s</string>
-    <string name="reboot_systemui">Starta om SystemUI</string>
-    <string name="animation_fade">Tona bort</string>
-    <string name="animation_slide_right">Glida in höger</string>
-    <string name="animation_slide_left">Glida in vänster</string>
-    <string name="animation_slide_right_no_fade">Glida åt höger (Inte tona bort)</string>
-    <string name="animation_slide_left_no_fade">Glida in vänster (Inte tona ut)</string>
-    <string name="animation_slide_up">Glida in botten</string>
-    <string name="animation_slide_down">Glida från toppen</string>
-    <string name="animation_default">Standard</string>
-    <string name="animation_translucent">Genomskinlig</string>
-    <string name="animation_grow_shrink">Väx i (Överst)</string>
-    <string name="animation_grow_shrink_center">Väx i (Center)</string>
-    <string name="animation_grow_shrink_bottom">Väx i (Botten)</string>
-    <string name="animation_grow_shrink_left">Väx i (Vänster)</string>
-    <string name="animation_grow_shrink_right">Väx i (Höger)</string>
-    <string name="action_null">Tom</string>
-    <string name="default_string">Standard</string>
-    <string name="global_action_onthego">On-The-Go Läge</string>
-    <string name="global_action_torch">Ficklampa</string>
-    <string name="floating_window_snap_top">Fästa till toppen</string>
-    <string name="floating_window_snap_bottom">Fästa till botten</string>
-    <string name="floating_window_snap_left">Fästa till vänster</string>
-    <string name="floating_window_snap_right">Fäst till höger</string>
-    <string name="floating_window_minimize">Minimera</string>
-    <string name="adb_not_connected_notification_title">ADB inaktiv</string>
-    <string name="adb_active_custom_tile_not_connected">Inaktiv</string>
-    <string name="system_error_vendorprint">Din leverantörs bild matchar inte systemets. Vänligen flasha %s leverantörsbild för din enhet</string>
     <string name="byteShort">B</string>
     <string name="kilobyteShort">kB</string>
     <string name="megabyteShort">MB</string>

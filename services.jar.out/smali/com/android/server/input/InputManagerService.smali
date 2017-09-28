@@ -2175,7 +2175,7 @@
     move-result-object v0
 
     .line 1675
-    const v1, 0x10e0074
+    const v1, 0x10e0072
 
     .line 1674
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
@@ -2398,7 +2398,7 @@
     const/4 v2, 0x0
 
     .line 937
-    const v3, 0x1040488
+    const v3, 0x104046c
 
     .line 936
     invoke-virtual {v0, v2, v3, v1}, Landroid/app/NotificationManager;->cancelAsUser(Ljava/lang/String;ILandroid/os/UserHandle;)V
@@ -3348,7 +3348,7 @@
     .param p1, "device"    # Landroid/view/InputDevice;
 
     .prologue
-    const v9, 0x1040488
+    const v9, 0x104046c
 
     const/4 v1, 0x0
 
@@ -3425,7 +3425,7 @@
     move-result-object v0
 
     .line 918
-    const v1, 0x1040489
+    const v1, 0x104046d
 
     .line 917
     invoke-virtual {v8, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -3442,7 +3442,7 @@
     move-result-object v0
 
     .line 920
-    const v1, 0x1080462
+    const v1, 0x108042b
 
     .line 914
     invoke-virtual {v0, v1}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;

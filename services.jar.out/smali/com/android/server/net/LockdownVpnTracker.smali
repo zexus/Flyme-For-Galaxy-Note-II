@@ -593,9 +593,9 @@
     if-le v0, v1, :cond_a
 
     .line 160
-    const v19, 0x10404da
+    const v19, 0x10404be
 
-    const v20, 0x10807fe
+    const v20, 0x108074f
 
     move-object/from16 v0, p0
 
@@ -711,9 +711,9 @@
     invoke-static {v13}, Lcom/android/server/EventLogTags;->writeLockdownVpnConnecting(I)V
 
     .line 166
-    const v19, 0x10404d8
+    const v19, 0x10404bc
 
-    const v20, 0x10807fe
+    const v20, 0x108074f
 
     move-object/from16 v0, p0
 
@@ -790,9 +790,9 @@
     invoke-static {v0, v1, v7}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     .line 176
-    const v19, 0x10404da
+    const v19, 0x10404be
 
-    const v20, 0x10807fe
+    const v20, 0x108074f
 
     move-object/from16 v0, p0
 
@@ -814,9 +814,9 @@
     invoke-static/range {v19 .. v20}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 180
-    const v19, 0x10404da
+    const v19, 0x10404be
 
-    const v20, 0x10807fe
+    const v20, 0x108074f
 
     move-object/from16 v0, p0
 
@@ -878,9 +878,9 @@
     invoke-static {v13}, Lcom/android/server/EventLogTags;->writeLockdownVpnConnected(I)V
 
     .line 195
-    const v19, 0x10404d9
+    const v19, 0x10404bd
 
-    const v20, 0x10807fd
+    const v20, 0x108074e
 
     move-object/from16 v0, p0
 
@@ -1275,7 +1275,7 @@
     .line 342
     iget-object v2, p0, Lcom/android/server/net/LockdownVpnTracker;->mContext:Landroid/content/Context;
 
-    const v3, 0x10404db
+    const v3, 0x10404bf
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1313,7 +1313,7 @@
     .line 346
     iget-object v2, p0, Lcom/android/server/net/LockdownVpnTracker;->mContext:Landroid/content/Context;
 
-    const v3, 0x10404de
+    const v3, 0x10404c2
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1323,7 +1323,7 @@
     iget-object v3, p0, Lcom/android/server/net/LockdownVpnTracker;->mResetIntent:Landroid/app/PendingIntent;
 
     .line 346
-    const v4, 0x1080425
+    const v4, 0x10803ea
 
     .line 338
     invoke-virtual {v1, v4, v2, v3}, Landroid/app/Notification$Builder;->addAction(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;

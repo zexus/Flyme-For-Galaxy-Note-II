@@ -102,7 +102,7 @@
     .line 1027
     if-eqz v10, :cond_3
 
-    const v0, 0x1040611
+    const v0, 0x10405f5
 
     .line 1026
     :goto_1
@@ -243,7 +243,7 @@
     .line 1028
     .end local v10    # "update":Z
     :cond_3
-    const v0, 0x1040610
+    const v0, 0x10405f4
 
     goto :goto_1
 

@@ -144,10 +144,6 @@ call_adapter                              u:object_r:telecom_service:s0
 flyme_perf                                u:object_r:flyme_perf_service:s0
 alphame_server                            u:object_r:alphame_service:s0
 
-#line 1 "device/samsung/n7100/selinux/service_contexts"
-SecTVOutService                           u:object_r:surfaceflinger_service:s0
-Exynos.HWCService                         u:object_r:surfaceflinger_service:s0
-Exynos.IPService                          u:object_r:surfaceflinger_service:s0
 #line 1 "vendor/cm/sepolicy/service_contexts"
 edgegestureservice                        u:object_r:edge_gesture_service:s0
 themes                                    u:object_r:themes_service:s0

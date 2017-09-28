@@ -214,7 +214,7 @@
     .line 179
     iget-object v3, p0, Lcom/android/internal/widget/ActionBarContextView;->mTitleLayout:Landroid/widget/LinearLayout;
 
-    const v6, 0x10202f0
+    const v6, 0x10202ee
 
     invoke-virtual {v3, v6}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -227,7 +227,7 @@
     .line 180
     iget-object v3, p0, Lcom/android/internal/widget/ActionBarContextView;->mTitleLayout:Landroid/widget/LinearLayout;
 
-    const v6, 0x10202f1
+    const v6, 0x10202ef
 
     invoke-virtual {v3, v6}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -514,7 +514,7 @@
     :goto_0
     iget-object v4, p0, Lcom/android/internal/widget/ActionBarContextView;->mClose:Landroid/view/View;
 
-    const v5, 0x10202f2
+    const v5, 0x10202f0
 
     invoke-virtual {v4, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

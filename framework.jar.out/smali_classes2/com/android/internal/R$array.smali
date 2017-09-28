@@ -15,11 +15,9 @@
 
 
 # static fields
-.field public static final anim_controls_entries:I = 0x1070055
-
 .field public static final app_ops_labels:I = 0x107000f
 
-.field public static final carrier_properties:I = 0x107005d
+.field public static final carrier_properties:I = 0x107005b
 
 .field public static final common_nicknames:I = 0x1070054
 
@@ -147,9 +145,9 @@
 
 .field public static final emailAddressTypes:I = 0x1070000
 
-.field public static final fingerprint_acquired_vendor:I = 0x107005a
+.field public static final fingerprint_acquired_vendor:I = 0x1070058
 
-.field public static final fingerprint_error_vendor:I = 0x107005b
+.field public static final fingerprint_error_vendor:I = 0x1070059
 
 .field public static final imProtocols:I = 0x1070001
 
@@ -189,11 +187,11 @@
 
 .field public static final special_locale_names:I = 0x1070009
 
-.field public static final wfcOperatorErrorAlertMessages:I = 0x1070058
+.field public static final wfcOperatorErrorAlertMessages:I = 0x1070056
 
-.field public static final wfcOperatorErrorCodes:I = 0x1070057
+.field public static final wfcOperatorErrorCodes:I = 0x1070055
 
-.field public static final wfcOperatorErrorNotificationMessages:I = 0x1070059
+.field public static final wfcOperatorErrorNotificationMessages:I = 0x1070057
 
 
 # direct methods
@@ -201,7 +199,7 @@
     .locals 0
 
     .prologue
-    .line 119
+    .line 90
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

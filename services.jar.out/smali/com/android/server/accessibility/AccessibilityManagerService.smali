@@ -3519,7 +3519,7 @@
     move-result-object v2
 
     .line 1349
-    const v4, 0x10403bf
+    const v4, 0x10403a3
 
     .line 1324
     invoke-virtual {v2, v4}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
@@ -3538,7 +3538,7 @@
 
     aput-object v0, v5, v6
 
-    const v6, 0x10403c0
+    const v6, 0x10403a4
 
     .line 1350
     invoke-virtual {v4, v6, v5}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;

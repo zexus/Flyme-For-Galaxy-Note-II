@@ -94,7 +94,7 @@
     invoke-virtual {p0, v3}, Lcom/android/internal/widget/ButtonBarLayout;->setGravity(I)V
 
     .line 106
-    const v3, 0x1020303
+    const v3, 0x1020301
 
     invoke-virtual {p0, v3}, Lcom/android/internal/widget/ButtonBarLayout;->findViewById(I)Landroid/view/View;
 

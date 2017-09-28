@@ -235,54 +235,54 @@
 
     const/4 v2, 0x0
 
-    .line 1258
+    .line 1256
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Landroid/provider/Settings;->mLocationSettingsLock:Ljava/lang/Object;
 
-    .line 11671
+    .line 8821
     new-array v0, v3, [Ljava/lang/String;
 
-    .line 11672
+    .line 8822
     const-string/jumbo v1, "android.permission.WRITE_SETTINGS"
 
     aput-object v1, v0, v2
 
-    .line 11671
+    .line 8821
     sput-object v0, Landroid/provider/Settings;->PM_WRITE_SETTINGS:[Ljava/lang/String;
 
-    .line 11674
+    .line 8824
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/String;
 
-    .line 11675
+    .line 8825
     const-string/jumbo v1, "android.permission.CHANGE_NETWORK_STATE"
 
     aput-object v1, v0, v2
 
-    .line 11676
+    .line 8826
     const-string/jumbo v1, "android.permission.WRITE_SETTINGS"
 
     aput-object v1, v0, v3
 
-    .line 11674
+    .line 8824
     sput-object v0, Landroid/provider/Settings;->PM_CHANGE_NETWORK_STATE:[Ljava/lang/String;
 
-    .line 11678
+    .line 8828
     new-array v0, v3, [Ljava/lang/String;
 
-    .line 11679
+    .line 8829
     const-string/jumbo v1, "android.permission.SYSTEM_ALERT_WINDOW"
 
     aput-object v1, v0, v2
 
-    .line 11678
+    .line 8828
     sput-object v0, Landroid/provider/Settings;->PM_SYSTEM_ALERT_WINDOW:[Ljava/lang/String;
 
-    .line 81
+    .line 79
     return-void
 .end method
 
@@ -290,7 +290,7 @@
     .locals 0
 
     .prologue
-    .line 81
+    .line 79
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -301,21 +301,21 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 1449
+    .line 1447
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v0
 
-    .line 1450
+    .line 1448
     .local v0, "uid":I
     invoke-static {p0, v0}, Landroid/provider/Settings;->getPackageNameForUid(Landroid/content/Context;I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1451
+    .line 1449
     const/4 v2, 0x0
 
-    .line 1450
+    .line 1448
     invoke-static {p0, v0, v1, v2}, Landroid/provider/Settings;->isCallingPackageAllowedToDrawOverlays(Landroid/content/Context;ILjava/lang/String;Z)Z
 
     move-result v1
@@ -333,7 +333,7 @@
     .prologue
     const/4 v6, 0x1
 
-    .line 11729
+    .line 8879
     const-string/jumbo v0, "android.permission.CHANGE_NETWORK_STATE"
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->checkCallingOrSelfPermission(Ljava/lang/String;)I
@@ -342,14 +342,14 @@
 
     if-nez v0, :cond_0
 
-    .line 11731
+    .line 8881
     return v6
 
-    .line 11735
+    .line 8885
     :cond_0
     sget-object v5, Landroid/provider/Settings;->PM_CHANGE_NETWORK_STATE:[Ljava/lang/String;
 
-    .line 11734
+    .line 8884
     const/16 v4, 0x17
 
     move-object v0, p0
@@ -360,7 +360,7 @@
 
     move v3, p3
 
-    .line 11733
+    .line 8883
     invoke-static/range {v0 .. v6}, Landroid/provider/Settings;->isCallingPackageAllowedToPerformAppOpsProtectedOperation(Landroid/content/Context;ILjava/lang/String;ZI[Ljava/lang/String;Z)Z
 
     move-result v0
@@ -376,13 +376,13 @@
     .param p3, "throwException"    # Z
 
     .prologue
-    .line 11766
+    .line 8916
     sget-object v5, Landroid/provider/Settings;->PM_SYSTEM_ALERT_WINDOW:[Ljava/lang/String;
 
-    .line 11765
+    .line 8915
     const/16 v4, 0x18
 
-    .line 11766
+    .line 8916
     const/4 v6, 0x1
 
     move-object v0, p0
@@ -393,7 +393,7 @@
 
     move v3, p3
 
-    .line 11764
+    .line 8914
     invoke-static/range {v0 .. v6}, Landroid/provider/Settings;->isCallingPackageAllowedToPerformAppOpsProtectedOperation(Landroid/content/Context;ILjava/lang/String;ZI[Ljava/lang/String;Z)Z
 
     move-result v0
@@ -409,13 +409,13 @@
     .param p3, "throwException"    # Z
 
     .prologue
-    .line 11711
+    .line 8861
     sget-object v5, Landroid/provider/Settings;->PM_WRITE_SETTINGS:[Ljava/lang/String;
 
-    .line 11710
+    .line 8860
     const/16 v4, 0x17
 
-    .line 11711
+    .line 8861
     const/4 v6, 0x1
 
     move-object v0, p0
@@ -426,7 +426,7 @@
 
     move v3, p3
 
-    .line 11709
+    .line 8859
     invoke-static/range {v0 .. v6}, Landroid/provider/Settings;->isCallingPackageAllowedToPerformAppOpsProtectedOperation(Landroid/content/Context;ILjava/lang/String;ZI[Ljava/lang/String;Z)Z
 
     move-result v0
@@ -439,7 +439,7 @@
     .param p0, "androidId"    # J
 
     .prologue
-    .line 11668
+    .line 8818
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -473,7 +473,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 11838
+    .line 8988
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v1
@@ -482,14 +482,14 @@
 
     move-result-object v0
 
-    .line 11839
+    .line 8989
     .local v0, "packages":[Ljava/lang/String;
     if-nez v0, :cond_0
 
-    .line 11840
+    .line 8990
     return-object v2
 
-    .line 11842
+    .line 8992
     :cond_0
     const/4 v1, 0x0
 
@@ -506,13 +506,13 @@
     .param p3, "throwException"    # Z
 
     .prologue
-    .line 11749
+    .line 8899
     sget-object v5, Landroid/provider/Settings;->PM_SYSTEM_ALERT_WINDOW:[Ljava/lang/String;
 
-    .line 11748
+    .line 8898
     const/16 v4, 0x18
 
-    .line 11749
+    .line 8899
     const/4 v6, 0x0
 
     move-object v0, p0
@@ -523,7 +523,7 @@
 
     move v3, p3
 
-    .line 11747
+    .line 8897
     invoke-static/range {v0 .. v6}, Landroid/provider/Settings;->isCallingPackageAllowedToPerformAppOpsProtectedOperation(Landroid/content/Context;ILjava/lang/String;ZI[Ljava/lang/String;Z)Z
 
     move-result v0
@@ -542,15 +542,15 @@
     .param p6, "makeNote"    # Z
 
     .prologue
-    .line 11778
+    .line 8928
     if-nez p2, :cond_0
 
-    .line 11779
+    .line 8929
     const/4 v5, 0x0
 
     return v5
 
-    .line 11782
+    .line 8932
     :cond_0
     const-string/jumbo v5, "appops"
 
@@ -560,34 +560,34 @@
 
     check-cast v0, Landroid/app/AppOpsManager;
 
-    .line 11783
+    .line 8933
     .local v0, "appOpsMgr":Landroid/app/AppOpsManager;
     const/4 v3, 0x3
 
-    .line 11784
+    .line 8934
     .local v3, "mode":I
     if-eqz p6, :cond_2
 
-    .line 11785
+    .line 8935
     invoke-virtual {v0, p4, p1, p2}, Landroid/app/AppOpsManager;->noteOpNoThrow(IILjava/lang/String;)I
 
     move-result v3
 
-    .line 11790
+    .line 8940
     :goto_0
     packed-switch v3, :pswitch_data_0
 
-    .line 11808
+    .line 8958
     :cond_1
     :pswitch_0
     if-nez p3, :cond_4
 
-    .line 11809
+    .line 8959
     const/4 v5, 0x0
 
     return v5
 
-    .line 11787
+    .line 8937
     :cond_2
     invoke-virtual {v0, p4, p1, p2}, Landroid/app/AppOpsManager;->checkOpNoThrow(IILjava/lang/String;)I
 
@@ -595,13 +595,13 @@
 
     goto :goto_0
 
-    .line 11792
+    .line 8942
     :pswitch_1
     const/4 v5, 0x1
 
     return v5
 
-    .line 11798
+    .line 8948
     :pswitch_2
     invoke-static/range {p4 .. p4}, Landroid/provider/Settings;->isFlymePermissionGranted(I)Z
 
@@ -624,7 +624,7 @@
 
     aget-object v4, p5, v5
 
-    .line 11799
+    .line 8949
     .local v4, "permission":Ljava/lang/String;
     invoke-virtual {p0, v4}, Landroid/content/Context;->checkCallingOrSelfPermission(Ljava/lang/String;)I
 
@@ -632,46 +632,46 @@
 
     if-nez v7, :cond_3
 
-    .line 11802
+    .line 8952
     const/4 v5, 0x1
 
     return v5
 
-    .line 11798
+    .line 8948
     :cond_3
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_1
 
-    .line 11814
+    .line 8964
     .end local v4    # "permission":Ljava/lang/String;
     :cond_4
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 11815
+    .line 8965
     .local v1, "exceptionMessage":Ljava/lang/StringBuilder;
     invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 11816
+    .line 8966
     const-string/jumbo v5, " was not granted "
 
     invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 11817
+    .line 8967
     array-length v5, p5
 
     const/4 v6, 0x1
 
     if-le v5, v6, :cond_5
 
-    .line 11818
+    .line 8968
     const-string/jumbo v5, " either of these permissions: "
 
     invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 11822
+    .line 8972
     :goto_2
     const/4 v2, 0x0
 
@@ -681,12 +681,12 @@
 
     if-ge v2, v5, :cond_7
 
-    .line 11823
+    .line 8973
     aget-object v5, p5, v2
 
     invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 11824
+    .line 8974
     array-length v5, p5
 
     add-int/lit8 v5, v5, -0x1
@@ -698,12 +698,12 @@
     :goto_4
     invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 11822
+    .line 8972
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_3
 
-    .line 11820
+    .line 8970
     .end local v2    # "i":I
     :cond_5
     const-string/jumbo v5, " this permission: "
@@ -712,14 +712,14 @@
 
     goto :goto_2
 
-    .line 11824
+    .line 8974
     .restart local v2    # "i":I
     :cond_6
     const-string/jumbo v5, ", "
 
     goto :goto_4
 
-    .line 11827
+    .line 8977
     :cond_7
     new-instance v5, Ljava/lang/SecurityException;
 
@@ -731,7 +731,7 @@
 
     throw v5
 
-    .line 11790
+    .line 8940
     nop
 
     :pswitch_data_0
@@ -751,13 +751,13 @@
     .param p3, "throwException"    # Z
 
     .prologue
-    .line 11693
+    .line 8843
     sget-object v5, Landroid/provider/Settings;->PM_WRITE_SETTINGS:[Ljava/lang/String;
 
-    .line 11692
+    .line 8842
     const/16 v4, 0x17
 
-    .line 11693
+    .line 8843
     const/4 v6, 0x0
 
     move-object v0, p0
@@ -768,7 +768,7 @@
 
     move v3, p3
 
-    .line 11691
+    .line 8841
     invoke-static/range {v0 .. v6}, Landroid/provider/Settings;->isCallingPackageAllowedToPerformAppOpsProtectedOperation(Landroid/content/Context;ILjava/lang/String;ZI[Ljava/lang/String;Z)Z
 
     move-result v0
@@ -783,22 +783,18 @@
     .prologue
     const/16 v0, 0x17
 
-    .line 8492
     if-ne p0, v0, :cond_0
 
-    .line 8493
     invoke-static {v0}, Lmeizu/security/FlymePermissionManager;->isFlymePermissionGranted(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 8494
     const/4 v0, 0x1
 
     return v0
 
-    .line 8498
     :cond_0
     const/4 v0, 0x0
 

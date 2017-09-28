@@ -54,97 +54,144 @@
 
 # virtual methods
 .method public onChange(ZLandroid/net/Uri;)V
-    .locals 5
+    .locals 7
     .param p1, "selfChange"    # Z
     .param p2, "uri"    # Landroid/net/Uri;
 
     .prologue
-    .line 516
-    const-string/jumbo v3, "show_ime_with_hard_keyboard"
+    .line 525
+    const-string/jumbo v5, "show_ime_with_hard_keyboard"
 
-    invoke-static {v3}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+    invoke-static {v5}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v2
 
-    .line 517
+    .line 527
     .local v2, "showImeUri":Landroid/net/Uri;
-    iget-object v3, p0, Lcom/android/server/InputMethodManagerService$SettingsObserver;->this$0:Lcom/android/server/InputMethodManagerService;
+    const-string/jumbo v5, "high_touch_sensitivity_enable"
 
-    iget-object v4, v3, Lcom/android/server/InputMethodManagerService;->mMethodMap:Ljava/util/HashMap;
+    invoke-static {v5}, Lcyanogenmod/providers/CMSettings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
-    monitor-enter v4
+    move-result-object v4
 
-    .line 518
+    .line 529
+    .local v4, "touchSensitivityUri":Landroid/net/Uri;
+    const-string/jumbo v5, "feature_touch_hovering"
+
+    invoke-static {v5}, Lcyanogenmod/providers/CMSettings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v3
+
+    .line 530
+    .local v3, "touchHoveringUri":Landroid/net/Uri;
+    iget-object v5, p0, Lcom/android/server/InputMethodManagerService$SettingsObserver;->this$0:Lcom/android/server/InputMethodManagerService;
+
+    iget-object v6, v5, Lcom/android/server/InputMethodManagerService;->mMethodMap:Ljava/util/HashMap;
+
+    monitor-enter v6
+
+    .line 531
     :try_start_0
     invoke-virtual {v2, p2}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v5
 
-    if-eqz v3, :cond_0
+    if-eqz v5, :cond_0
 
-    .line 519
-    iget-object v3, p0, Lcom/android/server/InputMethodManagerService$SettingsObserver;->this$0:Lcom/android/server/InputMethodManagerService;
+    .line 532
+    iget-object v5, p0, Lcom/android/server/InputMethodManagerService$SettingsObserver;->this$0:Lcom/android/server/InputMethodManagerService;
 
-    invoke-virtual {v3}, Lcom/android/server/InputMethodManagerService;->updateKeyboardFromSettingsLocked()V
+    invoke-virtual {v5}, Lcom/android/server/InputMethodManagerService;->updateKeyboardFromSettingsLocked()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :goto_0
-    monitor-exit v4
-
-    .line 514
-    return-void
-
-    .line 521
-    :cond_0
-    const/4 v0, 0x0
-
-    .line 522
-    .local v0, "enabledChanged":Z
-    :try_start_1
-    iget-object v3, p0, Lcom/android/server/InputMethodManagerService$SettingsObserver;->this$0:Lcom/android/server/InputMethodManagerService;
-
-    iget-object v3, v3, Lcom/android/server/InputMethodManagerService;->mSettings:Lcom/android/internal/inputmethod/InputMethodUtils$InputMethodSettings;
-
-    invoke-virtual {v3}, Lcom/android/internal/inputmethod/InputMethodUtils$InputMethodSettings;->getEnabledInputMethodsStr()Ljava/lang/String;
-
-    move-result-object v1
+    monitor-exit v6
 
     .line 523
-    .local v1, "newEnabled":Ljava/lang/String;
-    iget-object v3, p0, Lcom/android/server/InputMethodManagerService$SettingsObserver;->mLastEnabled:Ljava/lang/String;
+    return-void
 
-    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 533
+    :cond_0
+    :try_start_1
+    invoke-virtual {v4, p2}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v5
 
-    if-nez v3, :cond_1
+    if-eqz v5, :cond_1
 
-    .line 524
-    iput-object v1, p0, Lcom/android/server/InputMethodManagerService$SettingsObserver;->mLastEnabled:Ljava/lang/String;
+    .line 534
+    iget-object v5, p0, Lcom/android/server/InputMethodManagerService$SettingsObserver;->this$0:Lcom/android/server/InputMethodManagerService;
 
-    .line 525
-    const/4 v0, 0x1
-
-    .line 527
-    :cond_1
-    iget-object v3, p0, Lcom/android/server/InputMethodManagerService$SettingsObserver;->this$0:Lcom/android/server/InputMethodManagerService;
-
-    invoke-virtual {v3, v0}, Lcom/android/server/InputMethodManagerService;->updateInputMethodsFromSettingsLocked(Z)V
+    invoke-static {v5}, Lcom/android/server/InputMethodManagerService;->-wrap8(Lcom/android/server/InputMethodManagerService;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_0
 
-    .line 517
-    .end local v0    # "enabledChanged":Z
-    .end local v1    # "newEnabled":Ljava/lang/String;
+    .line 530
     :catchall_0
-    move-exception v3
+    move-exception v5
 
-    monitor-exit v4
+    monitor-exit v6
 
-    throw v3
+    throw v5
+
+    .line 535
+    :cond_1
+    :try_start_2
+    invoke-virtual {v3, p2}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_2
+
+    .line 536
+    iget-object v5, p0, Lcom/android/server/InputMethodManagerService$SettingsObserver;->this$0:Lcom/android/server/InputMethodManagerService;
+
+    invoke-static {v5}, Lcom/android/server/InputMethodManagerService;->-wrap7(Lcom/android/server/InputMethodManagerService;)V
+
+    goto :goto_0
+
+    .line 538
+    :cond_2
+    const/4 v0, 0x0
+
+    .line 539
+    .local v0, "enabledChanged":Z
+    iget-object v5, p0, Lcom/android/server/InputMethodManagerService$SettingsObserver;->this$0:Lcom/android/server/InputMethodManagerService;
+
+    iget-object v5, v5, Lcom/android/server/InputMethodManagerService;->mSettings:Lcom/android/internal/inputmethod/InputMethodUtils$InputMethodSettings;
+
+    invoke-virtual {v5}, Lcom/android/internal/inputmethod/InputMethodUtils$InputMethodSettings;->getEnabledInputMethodsStr()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 540
+    .local v1, "newEnabled":Ljava/lang/String;
+    iget-object v5, p0, Lcom/android/server/InputMethodManagerService$SettingsObserver;->mLastEnabled:Ljava/lang/String;
+
+    invoke-virtual {v5, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_3
+
+    .line 541
+    iput-object v1, p0, Lcom/android/server/InputMethodManagerService$SettingsObserver;->mLastEnabled:Ljava/lang/String;
+
+    .line 542
+    const/4 v0, 0x1
+
+    .line 544
+    :cond_3
+    iget-object v5, p0, Lcom/android/server/InputMethodManagerService$SettingsObserver;->this$0:Lcom/android/server/InputMethodManagerService;
+
+    invoke-virtual {v5, v0}, Lcom/android/server/InputMethodManagerService;->updateInputMethodsFromSettingsLocked(Z)V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    goto :goto_0
 .end method
 
 .method public registerContentObserverLocked(I)V
@@ -272,6 +319,58 @@
     invoke-virtual {v0, v1, v4, v2, p1}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
     .line 511
+    iget-object v1, p0, Lcom/android/server/InputMethodManagerService$SettingsObserver;->this$0:Lcom/android/server/InputMethodManagerService;
+
+    invoke-static {v1}, Lcom/android/server/InputMethodManagerService;->-get0(Lcom/android/server/InputMethodManagerService;)Lcyanogenmod/hardware/CMHardwareManager;
+
+    move-result-object v1
+
+    const/16 v2, 0x10
+
+    invoke-virtual {v1, v2}, Lcyanogenmod/hardware/CMHardwareManager;->isSupported(I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    .line 513
+    const-string/jumbo v1, "high_touch_sensitivity_enable"
+
+    .line 512
+    invoke-static {v1}, Lcyanogenmod/providers/CMSettings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1, v4, p0, p1}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
+
+    .line 515
+    :cond_3
+    iget-object v1, p0, Lcom/android/server/InputMethodManagerService$SettingsObserver;->this$0:Lcom/android/server/InputMethodManagerService;
+
+    invoke-static {v1}, Lcom/android/server/InputMethodManagerService;->-get0(Lcom/android/server/InputMethodManagerService;)Lcyanogenmod/hardware/CMHardwareManager;
+
+    move-result-object v1
+
+    const/16 v2, 0x800
+
+    invoke-virtual {v1, v2}, Lcyanogenmod/hardware/CMHardwareManager;->isSupported(I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_4
+
+    .line 517
+    const-string/jumbo v1, "feature_touch_hovering"
+
+    .line 516
+    invoke-static {v1}, Lcyanogenmod/providers/CMSettings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1, v4, p0, p1}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
+
+    .line 520
+    :cond_4
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/android/server/InputMethodManagerService$SettingsObserver;->mRegistered:Z
@@ -284,7 +383,7 @@
     .locals 2
 
     .prologue
-    .line 534
+    .line 551
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -313,26 +412,26 @@
 
     move-result-object v0
 
-    .line 535
+    .line 552
     const-string/jumbo v1, " mLastEnabled="
 
-    .line 534
+    .line 551
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 535
+    .line 552
     iget-object v1, p0, Lcom/android/server/InputMethodManagerService$SettingsObserver;->mLastEnabled:Ljava/lang/String;
 
-    .line 534
+    .line 551
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 535
+    .line 552
     const-string/jumbo v1, "}"
 
-    .line 534
+    .line 551
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0

@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/BatteryService;
 
     .prologue
-    .line 1146
+    .line 1142
     iput-object p1, p0, Lcom/android/server/BatteryService$BatteryListener;->this$0:Lcom/android/server/BatteryService;
 
     invoke-direct {p0}, Landroid/os/IBatteryPropertiesListener$Stub;-><init>()V
@@ -49,12 +49,12 @@
     .param p1, "props"    # Landroid/os/BatteryProperties;
 
     .prologue
-    .line 1149
+    .line 1145
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 1151
+    .line 1147
     .local v0, "identity":J
     :try_start_0
     iget-object v2, p0, Lcom/android/server/BatteryService$BatteryListener;->this$0:Lcom/android/server/BatteryService;
@@ -63,19 +63,19 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1153
+    .line 1149
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 1148
+    .line 1144
     return-void
 
-    .line 1152
+    .line 1148
     :catchall_0
     move-exception v2
 
-    .line 1153
+    .line 1149
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 1152
+    .line 1148
     throw v2
 .end method

@@ -486,7 +486,7 @@
     move-result-object v3
 
     .line 471
-    const v4, 0x10404fc
+    const v4, 0x10404e0
 
     .line 470
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -639,7 +639,7 @@
 
     .prologue
     .line 544
-    const v1, 0x102030e
+    const v1, 0x102030c
 
     invoke-virtual {p0, v1}, Landroid/accounts/ChooseTypeAndAccountActivity;->findViewById(I)Landroid/view/View;
 
@@ -1795,7 +1795,7 @@
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
     .line 228
-    const v7, 0x1090042
+    const v7, 0x1090041
 
     invoke-virtual {p0, v7}, Landroid/accounts/ChooseTypeAndAccountActivity;->setContentView(I)V
 

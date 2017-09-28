@@ -25,17 +25,17 @@
     .param p2, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 1326
+    .line 1214
     iput-object p1, p0, Lcom/android/server/display/DisplayPowerController$DisplayControllerHandler;->this$0:Lcom/android/server/display/DisplayPowerController;
 
-    .line 1327
+    .line 1215
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
     invoke-direct {p0, p2, v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;Z)V
 
-    .line 1326
+    .line 1214
     return-void
 .end method
 
@@ -46,37 +46,37 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 1332
+    .line 1220
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1331
+    .line 1219
     :cond_0
     :goto_0
     return-void
 
-    .line 1334
+    .line 1222
     :pswitch_0
     iget-object v0, p0, Lcom/android/server/display/DisplayPowerController$DisplayControllerHandler;->this$0:Lcom/android/server/display/DisplayPowerController;
 
-    invoke-static {v0}, Lcom/android/server/display/DisplayPowerController;->-wrap6(Lcom/android/server/display/DisplayPowerController;)V
+    invoke-static {v0}, Lcom/android/server/display/DisplayPowerController;->-wrap5(Lcom/android/server/display/DisplayPowerController;)V
 
     goto :goto_0
 
-    .line 1338
+    .line 1226
     :pswitch_1
     iget-object v0, p0, Lcom/android/server/display/DisplayPowerController$DisplayControllerHandler;->this$0:Lcom/android/server/display/DisplayPowerController;
 
-    invoke-static {v0}, Lcom/android/server/display/DisplayPowerController;->-wrap1(Lcom/android/server/display/DisplayPowerController;)V
+    invoke-static {v0}, Lcom/android/server/display/DisplayPowerController;->-wrap0(Lcom/android/server/display/DisplayPowerController;)V
 
     goto :goto_0
 
-    .line 1342
+    .line 1230
     :pswitch_2
     iget-object v0, p0, Lcom/android/server/display/DisplayPowerController$DisplayControllerHandler;->this$0:Lcom/android/server/display/DisplayPowerController;
 
-    invoke-static {v0}, Lcom/android/server/display/DisplayPowerController;->-get6(Lcom/android/server/display/DisplayPowerController;)Lcom/android/server/display/DisplayPowerController$ScreenOnUnblocker;
+    invoke-static {v0}, Lcom/android/server/display/DisplayPowerController;->-get2(Lcom/android/server/display/DisplayPowerController;)Lcom/android/server/display/DisplayPowerController$ScreenOnUnblocker;
 
     move-result-object v0
 
@@ -84,19 +84,19 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 1343
+    .line 1231
+    iget-object v0, p0, Lcom/android/server/display/DisplayPowerController$DisplayControllerHandler;->this$0:Lcom/android/server/display/DisplayPowerController;
+
+    invoke-static {v0}, Lcom/android/server/display/DisplayPowerController;->-wrap4(Lcom/android/server/display/DisplayPowerController;)V
+
+    .line 1232
     iget-object v0, p0, Lcom/android/server/display/DisplayPowerController$DisplayControllerHandler;->this$0:Lcom/android/server/display/DisplayPowerController;
 
     invoke-static {v0}, Lcom/android/server/display/DisplayPowerController;->-wrap5(Lcom/android/server/display/DisplayPowerController;)V
 
-    .line 1344
-    iget-object v0, p0, Lcom/android/server/display/DisplayPowerController$DisplayControllerHandler;->this$0:Lcom/android/server/display/DisplayPowerController;
-
-    invoke-static {v0}, Lcom/android/server/display/DisplayPowerController;->-wrap6(Lcom/android/server/display/DisplayPowerController;)V
-
     goto :goto_0
 
-    .line 1332
+    .line 1220
     nop
 
     :pswitch_data_0

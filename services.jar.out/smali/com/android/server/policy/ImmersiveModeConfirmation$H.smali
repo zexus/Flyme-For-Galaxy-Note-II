@@ -51,38 +51,11 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .locals 3
+    .locals 1
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
     .line 346
-    iget-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation$H;->this$0:Lcom/android/server/policy/ImmersiveModeConfirmation;
-
-    invoke-static {v0}, Lcom/android/server/policy/ImmersiveModeConfirmation;->-get1(Lcom/android/server/policy/ImmersiveModeConfirmation;)Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    .line 347
-    const-string/jumbo v1, "disable_immersive_message"
-
-    const/4 v2, 0x0
-
-    .line 346
-    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v0
-
-    .line 347
-    const/4 v1, 0x1
-
-    .line 346
-    if-eq v0, v1, :cond_0
-
-    .line 348
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
@@ -91,7 +64,7 @@
     :goto_0
     return-void
 
-    .line 350
+    .line 348
     :pswitch_0
     iget-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation$H;->this$0:Lcom/android/server/policy/ImmersiveModeConfirmation;
 
@@ -99,7 +72,7 @@
 
     goto :goto_0
 
-    .line 353
+    .line 351
     :pswitch_1
     iget-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation$H;->this$0:Lcom/android/server/policy/ImmersiveModeConfirmation;
 
@@ -107,17 +80,7 @@
 
     goto :goto_0
 
-    .line 357
-    :cond_0
-    iget-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation$H;->this$0:Lcom/android/server/policy/ImmersiveModeConfirmation;
-
-    invoke-static {v0}, Lcom/android/server/policy/ImmersiveModeConfirmation;->-wrap0(Lcom/android/server/policy/ImmersiveModeConfirmation;)V
-
-    goto :goto_0
-
-    .line 348
-    nop
-
+    .line 346
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

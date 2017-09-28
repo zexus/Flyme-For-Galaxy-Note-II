@@ -15,11 +15,11 @@
 
 
 # static fields
-.field private static final ITEM_LAYOUT:I = 0x1090105
+.field private static final ITEM_LAYOUT:I = 0x1090102
 
-.field private static final ITEM_TEXT_ACTIVATED_APPEARANCE:I = 0x103044d
+.field private static final ITEM_TEXT_ACTIVATED_APPEARANCE:I = 0x1030426
 
-.field private static final ITEM_TEXT_APPEARANCE:I = 0x103044c
+.field private static final ITEM_TEXT_APPEARANCE:I = 0x1030425
 
 
 # instance fields
@@ -163,7 +163,7 @@
     .line 184
     iget-object v5, p0, Landroid/widget/YearPickerView$YearAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    const v6, 0x1090105
+    const v6, 0x1090102
 
     const/4 v7, 0x0
 
@@ -204,7 +204,7 @@
     if-eqz v0, :cond_5
 
     .line 195
-    const v2, 0x103044d
+    const v2, 0x1030426
 
     .line 199
     .local v2, "textAppearanceResId":I
@@ -256,7 +256,7 @@
 
     .line 197
     :cond_5
-    const v2, 0x103044c
+    const v2, 0x1030425
 
     .restart local v2    # "textAppearanceResId":I
     goto :goto_3

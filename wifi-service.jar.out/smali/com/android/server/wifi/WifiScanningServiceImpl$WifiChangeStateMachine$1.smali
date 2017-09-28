@@ -24,7 +24,7 @@
     .param p1, "this$1"    # Lcom/android/server/wifi/WifiScanningServiceImpl$WifiChangeStateMachine;
 
     .prologue
-    .line 1461
+    .line 1456
     iput-object p1, p0, Lcom/android/server/wifi/WifiScanningServiceImpl$WifiChangeStateMachine$1;->this$1:Lcom/android/server/wifi/WifiScanningServiceImpl$WifiChangeStateMachine;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,13 +40,13 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 1464
+    .line 1459
     iget-object v0, p0, Lcom/android/server/wifi/WifiScanningServiceImpl$WifiChangeStateMachine$1;->this$1:Lcom/android/server/wifi/WifiScanningServiceImpl$WifiChangeStateMachine;
 
     const/4 v1, 0x2
 
     invoke-virtual {v0, v1}, Lcom/android/server/wifi/WifiScanningServiceImpl$WifiChangeStateMachine;->sendMessage(I)V
 
-    .line 1463
+    .line 1458
     return-void
 .end method

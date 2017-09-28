@@ -25,13 +25,13 @@
     .param p2, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 3129
+    .line 3081
     iput-object p1, p0, Lcom/android/server/notification/NotificationManagerService$RankingWorkerHandler;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
-    .line 3130
+    .line 3082
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 3129
+    .line 3081
     return-void
 .end method
 
@@ -42,16 +42,16 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 3135
+    .line 3087
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 3134
+    .line 3086
     :goto_0
     return-void
 
-    .line 3137
+    .line 3089
     :pswitch_0
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$RankingWorkerHandler;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
@@ -59,7 +59,7 @@
 
     goto :goto_0
 
-    .line 3140
+    .line 3092
     :pswitch_1
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$RankingWorkerHandler;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
@@ -67,7 +67,7 @@
 
     goto :goto_0
 
-    .line 3135
+    .line 3087
     :pswitch_data_0
     .packed-switch 0x4
         :pswitch_0

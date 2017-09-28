@@ -533,7 +533,7 @@
     iput-object p1, v2, Landroid/view/WindowManager$LayoutParams;->token:Landroid/os/IBinder;
 
     .line 978
-    const v3, 0x1030320
+    const v3, 0x10302f9
 
     iput v3, v2, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 

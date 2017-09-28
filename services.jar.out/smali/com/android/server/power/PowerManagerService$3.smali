@@ -36,7 +36,7 @@
     .param p4, "val$reason"    # Ljava/lang/String;
 
     .prologue
-    .line 2582
+    .line 2530
     iput-object p1, p0, Lcom/android/server/power/PowerManagerService$3;->this$0:Lcom/android/server/power/PowerManagerService;
 
     iput-boolean p2, p0, Lcom/android/server/power/PowerManagerService$3;->val$shutdown:Z
@@ -56,19 +56,19 @@
     .locals 3
 
     .prologue
-    .line 2585
+    .line 2533
     monitor-enter p0
 
-    .line 2586
+    .line 2534
     :try_start_0
     iget-boolean v0, p0, Lcom/android/server/power/PowerManagerService$3;->val$shutdown:Z
 
     if-eqz v0, :cond_0
 
-    .line 2587
+    .line 2535
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$3;->this$0:Lcom/android/server/power/PowerManagerService;
 
-    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->-get2(Lcom/android/server/power/PowerManagerService;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->-get3(Lcom/android/server/power/PowerManagerService;)Landroid/content/Context;
 
     move-result-object v0
 
@@ -81,15 +81,15 @@
     :goto_0
     monitor-exit p0
 
-    .line 2584
+    .line 2532
     return-void
 
-    .line 2589
+    .line 2537
     :cond_0
     :try_start_1
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$3;->this$0:Lcom/android/server/power/PowerManagerService;
 
-    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->-get2(Lcom/android/server/power/PowerManagerService;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->-get3(Lcom/android/server/power/PowerManagerService;)Landroid/content/Context;
 
     move-result-object v0
 
@@ -103,7 +103,7 @@
 
     goto :goto_0
 
-    .line 2585
+    .line 2533
     :catchall_0
     move-exception v0
 

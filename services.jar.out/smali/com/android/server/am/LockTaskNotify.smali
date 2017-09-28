@@ -102,7 +102,7 @@
     const/4 v4, -0x2
 
     .line 54
-    invoke-static {v2, v3, v1, v4}, Lcyanogenmod/providers/CMSettings$Secure;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+    invoke-static {v2, v3, v1, v4}, Lcyanogenmod/providers/CMSettings$Global;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v2
 
@@ -166,7 +166,7 @@
     if-ne p1, v1, :cond_1
 
     .line 65
-    const v0, 0x104060a
+    const v0, 0x10405ee
 
     .line 73
     .local v0, "textResId":I
@@ -223,7 +223,7 @@
     if-eqz v1, :cond_2
 
     .line 68
-    const v0, 0x1040609
+    const v0, 0x10405ed
 
     .restart local v0    # "textResId":I
     goto :goto_0
@@ -238,14 +238,14 @@
     if-eqz v1, :cond_3
 
     .line 71
-    const v0, 0x1040608
+    const v0, 0x10405ec
 
     .restart local v0    # "textResId":I
     goto :goto_0
 
     .end local v0    # "textResId":I
     :cond_3
-    const v0, 0x1040088
+    const v0, 0x1040087
 
     .restart local v0    # "textResId":I
     goto :goto_0
@@ -257,14 +257,14 @@
 
     .prologue
     .line 80
-    const v0, 0x104060c
+    const v0, 0x10405f0
 
     .line 81
     .local v0, "showString":I
     if-eqz p1, :cond_0
 
     .line 82
-    const v0, 0x104060b
+    const v0, 0x10405ef
 
     .line 84
     :cond_0

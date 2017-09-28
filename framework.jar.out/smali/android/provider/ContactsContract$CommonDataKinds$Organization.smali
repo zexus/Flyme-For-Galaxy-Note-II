@@ -99,19 +99,19 @@
     packed-switch p0, :pswitch_data_0
 
     .line 6717
-    const v0, 0x10402e6
+    const v0, 0x10402ca
 
     return v0
 
     .line 6715
     :pswitch_0
-    const v0, 0x10402e4
+    const v0, 0x10402c8
 
     return v0
 
     .line 6716
     :pswitch_1
-    const v0, 0x10402e5
+    const v0, 0x10402c9
 
     return v0
 

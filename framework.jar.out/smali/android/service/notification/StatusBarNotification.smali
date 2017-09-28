@@ -42,11 +42,11 @@
 
 .field private mContext:Landroid/content/Context;
 
-.field public final notification:Landroid/app/Notification;
+.field private final notification:Landroid/app/Notification;
 
 .field private final opPkg:Ljava/lang/String;
 
-.field public final pkg:Ljava/lang/String;
+.field private final pkg:Ljava/lang/String;
 
 .field private final postTime:J
 
@@ -56,7 +56,7 @@
 
 .field private final uid:I
 
-.field public final user:Landroid/os/UserHandle;
+.field private final user:Landroid/os/UserHandle;
 
 
 # direct methods

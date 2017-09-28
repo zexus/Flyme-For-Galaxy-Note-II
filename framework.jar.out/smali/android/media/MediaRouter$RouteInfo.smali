@@ -897,7 +897,7 @@
     .line 1635
     .end local v0    # "resId":I
     :pswitch_2
-    const v0, 0x104055c
+    const v0, 0x1040540
 
     .line 1636
     .restart local v0    # "resId":I
@@ -906,7 +906,7 @@
     .line 1638
     .end local v0    # "resId":I
     :pswitch_3
-    const v0, 0x104055d
+    const v0, 0x1040541
 
     .line 1639
     .restart local v0    # "resId":I
@@ -915,7 +915,7 @@
     .line 1641
     .end local v0    # "resId":I
     :pswitch_4
-    const v0, 0x104055e
+    const v0, 0x1040542
 
     .line 1642
     .restart local v0    # "resId":I
@@ -924,7 +924,7 @@
     .line 1644
     .end local v0    # "resId":I
     :pswitch_5
-    const v0, 0x104055f
+    const v0, 0x1040543
 
     .line 1645
     .restart local v0    # "resId":I
@@ -933,7 +933,7 @@
     .line 1647
     .end local v0    # "resId":I
     :pswitch_6
-    const v0, 0x1040560
+    const v0, 0x1040544
 
     .line 1648
     .restart local v0    # "resId":I

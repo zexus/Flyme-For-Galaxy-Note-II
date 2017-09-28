@@ -26,17 +26,17 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1758
+    .line 1753
     iput-object p1, p0, Lcom/android/server/wifi/WifiScanningServiceImpl$WifiChangeStateMachine$ClientInfoLocal;->this$1:Lcom/android/server/wifi/WifiScanningServiceImpl$WifiChangeStateMachine;
 
-    .line 1759
+    .line 1754
     iget-object v0, p1, Lcom/android/server/wifi/WifiScanningServiceImpl$WifiChangeStateMachine;->this$0:Lcom/android/server/wifi/WifiScanningServiceImpl;
 
     const/4 v1, 0x0
 
     invoke-direct {p0, v0, v1, v2, v2}, Lcom/android/server/wifi/WifiScanningServiceImpl$ClientInfo;-><init>(Lcom/android/server/wifi/WifiScanningServiceImpl;ILcom/android/internal/util/AsyncChannel;Landroid/os/Messenger;)V
 
-    .line 1758
+    .line 1753
     return-void
 .end method
 
@@ -50,12 +50,12 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1764
+    .line 1759
     iget-object v0, p0, Lcom/android/server/wifi/WifiScanningServiceImpl$WifiChangeStateMachine$ClientInfoLocal;->this$1:Lcom/android/server/wifi/WifiScanningServiceImpl$WifiChangeStateMachine;
 
     invoke-virtual {v0, v1, v1, v1, p2}, Lcom/android/server/wifi/WifiScanningServiceImpl$WifiChangeStateMachine;->sendMessage(IIILjava/lang/Object;)V
 
-    .line 1762
+    .line 1757
     return-void
 .end method
 
@@ -66,6 +66,6 @@
     .param p3, "newPeriodInMs"    # I
 
     .prologue
-    .line 1767
+    .line 1762
     return-void
 .end method

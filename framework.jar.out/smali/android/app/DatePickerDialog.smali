@@ -89,7 +89,7 @@
 
     .line 112
     .local v0, "inflater":Landroid/view/LayoutInflater;
-    const v3, 0x1090046
+    const v3, 0x1090045
 
     const/4 v4, 0x0
 
@@ -127,7 +127,7 @@
     invoke-virtual {p0, v5}, Landroid/app/DatePickerDialog;->setButtonPanelLayoutHint(I)V
 
     .line 118
-    const v3, 0x1020326
+    const v3, 0x1020320
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -300,7 +300,7 @@
     iput-boolean v1, p0, Landroid/app/DatePickerDialog;->mTitleNeedsUpdate:Z
 
     .line 184
-    const v1, 0x1040463
+    const v1, 0x1040447
 
     invoke-virtual {p0, v1}, Landroid/app/DatePickerDialog;->setTitle(I)V
 

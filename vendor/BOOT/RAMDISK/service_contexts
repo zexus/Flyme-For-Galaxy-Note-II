@@ -130,10 +130,6 @@ wifiscanner                               u:object_r:wifiscanner_service:s0
 wifi                                      u:object_r:wifi_service:s0
 window                                    u:object_r:window_service:s0
 *                                         u:object_r:default_android_service:s0
-#line 1 "device/samsung/n7100/selinux/service_contexts"
-SecTVOutService                           u:object_r:surfaceflinger_service:s0
-Exynos.HWCService                         u:object_r:surfaceflinger_service:s0
-Exynos.IPService                          u:object_r:surfaceflinger_service:s0
 #line 1 "vendor/cm/sepolicy/service_contexts"
 edgegestureservice                        u:object_r:edge_gesture_service:s0
 themes                                    u:object_r:themes_service:s0

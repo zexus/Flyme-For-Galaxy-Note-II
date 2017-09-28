@@ -547,36 +547,6 @@
 
 .field public static final Theme_Material:I = 0x1030224
 
-.field public static final Theme_Material_DayNight:I = 0x10302d8
-
-.field public static final Theme_Material_DayNight_DarkActionBar:I = 0x10302d9
-
-.field public static final Theme_Material_DayNight_Dialog:I = 0x10302da
-
-.field public static final Theme_Material_DayNight_DialogWhenLarge:I = 0x10302e0
-
-.field public static final Theme_Material_DayNight_DialogWhenLarge_NoActionBar:I = 0x10302e1
-
-.field public static final Theme_Material_DayNight_Dialog_Alert:I = 0x10302db
-
-.field public static final Theme_Material_DayNight_Dialog_MinWidth:I = 0x10302dc
-
-.field public static final Theme_Material_DayNight_Dialog_NoActionBar:I = 0x10302dd
-
-.field public static final Theme_Material_DayNight_Dialog_NoActionBar_MinWidth:I = 0x10302de
-
-.field public static final Theme_Material_DayNight_Dialog_Presentation:I = 0x10302df
-
-.field public static final Theme_Material_DayNight_NoActionBar:I = 0x10302e2
-
-.field public static final Theme_Material_DayNight_NoActionBar_Fullscreen:I = 0x10302e3
-
-.field public static final Theme_Material_DayNight_NoActionBar_Overscan:I = 0x10302e4
-
-.field public static final Theme_Material_DayNight_NoActionBar_TranslucentDecor:I = 0x10302e5
-
-.field public static final Theme_Material_DayNight_Panel:I = 0x10302e6
-
 .field public static final Theme_Material_Dialog:I = 0x1030225
 
 .field public static final Theme_Material_DialogWhenLarge:I = 0x103022b
@@ -1534,7 +1504,7 @@
     .locals 0
 
     .prologue
-    .line 14844
+    .line 14839
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

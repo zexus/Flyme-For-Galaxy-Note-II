@@ -414,7 +414,7 @@
     const/4 v1, 0x0
 
     .line 236
-    const v2, 0x10e00aa
+    const v2, 0x10e00a8
 
     .line 235
     invoke-virtual {p0, v2}, Landroid/content/res/Resources;->getInteger(I)I
@@ -574,7 +574,7 @@
 
     .line 190
     .local v2, "sensorManager":Landroid/hardware/SensorManager;
-    const v4, 0x10e00aa
+    const v4, 0x10e00a8
 
     .line 189
     invoke-virtual {p1, v4}, Landroid/content/res/Resources;->getInteger(I)I
@@ -591,7 +591,7 @@
     iput-boolean v6, p0, Lcom/android/server/GestureLauncherService;->mRegistered:Z
 
     .line 194
-    const v4, 0x10400d4
+    const v4, 0x10400d3
 
     .line 193
     invoke-virtual {p1, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;

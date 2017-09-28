@@ -137,27 +137,33 @@
     .param p1, "color"    # I
 
     .prologue
-    .line 273
+    .line 220
     invoke-static {p1}, Landroid/graphics/Color;->alpha(I)I
 
     move-result v0
 
-    .line 274
+    .line 221
     invoke-static {p1}, Landroid/graphics/Color;->red(I)I
 
     move-result v1
 
-    .line 275
+    rsub-int v1, v1, 0xff
+
+    .line 222
     invoke-static {p1}, Landroid/graphics/Color;->green(I)I
 
     move-result v2
 
-    .line 276
+    rsub-int v2, v2, 0xff
+
+    .line 223
     invoke-static {p1}, Landroid/graphics/Color;->blue(I)I
 
     move-result v3
 
-    .line 273
+    rsub-int v3, v3, 0xff
+
+    .line 220
     invoke-static {v0, v1, v2, v3}, Landroid/graphics/Color;->argb(IIII)I
 
     move-result v0
@@ -165,147 +171,30 @@
     return v0
 .end method
 
-.method private processTextAppearanceSpan(ILandroid/text/style/TextAppearanceSpan;)Landroid/text/style/TextAppearanceSpan;
-    .locals 10
-    .param p1, "color"    # I
-    .param p2, "span"    # Landroid/text/style/TextAppearanceSpan;
-
-    .prologue
-    .line 246
-    invoke-virtual {p2}, Landroid/text/style/TextAppearanceSpan;->getTextColor()Landroid/content/res/ColorStateList;
-
-    move-result-object v7
-
-    .line 247
-    .local v7, "colorStateList":Landroid/content/res/ColorStateList;
-    if-eqz v7, :cond_3
-
-    .line 248
-    invoke-virtual {v7}, Landroid/content/res/ColorStateList;->getColors()[I
-
-    move-result-object v8
-
-    .line 249
-    .local v8, "colors":[I
-    const/4 v6, 0x0
-
-    .line 250
-    .local v6, "changed":Z
-    const/4 v9, 0x0
-
-    .local v9, "i":I
-    :goto_0
-    array-length v0, v8
-
-    if-ge v9, v0, :cond_2
-
-    .line 251
-    aget v0, v8, v9
-
-    invoke-static {v0}, Lcom/android/internal/util/ImageUtils;->isGrayscale(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 255
-    if-nez v6, :cond_0
-
-    .line 256
-    array-length v0, v8
-
-    invoke-static {v8, v0}, Ljava/util/Arrays;->copyOf([II)[I
-
-    move-result-object v8
-
-    .line 258
-    :cond_0
-    invoke-direct {p0, p1}, Lcom/android/internal/util/NotificationColorUtil;->processColor(I)I
-
-    move-result v0
-
-    aput v0, v8, v9
-
-    .line 259
-    const/4 v6, 0x1
-
-    .line 250
-    :cond_1
-    add-int/lit8 v9, v9, 0x1
-
-    goto :goto_0
-
-    .line 262
-    :cond_2
-    if-eqz v6, :cond_3
-
-    .line 263
-    new-instance v0, Landroid/text/style/TextAppearanceSpan;
-
-    .line 264
-    invoke-virtual {p2}, Landroid/text/style/TextAppearanceSpan;->getFamily()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p2}, Landroid/text/style/TextAppearanceSpan;->getTextStyle()I
-
-    move-result v2
-
-    invoke-virtual {p2}, Landroid/text/style/TextAppearanceSpan;->getTextSize()I
-
-    move-result v3
-
-    .line 265
-    new-instance v4, Landroid/content/res/ColorStateList;
-
-    invoke-virtual {v7}, Landroid/content/res/ColorStateList;->getStates()[[I
-
-    move-result-object v5
-
-    invoke-direct {v4, v5, v8}, Landroid/content/res/ColorStateList;-><init>([[I[I)V
-
-    .line 266
-    invoke-virtual {p2}, Landroid/text/style/TextAppearanceSpan;->getLinkTextColor()Landroid/content/res/ColorStateList;
-
-    move-result-object v5
-
-    .line 263
-    invoke-direct/range {v0 .. v5}, Landroid/text/style/TextAppearanceSpan;-><init>(Ljava/lang/String;IILandroid/content/res/ColorStateList;Landroid/content/res/ColorStateList;)V
-
-    return-object v0
-
-    .line 269
-    .end local v6    # "changed":Z
-    .end local v8    # "colors":[I
-    .end local v9    # "i":I
-    :cond_3
-    return-object p2
-.end method
-
 .method private processTextAppearanceSpan(Landroid/text/style/TextAppearanceSpan;)Landroid/text/style/TextAppearanceSpan;
     .locals 10
     .param p1, "span"    # Landroid/text/style/TextAppearanceSpan;
 
     .prologue
-    .line 219
+    .line 193
     invoke-virtual {p1}, Landroid/text/style/TextAppearanceSpan;->getTextColor()Landroid/content/res/ColorStateList;
 
     move-result-object v7
 
-    .line 220
+    .line 194
     .local v7, "colorStateList":Landroid/content/res/ColorStateList;
     if-eqz v7, :cond_3
 
-    .line 221
+    .line 195
     invoke-virtual {v7}, Landroid/content/res/ColorStateList;->getColors()[I
 
     move-result-object v8
 
-    .line 222
+    .line 196
     .local v8, "colors":[I
     const/4 v6, 0x0
 
-    .line 223
+    .line 197
     .local v6, "changed":Z
     const/4 v9, 0x0
 
@@ -315,7 +204,7 @@
 
     if-ge v9, v0, :cond_2
 
-    .line 224
+    .line 198
     aget v0, v8, v9
 
     invoke-static {v0}, Lcom/android/internal/util/ImageUtils;->isGrayscale(I)Z
@@ -324,17 +213,17 @@
 
     if-eqz v0, :cond_1
 
-    .line 228
+    .line 202
     if-nez v6, :cond_0
 
-    .line 229
+    .line 203
     array-length v0, v8
 
     invoke-static {v8, v0}, Ljava/util/Arrays;->copyOf([II)[I
 
     move-result-object v8
 
-    .line 231
+    .line 205
     :cond_0
     aget v0, v8, v9
 
@@ -344,23 +233,23 @@
 
     aput v0, v8, v9
 
-    .line 232
+    .line 206
     const/4 v6, 0x1
 
-    .line 223
+    .line 197
     :cond_1
     add-int/lit8 v9, v9, 0x1
 
     goto :goto_0
 
-    .line 235
+    .line 209
     :cond_2
     if-eqz v6, :cond_3
 
-    .line 236
+    .line 210
     new-instance v0, Landroid/text/style/TextAppearanceSpan;
 
-    .line 237
+    .line 211
     invoke-virtual {p1}, Landroid/text/style/TextAppearanceSpan;->getFamily()Ljava/lang/String;
 
     move-result-object v1
@@ -373,7 +262,7 @@
 
     move-result v3
 
-    .line 238
+    .line 212
     new-instance v4, Landroid/content/res/ColorStateList;
 
     invoke-virtual {v7}, Landroid/content/res/ColorStateList;->getStates()[[I
@@ -382,17 +271,17 @@
 
     invoke-direct {v4, v5, v8}, Landroid/content/res/ColorStateList;-><init>([[I[I)V
 
-    .line 239
+    .line 213
     invoke-virtual {p1}, Landroid/text/style/TextAppearanceSpan;->getLinkTextColor()Landroid/content/res/ColorStateList;
 
     move-result-object v5
 
-    .line 236
+    .line 210
     invoke-direct/range {v0 .. v5}, Landroid/text/style/TextAppearanceSpan;-><init>(Ljava/lang/String;IILandroid/content/res/ColorStateList;Landroid/content/res/ColorStateList;)V
 
     return-object v0
 
-    .line 242
+    .line 216
     .end local v6    # "changed":Z
     .end local v8    # "colors":[I
     .end local v9    # "i":I
@@ -888,113 +777,4 @@
     .line 129
     :cond_5
     return v3
-.end method
-
-.method public processCharSequenceColors(ILjava/lang/CharSequence;)Ljava/lang/CharSequence;
-    .locals 10
-    .param p1, "color"    # I
-    .param p2, "charSequence"    # Ljava/lang/CharSequence;
-
-    .prologue
-    const/4 v5, 0x0
-
-    .line 201
-    instance-of v6, p2, Landroid/text/Spanned;
-
-    if-eqz v6, :cond_2
-
-    move-object v4, p2
-
-    .line 202
-    check-cast v4, Landroid/text/Spanned;
-
-    .line 203
-    .local v4, "ss":Landroid/text/Spanned;
-    invoke-interface {v4}, Landroid/text/Spanned;->length()I
-
-    move-result v6
-
-    const-class v7, Ljava/lang/Object;
-
-    invoke-interface {v4, v5, v6, v7}, Landroid/text/Spanned;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
-
-    move-result-object v3
-
-    .line 204
-    .local v3, "spans":[Ljava/lang/Object;
-    new-instance v0, Landroid/text/SpannableStringBuilder;
-
-    invoke-interface {v4}, Landroid/text/Spanned;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-direct {v0, v6}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
-
-    .line 205
-    .local v0, "builder":Landroid/text/SpannableStringBuilder;
-    array-length v7, v3
-
-    move v6, v5
-
-    :goto_0
-    if-ge v6, v7, :cond_1
-
-    aget-object v2, v3, v6
-
-    .line 206
-    .local v2, "span":Ljava/lang/Object;
-    move-object v1, v2
-
-    .line 207
-    .local v1, "resultSpan":Ljava/lang/Object;
-    instance-of v5, v2, Landroid/text/style/TextAppearanceSpan;
-
-    if-eqz v5, :cond_0
-
-    move-object v5, v2
-
-    .line 208
-    check-cast v5, Landroid/text/style/TextAppearanceSpan;
-
-    invoke-direct {p0, p1, v5}, Lcom/android/internal/util/NotificationColorUtil;->processTextAppearanceSpan(ILandroid/text/style/TextAppearanceSpan;)Landroid/text/style/TextAppearanceSpan;
-
-    move-result-object v1
-
-    .line 210
-    :cond_0
-    invoke-interface {v4, v2}, Landroid/text/Spanned;->getSpanStart(Ljava/lang/Object;)I
-
-    move-result v5
-
-    invoke-interface {v4, v2}, Landroid/text/Spanned;->getSpanEnd(Ljava/lang/Object;)I
-
-    move-result v8
-
-    .line 211
-    invoke-interface {v4, v2}, Landroid/text/Spanned;->getSpanFlags(Ljava/lang/Object;)I
-
-    move-result v9
-
-    .line 210
-    invoke-virtual {v0, v1, v5, v8, v9}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
-
-    .line 205
-    add-int/lit8 v5, v6, 0x1
-
-    move v6, v5
-
-    goto :goto_0
-
-    .line 213
-    .end local v1    # "resultSpan":Ljava/lang/Object;
-    .end local v2    # "span":Ljava/lang/Object;
-    :cond_1
-    return-object v0
-
-    .line 215
-    .end local v0    # "builder":Landroid/text/SpannableStringBuilder;
-    .end local v3    # "spans":[Ljava/lang/Object;
-    .end local v4    # "ss":Landroid/text/Spanned;
-    :cond_2
-    return-object p2
 .end method

@@ -24,30 +24,30 @@
     .param p1, "this$0"    # Lcom/android/server/policy/GlobalActions;
 
     .prologue
-    .line 1429
+    .line 1187
     iput-object p1, p0, Lcom/android/server/policy/GlobalActions$SilentModeToggleAction;->this$0:Lcom/android/server/policy/GlobalActions;
 
-    .line 1430
-    const v1, 0x1080333
+    .line 1188
+    const v1, 0x1080301
 
-    .line 1431
-    const v2, 0x1080332
+    .line 1189
+    const v2, 0x1080300
 
-    .line 1432
-    const v3, 0x10401b1
+    .line 1190
+    const v3, 0x1040195
 
-    .line 1433
-    const v4, 0x10401b2
+    .line 1191
+    const v4, 0x1040196
 
-    .line 1434
-    const v5, 0x10401b3
+    .line 1192
+    const v5, 0x1040197
 
     move-object v0, p0
 
-    .line 1430
+    .line 1188
     invoke-direct/range {v0 .. v5}, Lcom/android/server/policy/GlobalActions$ToggleAction;-><init>(IIIII)V
 
-    .line 1429
+    .line 1187
     return-void
 .end method
 
@@ -58,10 +58,10 @@
     .param p1, "on"    # Z
 
     .prologue
-    .line 1438
+    .line 1196
     if-eqz p1, :cond_0
 
-    .line 1439
+    .line 1197
     iget-object v0, p0, Lcom/android/server/policy/GlobalActions$SilentModeToggleAction;->this$0:Lcom/android/server/policy/GlobalActions;
 
     invoke-static {v0}, Lcom/android/server/policy/GlobalActions;->-get4(Lcom/android/server/policy/GlobalActions;)Landroid/media/AudioManager;
@@ -72,11 +72,11 @@
 
     invoke-virtual {v0, v1}, Landroid/media/AudioManager;->setRingerMode(I)V
 
-    .line 1437
+    .line 1195
     :goto_0
     return-void
 
-    .line 1441
+    .line 1199
     :cond_0
     iget-object v0, p0, Lcom/android/server/policy/GlobalActions$SilentModeToggleAction;->this$0:Lcom/android/server/policy/GlobalActions;
 
@@ -95,7 +95,7 @@
     .locals 1
 
     .prologue
-    .line 1450
+    .line 1208
     const/4 v0, 0x0
 
     return v0
@@ -105,7 +105,7 @@
     .locals 1
 
     .prologue
-    .line 1446
+    .line 1204
     const/4 v0, 0x1
 
     return v0

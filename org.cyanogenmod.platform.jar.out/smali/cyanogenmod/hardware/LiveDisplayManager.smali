@@ -4,6 +4,14 @@
 
 
 # static fields
+.field public static final ADJUSTMENT_CONTRAST:I = 0x3
+
+.field public static final ADJUSTMENT_HUE:I = 0x0
+
+.field public static final ADJUSTMENT_INTENSITY:I = 0x2
+
+.field public static final ADJUSTMENT_SATURATION:I = 0x1
+
 .field public static final FEATURE_AUTO_CONTRAST:I = 0xb
 
 .field public static final FEATURE_CABC:I = 0xa
@@ -18,9 +26,11 @@
 
 .field public static final FEATURE_FIRST:I = 0xa
 
-.field public static final FEATURE_LAST:I = 0x10
+.field public static final FEATURE_LAST:I = 0x11
 
 .field public static final FEATURE_MANAGED_OUTDOOR_MODE:I = 0xe
+
+.field public static final FEATURE_PICTURE_ADJUSTMENT:I = 0x11
 
 .field public static final MODE_AUTO:I = 0x2
 
@@ -55,22 +65,22 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 128
+    .line 144
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 129
+    .line 145
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 130
+    .line 146
     .local v0, "appContext":Landroid/content/Context;
     if-eqz v0, :cond_0
 
-    .line 131
+    .line 147
     iput-object v0, p0, Lcyanogenmod/hardware/LiveDisplayManager;->mContext:Landroid/content/Context;
 
-    .line 135
+    .line 151
     :goto_0
     invoke-static {}, Lcyanogenmod/hardware/LiveDisplayManager;->getService()Lcyanogenmod/hardware/ILiveDisplayService;
 
@@ -78,29 +88,29 @@
 
     sput-object v2, Lcyanogenmod/hardware/LiveDisplayManager;->sService:Lcyanogenmod/hardware/ILiveDisplayService;
 
-    .line 137
+    .line 153
     invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v2
 
-    .line 138
+    .line 154
     const-string/jumbo v3, "org.cyanogenmod.livedisplay"
 
-    .line 137
+    .line 153
     invoke-virtual {v2, v3}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 138
+    .line 154
     invoke-direct {p0}, Lcyanogenmod/hardware/LiveDisplayManager;->checkService()Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 145
+    .line 161
     :goto_1
     :try_start_0
     sget-object v2, Lcyanogenmod/hardware/LiveDisplayManager;->sService:Lcyanogenmod/hardware/ILiveDisplayService;
@@ -111,12 +121,12 @@
 
     iput-object v2, p0, Lcyanogenmod/hardware/LiveDisplayManager;->mConfig:Lcyanogenmod/hardware/LiveDisplayConfig;
 
-    .line 146
+    .line 162
     iget-object v2, p0, Lcyanogenmod/hardware/LiveDisplayManager;->mConfig:Lcyanogenmod/hardware/LiveDisplayConfig;
 
     if-nez v2, :cond_2
 
-    .line 147
+    .line 163
     new-instance v2, Ljava/lang/RuntimeException;
 
     const-string/jumbo v3, "Unable to get LiveDisplay configuration!"
@@ -127,11 +137,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 149
+    .line 165
     :catch_0
     move-exception v1
 
-    .line 150
+    .line 166
     .local v1, "e":Landroid/os/RemoteException;
     new-instance v2, Ljava/lang/RuntimeException;
 
@@ -141,14 +151,14 @@
 
     throw v2
 
-    .line 133
+    .line 149
     .end local v1    # "e":Landroid/os/RemoteException;
     :cond_0
     iput-object p1, p0, Lcyanogenmod/hardware/LiveDisplayManager;->mContext:Landroid/content/Context;
 
     goto :goto_0
 
-    .line 139
+    .line 155
     :cond_1
     const-string/jumbo v2, "LiveDisplay"
 
@@ -158,7 +168,7 @@
 
     goto :goto_1
 
-    .line 128
+    .line 144
     :cond_2
     return-void
 .end method
@@ -167,24 +177,24 @@
     .locals 2
 
     .prologue
-    .line 183
+    .line 199
     sget-object v0, Lcyanogenmod/hardware/LiveDisplayManager;->sService:Lcyanogenmod/hardware/ILiveDisplayService;
 
     if-nez v0, :cond_0
 
-    .line 184
+    .line 200
     const-string/jumbo v0, "LiveDisplay"
 
     const-string/jumbo v1, "not connected to CMHardwareManagerService"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 185
+    .line 201
     const/4 v0, 0x0
 
     return v0
 
-    .line 187
+    .line 203
     :cond_0
     const/4 v0, 0x1
 
@@ -200,20 +210,20 @@
 
     monitor-enter v1
 
-    .line 160
+    .line 176
     :try_start_0
     sget-object v0, Lcyanogenmod/hardware/LiveDisplayManager;->sInstance:Lcyanogenmod/hardware/LiveDisplayManager;
 
     if-nez v0, :cond_0
 
-    .line 161
+    .line 177
     new-instance v0, Lcyanogenmod/hardware/LiveDisplayManager;
 
     invoke-direct {v0, p0}, Lcyanogenmod/hardware/LiveDisplayManager;-><init>(Landroid/content/Context;)V
 
     sput-object v0, Lcyanogenmod/hardware/LiveDisplayManager;->sInstance:Lcyanogenmod/hardware/LiveDisplayManager;
 
-    .line 163
+    .line 179
     :cond_0
     sget-object v0, Lcyanogenmod/hardware/LiveDisplayManager;->sInstance:Lcyanogenmod/hardware/LiveDisplayManager;
     :try_end_0
@@ -237,17 +247,17 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 168
+    .line 184
     sget-object v1, Lcyanogenmod/hardware/LiveDisplayManager;->sService:Lcyanogenmod/hardware/ILiveDisplayService;
 
     if-eqz v1, :cond_0
 
-    .line 169
+    .line 185
     sget-object v1, Lcyanogenmod/hardware/LiveDisplayManager;->sService:Lcyanogenmod/hardware/ILiveDisplayService;
 
     return-object v1
 
-    .line 171
+    .line 187
     :cond_0
     const-string/jumbo v1, "cmlivedisplay"
 
@@ -255,23 +265,23 @@
 
     move-result-object v0
 
-    .line 172
+    .line 188
     .local v0, "b":Landroid/os/IBinder;
     if-eqz v0, :cond_1
 
-    .line 173
+    .line 189
     invoke-static {v0}, Lcyanogenmod/hardware/ILiveDisplayService$Stub;->asInterface(Landroid/os/IBinder;)Lcyanogenmod/hardware/ILiveDisplayService;
 
     move-result-object v1
 
     sput-object v1, Lcyanogenmod/hardware/LiveDisplayManager;->sService:Lcyanogenmod/hardware/ILiveDisplayService;
 
-    .line 174
+    .line 190
     sget-object v1, Lcyanogenmod/hardware/LiveDisplayManager;->sService:Lcyanogenmod/hardware/ILiveDisplayService;
 
     return-object v1
 
-    .line 176
+    .line 192
     :cond_1
     return-object v2
 .end method
@@ -282,7 +292,7 @@
     .locals 2
 
     .prologue
-    .line 399
+    .line 415
     :try_start_0
     invoke-direct {p0}, Lcyanogenmod/hardware/LiveDisplayManager;->checkService()Z
 
@@ -290,7 +300,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 400
+    .line 416
     sget-object v1, Lcyanogenmod/hardware/LiveDisplayManager;->sService:Lcyanogenmod/hardware/ILiveDisplayService;
 
     invoke-interface {v1}, Lcyanogenmod/hardware/ILiveDisplayService;->getColorAdjustment()[F
@@ -301,11 +311,11 @@
 
     return-object v1
 
-    .line 402
+    .line 418
     :catch_0
     move-exception v0
 
-    .line 404
+    .line 420
     :cond_0
     const/4 v1, 0x3
 
@@ -329,7 +339,7 @@
     .locals 1
 
     .prologue
-    .line 196
+    .line 212
     iget-object v0, p0, Lcyanogenmod/hardware/LiveDisplayManager;->mConfig:Lcyanogenmod/hardware/LiveDisplayConfig;
 
     return-object v0
@@ -341,7 +351,7 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 314
+    .line 330
     :try_start_0
     invoke-direct {p0}, Lcyanogenmod/hardware/LiveDisplayManager;->checkService()Z
 
@@ -360,13 +370,47 @@
     :cond_0
     return v1
 
-    .line 315
+    .line 331
     :catch_0
     move-exception v0
 
-    .line 316
+    .line 332
     .local v0, "e":Landroid/os/RemoteException;
     return v1
+.end method
+
+.method public getDefaultPictureAdjustment()Lcyanogenmod/hardware/HSIC;
+    .locals 2
+
+    .prologue
+    .line 478
+    :try_start_0
+    invoke-direct {p0}, Lcyanogenmod/hardware/LiveDisplayManager;->checkService()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 479
+    sget-object v1, Lcyanogenmod/hardware/LiveDisplayManager;->sService:Lcyanogenmod/hardware/ILiveDisplayService;
+
+    invoke-interface {v1}, Lcyanogenmod/hardware/ILiveDisplayService;->getDefaultPictureAdjustment()Lcyanogenmod/hardware/HSIC;
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v1
+
+    return-object v1
+
+    .line 481
+    :catch_0
+    move-exception v0
+
+    .line 483
+    :cond_0
+    const/4 v1, 0x0
+
+    return-object v1
 .end method
 
 .method public getMode()I
@@ -375,7 +419,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 206
+    .line 222
     :try_start_0
     invoke-direct {p0}, Lcyanogenmod/hardware/LiveDisplayManager;->checkService()Z
 
@@ -394,11 +438,11 @@
     :cond_0
     return v1
 
-    .line 207
+    .line 223
     :catch_0
     move-exception v0
 
-    .line 208
+    .line 224
     .local v0, "e":Landroid/os/RemoteException;
     return v1
 .end method
@@ -409,7 +453,7 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 341
+    .line 357
     :try_start_0
     invoke-direct {p0}, Lcyanogenmod/hardware/LiveDisplayManager;->checkService()Z
 
@@ -428,13 +472,47 @@
     :cond_0
     return v1
 
-    .line 342
+    .line 358
     :catch_0
     move-exception v0
 
-    .line 343
+    .line 359
     .local v0, "e":Landroid/os/RemoteException;
     return v1
+.end method
+
+.method public getPictureAdjustment()Lcyanogenmod/hardware/HSIC;
+    .locals 2
+
+    .prologue
+    .line 449
+    :try_start_0
+    invoke-direct {p0}, Lcyanogenmod/hardware/LiveDisplayManager;->checkService()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 450
+    sget-object v1, Lcyanogenmod/hardware/LiveDisplayManager;->sService:Lcyanogenmod/hardware/ILiveDisplayService;
+
+    invoke-interface {v1}, Lcyanogenmod/hardware/ILiveDisplayService;->getPictureAdjustment()Lcyanogenmod/hardware/HSIC;
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v1
+
+    return-object v1
+
+    .line 452
+    :catch_0
+    move-exception v0
+
+    .line 454
+    :cond_0
+    const/4 v1, 0x0
+
+    return-object v1
 .end method
 
 .method public isAutoContrastEnabled()Z
@@ -443,7 +521,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 233
+    .line 249
     :try_start_0
     invoke-direct {p0}, Lcyanogenmod/hardware/LiveDisplayManager;->checkService()Z
 
@@ -462,11 +540,11 @@
     :cond_0
     return v1
 
-    .line 234
+    .line 250
     :catch_0
     move-exception v0
 
-    .line 235
+    .line 251
     .local v0, "e":Landroid/os/RemoteException;
     return v1
 .end method
@@ -477,7 +555,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 369
+    .line 385
     :try_start_0
     invoke-direct {p0}, Lcyanogenmod/hardware/LiveDisplayManager;->checkService()Z
 
@@ -496,11 +574,11 @@
     :cond_0
     return v1
 
-    .line 370
+    .line 386
     :catch_0
     move-exception v0
 
-    .line 371
+    .line 387
     .local v0, "e":Landroid/os/RemoteException;
     return v1
 .end method
@@ -511,7 +589,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 260
+    .line 276
     :try_start_0
     invoke-direct {p0}, Lcyanogenmod/hardware/LiveDisplayManager;->checkService()Z
 
@@ -530,11 +608,11 @@
     :cond_0
     return v1
 
-    .line 261
+    .line 277
     :catch_0
     move-exception v0
 
-    .line 262
+    .line 278
     .local v0, "e":Landroid/os/RemoteException;
     return v1
 .end method
@@ -545,7 +623,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 287
+    .line 303
     :try_start_0
     invoke-direct {p0}, Lcyanogenmod/hardware/LiveDisplayManager;->checkService()Z
 
@@ -564,11 +642,11 @@
     :cond_0
     return v1
 
-    .line 288
+    .line 304
     :catch_0
     move-exception v0
 
-    .line 289
+    .line 305
     .local v0, "e":Landroid/os/RemoteException;
     return v1
 .end method
@@ -580,7 +658,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 247
+    .line 263
     :try_start_0
     invoke-direct {p0}, Lcyanogenmod/hardware/LiveDisplayManager;->checkService()Z
 
@@ -599,11 +677,11 @@
     :cond_0
     return v1
 
-    .line 248
+    .line 264
     :catch_0
     move-exception v0
 
-    .line 249
+    .line 265
     .local v0, "e":Landroid/os/RemoteException;
     return v1
 .end method
@@ -615,7 +693,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 384
+    .line 400
     :try_start_0
     invoke-direct {p0}, Lcyanogenmod/hardware/LiveDisplayManager;->checkService()Z
 
@@ -634,11 +712,11 @@
     :cond_0
     return v1
 
-    .line 385
+    .line 401
     :catch_0
     move-exception v0
 
-    .line 386
+    .line 402
     .local v0, "e":Landroid/os/RemoteException;
     return v1
 .end method
@@ -650,7 +728,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 274
+    .line 290
     :try_start_0
     invoke-direct {p0}, Lcyanogenmod/hardware/LiveDisplayManager;->checkService()Z
 
@@ -669,11 +747,11 @@
     :cond_0
     return v1
 
-    .line 275
+    .line 291
     :catch_0
     move-exception v0
 
-    .line 276
+    .line 292
     .local v0, "e":Landroid/os/RemoteException;
     return v1
 .end method
@@ -685,7 +763,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 420
+    .line 436
     :try_start_0
     invoke-direct {p0}, Lcyanogenmod/hardware/LiveDisplayManager;->checkService()Z
 
@@ -704,11 +782,11 @@
     :cond_0
     return v1
 
-    .line 421
+    .line 437
     :catch_0
     move-exception v0
 
-    .line 422
+    .line 438
     .local v0, "e":Landroid/os/RemoteException;
     return v1
 .end method
@@ -720,7 +798,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 301
+    .line 317
     :try_start_0
     invoke-direct {p0}, Lcyanogenmod/hardware/LiveDisplayManager;->checkService()Z
 
@@ -739,11 +817,11 @@
     :cond_0
     return v1
 
-    .line 302
+    .line 318
     :catch_0
     move-exception v0
 
-    .line 303
+    .line 319
     .local v0, "e":Landroid/os/RemoteException;
     return v1
 .end method
@@ -755,7 +833,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 328
+    .line 344
     :try_start_0
     invoke-direct {p0}, Lcyanogenmod/hardware/LiveDisplayManager;->checkService()Z
 
@@ -774,11 +852,11 @@
     :cond_0
     return v1
 
-    .line 329
+    .line 345
     :catch_0
     move-exception v0
 
-    .line 330
+    .line 346
     .local v0, "e":Landroid/os/RemoteException;
     return v1
 .end method
@@ -790,7 +868,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 220
+    .line 236
     :try_start_0
     invoke-direct {p0}, Lcyanogenmod/hardware/LiveDisplayManager;->checkService()Z
 
@@ -809,11 +887,11 @@
     :cond_0
     return v1
 
-    .line 221
+    .line 237
     :catch_0
     move-exception v0
 
-    .line 222
+    .line 238
     .local v0, "e":Landroid/os/RemoteException;
     return v1
 .end method
@@ -825,7 +903,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 355
+    .line 371
     :try_start_0
     invoke-direct {p0}, Lcyanogenmod/hardware/LiveDisplayManager;->checkService()Z
 
@@ -844,11 +922,46 @@
     :cond_0
     return v1
 
-    .line 356
+    .line 372
     :catch_0
     move-exception v0
 
-    .line 357
+    .line 373
+    .local v0, "e":Landroid/os/RemoteException;
+    return v1
+.end method
+
+.method public setPictureAdjustment(Lcyanogenmod/hardware/HSIC;)Z
+    .locals 3
+    .param p1, "hsic"    # Lcyanogenmod/hardware/HSIC;
+
+    .prologue
+    const/4 v1, 0x0
+
+    .line 465
+    :try_start_0
+    invoke-direct {p0}, Lcyanogenmod/hardware/LiveDisplayManager;->checkService()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    sget-object v2, Lcyanogenmod/hardware/LiveDisplayManager;->sService:Lcyanogenmod/hardware/ILiveDisplayService;
+
+    invoke-interface {v2, p1}, Lcyanogenmod/hardware/ILiveDisplayService;->setPictureAdjustment(Lcyanogenmod/hardware/HSIC;)Z
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v1
+
+    :cond_0
+    return v1
+
+    .line 466
+    :catch_0
+    move-exception v0
+
+    .line 468
     .local v0, "e":Landroid/os/RemoteException;
     return v1
 .end method

@@ -100,6 +100,21 @@
     return v0
 .end method
 
+.method public getDefaultPictureAdjustment()Lcyanogenmod/hardware/HSIC;
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 95
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
 .method public getMode()I
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
@@ -128,6 +143,21 @@
     const/4 v0, 0x0
 
     return v0
+.end method
+
+.method public getPictureAdjustment()Lcyanogenmod/hardware/HSIC;
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 91
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public isAutoContrastEnabled()Z
@@ -313,6 +343,22 @@
 
     .prologue
     .line 75
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public setPictureAdjustment(Lcyanogenmod/hardware/HSIC;)Z
+    .locals 1
+    .param p1, "adj"    # Lcyanogenmod/hardware/HSIC;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 99
     const/4 v0, 0x0
 
     return v0

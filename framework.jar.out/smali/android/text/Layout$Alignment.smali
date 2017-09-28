@@ -52,7 +52,7 @@
 
     const/4 v2, 0x0
 
-    .line 2031
+    .line 2030
     new-instance v0, Landroid/text/Layout$Alignment;
 
     const-string/jumbo v1, "ALIGN_NORMAL"
@@ -61,7 +61,7 @@
 
     sput-object v0, Landroid/text/Layout$Alignment;->ALIGN_NORMAL:Landroid/text/Layout$Alignment;
 
-    .line 2032
+    .line 2031
     new-instance v0, Landroid/text/Layout$Alignment;
 
     const-string/jumbo v1, "ALIGN_OPPOSITE"
@@ -70,7 +70,7 @@
 
     sput-object v0, Landroid/text/Layout$Alignment;->ALIGN_OPPOSITE:Landroid/text/Layout$Alignment;
 
-    .line 2033
+    .line 2032
     new-instance v0, Landroid/text/Layout$Alignment;
 
     const-string/jumbo v1, "ALIGN_CENTER"
@@ -79,27 +79,27 @@
 
     sput-object v0, Landroid/text/Layout$Alignment;->ALIGN_CENTER:Landroid/text/Layout$Alignment;
 
-    .line 2034
+    .line 2033
     new-instance v0, Landroid/text/Layout$Alignment;
 
     const-string/jumbo v1, "ALIGN_LEFT"
 
     invoke-direct {v0, v1, v5}, Landroid/text/Layout$Alignment;-><init>(Ljava/lang/String;I)V
 
-    .line 2035
+    .line 2034
     sput-object v0, Landroid/text/Layout$Alignment;->ALIGN_LEFT:Landroid/text/Layout$Alignment;
 
-    .line 2036
+    .line 2035
     new-instance v0, Landroid/text/Layout$Alignment;
 
     const-string/jumbo v1, "ALIGN_RIGHT"
 
     invoke-direct {v0, v1, v6}, Landroid/text/Layout$Alignment;-><init>(Ljava/lang/String;I)V
 
-    .line 2037
+    .line 2036
     sput-object v0, Landroid/text/Layout$Alignment;->ALIGN_RIGHT:Landroid/text/Layout$Alignment;
 
-    .line 2030
+    .line 2029
     const/4 v0, 0x5
 
     new-array v0, v0, [Landroid/text/Layout$Alignment;
@@ -133,7 +133,7 @@
     .locals 0
 
     .prologue
-    .line 2030
+    .line 2029
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -144,7 +144,7 @@
     .param p0, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 2030
+    .line 2029
     const-class v0, Landroid/text/Layout$Alignment;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -160,7 +160,7 @@
     .locals 1
 
     .prologue
-    .line 2030
+    .line 2029
     sget-object v0, Landroid/text/Layout$Alignment;->$VALUES:[Landroid/text/Layout$Alignment;
 
     return-object v0

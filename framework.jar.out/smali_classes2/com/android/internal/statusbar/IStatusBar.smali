@@ -135,22 +135,6 @@
     .end annotation
 .end method
 
-.method public abstract screenPinningStateChanged(Z)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setAutoRotate(Z)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract setIcon(ILcom/android/internal/statusbar/StatusBarIcon;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -191,14 +175,6 @@
     .end annotation
 .end method
 
-.method public abstract showCustomIntentAfterKeyguard(Landroid/content/Intent;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract showRecentApps(Z)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -223,39 +199,7 @@
     .end annotation
 .end method
 
-.method public abstract toggleKillApp()V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract toggleLastApp()V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract toggleOrientationListener(Z)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract toggleRecentApps()V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract toggleScreenshot()V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

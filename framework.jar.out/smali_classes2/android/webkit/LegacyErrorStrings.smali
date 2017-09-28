@@ -23,7 +23,7 @@
     .param p0, "errorCode"    # I
 
     .prologue
-    const v3, 0x1040177
+    const v3, 0x104015b
 
     .line 45
     packed-switch p0, :pswitch_data_0
@@ -56,7 +56,7 @@
 
     .line 47
     :pswitch_0
-    const v0, 0x1040176
+    const v0, 0x104015a
 
     return v0
 
@@ -66,49 +66,49 @@
 
     .line 53
     :pswitch_2
-    const v0, 0x1040178
+    const v0, 0x104015c
 
     return v0
 
     .line 56
     :pswitch_3
-    const v0, 0x1040179
+    const v0, 0x104015d
 
     return v0
 
     .line 59
     :pswitch_4
-    const v0, 0x104017a
+    const v0, 0x104015e
 
     return v0
 
     .line 62
     :pswitch_5
-    const v0, 0x104017b
+    const v0, 0x104015f
 
     return v0
 
     .line 65
     :pswitch_6
-    const v0, 0x104017c
+    const v0, 0x1040160
 
     return v0
 
     .line 68
     :pswitch_7
-    const v0, 0x104017d
+    const v0, 0x1040161
 
     return v0
 
     .line 71
     :pswitch_8
-    const v0, 0x104017e
+    const v0, 0x1040162
 
     return v0
 
     .line 74
     :pswitch_9
-    const v0, 0x104017f
+    const v0, 0x1040163
 
     return v0
 
@@ -120,7 +120,7 @@
 
     .line 80
     :pswitch_b
-    const v0, 0x1040180
+    const v0, 0x1040164
 
     return v0
 
@@ -132,19 +132,19 @@
 
     .line 86
     :pswitch_d
-    const v0, 0x1040181
+    const v0, 0x1040165
 
     return v0
 
     .line 89
     :pswitch_e
-    const v0, 0x1040182
+    const v0, 0x1040166
 
     return v0
 
     .line 92
     :pswitch_f
-    const v0, 0x1040183
+    const v0, 0x1040167
 
     return v0
 

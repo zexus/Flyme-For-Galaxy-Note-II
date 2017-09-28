@@ -25,7 +25,7 @@
     <item type="drawable" name="notification_template_icon_bg">#3333b5e5</item>
     <item type="drawable" name="notification_template_icon_low_bg">#0cffffff</item>
     <item type="drawable" name="notification_template_divider">#29000000</item>
-    <item type="drawable" name="notification_template_divider_media">#40808080</item>
+    <item type="drawable" name="notification_template_divider_media">#29ffffff</item>
     <item type="drawable" name="input_method_fullscreen_background_holo">@drawable/screen_background_holo_dark</item>
     <item type="drawable" name="screen_background_holo_light">#fff3f3f3</item>
     <item type="drawable" name="screen_background_holo_dark">#ff000000</item>

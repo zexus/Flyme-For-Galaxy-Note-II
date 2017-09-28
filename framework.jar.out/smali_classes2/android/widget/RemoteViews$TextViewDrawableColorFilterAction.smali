@@ -41,29 +41,29 @@
     .param p6, "mode"    # Landroid/graphics/PorterDuff$Mode;
 
     .prologue
-    .line 1641
+    .line 1637
     iput-object p1, p0, Landroid/widget/RemoteViews$TextViewDrawableColorFilterAction;->this$0:Landroid/widget/RemoteViews;
 
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews$Action;-><init>(Landroid/widget/RemoteViews$Action;)V
 
-    .line 1643
+    .line 1639
     iput p2, p0, Landroid/widget/RemoteViews$TextViewDrawableColorFilterAction;->viewId:I
 
-    .line 1644
+    .line 1640
     iput-boolean p3, p0, Landroid/widget/RemoteViews$TextViewDrawableColorFilterAction;->isRelative:Z
 
-    .line 1645
+    .line 1641
     iput p4, p0, Landroid/widget/RemoteViews$TextViewDrawableColorFilterAction;->index:I
 
-    .line 1646
+    .line 1642
     iput p5, p0, Landroid/widget/RemoteViews$TextViewDrawableColorFilterAction;->color:I
 
-    .line 1647
+    .line 1643
     iput-object p6, p0, Landroid/widget/RemoteViews$TextViewDrawableColorFilterAction;->mode:Landroid/graphics/PorterDuff$Mode;
 
-    .line 1642
+    .line 1638
     return-void
 .end method
 
@@ -75,21 +75,21 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 1650
+    .line 1646
     iput-object p1, p0, Landroid/widget/RemoteViews$TextViewDrawableColorFilterAction;->this$0:Landroid/widget/RemoteViews;
 
     const/4 v1, 0x0
 
     invoke-direct {p0, v1}, Landroid/widget/RemoteViews$Action;-><init>(Landroid/widget/RemoteViews$Action;)V
 
-    .line 1651
+    .line 1647
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, p0, Landroid/widget/RemoteViews$TextViewDrawableColorFilterAction;->viewId:I
 
-    .line 1652
+    .line 1648
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
@@ -101,28 +101,28 @@
     :cond_0
     iput-boolean v0, p0, Landroid/widget/RemoteViews$TextViewDrawableColorFilterAction;->isRelative:Z
 
-    .line 1653
+    .line 1649
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/widget/RemoteViews$TextViewDrawableColorFilterAction;->index:I
 
-    .line 1654
+    .line 1650
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/widget/RemoteViews$TextViewDrawableColorFilterAction;->color:I
 
-    .line 1655
+    .line 1651
     invoke-direct {p0, p2}, Landroid/widget/RemoteViews$TextViewDrawableColorFilterAction;->readPorterDuffMode(Landroid/os/Parcel;)Landroid/graphics/PorterDuff$Mode;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/widget/RemoteViews$TextViewDrawableColorFilterAction;->mode:Landroid/graphics/PorterDuff$Mode;
 
-    .line 1650
+    .line 1646
     return-void
 .end method
 
@@ -131,12 +131,12 @@
     .param p1, "parcel"    # Landroid/os/Parcel;
 
     .prologue
-    .line 1659
+    .line 1655
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 1660
+    .line 1656
     .local v0, "mode":I
     if-ltz v0, :cond_0
 
@@ -148,7 +148,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 1661
+    .line 1657
     invoke-static {}, Landroid/graphics/PorterDuff$Mode;->values()[Landroid/graphics/PorterDuff$Mode;
 
     move-result-object v1
@@ -157,7 +157,7 @@
 
     return-object v1
 
-    .line 1663
+    .line 1659
     :cond_0
     sget-object v1, Landroid/graphics/PorterDuff$Mode;->CLEAR:Landroid/graphics/PorterDuff$Mode;
 
@@ -173,7 +173,7 @@
     .param p3, "handler"    # Landroid/widget/RemoteViews$OnClickHandler;
 
     .prologue
-    .line 1678
+    .line 1674
     iget v3, p0, Landroid/widget/RemoteViews$TextViewDrawableColorFilterAction;->viewId:I
 
     invoke-virtual {p1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -182,24 +182,24 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    .line 1679
+    .line 1675
     .local v2, "target":Landroid/widget/TextView;
     if-nez v2, :cond_0
 
     return-void
 
-    .line 1680
+    .line 1676
     :cond_0
     iget-boolean v3, p0, Landroid/widget/RemoteViews$TextViewDrawableColorFilterAction;->isRelative:Z
 
     if-eqz v3, :cond_2
 
-    .line 1681
+    .line 1677
     invoke-virtual {v2}, Landroid/widget/TextView;->getCompoundDrawablesRelative()[Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
-    .line 1683
+    .line 1679
     .local v1, "drawables":[Landroid/graphics/drawable/Drawable;
     :goto_0
     iget v3, p0, Landroid/widget/RemoteViews$TextViewDrawableColorFilterAction;->index:I
@@ -212,7 +212,7 @@
 
     if-lt v3, v4, :cond_3
 
-    .line 1684
+    .line 1680
     :cond_1
     new-instance v3, Ljava/lang/IllegalStateException;
 
@@ -222,7 +222,7 @@
 
     throw v3
 
-    .line 1682
+    .line 1678
     .end local v1    # "drawables":[Landroid/graphics/drawable/Drawable;
     :cond_2
     invoke-virtual {v2}, Landroid/widget/TextView;->getCompoundDrawables()[Landroid/graphics/drawable/Drawable;
@@ -232,29 +232,27 @@
     .restart local v1    # "drawables":[Landroid/graphics/drawable/Drawable;
     goto :goto_0
 
-    .line 1686
+    .line 1682
     :cond_3
     iget v3, p0, Landroid/widget/RemoteViews$TextViewDrawableColorFilterAction;->index:I
 
     aget-object v0, v1, v3
 
-    .line 1687
+    .line 1683
     .local v0, "d":Landroid/graphics/drawable/Drawable;
     if-eqz v0, :cond_4
 
-    .line 1688
+    .line 1684
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
 
-    .line 1689
+    .line 1685
     iget v3, p0, Landroid/widget/RemoteViews$TextViewDrawableColorFilterAction;->color:I
 
-    invoke-static {v3}, Lcom/android/internal/util/rr/ColorHelper;->getColorFilter(I)Landroid/graphics/ColorMatrixColorFilter;
+    iget-object v4, p0, Landroid/widget/RemoteViews$TextViewDrawableColorFilterAction;->mode:Landroid/graphics/PorterDuff$Mode;
 
-    move-result-object v3
+    invoke-virtual {v0, v3, v4}, Landroid/graphics/drawable/Drawable;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
 
-    invoke-virtual {v0, v3}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
-
-    .line 1677
+    .line 1673
     :cond_4
     return-void
 .end method
@@ -263,7 +261,7 @@
     .locals 1
 
     .prologue
-    .line 1694
+    .line 1690
     const-string/jumbo v0, "TextViewDrawableColorFilterAction"
 
     return-object v0
@@ -275,17 +273,17 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 1668
+    .line 1664
     const/16 v0, 0x11
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1669
+    .line 1665
     iget v0, p0, Landroid/widget/RemoteViews$TextViewDrawableColorFilterAction;->viewId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1670
+    .line 1666
     iget-boolean v0, p0, Landroid/widget/RemoteViews$TextViewDrawableColorFilterAction;->isRelative:Z
 
     if-eqz v0, :cond_0
@@ -295,17 +293,17 @@
     :goto_0
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1671
+    .line 1667
     iget v0, p0, Landroid/widget/RemoteViews$TextViewDrawableColorFilterAction;->index:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1672
+    .line 1668
     iget v0, p0, Landroid/widget/RemoteViews$TextViewDrawableColorFilterAction;->color:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1673
+    .line 1669
     iget-object v0, p0, Landroid/widget/RemoteViews$TextViewDrawableColorFilterAction;->mode:Landroid/graphics/PorterDuff$Mode;
 
     invoke-virtual {v0}, Landroid/graphics/PorterDuff$Mode;->ordinal()I
@@ -314,10 +312,10 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1667
+    .line 1663
     return-void
 
-    .line 1670
+    .line 1666
     :cond_0
     const/4 v0, 0x0
 

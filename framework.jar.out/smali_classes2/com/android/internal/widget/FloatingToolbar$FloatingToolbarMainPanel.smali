@@ -136,7 +136,7 @@
     if-eqz v1, :cond_0
 
     .line 1140
-    const v1, 0x1020056
+    const v1, 0x1020054
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -412,7 +412,7 @@
     move-result-object v8
 
     .line 1093
-    const v9, 0x109005d
+    const v9, 0x109005c
 
     const/4 v10, 0x0
 

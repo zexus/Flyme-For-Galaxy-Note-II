@@ -151,33 +151,6 @@
     <string name="time_of_day" formatted="false">%H:%M:%S</string>
     <string name="date_and_time" formatted="false">%H:%M:%S %-e.%b.%Y.</string>
     <string name="date_time">%2$s %1$s</string>
-    <string name="reboot_systemui">Korisničko sučelje sustava</string>
-    <string name="animation_fade">Blijeđenje</string>
-    <string name="animation_slide_right">Klizanje udesno</string>
-    <string name="animation_slide_left">Klizanje ulijevo</string>
-    <string name="animation_slide_right_no_fade">Klizanje udesno (bez blijeđenja)</string>
-    <string name="animation_slide_left_no_fade">Klizanje ulijevo (bez blijeđenja)</string>
-    <string name="animation_slide_up">Klizanje prema dolje</string>
-    <string name="animation_slide_down">Klizanje prema gore</string>
-    <string name="animation_default">Zadano</string>
-    <string name="animation_translucent">Prozirno</string>
-    <string name="animation_grow_shrink">Širenje u rastu (gore)</string>
-    <string name="animation_grow_shrink_center">Širenje u rastu (sredina)</string>
-    <string name="animation_grow_shrink_bottom">Širenje u rastu (dno)</string>
-    <string name="animation_grow_shrink_left">Širenje u rastu (lijevo)</string>
-    <string name="animation_grow_shrink_right">Širenje u rastu (desno)</string>
-    <string name="action_null">Prazno</string>
-    <string name="default_string">Zadano</string>
-    <string name="global_action_onthego">Način rada u pokretu</string>
-    <string name="global_action_torch">Svjetiljka</string>
-    <string name="floating_window_snap_top">Pomakni gore</string>
-    <string name="floating_window_snap_bottom">Pomakni dolje</string>
-    <string name="floating_window_snap_left">Pomakni ulijevo</string>
-    <string name="floating_window_snap_right">Pomakni udesno</string>
-    <string name="floating_window_minimize">Smanji</string>
-    <string name="adb_not_connected_notification_title">ADB inactive</string>
-    <string name="adb_active_custom_tile_not_connected">inactive</string>
-    <string name="system_error_vendorprint">Your vendor image does not match the system. Please flash the %s vendor image for your device</string>
     <string name="byteShort">B</string>
     <string name="kilobyteShort">KB</string>
     <string name="megabyteShort">MB</string>

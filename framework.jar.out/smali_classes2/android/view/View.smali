@@ -6799,7 +6799,7 @@
     .local p0, "found":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/String;>;"
     const/4 v7, 0x0
 
-    .line 22424
+    .line 22422
     const-string/jumbo v4, "%32s"
 
     const/4 v5, 0x1
@@ -6824,7 +6824,7 @@
 
     move-result-object v0
 
-    .line 22425
+    .line 22423
     .local v0, "bits":Ljava/lang/String;
     const/16 v4, 0x5f
 
@@ -6832,7 +6832,7 @@
 
     move-result v3
 
-    .line 22426
+    .line 22424
     .local v3, "prefix":I
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -6861,7 +6861,7 @@
 
     move-result-object v1
 
-    .line 22427
+    .line 22425
     .local v1, "key":Ljava/lang/String;
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -6885,11 +6885,11 @@
 
     move-result-object v2
 
-    .line 22428
+    .line 22426
     .local v2, "output":Ljava/lang/String;
     invoke-virtual {p0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 22422
+    .line 22420
     return-void
 
     .end local v1    # "key":Ljava/lang/String;
@@ -6897,7 +6897,7 @@
     :cond_0
     move-object v4, p1
 
-    .line 22426
+    .line 22424
     goto :goto_0
 .end method
 
@@ -6905,12 +6905,12 @@
     .locals 15
 
     .prologue
-    .line 22394
+    .line 22392
     invoke-static {}, Lcom/google/android/collect/Maps;->newHashMap()Ljava/util/HashMap;
 
     move-result-object v2
 
-    .line 22396
+    .line 22394
     .local v2, "found":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/String;>;"
     :try_start_0
     const-class v10, Landroid/view/View;
@@ -6928,13 +6928,13 @@
 
     aget-object v1, v11, v10
 
-    .line 22397
+    .line 22395
     .local v1, "field":Ljava/lang/reflect/Field;
     invoke-virtual {v1}, Ljava/lang/reflect/Field;->getModifiers()I
 
     move-result v7
 
-    .line 22398
+    .line 22396
     .local v7, "modifiers":I
     invoke-static {v7}, Ljava/lang/reflect/Modifier;->isStatic(I)Z
 
@@ -6948,7 +6948,7 @@
 
     if-eqz v13, :cond_0
 
-    .line 22399
+    .line 22397
     invoke-virtual {v1}, Ljava/lang/reflect/Field;->getType()Ljava/lang/Class;
 
     move-result-object v13
@@ -6961,14 +6961,14 @@
 
     if-eqz v13, :cond_1
 
-    .line 22400
+    .line 22398
     const/4 v13, 0x0
 
     invoke-virtual {v1, v13}, Ljava/lang/reflect/Field;->getInt(Ljava/lang/Object;)I
 
     move-result v8
 
-    .line 22401
+    .line 22399
     .local v8, "value":I
     invoke-virtual {v1}, Ljava/lang/reflect/Field;->getName()Ljava/lang/String;
 
@@ -6976,14 +6976,14 @@
 
     invoke-static {v2, v13, v8}, Landroid/view/View;->dumpFlag(Ljava/util/HashMap;Ljava/lang/String;I)V
 
-    .line 22396
+    .line 22394
     .end local v8    # "value":I
     :cond_0
     add-int/lit8 v10, v10, 0x1
 
     goto :goto_0
 
-    .line 22402
+    .line 22400
     :cond_1
     invoke-virtual {v1}, Ljava/lang/reflect/Field;->getType()Ljava/lang/Class;
 
@@ -6997,7 +6997,7 @@
 
     if-eqz v13, :cond_0
 
-    .line 22403
+    .line 22401
     const/4 v13, 0x0
 
     invoke-virtual {v1, v13}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -7006,7 +7006,7 @@
 
     check-cast v9, [I
 
-    .line 22404
+    .line 22402
     .local v9, "values":[I
     const/4 v3, 0x0
 
@@ -7016,7 +7016,7 @@
 
     if-ge v3, v13, :cond_0
 
-    .line 22405
+    .line 22403
     new-instance v13, Ljava/lang/StringBuilder;
 
     invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
@@ -7055,12 +7055,12 @@
     :try_end_0
     .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 22404
+    .line 22402
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
-    .line 22410
+    .line 22408
     .end local v1    # "field":Ljava/lang/reflect/Field;
     .end local v3    # "i":I
     .end local v7    # "modifiers":I
@@ -7068,7 +7068,7 @@
     :catch_0
     move-exception v0
 
-    .line 22411
+    .line 22409
     .local v0, "e":Ljava/lang/IllegalAccessException;
     new-instance v10, Ljava/lang/RuntimeException;
 
@@ -7076,14 +7076,14 @@
 
     throw v10
 
-    .line 22414
+    .line 22412
     .end local v0    # "e":Ljava/lang/IllegalAccessException;
     :cond_2
     invoke-static {}, Lcom/google/android/collect/Lists;->newArrayList()Ljava/util/ArrayList;
 
     move-result-object v6
 
-    .line 22415
+    .line 22413
     .local v6, "keys":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     invoke-virtual {v2}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
 
@@ -7091,10 +7091,10 @@
 
     invoke-virtual {v6, v10}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 22416
+    .line 22414
     invoke-static {v6}, Ljava/util/Collections;->sort(Ljava/util/List;)V
 
-    .line 22417
+    .line 22415
     invoke-interface {v6}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v5
@@ -7113,7 +7113,7 @@
 
     check-cast v4, Ljava/lang/String;
 
-    .line 22418
+    .line 22416
     .local v4, "key":Ljava/lang/String;
     const-string/jumbo v11, "View"
 
@@ -7127,7 +7127,7 @@
 
     goto :goto_2
 
-    .line 22393
+    .line 22391
     .end local v4    # "key":Ljava/lang/String;
     :cond_3
     return-void
@@ -7806,23 +7806,23 @@
 
     const/4 v2, 0x0
 
-    .line 22373
+    .line 22371
     invoke-virtual {p0}, Landroid/view/View;->getAccessibilityLiveRegion()I
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 22374
+    .line 22372
     return v3
 
-    .line 22377
+    .line 22375
     :cond_0
     invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
-    .line 22378
+    .line 22376
     .local v0, "parent":Landroid/view/ViewParent;
     :goto_0
     instance-of v1, v0, Landroid/view/View;
@@ -7831,7 +7831,7 @@
 
     move-object v1, v0
 
-    .line 22379
+    .line 22377
     check-cast v1, Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getAccessibilityLiveRegion()I
@@ -7840,10 +7840,10 @@
 
     if-eqz v1, :cond_1
 
-    .line 22381
+    .line 22379
     return v3
 
-    .line 22383
+    .line 22381
     :cond_1
     invoke-interface {v0}, Landroid/view/ViewParent;->getParent()Landroid/view/ViewParent;
 
@@ -7851,7 +7851,7 @@
 
     goto :goto_0
 
-    .line 22386
+    .line 22384
     :cond_2
     return v2
 .end method
@@ -22720,13 +22720,8 @@
     .prologue
     iget-object v0, p0, Landroid/view/View;->mAttachInfo:Landroid/view/View$AttachInfo;
 
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Landroid/view/View;->mAttachInfo:Landroid/view/View$AttachInfo;
-
     iput-boolean p1, v0, Landroid/view/View$AttachInfo;->mTurnOffWindowResizeAnim:Z
 
-    :cond_0
     return-void
 .end method
 

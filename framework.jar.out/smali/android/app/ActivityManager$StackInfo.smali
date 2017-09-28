@@ -53,14 +53,14 @@
     .locals 1
 
     .prologue
-    .line 1814
+    .line 1831
     new-instance v0, Landroid/app/ActivityManager$StackInfo$1;
 
     invoke-direct {v0}, Landroid/app/ActivityManager$StackInfo$1;-><init>()V
 
     sput-object v0, Landroid/app/ActivityManager$StackInfo;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 1781
+    .line 1798
     return-void
 .end method
 
@@ -68,17 +68,17 @@
     .locals 1
 
     .prologue
-    .line 1825
+    .line 1842
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1783
+    .line 1800
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/app/ActivityManager$StackInfo;->bounds:Landroid/graphics/Rect;
 
-    .line 1825
+    .line 1842
     return-void
 .end method
 
@@ -87,20 +87,20 @@
     .param p1, "source"    # Landroid/os/Parcel;
 
     .prologue
-    .line 1828
+    .line 1845
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1783
+    .line 1800
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/app/ActivityManager$StackInfo;->bounds:Landroid/graphics/Rect;
 
-    .line 1829
+    .line 1846
     invoke-virtual {p0, p1}, Landroid/app/ActivityManager$StackInfo;->readFromParcel(Landroid/os/Parcel;)V
 
-    .line 1828
+    .line 1845
     return-void
 .end method
 
@@ -120,7 +120,7 @@
     .locals 1
 
     .prologue
-    .line 1790
+    .line 1807
     const/4 v0, 0x0
 
     return v0
@@ -131,17 +131,17 @@
     .param p1, "source"    # Landroid/os/Parcel;
 
     .prologue
-    .line 1806
+    .line 1823
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/app/ActivityManager$StackInfo;->stackId:I
 
-    .line 1807
+    .line 1824
     new-instance v0, Landroid/graphics/Rect;
 
-    .line 1808
+    .line 1825
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
@@ -158,33 +158,33 @@
 
     move-result v4
 
-    .line 1807
+    .line 1824
     invoke-direct {v0, v1, v2, v3, v4}, Landroid/graphics/Rect;-><init>(IIII)V
 
     iput-object v0, p0, Landroid/app/ActivityManager$StackInfo;->bounds:Landroid/graphics/Rect;
 
-    .line 1809
+    .line 1826
     invoke-virtual {p1}, Landroid/os/Parcel;->createIntArray()[I
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/ActivityManager$StackInfo;->taskIds:[I
 
-    .line 1810
+    .line 1827
     invoke-virtual {p1}, Landroid/os/Parcel;->createStringArray()[Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/ActivityManager$StackInfo;->taskNames:[Ljava/lang/String;
 
-    .line 1811
+    .line 1828
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/app/ActivityManager$StackInfo;->displayId:I
 
-    .line 1805
+    .line 1822
     return-void
 .end method
 
@@ -192,7 +192,7 @@
     .locals 1
 
     .prologue
-    .line 1848
+    .line 1865
     const-string/jumbo v0, ""
 
     invoke-virtual {p0, v0}, Landroid/app/ActivityManager$StackInfo;->toString(Ljava/lang/String;)Ljava/lang/String;
@@ -207,14 +207,14 @@
     .param p1, "prefix"    # Ljava/lang/String;
 
     .prologue
-    .line 1833
+    .line 1850
     new-instance v1, Ljava/lang/StringBuilder;
 
     const/16 v2, 0x100
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 1834
+    .line 1851
     .local v1, "sb":Ljava/lang/StringBuilder;
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -226,7 +226,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 1835
+    .line 1852
     const-string/jumbo v2, " bounds="
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -239,7 +239,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1836
+    .line 1853
     const-string/jumbo v2, " displayId="
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -248,12 +248,12 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 1837
+    .line 1854
     const-string/jumbo v2, "\n"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1838
+    .line 1855
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -272,7 +272,7 @@
 
     move-result-object p1
 
-    .line 1839
+    .line 1856
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -283,7 +283,7 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 1840
+    .line 1857
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string/jumbo v2, "taskId="
@@ -296,7 +296,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 1841
+    .line 1858
     const-string/jumbo v2, ": "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -311,12 +311,12 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1839
+    .line 1856
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 1843
+    .line 1860
     :cond_0
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -331,54 +331,54 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 1795
+    .line 1812
     iget v0, p0, Landroid/app/ActivityManager$StackInfo;->stackId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1796
+    .line 1813
     iget-object v0, p0, Landroid/app/ActivityManager$StackInfo;->bounds:Landroid/graphics/Rect;
 
     iget v0, v0, Landroid/graphics/Rect;->left:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1797
+    .line 1814
     iget-object v0, p0, Landroid/app/ActivityManager$StackInfo;->bounds:Landroid/graphics/Rect;
 
     iget v0, v0, Landroid/graphics/Rect;->top:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1798
+    .line 1815
     iget-object v0, p0, Landroid/app/ActivityManager$StackInfo;->bounds:Landroid/graphics/Rect;
 
     iget v0, v0, Landroid/graphics/Rect;->right:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1799
+    .line 1816
     iget-object v0, p0, Landroid/app/ActivityManager$StackInfo;->bounds:Landroid/graphics/Rect;
 
     iget v0, v0, Landroid/graphics/Rect;->bottom:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1800
+    .line 1817
     iget-object v0, p0, Landroid/app/ActivityManager$StackInfo;->taskIds:[I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeIntArray([I)V
 
-    .line 1801
+    .line 1818
     iget-object v0, p0, Landroid/app/ActivityManager$StackInfo;->taskNames:[Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeStringArray([Ljava/lang/String;)V
 
-    .line 1802
+    .line 1819
     iget v0, p0, Landroid/app/ActivityManager$StackInfo;->displayId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1794
+    .line 1811
     return-void
 .end method

@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/power/PowerManagerService;
 
     .prologue
-    .line 4034
+    .line 3939
     iput-object p1, p0, Lcom/android/server/power/PowerManagerService$LocalService;->this$0:Lcom/android/server/power/PowerManagerService;
 
     invoke-direct {p0}, Landroid/os/PowerManagerInternal;-><init>()V
@@ -49,8 +49,8 @@
     .param p1, "featureId"    # I
 
     .prologue
-    .line 4146
-    invoke-static {p1}, Lcom/android/server/power/PowerManagerService;->-wrap8(I)I
+    .line 4048
+    invoke-static {p1}, Lcom/android/server/power/PowerManagerService;->-wrap10(I)I
 
     move-result v0
 
@@ -61,20 +61,20 @@
     .locals 2
 
     .prologue
-    .line 4097
+    .line 3999
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$LocalService;->this$0:Lcom/android/server/power/PowerManagerService;
 
-    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->-get12(Lcom/android/server/power/PowerManagerService;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->-get13(Lcom/android/server/power/PowerManagerService;)Ljava/lang/Object;
 
     move-result-object v1
 
     monitor-enter v1
 
-    .line 4098
+    .line 4000
     :try_start_0
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$LocalService;->this$0:Lcom/android/server/power/PowerManagerService;
 
-    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->-get13(Lcom/android/server/power/PowerManagerService;)Z
+    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->-get14(Lcom/android/server/power/PowerManagerService;)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -84,7 +84,7 @@
 
     return v0
 
-    .line 4097
+    .line 3999
     :catchall_0
     move-exception v0
 
@@ -99,12 +99,12 @@
     .param p2, "data"    # I
 
     .prologue
-    .line 4136
+    .line 4038
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$LocalService;->this$0:Lcom/android/server/power/PowerManagerService;
 
-    invoke-static {v0, p1, p2}, Lcom/android/server/power/PowerManagerService;->-wrap26(Lcom/android/server/power/PowerManagerService;II)V
+    invoke-static {v0, p1, p2}, Lcom/android/server/power/PowerManagerService;->-wrap28(Lcom/android/server/power/PowerManagerService;II)V
 
-    .line 4135
+    .line 4037
     return-void
 .end method
 
@@ -113,20 +113,20 @@
     .param p1, "listener"    # Landroid/os/PowerManagerInternal$LowPowerModeListener;
 
     .prologue
-    .line 4104
+    .line 4006
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$LocalService;->this$0:Lcom/android/server/power/PowerManagerService;
 
-    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->-get12(Lcom/android/server/power/PowerManagerService;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->-get13(Lcom/android/server/power/PowerManagerService;)Ljava/lang/Object;
 
     move-result-object v1
 
     monitor-enter v1
 
-    .line 4105
+    .line 4007
     :try_start_0
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$LocalService;->this$0:Lcom/android/server/power/PowerManagerService;
 
-    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->-get14(Lcom/android/server/power/PowerManagerService;)Ljava/util/ArrayList;
+    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->-get15(Lcom/android/server/power/PowerManagerService;)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -136,10 +136,10 @@
 
     monitor-exit v1
 
-    .line 4103
+    .line 4005
     return-void
 
-    .line 4104
+    .line 4006
     :catchall_0
     move-exception v0
 
@@ -153,10 +153,10 @@
     .param p1, "screenBrightness"    # I
 
     .prologue
-    .line 4046
+    .line 3951
     iget-object v2, p0, Lcom/android/server/power/PowerManagerService$LocalService;->this$0:Lcom/android/server/power/PowerManagerService;
 
-    invoke-static {v2}, Lcom/android/server/power/PowerManagerService;->-get2(Lcom/android/server/power/PowerManagerService;)Landroid/content/Context;
+    invoke-static {v2}, Lcom/android/server/power/PowerManagerService;->-get3(Lcom/android/server/power/PowerManagerService;)Landroid/content/Context;
 
     move-result-object v2
 
@@ -166,34 +166,34 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4048
+    .line 3953
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 4050
+    .line 3955
     .local v0, "ident":J
     :try_start_0
     iget-object v2, p0, Lcom/android/server/power/PowerManagerService$LocalService;->this$0:Lcom/android/server/power/PowerManagerService;
 
-    invoke-static {v2, p1}, Lcom/android/server/power/PowerManagerService;->-wrap30(Lcom/android/server/power/PowerManagerService;I)V
+    invoke-static {v2, p1}, Lcom/android/server/power/PowerManagerService;->-wrap32(Lcom/android/server/power/PowerManagerService;I)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 4052
+    .line 3957
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 4045
+    .line 3950
     return-void
 
-    .line 4051
+    .line 3956
     :catchall_0
     move-exception v2
 
-    .line 4052
+    .line 3957
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 4051
+    .line 3956
     throw v2
 .end method
 
@@ -202,12 +202,12 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 4111
+    .line 4013
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$LocalService;->this$0:Lcom/android/server/power/PowerManagerService;
 
     invoke-virtual {v0, p1}, Lcom/android/server/power/PowerManagerService;->setDeviceIdleModeInternal(Z)V
 
-    .line 4110
+    .line 4012
     return-void
 .end method
 
@@ -216,12 +216,12 @@
     .param p1, "appids"    # [I
 
     .prologue
-    .line 4121
+    .line 4023
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$LocalService;->this$0:Lcom/android/server/power/PowerManagerService;
 
     invoke-virtual {v0, p1}, Lcom/android/server/power/PowerManagerService;->setDeviceIdleTempWhitelistInternal([I)V
 
-    .line 4120
+    .line 4022
     return-void
 .end method
 
@@ -230,12 +230,12 @@
     .param p1, "appids"    # [I
 
     .prologue
-    .line 4116
+    .line 4018
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$LocalService;->this$0:Lcom/android/server/power/PowerManagerService;
 
     invoke-virtual {v0, p1}, Lcom/android/server/power/PowerManagerService;->setDeviceIdleWhitelistInternal([I)V
 
-    .line 4115
+    .line 4017
     return-void
 .end method
 
@@ -245,37 +245,37 @@
     .param p2, "screenBrightness"    # I
 
     .prologue
-    .line 4062
+    .line 3964
     packed-switch p1, :pswitch_data_0
 
-    .line 4070
+    .line 3972
     const/4 p1, 0x0
 
-    .line 4073
+    .line 3975
     :pswitch_0
     const/4 v0, -0x1
 
     if-lt p2, v0, :cond_0
 
-    .line 4074
+    .line 3976
     const/16 v0, 0xff
 
     if-le p2, v0, :cond_1
 
-    .line 4075
+    .line 3977
     :cond_0
     const/4 p2, -0x1
 
-    .line 4077
+    .line 3979
     :cond_1
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$LocalService;->this$0:Lcom/android/server/power/PowerManagerService;
 
-    invoke-static {v0, p1, p2}, Lcom/android/server/power/PowerManagerService;->-wrap31(Lcom/android/server/power/PowerManagerService;II)V
+    invoke-static {v0, p1, p2}, Lcom/android/server/power/PowerManagerService;->-wrap33(Lcom/android/server/power/PowerManagerService;II)V
 
-    .line 4061
+    .line 3963
     return-void
 
-    .line 4062
+    .line 3964
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -292,10 +292,10 @@
     .param p2, "data"    # I
 
     .prologue
-    .line 4151
-    invoke-static {p1, p2}, Lcom/android/server/power/PowerManagerService;->-wrap25(II)V
+    .line 4053
+    invoke-static {p1, p2}, Lcom/android/server/power/PowerManagerService;->-wrap27(II)V
 
-    .line 4150
+    .line 4052
     return-void
 .end method
 
@@ -304,12 +304,12 @@
     .param p1, "timeMs"    # I
 
     .prologue
-    .line 4092
+    .line 3994
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$LocalService;->this$0:Lcom/android/server/power/PowerManagerService;
 
     invoke-virtual {v0, p1}, Lcom/android/server/power/PowerManagerService;->setMaximumScreenOffTimeoutFromDeviceAdminInternal(I)V
 
-    .line 4091
+    .line 3993
     return-void
 .end method
 
@@ -318,10 +318,10 @@
     .param p1, "mode"    # Z
 
     .prologue
-    .line 4141
+    .line 4043
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$LocalService;->this$0:Lcom/android/server/power/PowerManagerService;
 
-    invoke-static {v0, p1}, Lcom/android/server/power/PowerManagerService;->-wrap6(Lcom/android/server/power/PowerManagerService;Z)Z
+    invoke-static {v0, p1}, Lcom/android/server/power/PowerManagerService;->-wrap7(Lcom/android/server/power/PowerManagerService;Z)Z
 
     move-result v0
 
@@ -333,27 +333,27 @@
     .param p1, "screenBrightness"    # I
 
     .prologue
-    .line 4037
+    .line 3942
     const/4 v0, -0x1
 
     if-lt p1, v0, :cond_0
 
-    .line 4038
+    .line 3943
     const/16 v0, 0xff
 
     if-le p1, v0, :cond_1
 
-    .line 4039
+    .line 3944
     :cond_0
     const/4 p1, -0x1
 
-    .line 4041
+    .line 3946
     :cond_1
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$LocalService;->this$0:Lcom/android/server/power/PowerManagerService;
 
-    invoke-static {v0, p1}, Lcom/android/server/power/PowerManagerService;->-wrap34(Lcom/android/server/power/PowerManagerService;I)V
+    invoke-static {v0, p1}, Lcom/android/server/power/PowerManagerService;->-wrap36(Lcom/android/server/power/PowerManagerService;I)V
 
-    .line 4036
+    .line 3941
     return-void
 .end method
 
@@ -362,12 +362,12 @@
     .param p1, "timeoutMillis"    # J
 
     .prologue
-    .line 4087
+    .line 3989
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$LocalService;->this$0:Lcom/android/server/power/PowerManagerService;
 
-    invoke-static {v0, p1, p2}, Lcom/android/server/power/PowerManagerService;->-wrap37(Lcom/android/server/power/PowerManagerService;J)V
+    invoke-static {v0, p1, p2}, Lcom/android/server/power/PowerManagerService;->-wrap39(Lcom/android/server/power/PowerManagerService;J)V
 
-    .line 4086
+    .line 3988
     return-void
 .end method
 
@@ -375,12 +375,12 @@
     .locals 1
 
     .prologue
-    .line 4082
+    .line 3984
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$LocalService;->this$0:Lcom/android/server/power/PowerManagerService;
 
-    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->-wrap38(Lcom/android/server/power/PowerManagerService;)V
+    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->-wrap40(Lcom/android/server/power/PowerManagerService;)V
 
-    .line 4081
+    .line 3983
     return-void
 .end method
 
@@ -389,12 +389,12 @@
     .param p1, "uid"    # I
 
     .prologue
-    .line 4131
+    .line 4033
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$LocalService;->this$0:Lcom/android/server/power/PowerManagerService;
 
     invoke-virtual {v0, p1}, Lcom/android/server/power/PowerManagerService;->uidGoneInternal(I)V
 
-    .line 4130
+    .line 4032
     return-void
 .end method
 
@@ -404,11 +404,11 @@
     .param p2, "procState"    # I
 
     .prologue
-    .line 4126
+    .line 4028
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$LocalService;->this$0:Lcom/android/server/power/PowerManagerService;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/server/power/PowerManagerService;->updateUidProcStateInternal(II)V
 
-    .line 4125
+    .line 4027
     return-void
 .end method

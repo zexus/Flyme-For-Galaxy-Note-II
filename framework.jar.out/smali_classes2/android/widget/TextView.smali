@@ -30915,6 +30915,7 @@
     :goto_0
     return v0
 
+    .line 2515
     :cond_0
     iget-object v0, p0, Landroid/widget/TextView;->mEditor:Landroid/widget/Editor;
 
@@ -30968,7 +30969,6 @@
 
     if-eqz p2, :cond_1
 
-    .line 2515
     :cond_0
     iget-object v0, p0, Landroid/widget/TextView;->mTextPaint:Landroid/text/TextPaint;
 

@@ -339,7 +339,7 @@
 
     .line 151
     .local v1, "res":Landroid/content/res/Resources;
-    const v3, 0x1050128
+    const v3, 0x1050125
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -348,7 +348,7 @@
     iput v3, p0, Landroid/widget/SimpleMonthView;->mDesiredMonthHeight:I
 
     .line 152
-    const v3, 0x1050129
+    const v3, 0x1050126
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -357,7 +357,7 @@
     iput v3, p0, Landroid/widget/SimpleMonthView;->mDesiredDayOfWeekHeight:I
 
     .line 153
-    const v3, 0x105012a
+    const v3, 0x1050127
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -366,7 +366,7 @@
     iput v3, p0, Landroid/widget/SimpleMonthView;->mDesiredDayHeight:I
 
     .line 154
-    const v3, 0x105012b
+    const v3, 0x1050128
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -375,7 +375,7 @@
     iput v3, p0, Landroid/widget/SimpleMonthView;->mDesiredCellWidth:I
 
     .line 156
-    const v3, 0x105012c
+    const v3, 0x1050129
 
     .line 155
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -1528,7 +1528,7 @@
     const/4 v8, 0x1
 
     .line 242
-    const v6, 0x1040605
+    const v6, 0x10405e9
 
     invoke-virtual {p1, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1536,7 +1536,7 @@
 
     .line 243
     .local v5, "monthTypeface":Ljava/lang/String;
-    const v6, 0x1040606
+    const v6, 0x10405ea
 
     invoke-virtual {p1, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1544,7 +1544,7 @@
 
     .line 244
     .local v1, "dayOfWeekTypeface":Ljava/lang/String;
-    const v6, 0x1040607
+    const v6, 0x10405eb
 
     invoke-virtual {p1, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1552,7 +1552,7 @@
 
     .line 247
     .local v3, "dayTypeface":Ljava/lang/String;
-    const v6, 0x1050125
+    const v6, 0x1050122
 
     .line 246
     invoke-virtual {p1, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -1561,7 +1561,7 @@
 
     .line 249
     .local v4, "monthTextSize":I
-    const v6, 0x1050126
+    const v6, 0x1050123
 
     .line 248
     invoke-virtual {p1, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -1570,7 +1570,7 @@
 
     .line 251
     .local v0, "dayOfWeekTextSize":I
-    const v6, 0x1050127
+    const v6, 0x1050124
 
     .line 250
     invoke-virtual {p1, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I

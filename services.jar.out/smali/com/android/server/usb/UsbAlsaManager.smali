@@ -1409,7 +1409,7 @@
     const-string/jumbo v2, "name"
 
     .line 478
-    const v3, 0x1040629
+    const v3, 0x104060d
 
     .line 477
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -1422,7 +1422,7 @@
     const-string/jumbo v2, "manufacturer"
 
     .line 480
-    const v3, 0x104062a
+    const v3, 0x104060e
 
     .line 479
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -1435,7 +1435,7 @@
     const-string/jumbo v2, "product"
 
     .line 482
-    const v3, 0x104062b
+    const v3, 0x104060f
 
     .line 481
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;

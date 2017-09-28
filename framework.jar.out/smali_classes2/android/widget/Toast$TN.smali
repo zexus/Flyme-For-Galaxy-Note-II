@@ -126,7 +126,7 @@
     .locals 3
 
     .prologue
-    .line 514
+    .line 451
     iget-object v2, p0, Landroid/widget/Toast$TN;->mView:Landroid/view/View;
 
     invoke-virtual {v2}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -137,7 +137,7 @@
 
     move-result-object v0
 
-    .line 515
+    .line 452
     .local v0, "accessibilityManager":Landroid/view/accessibility/AccessibilityManager;
     invoke-virtual {v0}, Landroid/view/accessibility/AccessibilityManager;->isEnabled()Z
 
@@ -145,19 +145,19 @@
 
     if-nez v2, :cond_0
 
-    .line 516
+    .line 453
     return-void
 
-    .line 521
+    .line 458
     :cond_0
     const/16 v2, 0x40
 
-    .line 520
+    .line 457
     invoke-static {v2}, Landroid/view/accessibility/AccessibilityEvent;->obtain(I)Landroid/view/accessibility/AccessibilityEvent;
 
     move-result-object v1
 
-    .line 522
+    .line 459
     .local v1, "event":Landroid/view/accessibility/AccessibilityEvent;
     invoke-virtual {p0}, Landroid/widget/Toast$TN;->getClass()Ljava/lang/Class;
 
@@ -169,7 +169,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
 
-    .line 523
+    .line 460
     iget-object v2, p0, Landroid/widget/Toast$TN;->mView:Landroid/view/View;
 
     invoke-virtual {v2}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -182,15 +182,15 @@
 
     invoke-virtual {v1, v2}, Landroid/view/accessibility/AccessibilityEvent;->setPackageName(Ljava/lang/CharSequence;)V
 
-    .line 524
+    .line 461
     iget-object v2, p0, Landroid/widget/Toast$TN;->mView:Landroid/view/View;
 
     invoke-virtual {v2, v1}, Landroid/view/View;->dispatchPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)Z
 
-    .line 525
+    .line 462
     invoke-virtual {v0, v1}, Landroid/view/accessibility/AccessibilityManager;->sendAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
-    .line 512
+    .line 449
     return-void
 .end method
 
@@ -202,12 +202,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 530
+    .line 467
     iget-object v0, p0, Landroid/widget/Toast$TN;->mView:Landroid/view/View;
 
     if-eqz v0, :cond_1
 
-    .line 534
+    .line 471
     iget-object v0, p0, Landroid/widget/Toast$TN;->mView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
@@ -216,18 +216,18 @@
 
     if-eqz v0, :cond_0
 
-    .line 536
+    .line 473
     iget-object v0, p0, Landroid/widget/Toast$TN;->mWM:Landroid/view/WindowManager;
 
     iget-object v1, p0, Landroid/widget/Toast$TN;->mView:Landroid/view/View;
 
     invoke-interface {v0, v1}, Landroid/view/WindowManager;->removeView(Landroid/view/View;)V
 
-    .line 539
+    .line 476
     :cond_0
     iput-object v2, p0, Landroid/widget/Toast$TN;->mView:Landroid/view/View;
 
-    .line 528
+    .line 465
     :cond_1
     invoke-static {}, Landroid/widget/Toast$FlymeInjector;->resetFlymeExtraFields()V
 
@@ -235,29 +235,27 @@
 .end method
 
 .method public handleShow()V
-    .locals 13
+    .locals 12
 
     .prologue
-    const/high16 v12, 0x3f800000    # 1.0f
+    const/high16 v11, 0x3f800000    # 1.0f
 
-    const/4 v11, 0x1
-
-    .line 407
+    .line 397
     iget-object v9, p0, Landroid/widget/Toast$TN;->mView:Landroid/view/View;
 
     iget-object v10, p0, Landroid/widget/Toast$TN;->mNextView:Landroid/view/View;
 
     if-eq v9, v10, :cond_5
 
-    .line 409
+    .line 399
     invoke-virtual {p0}, Landroid/widget/Toast$TN;->handleHide()V
 
-    .line 410
+    .line 400
     iget-object v9, p0, Landroid/widget/Toast$TN;->mNextView:Landroid/view/View;
 
     iput-object v9, p0, Landroid/widget/Toast$TN;->mView:Landroid/view/View;
 
-    .line 411
+    .line 401
     iget-object v9, p0, Landroid/widget/Toast$TN;->mView:Landroid/view/View;
 
     invoke-virtual {v9}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -266,10 +264,10 @@
 
     invoke-virtual {v9}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v2
+    move-result-object v3
 
-    .line 412
-    .local v2, "context":Landroid/content/Context;
+    .line 402
+    .local v3, "context":Landroid/content/Context;
     iget-object v9, p0, Landroid/widget/Toast$TN;->mView:Landroid/view/View;
 
     invoke-virtual {v9}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -280,18 +278,18 @@
 
     move-result-object v7
 
-    .line 413
+    .line 403
     .local v7, "packageName":Ljava/lang/String;
-    if-nez v2, :cond_0
+    if-nez v3, :cond_0
 
-    .line 414
+    .line 404
     iget-object v9, p0, Landroid/widget/Toast$TN;->mView:Landroid/view/View;
 
     invoke-virtual {v9}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    move-result-object v2
+    move-result-object v3
 
-    .line 417
+    .line 407
     :cond_0
     iget-object v9, p0, Landroid/widget/Toast$TN;->mView:Landroid/view/View;
 
@@ -299,72 +297,61 @@
 
     invoke-virtual {v9, v10}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/ImageView;
+
+    .line 408
+    .local v1, "appIcon":Landroid/widget/ImageView;
+    if-eqz v1, :cond_1
+
+    .line 410
+    const-string/jumbo v9, "activity"
+
+    invoke-virtual {v3, v9}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
     move-result-object v0
 
-    check-cast v0, Landroid/widget/ImageView;
+    check-cast v0, Landroid/app/ActivityManager;
 
-    .line 418
-    .local v0, "appIcon":Landroid/widget/ImageView;
-    sget-object v9, Landroid/widget/Toast;->tContext:Landroid/content/Context;
-
-    invoke-static {v9}, Lcom/android/internal/util/rr/RandomColorHelper;->getToastIconColorList(Landroid/content/Context;)Landroid/content/res/ColorStateList;
-
-    move-result-object v6
-
-    .line 419
-    .local v6, "iconColor":Landroid/content/res/ColorStateList;
-    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v9
-
-    const-string/jumbo v10, "toast_icon"
-
-    invoke-static {v9, v10, v11}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    .line 411
+    .local v0, "am":Landroid/app/ActivityManager;
+    invoke-virtual {v0, v7}, Landroid/app/ActivityManager;->isPackageInForeground(Ljava/lang/String;)Z
 
     move-result v9
 
-    if-ne v9, v11, :cond_1
+    if-nez v9, :cond_1
 
-    .line 420
-    if-eqz v0, :cond_1
-
-    .line 421
-    invoke-virtual {v2}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+    .line 412
+    invoke-virtual {v3}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v8
 
-    .line 422
+    .line 413
     .local v8, "pm":Landroid/content/pm/PackageManager;
-    const/4 v5, 0x0
+    const/4 v6, 0x0
 
-    .line 424
-    .local v5, "icon":Landroid/graphics/drawable/Drawable;
+    .line 415
+    .local v6, "icon":Landroid/graphics/drawable/Drawable;
     :try_start_0
     invoke-virtual {v8, v7}, Landroid/content/pm/PackageManager;->getApplicationIcon(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-object v5
+    move-result-object v6
 
-    .line 428
-    .end local v5    # "icon":Landroid/graphics/drawable/Drawable;
+    .line 419
+    .end local v6    # "icon":Landroid/graphics/drawable/Drawable;
     :goto_0
-    invoke-virtual {v0, v5}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v1, v6}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 429
-    invoke-virtual {v0, v6}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
-
-    .line 430
-    sget-object v9, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
-
-    invoke-virtual {v0, v9}, Landroid/widget/ImageView;->setImageTintMode(Landroid/graphics/PorterDuff$Mode;)V
-
-    .line 433
+    .line 422
+    .end local v0    # "am":Landroid/app/ActivityManager;
     .end local v8    # "pm":Landroid/content/pm/PackageManager;
     :cond_1
     const-string/jumbo v9, "window"
 
-    invoke-virtual {v2, v9}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v3, v9}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v9
 
@@ -372,7 +359,7 @@
 
     iput-object v9, p0, Landroid/widget/Toast$TN;->mWM:Landroid/view/WindowManager;
 
-    .line 436
+    .line 425
     iget-object v9, p0, Landroid/widget/Toast$TN;->mView:Landroid/view/View;
 
     invoke-virtual {v9}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -385,66 +372,52 @@
 
     invoke-virtual {v9}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 437
-    .local v1, "config":Landroid/content/res/Configuration;
+    .line 426
+    .local v2, "config":Landroid/content/res/Configuration;
     iget v9, p0, Landroid/widget/Toast$TN;->mGravity:I
 
-    invoke-virtual {v1}, Landroid/content/res/Configuration;->getLayoutDirection()I
+    invoke-virtual {v2}, Landroid/content/res/Configuration;->getLayoutDirection()I
 
     move-result v10
 
     invoke-static {v9, v10}, Landroid/view/Gravity;->getAbsoluteGravity(II)I
 
-    move-result v4
+    move-result v5
 
-    .line 439
-    .local v4, "gravity":I
-    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v9
-
-    const-string/jumbo v10, "toast_animation"
-
-    invoke-static {v9, v10, v11}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v9
-
-    packed-switch v9, :pswitch_data_0
-
-    .line 490
-    :goto_1
+    .line 427
+    .local v5, "gravity":I
     iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
 
-    iput v4, v9, Landroid/view/WindowManager$LayoutParams;->gravity:I
+    iput v5, v9, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 491
-    and-int/lit8 v9, v4, 0x7
+    .line 428
+    and-int/lit8 v9, v5, 0x7
 
     const/4 v10, 0x7
 
     if-ne v9, v10, :cond_2
 
-    .line 492
+    .line 429
     iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
 
-    iput v12, v9, Landroid/view/WindowManager$LayoutParams;->horizontalWeight:F
+    iput v11, v9, Landroid/view/WindowManager$LayoutParams;->horizontalWeight:F
 
-    .line 494
+    .line 431
     :cond_2
-    and-int/lit8 v9, v4, 0x70
+    and-int/lit8 v9, v5, 0x70
 
     const/16 v10, 0x70
 
     if-ne v9, v10, :cond_3
 
-    .line 495
+    .line 432
     iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
 
-    iput v12, v9, Landroid/view/WindowManager$LayoutParams;->verticalWeight:F
+    iput v11, v9, Landroid/view/WindowManager$LayoutParams;->verticalWeight:F
 
-    .line 497
+    .line 434
     :cond_3
     iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
 
@@ -484,14 +457,14 @@
 
     if-eqz v9, :cond_4
 
-    .line 504
+    .line 441
     iget-object v9, p0, Landroid/widget/Toast$TN;->mWM:Landroid/view/WindowManager;
 
     iget-object v10, p0, Landroid/widget/Toast$TN;->mView:Landroid/view/View;
 
     invoke-interface {v9, v10}, Landroid/view/WindowManager;->removeView(Landroid/view/View;)V
 
-    .line 507
+    .line 444
     :cond_4
     iget-object v9, p0, Landroid/widget/Toast$TN;->mWM:Landroid/view/WindowManager;
 
@@ -501,233 +474,44 @@
 
     invoke-interface {v9, v10, v11}, Landroid/view/WindowManager;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 508
+    .line 445
     invoke-direct {p0}, Landroid/widget/Toast$TN;->trySendAccessibilityEvent()V
 
-    .line 404
-    .end local v0    # "appIcon":Landroid/widget/ImageView;
-    .end local v1    # "config":Landroid/content/res/Configuration;
-    .end local v2    # "context":Landroid/content/Context;
-    .end local v4    # "gravity":I
-    .end local v6    # "iconColor":Landroid/content/res/ColorStateList;
+    .line 394
+    .end local v1    # "appIcon":Landroid/widget/ImageView;
+    .end local v2    # "config":Landroid/content/res/Configuration;
+    .end local v3    # "context":Landroid/content/Context;
+    .end local v5    # "gravity":I
     .end local v7    # "packageName":Ljava/lang/String;
     :cond_5
     return-void
 
-    .line 425
-    .restart local v0    # "appIcon":Landroid/widget/ImageView;
-    .restart local v2    # "context":Landroid/content/Context;
-    .restart local v5    # "icon":Landroid/graphics/drawable/Drawable;
-    .restart local v6    # "iconColor":Landroid/content/res/ColorStateList;
+    .line 416
+    .restart local v0    # "am":Landroid/app/ActivityManager;
+    .restart local v1    # "appIcon":Landroid/widget/ImageView;
+    .restart local v3    # "context":Landroid/content/Context;
+    .restart local v6    # "icon":Landroid/graphics/drawable/Drawable;
     .restart local v7    # "packageName":Ljava/lang/String;
     .restart local v8    # "pm":Landroid/content/pm/PackageManager;
     :catch_0
-    move-exception v3
+    move-exception v4
 
-    .local v3, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
-    goto/16 :goto_0
-
-    .line 441
-    .end local v3    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
-    .end local v5    # "icon":Landroid/graphics/drawable/Drawable;
-    .end local v8    # "pm":Landroid/content/pm/PackageManager;
-    .restart local v1    # "config":Landroid/content/res/Configuration;
-    .restart local v4    # "gravity":I
-    :pswitch_0
-    iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
-
-    const/4 v10, -0x1
-
-    iput v10, v9, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
-
-    goto :goto_1
-
-    .line 444
-    :pswitch_1
-    iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
-
-    const v10, #android:style@Animation.Toast#t
-
-    iput v10, v9, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
-
-    goto :goto_1
-
-    .line 447
-    :pswitch_2
-    iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
-
-    const v10, #android:style@Animation.Toast.Fade#t
-
-    iput v10, v9, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
-
-    goto :goto_1
-
-    .line 450
-    :pswitch_3
-    iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
-
-    const v10, #android:style@Animation.Toast.SlideRight#t
-
-    iput v10, v9, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
-
-    goto :goto_1
-
-    .line 453
-    :pswitch_4
-    iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
-
-    const v10, #android:style@Animation.Toast.SlideLeft#t
-
-    iput v10, v9, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
-
-    goto :goto_1
-
-    .line 456
-    :pswitch_5
-    iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
-
-    const v10, #android:style@Animation.Toast.Xylon#t
-
-    iput v10, v9, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
-
-    goto :goto_1
-
-    .line 459
-    :pswitch_6
-    iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
-
-    const v10, #android:style@Animation.Toast.Toko#t
-
-    iput v10, v9, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
-
-    goto/16 :goto_1
-
-    .line 462
-    :pswitch_7
-    iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
-
-    const v10, #android:style@Animation.Toast.Tn#t
-
-    iput v10, v9, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
-
-    goto/16 :goto_1
-
-    .line 465
-    :pswitch_8
-    iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
-
-    const v10, #android:style@Animation.Toast.Honami#t
-
-    iput v10, v9, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
-
-    goto/16 :goto_1
-
-    .line 468
-    :pswitch_9
-    iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
-
-    const v10, #android:style@Animation.Toast.FastFade#t
-
-    iput v10, v9, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
-
-    goto/16 :goto_1
-
-    .line 471
-    :pswitch_a
-    iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
-
-    const v10, #android:style@Animation.Toast.GrowFade#t
-
-    iput v10, v9, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
-
-    goto/16 :goto_1
-
-    .line 474
-    :pswitch_b
-    iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
-
-    const v10, #android:style@Animation.Toast.GrowFadeCenter#t
-
-    iput v10, v9, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
-
-    goto/16 :goto_1
-
-    .line 477
-    :pswitch_c
-    iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
-
-    const v10, #android:style@Animation.Toast.GrowFadeBottom#t
-
-    iput v10, v9, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
-
-    goto/16 :goto_1
-
-    .line 480
-    :pswitch_d
-    iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
-
-    const v10, #android:style@Animation.Toast.Translucent#t
-
-    iput v10, v9, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
-
-    goto/16 :goto_1
-
-    .line 483
-    :pswitch_e
-    iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
-
-    const v10, #android:style@Animation.Toast.SlideLeftRight#t
-
-    iput v10, v9, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
-
-    goto/16 :goto_1
-
-    .line 486
-    :pswitch_f
-    iget-object v9, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
-
-    const v10, #android:style@Animation.Toast.SlideRightLeft#t
-
-    iput v10, v9, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
-
-    goto/16 :goto_1
-
-    .line 439
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-        :pswitch_3
-        :pswitch_4
-        :pswitch_5
-        :pswitch_6
-        :pswitch_7
-        :pswitch_8
-        :pswitch_9
-        :pswitch_a
-        :pswitch_b
-        :pswitch_c
-        :pswitch_d
-        :pswitch_e
-        :pswitch_f
-    .end packed-switch
+    .local v4, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
+    goto :goto_0
 .end method
 
 .method public hide()V
     .locals 2
 
     .prologue
-    .line 401
+    .line 391
     iget-object v0, p0, Landroid/widget/Toast$TN;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Landroid/widget/Toast$TN;->mHide:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 399
+    .line 389
     return-void
 .end method
 
@@ -735,14 +519,14 @@
     .locals 2
 
     .prologue
-    .line 392
+    .line 382
     iget-object v0, p0, Landroid/widget/Toast$TN;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Landroid/widget/Toast$TN;->mShow:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 390
+    .line 380
     return-void
 .end method
 

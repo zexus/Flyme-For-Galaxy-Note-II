@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/server/InputMethodManagerService;
 
     .prologue
-    .line 226
+    .line 225
     iput-object p1, p0, Lcom/android/server/InputMethodManagerService$2;->this$0:Lcom/android/server/InputMethodManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .param p2, "service"    # Landroid/os/IBinder;
 
     .prologue
-    .line 227
+    .line 226
     return-void
 .end method
 
@@ -52,6 +52,6 @@
     .param p1, "name"    # Landroid/content/ComponentName;
 
     .prologue
-    .line 230
+    .line 229
     return-void
 .end method

@@ -150,7 +150,7 @@
     .line 1896
     const/4 v2, 0x0
 
-    const v4, 0x1040189
+    const v4, 0x104016d
 
     .line 1895
     move-object/from16 v0, p1
@@ -266,7 +266,7 @@
 
     iget-object v1, v1, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mContext:Landroid/content/Context;
 
-    const v2, 0x104018b
+    const v2, 0x104016f
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -274,7 +274,7 @@
 
     .line 1906
     .local v7, "contentText":Ljava/lang/String;
-    const v17, 0x1080716
+    const v17, 0x1080671
 
     .line 1915
     .local v17, "smallIconId":I
@@ -360,7 +360,7 @@
 
     iget-object v2, v2, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mContext:Landroid/content/Context;
 
-    const v4, 0x1040189
+    const v4, 0x104016d
 
     invoke-virtual {v2, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -432,7 +432,7 @@
     .line 1941
     const/4 v2, 0x0
 
-    const v4, 0x1040189
+    const v4, 0x104016d
 
     .line 1940
     move-object/from16 v0, p1
@@ -467,7 +467,7 @@
 
     aput-object v16, v2, v4
 
-    const v4, 0x104018c
+    const v4, 0x1040170
 
     invoke-virtual {v1, v4, v2}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -475,7 +475,7 @@
 
     .line 1909
     .restart local v7    # "contentText":Ljava/lang/String;
-    const v17, 0x1080716
+    const v17, 0x1080671
 
     .restart local v17    # "smallIconId":I
     goto/16 :goto_1
@@ -490,7 +490,7 @@
 
     iget-object v1, v1, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mContext:Landroid/content/Context;
 
-    const v2, 0x104018a
+    const v2, 0x104016e
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

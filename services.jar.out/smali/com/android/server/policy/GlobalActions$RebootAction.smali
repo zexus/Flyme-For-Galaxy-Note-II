@@ -24,19 +24,19 @@
     .param p1, "this$0"    # Lcom/android/server/policy/GlobalActions;
 
     .prologue
-    .line 591
+    .line 478
     iput-object p1, p0, Lcom/android/server/policy/GlobalActions$RebootAction;->this$0:Lcom/android/server/policy/GlobalActions;
 
-    .line 592
-    const v0, 0x108039d
+    .line 479
+    const v0, 0x1080365
 
-    .line 593
-    const v1, 0x1040027
+    .line 480
+    const v1, 0x1040026
 
-    .line 592
+    .line 479
     invoke-direct {p0, v0, v1}, Lcom/android/server/policy/GlobalActions$SinglePressAction;-><init>(II)V
 
-    .line 591
+    .line 478
     return-void
 .end method
 
@@ -56,11 +56,11 @@
     .locals 5
 
     .prologue
-    .line 610
+    .line 497
     :try_start_0
     const-string/jumbo v2, "power"
 
-    .line 609
+    .line 496
     invoke-static {v2}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v2
@@ -69,7 +69,7 @@
 
     move-result-object v1
 
-    .line 611
+    .line 498
     .local v1, "pm":Landroid/os/IPowerManager;
     const/4 v2, 0x1
 
@@ -81,15 +81,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 607
+    .line 494
     return-void
 
-    .line 612
+    .line 499
     .end local v1    # "pm":Landroid/os/IPowerManager;
     :catch_0
     move-exception v0
 
-    .line 613
+    .line 500
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v2, "GlobalActions"
 
@@ -97,7 +97,7 @@
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 614
+    .line 501
     return-void
 .end method
 
@@ -105,7 +105,7 @@
     .locals 1
 
     .prologue
-    .line 603
+    .line 490
     const/4 v0, 0x1
 
     return v0
@@ -115,7 +115,7 @@
     .locals 1
 
     .prologue
-    .line 598
+    .line 485
     const/4 v0, 0x1
 
     return v0

@@ -642,7 +642,7 @@
 
     .prologue
     .line 585
-    const v1, 0x10404f2
+    const v1, 0x10404d6
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -699,7 +699,7 @@
 
     .prologue
     .line 569
-    const v1, 0x10404f0
+    const v1, 0x10404d4
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -756,7 +756,7 @@
 
     .prologue
     .line 578
-    const v1, 0x10404f1
+    const v1, 0x10404d5
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1292,7 +1292,7 @@
     invoke-direct {v5, v6}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;)V
 
     .line 372
-    const v6, 0x1080721
+    const v6, 0x108067c
 
     .line 371
     invoke-virtual {v5, v6}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;

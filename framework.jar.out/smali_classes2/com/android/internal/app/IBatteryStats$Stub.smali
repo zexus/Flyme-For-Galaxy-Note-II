@@ -38,9 +38,9 @@
 
 .field static final TRANSACTION_getAwakeTimePlugged:I = 0x4a
 
-.field static final TRANSACTION_getDockStatistics:I = 0x4c
+.field static final TRANSACTION_getDockStatistics:I = 0x4b
 
-.field static final TRANSACTION_getDockStatisticsStream:I = 0x4d
+.field static final TRANSACTION_getDockStatisticsStream:I = 0x4c
 
 .field static final TRANSACTION_getStatistics:I = 0xf
 
@@ -180,7 +180,7 @@
 
 .field static final TRANSACTION_noteWifiSupplicantStateChanged:I = 0x34
 
-.field static final TRANSACTION_resetStatistics:I = 0x4b
+.field static final TRANSACTION_resetStatistics:I = 0x4d
 
 .field static final TRANSACTION_setBatteryState:I = 0x48
 
@@ -3255,17 +3255,28 @@
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 890
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/app/IBatteryStats$Stub;->resetStatistics()V
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/app/IBatteryStats$Stub;->getDockStatistics()[B
+
+    move-result-object v42
 
     .line 891
+    .restart local v42    # "_result":[B
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 892
+    move-object/from16 v0, p3
+
+    move-object/from16 v1, v42
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeByteArray([B)V
+
+    .line 893
     const/4 v4, 0x1
 
     return v4
 
-    .line 896
+    .line 897
+    .end local v42    # "_result":[B
     :sswitch_4c
     const-string/jumbo v4, "com.android.internal.app.IBatteryStats"
 
@@ -3273,56 +3284,26 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 897
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/app/IBatteryStats$Stub;->getDockStatistics()[B
-
-    move-result-object v42
-
     .line 898
-    .restart local v42    # "_result":[B
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 899
-    move-object/from16 v0, p3
-
-    move-object/from16 v1, v42
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeByteArray([B)V
-
-    .line 900
-    const/4 v4, 0x1
-
-    return v4
-
-    .line 904
-    .end local v42    # "_result":[B
-    :sswitch_4d
-    const-string/jumbo v4, "com.android.internal.app.IBatteryStats"
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 905
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/app/IBatteryStats$Stub;->getDockStatisticsStream()Landroid/os/ParcelFileDescriptor;
 
     move-result-object v40
 
-    .line 906
+    .line 899
     .restart local v40    # "_result":Landroid/os/ParcelFileDescriptor;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 907
+    .line 900
     if-eqz v40, :cond_1a
 
-    .line 908
+    .line 901
     const/4 v4, 0x1
 
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 909
+    .line 902
     const/4 v4, 0x1
 
     move-object/from16 v0, v40
@@ -3331,13 +3312,13 @@
 
     invoke-virtual {v0, v1, v4}, Landroid/os/ParcelFileDescriptor;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 914
+    .line 907
     :goto_1a
     const/4 v4, 0x1
 
     return v4
 
-    .line 912
+    .line 905
     :cond_1a
     const/4 v4, 0x0
 
@@ -3347,8 +3328,27 @@
 
     goto :goto_1a
 
-    .line 918
+    .line 911
     .end local v40    # "_result":Landroid/os/ParcelFileDescriptor;
+    :sswitch_4d
+    const-string/jumbo v4, "com.android.internal.app.IBatteryStats"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 912
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/app/IBatteryStats$Stub;->resetStatistics()V
+
+    .line 913
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 914
+    const/4 v4, 0x1
+
+    return v4
+
+    .line 918
     :sswitch_4e
     const-string/jumbo v4, "com.android.internal.app.IBatteryStats"
 

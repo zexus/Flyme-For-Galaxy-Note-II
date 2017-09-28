@@ -198,7 +198,7 @@
     .local v2, "metrics":Landroid/util/DisplayMetrics;
     iget-object v4, p0, Lcom/android/server/policy/ImmersiveModeConfirmation$ClingWindowView;->this$0:Lcom/android/server/policy/ImmersiveModeConfirmation;
 
-    invoke-static {v4}, Lcom/android/server/policy/ImmersiveModeConfirmation;->-get2(Lcom/android/server/policy/ImmersiveModeConfirmation;)Landroid/view/WindowManager;
+    invoke-static {v4}, Lcom/android/server/policy/ImmersiveModeConfirmation;->-get1(Lcom/android/server/policy/ImmersiveModeConfirmation;)Landroid/view/WindowManager;
 
     move-result-object v4
 
@@ -226,7 +226,7 @@
 
     move-result-object v4
 
-    const v5, 0x109006a
+    const v5, 0x1090068
 
     const/4 v6, 0x0
 
@@ -242,7 +242,7 @@
     .line 256
     iget-object v4, p0, Lcom/android/server/policy/ImmersiveModeConfirmation$ClingWindowView;->mClingLayout:Landroid/view/ViewGroup;
 
-    const v5, 0x102035f
+    const v5, 0x1020350
 
     invoke-virtual {v4, v5}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 

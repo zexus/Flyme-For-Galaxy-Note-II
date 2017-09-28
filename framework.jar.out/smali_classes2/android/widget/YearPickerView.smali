@@ -105,7 +105,7 @@
 
     .line 59
     .local v1, "res":Landroid/content/res/Resources;
-    const v2, 0x1050130
+    const v2, 0x105012d
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -114,7 +114,7 @@
     iput v2, p0, Landroid/widget/YearPickerView;->mViewSize:I
 
     .line 60
-    const v2, 0x1050119
+    const v2, 0x1050116
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 

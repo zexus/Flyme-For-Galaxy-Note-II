@@ -24,13 +24,13 @@
     .param p1, "task"    # Landroid/app/IAppTask;
 
     .prologue
-    .line 2926
+    .line 2943
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2927
+    .line 2944
     iput-object p1, p0, Landroid/app/ActivityManager$AppTask;->mAppTaskImpl:Landroid/app/IAppTask;
 
-    .line 2926
+    .line 2943
     return-void
 .end method
 
@@ -40,7 +40,7 @@
     .locals 3
 
     .prologue
-    .line 2935
+    .line 2952
     :try_start_0
     iget-object v1, p0, Landroid/app/ActivityManager$AppTask;->mAppTaskImpl:Landroid/app/IAppTask;
 
@@ -48,15 +48,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2933
+    .line 2950
     :goto_0
     return-void
 
-    .line 2936
+    .line 2953
     :catch_0
     move-exception v0
 
-    .line 2937
+    .line 2954
     .local v0, "e":Landroid/os/RemoteException;
     invoke-static {}, Landroid/app/ActivityManager;->-get0()Ljava/lang/String;
 
@@ -73,7 +73,7 @@
     .locals 3
 
     .prologue
-    .line 2948
+    .line 2965
     :try_start_0
     iget-object v1, p0, Landroid/app/ActivityManager$AppTask;->mAppTaskImpl:Landroid/app/IAppTask;
 
@@ -85,11 +85,11 @@
 
     return-object v1
 
-    .line 2949
+    .line 2966
     :catch_0
     move-exception v0
 
-    .line 2950
+    .line 2967
     .local v0, "e":Landroid/os/RemoteException;
     invoke-static {}, Landroid/app/ActivityManager;->-get0()Ljava/lang/String;
 
@@ -99,7 +99,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 2951
+    .line 2968
     const/4 v1, 0x0
 
     return-object v1
@@ -109,7 +109,7 @@
     .locals 3
 
     .prologue
-    .line 2963
+    .line 2980
     :try_start_0
     iget-object v1, p0, Landroid/app/ActivityManager$AppTask;->mAppTaskImpl:Landroid/app/IAppTask;
 
@@ -117,15 +117,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2961
+    .line 2978
     :goto_0
     return-void
 
-    .line 2964
+    .line 2981
     :catch_0
     move-exception v0
 
-    .line 2965
+    .line 2982
     .local v0, "e":Landroid/os/RemoteException;
     invoke-static {}, Landroid/app/ActivityManager;->-get0()Ljava/lang/String;
 
@@ -143,7 +143,7 @@
     .param p1, "exclude"    # Z
 
     .prologue
-    .line 3005
+    .line 3022
     :try_start_0
     iget-object v1, p0, Landroid/app/ActivityManager$AppTask;->mAppTaskImpl:Landroid/app/IAppTask;
 
@@ -151,15 +151,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3003
+    .line 3020
     :goto_0
     return-void
 
-    .line 3006
+    .line 3023
     :catch_0
     move-exception v0
 
-    .line 3007
+    .line 3024
     .local v0, "e":Landroid/os/RemoteException;
     invoke-static {}, Landroid/app/ActivityManager;->-get0()Ljava/lang/String;
 
@@ -179,18 +179,18 @@
     .param p3, "options"    # Landroid/os/Bundle;
 
     .prologue
-    .line 2991
+    .line 3008
     invoke-static {}, Landroid/app/ActivityThread;->currentActivityThread()Landroid/app/ActivityThread;
 
     move-result-object v6
 
-    .line 2992
+    .line 3009
     .local v6, "thread":Landroid/app/ActivityThread;
     invoke-virtual {v6}, Landroid/app/ActivityThread;->getInstrumentation()Landroid/app/Instrumentation;
 
     move-result-object v0
 
-    .line 2993
+    .line 3010
     invoke-virtual {v6}, Landroid/app/ActivityThread;->getApplicationThread()Landroid/app/ActivityThread$ApplicationThread;
 
     move-result-object v2
@@ -203,9 +203,9 @@
 
     move-object v5, p3
 
-    .line 2992
+    .line 3009
     invoke-virtual/range {v0 .. v5}, Landroid/app/Instrumentation;->execStartActivityFromAppTask(Landroid/content/Context;Landroid/os/IBinder;Landroid/app/IAppTask;Landroid/content/Intent;Landroid/os/Bundle;)V
 
-    .line 2990
+    .line 3007
     return-void
 .end method

@@ -47,27 +47,27 @@
 
 .field public static final content_rect_bottom_clip_allowance:I = 0x10500a1
 
-.field public static final date_picker_day_height:I = 0x105012a
+.field public static final date_picker_day_height:I = 0x1050127
 
-.field public static final date_picker_day_of_week_height:I = 0x1050129
+.field public static final date_picker_day_of_week_height:I = 0x1050126
 
-.field public static final date_picker_day_of_week_text_size:I = 0x1050126
+.field public static final date_picker_day_of_week_text_size:I = 0x1050123
 
-.field public static final date_picker_day_selector_radius:I = 0x105012c
+.field public static final date_picker_day_selector_radius:I = 0x1050129
 
-.field public static final date_picker_day_text_size:I = 0x1050127
+.field public static final date_picker_day_text_size:I = 0x1050124
 
-.field public static final date_picker_day_width:I = 0x105012b
+.field public static final date_picker_day_width:I = 0x1050128
 
-.field public static final date_picker_month_height:I = 0x1050128
+.field public static final date_picker_month_height:I = 0x1050125
 
-.field public static final date_picker_month_text_size:I = 0x1050125
+.field public static final date_picker_month_text_size:I = 0x1050122
 
-.field public static final datepicker_view_animator_height:I = 0x1050130
+.field public static final datepicker_view_animator_height:I = 0x105012d
 
-.field public static final datepicker_year_label_height:I = 0x1050119
+.field public static final datepicker_year_label_height:I = 0x1050116
 
-.field public static final day_picker_padding_top:I = 0x105012e
+.field public static final day_picker_padding_top:I = 0x105012b
 
 .field public static final default_app_widget_padding_bottom:I = 0x1050056
 
@@ -79,14 +79,6 @@
 
 .field public static final default_gap:I = 0x105004e
 
-.field public static final dexopt_icon_margin:I = 0x1050131
-
-.field public static final dexopt_icon_size:I = 0x1050132
-
-.field public static final dexopt_logo_size:I = 0x1050133
-
-.field public static final dexopt_message:I = 0x1050135
-
 .field public static final dialog_min_width_major:I = 0x1050003
 
 .field public static final dialog_min_width_minor:I = 0x1050004
@@ -94,12 +86,6 @@
 .field public static final dropdownitem_icon_width:I = 0x1050051
 
 .field public static final dropdownitem_text_padding_left:I = 0x105004f
-
-.field public static final edge_gesture_perpendicular_distance:I = 0x10500a6
-
-.field public static final edge_gesture_trigger_distance:I = 0x10500a5
-
-.field public static final edge_gesture_trigger_thickness:I = 0x10500a7
 
 .field public static final fast_scroller_minimum_touch_target:I = 0x1050087
 
@@ -123,7 +109,7 @@
 
 .field public static final floating_toolbar_vertical_margin:I = 0x10500a0
 
-.field public static final global_actions_avatar_size:I = 0x10500a8
+.field public static final global_actions_avatar_size:I = 0x10500a5
 
 .field public static final immersive_mode_cling_width:I = 0x1050088
 
@@ -183,7 +169,7 @@
 
 .field public static final text_handle_min_size:I = 0x105008e
 
-.field public static final text_size_small_material:I = 0x10500f4
+.field public static final text_size_small_material:I = 0x10500f1
 
 .field public static final textview_error_popup_default_width:I = 0x1050052
 
@@ -191,21 +177,21 @@
 
 .field public static final thumbnail_width:I = 0x1050002
 
-.field public static final timepicker_center_dot_radius:I = 0x1050114
+.field public static final timepicker_center_dot_radius:I = 0x1050111
 
-.field public static final timepicker_selector_dot_radius:I = 0x1050115
+.field public static final timepicker_selector_dot_radius:I = 0x1050112
 
-.field public static final timepicker_selector_radius:I = 0x1050112
+.field public static final timepicker_selector_radius:I = 0x105010f
 
-.field public static final timepicker_selector_stroke:I = 0x1050113
+.field public static final timepicker_selector_stroke:I = 0x1050110
 
-.field public static final timepicker_text_inset_inner:I = 0x10500ac
+.field public static final timepicker_text_inset_inner:I = 0x10500a9
 
-.field public static final timepicker_text_inset_normal:I = 0x1050116
+.field public static final timepicker_text_inset_normal:I = 0x1050113
 
-.field public static final timepicker_text_size_inner:I = 0x1050118
+.field public static final timepicker_text_size_inner:I = 0x1050115
 
-.field public static final timepicker_text_size_normal:I = 0x1050117
+.field public static final timepicker_text_size_normal:I = 0x1050114
 
 .field public static final toast_y_offset:I = 0x1050016
 
@@ -215,7 +201,7 @@
     .locals 0
 
     .prologue
-    .line 15753
+    .line 15690
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

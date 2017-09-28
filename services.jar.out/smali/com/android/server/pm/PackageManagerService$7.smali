@@ -48,7 +48,7 @@
     .param p9, "val$prebundledUserId"    # I
 
     .prologue
-    .line 5887
+    .line 5875
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$7;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iput-object p2, p0, Lcom/android/server/pm/PackageManagerService$7;->val$ref_file:Ljava/io/File;
@@ -76,7 +76,7 @@
     .locals 12
 
     .prologue
-    .line 5891
+    .line 5879
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$7;->this$0:Lcom/android/server/pm/PackageManagerService;
 
@@ -86,24 +86,24 @@
 
     or-int/lit8 v2, v2, 0x4
 
-    .line 5892
+    .line 5880
     iget v3, p0, Lcom/android/server/pm/PackageManagerService$7;->val$ref_scanFlags:I
 
     iget-wide v4, p0, Lcom/android/server/pm/PackageManagerService$7;->val$ref_currentTime:J
 
     iget-object v6, p0, Lcom/android/server/pm/PackageManagerService$7;->val$user:Landroid/os/UserHandle;
 
-    .line 5891
+    .line 5879
     invoke-static/range {v0 .. v6}, Lcom/android/server/pm/PackageManagerService;->-wrap1(Lcom/android/server/pm/PackageManagerService;Ljava/io/File;IIJLandroid/os/UserHandle;)Landroid/content/pm/PackageParser$Package;
 
-    .line 5893
+    .line 5881
     iget-boolean v0, p0, Lcom/android/server/pm/PackageManagerService$7;->val$isPrebundled:Z
     :try_end_0
     .catch Lcom/android/server/pm/PackageManagerException; {:try_start_0 .. :try_end_0} :catch_0
 
     if-eqz v0, :cond_1
 
-    .line 5896
+    .line 5884
     :try_start_1
     new-instance v0, Landroid/content/pm/PackageParser;
 
@@ -120,7 +120,7 @@
 
     move-result-object v9
 
-    .line 5903
+    .line 5891
     .local v9, "pkg":Landroid/content/pm/PackageParser$Package;
     :try_start_2
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$7;->this$0:Lcom/android/server/pm/PackageManagerService;
@@ -129,13 +129,13 @@
 
     iget v1, p0, Lcom/android/server/pm/PackageManagerService$7;->val$prebundledUserId:I
 
-    .line 5904
+    .line 5892
     iget-object v2, v9, Landroid/content/pm/PackageParser$Package;->packageName:Ljava/lang/String;
 
-    .line 5903
+    .line 5891
     invoke-virtual {v0, v1, v2}, Lcom/android/server/pm/Settings;->markPrebundledPackageInstalledLPr(ILjava/lang/String;)V
 
-    .line 5906
+    .line 5894
     sget-object v0, Lcom/android/server/pm/PackageManagerService;->sUserManager:Lcom/android/server/pm/UserManagerService;
 
     const/4 v1, 0x1
@@ -163,7 +163,7 @@
 
     check-cast v10, Landroid/content/pm/UserInfo;
 
-    .line 5907
+    .line 5895
     .local v10, "userInfo":Landroid/content/pm/UserInfo;
     iget v0, v10, Landroid/content/pm/UserInfo;->id:I
 
@@ -171,31 +171,31 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 5910
+    .line 5898
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$7;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v0, v0, Lcom/android/server/pm/PackageManagerService;->mSettings:Lcom/android/server/pm/Settings;
 
     iget v1, v10, Landroid/content/pm/UserInfo;->id:I
 
-    .line 5911
+    .line 5899
     iget-object v2, v9, Landroid/content/pm/PackageParser$Package;->packageName:Ljava/lang/String;
 
-    .line 5910
+    .line 5898
     invoke-virtual {v0, v1, v2}, Lcom/android/server/pm/Settings;->markPrebundledPackageInstalledLPr(ILjava/lang/String;)V
     :try_end_2
     .catch Lcom/android/server/pm/PackageManagerException; {:try_start_2 .. :try_end_2} :catch_0
 
     goto :goto_0
 
-    .line 5914
+    .line 5902
     .end local v9    # "pkg":Landroid/content/pm/PackageParser$Package;
     .end local v10    # "userInfo":Landroid/content/pm/UserInfo;
     .end local v11    # "userInfo$iterator":Ljava/util/Iterator;
     :catch_0
     move-exception v8
 
-    .line 5915
+    .line 5903
     .local v8, "e":Lcom/android/server/pm/PackageManagerException;
     const-string/jumbo v0, "PackageManager"
 
@@ -235,21 +235,21 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5918
+    .line 5906
     iget v0, p0, Lcom/android/server/pm/PackageManagerService$7;->val$ref_parseFlags:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-nez v0, :cond_1
 
-    .line 5919
+    .line 5907
     iget v0, v8, Lcom/android/server/pm/PackageManagerException;->error:I
 
     const/4 v1, -0x2
 
     if-ne v0, v1, :cond_1
 
-    .line 5920
+    .line 5908
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -274,7 +274,7 @@
 
     invoke-static {v1, v0}, Lcom/android/server/pm/PackageManagerService;->logCriticalInfo(ILjava/lang/String;)V
 
-    .line 5921
+    .line 5909
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$7;->val$ref_file:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->isDirectory()Z
@@ -283,7 +283,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 5922
+    .line 5910
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$7;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v0, v0, Lcom/android/server/pm/PackageManagerService;->mInstaller:Lcom/android/server/pm/Installer;
@@ -296,17 +296,17 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/pm/Installer;->rmPackageDir(Ljava/lang/String;)I
 
-    .line 5888
+    .line 5876
     .end local v8    # "e":Lcom/android/server/pm/PackageManagerException;
     :cond_1
     :goto_1
     return-void
 
-    .line 5897
+    .line 5885
     :catch_1
     move-exception v7
 
-    .line 5898
+    .line 5886
     .local v7, "e":Landroid/content/pm/PackageParser$PackageParserException;
     :try_start_3
     invoke-static {v7}, Lcom/android/server/pm/PackageManagerException;->from(Landroid/content/pm/PackageParser$PackageParserException;)Lcom/android/server/pm/PackageManagerException;
@@ -317,7 +317,7 @@
     :try_end_3
     .catch Lcom/android/server/pm/PackageManagerException; {:try_start_3 .. :try_end_3} :catch_0
 
-    .line 5924
+    .line 5912
     .end local v7    # "e":Landroid/content/pm/PackageParser$PackageParserException;
     .restart local v8    # "e":Lcom/android/server/pm/PackageManagerException;
     :cond_2

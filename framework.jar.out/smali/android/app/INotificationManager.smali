@@ -231,14 +231,6 @@
     .end annotation
 .end method
 
-.method public abstract isPackageAllowedForHalo(Ljava/lang/String;I)Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract isSystemConditionProviderEnabled(Ljava/lang/String;)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -288,14 +280,6 @@
 .end method
 
 .method public abstract requestZenModeConditions(Landroid/service/notification/IConditionListener;I)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setHaloPolicyBlack(Ljava/lang/String;IZ)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

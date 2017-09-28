@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/server/policy/PhoneWindowManager;
 
     .prologue
-    .line 1617
+    .line 1554
     iput-object p1, p0, Lcom/android/server/policy/PhoneWindowManager$7;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,46 +38,29 @@
 
 # virtual methods
 .method public run()V
-    .locals 3
+    .locals 2
 
     .prologue
-    const/4 v2, 0x1
-
-    .line 1620
+    .line 1557
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$7;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mContext:Landroid/content/Context;
+    iget-boolean v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mHomeDoubleTapPending:Z
 
-    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    if-eqz v0, :cond_0
 
-    move-result-object v0
-
-    .line 1621
-    const-string/jumbo v1, "screen_shot_shortcut"
-
-    .line 1620
-    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v0
-
-    if-ne v0, v2, :cond_0
-
-    .line 1622
+    .line 1558
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$7;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    invoke-static {v0}, Lcom/android/server/policy/PhoneWindowManager;->-wrap17(Lcom/android/server/policy/PhoneWindowManager;)V
+    const/4 v1, 0x0
 
-    .line 1619
-    :goto_0
-    return-void
+    iput-boolean v1, v0, Lcom/android/server/policy/PhoneWindowManager;->mHomeDoubleTapPending:Z
 
-    .line 1624
+    .line 1559
+    iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$7;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+
+    invoke-static {v0}, Lcom/android/server/policy/PhoneWindowManager;->-wrap10(Lcom/android/server/policy/PhoneWindowManager;)V
+
+    .line 1556
     :cond_0
-    const-string/jumbo v0, "WindowManager"
-
-    const-string/jumbo v1, "ScreenShot Shortcut Disabled"
-
-    invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
+    return-void
 .end method

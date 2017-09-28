@@ -131,6 +131,21 @@
     return-object v0
 .end method
 
+.method public getDefaultPictureAdjustment()Lcyanogenmod/hardware/HSIC;
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 143
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
 .method public getDisplayColorCalibration()[I
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
@@ -235,6 +250,36 @@
     const/4 v0, 0x0
 
     return v0
+.end method
+
+.method public getPictureAdjustment()Lcyanogenmod/hardware/HSIC;
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 139
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
+.method public getPictureAdjustmentRanges()[F
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 151
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public getSerialNumber()Ljava/lang/String;
@@ -452,6 +497,22 @@
 
     .prologue
     .line 91
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public setPictureAdjustment(Lcyanogenmod/hardware/HSIC;)Z
+    .locals 1
+    .param p1, "hsic"    # Lcyanogenmod/hardware/HSIC;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 147
     const/4 v0, 0x0
 
     return v0

@@ -215,7 +215,7 @@
     .prologue
     const/4 v9, 0x0
 
-    const v8, 0x10202f5
+    const v8, 0x10202f3
 
     const/4 v7, 0x4
 
@@ -290,7 +290,7 @@
     iput-object v5, p0, Landroid/widget/ActivityChooserView;->mCallbacks:Landroid/widget/ActivityChooserView$Callbacks;
 
     .line 247
-    const v5, 0x10202f3
+    const v5, 0x10202f1
 
     invoke-virtual {p0, v5}, Landroid/widget/ActivityChooserView;->findViewById(I)Landroid/view/View;
 
@@ -310,7 +310,7 @@
     iput-object v5, p0, Landroid/widget/ActivityChooserView;->mActivityChooserContentBackground:Landroid/graphics/drawable/Drawable;
 
     .line 250
-    const v5, 0x10202f6
+    const v5, 0x10202f4
 
     invoke-virtual {p0, v5}, Landroid/widget/ActivityChooserView;->findViewById(I)Landroid/view/View;
 
@@ -346,7 +346,7 @@
     iput-object v5, p0, Landroid/widget/ActivityChooserView;->mDefaultActivityButtonImage:Landroid/widget/ImageView;
 
     .line 255
-    const v5, 0x10202f4
+    const v5, 0x10202f2
 
     invoke-virtual {p0, v5}, Landroid/widget/ActivityChooserView;->findViewById(I)Landroid/view/View;
 
@@ -654,7 +654,7 @@
     iget-object v6, p0, Landroid/widget/ActivityChooserView;->mContext:Landroid/content/Context;
 
     .line 405
-    const v7, 0x1040516
+    const v7, 0x10404fa
 
     .line 404
     invoke-virtual {v6, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;

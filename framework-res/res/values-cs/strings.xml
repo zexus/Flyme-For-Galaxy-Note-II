@@ -151,33 +151,6 @@
     <string name="time_of_day" formatted="false">%-k:%M:%S</string>
     <string name="date_and_time" formatted="false">%-k:%M:%S %-e. %-m. %Y</string>
     <string name="date_time">%2$s %1$s</string>
-    <string name="reboot_systemui">Restartovat SystemUI</string>
-    <string name="animation_fade">Animace slábnutí</string>
-    <string name="animation_slide_right">Posunutí vpravo</string>
-    <string name="animation_slide_left">Posunutí vlevo</string>
-    <string name="animation_slide_right_no_fade">Posunutí vpravo (bez slábnutí)</string>
-    <string name="animation_slide_left_no_fade">Posunutí vlevo (bez slábnutí)</string>
-    <string name="animation_slide_up">Posunutí dolů</string>
-    <string name="animation_slide_down">Posunutí nahoru</string>
-    <string name="animation_default">Výchozí</string>
-    <string name="animation_translucent">Průhlednost</string>
-    <string name="animation_grow_shrink">Růst (nahoru)</string>
-    <string name="animation_grow_shrink_center">Růst (uprostřed)</string>
-    <string name="animation_grow_shrink_bottom">Růst (dole)</string>
-    <string name="animation_grow_shrink_left">Růst (zleva)</string>
-    <string name="animation_grow_shrink_right">Růst (zprava)</string>
-    <string name="action_null">Prázdný</string>
-    <string name="default_string">Výchozí</string>
-    <string name="global_action_onthego">Režim On-The-Go</string>
-    <string name="global_action_torch">Svítilna</string>
-    <string name="floating_window_snap_top">Přichytit nahoru</string>
-    <string name="floating_window_snap_bottom">Přichytit dolů</string>
-    <string name="floating_window_snap_left">Přichytit vlevo</string>
-    <string name="floating_window_snap_right">Přichytit vpravo</string>
-    <string name="floating_window_minimize">Minimalizovat</string>
-    <string name="adb_not_connected_notification_title">ADB neaktivní</string>
-    <string name="adb_active_custom_tile_not_connected">neaktivní</string>
-    <string name="system_error_vendorprint">Váš dodavatel image se neshoduje se systémem. Prosím flash image %s pro vaše zařízení</string>
     <string name="byteShort">B</string>
     <string name="kilobyteShort">kB</string>
     <string name="megabyteShort">MB</string>

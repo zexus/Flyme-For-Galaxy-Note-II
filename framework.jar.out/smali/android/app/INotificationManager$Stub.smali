@@ -80,8 +80,6 @@
 
 .field static final TRANSACTION_isNotificationPolicyAccessGrantedForPackage:I = 0x2b
 
-.field static final TRANSACTION_isPackageAllowedForHalo:I = 0x31
-
 .field static final TRANSACTION_isSystemConditionProviderEnabled:I = 0x20
 
 .field static final TRANSACTION_matchesCallFilter:I = 0x1f
@@ -95,8 +93,6 @@
 .field static final TRANSACTION_requestInterruptionFilterFromListener:I = 0x1a
 
 .field static final TRANSACTION_requestZenModeConditions:I = 0x26
-
-.field static final TRANSACTION_setHaloPolicyBlack:I = 0x30
 
 .field static final TRANSACTION_setInterruptionFilter:I = 0x1d
 
@@ -213,7 +209,7 @@
     .line 39
     sparse-switch p1, :sswitch_data_0
 
-    .line 673
+    .line 648
     invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v3
@@ -2614,122 +2610,6 @@
 
     goto :goto_14
 
-    .line 649
-    .end local v4    # "_arg0":Ljava/lang/String;
-    .end local v17    # "_arg1":I
-    .end local v31    # "_result":Landroid/content/pm/ParceledListSlice;
-    :sswitch_30
-    const-string/jumbo v3, "android.app.INotificationManager"
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 651
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 653
-    .restart local v4    # "_arg0":Ljava/lang/String;
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v17
-
-    .line 655
-    .restart local v17    # "_arg1":I
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v3
-
-    if-eqz v3, :cond_15
-
-    const/16 v26, 0x1
-
-    .line 656
-    .restart local v26    # "_arg2":Z
-    :goto_15
-    move-object/from16 v0, p0
-
-    move/from16 v1, v17
-
-    move/from16 v2, v26
-
-    invoke-virtual {v0, v4, v1, v2}, Landroid/app/INotificationManager$Stub;->setHaloPolicyBlack(Ljava/lang/String;IZ)V
-
-    .line 657
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 658
-    const/4 v3, 0x1
-
-    return v3
-
-    .line 655
-    .end local v26    # "_arg2":Z
-    :cond_15
-    const/16 v26, 0x0
-
-    .restart local v26    # "_arg2":Z
-    goto :goto_15
-
-    .line 662
-    .end local v4    # "_arg0":Ljava/lang/String;
-    .end local v17    # "_arg1":I
-    .end local v26    # "_arg2":Z
-    :sswitch_31
-    const-string/jumbo v3, "android.app.INotificationManager"
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 664
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 666
-    .restart local v4    # "_arg0":Ljava/lang/String;
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v17
-
-    .line 667
-    .restart local v17    # "_arg1":I
-    move-object/from16 v0, p0
-
-    move/from16 v1, v17
-
-    invoke-virtual {v0, v4, v1}, Landroid/app/INotificationManager$Stub;->isPackageAllowedForHalo(Ljava/lang/String;I)Z
-
-    move-result v33
-
-    .line 668
-    .restart local v33    # "_result":Z
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 669
-    if-eqz v33, :cond_16
-
-    const/4 v3, 0x1
-
-    :goto_16
-    move-object/from16 v0, p3
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 670
-    const/4 v3, 0x1
-
-    return v3
-
-    .line 669
-    :cond_16
-    const/4 v3, 0x0
-
-    goto :goto_16
-
     .line 39
     nop
 
@@ -2782,8 +2662,6 @@
         0x2d -> :sswitch_2d
         0x2e -> :sswitch_2e
         0x2f -> :sswitch_2f
-        0x30 -> :sswitch_30
-        0x31 -> :sswitch_31
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

@@ -132,7 +132,7 @@
     if-eqz v1, :cond_3
 
     .line 58
-    const v4, 0x10403fe
+    const v4, 0x10403e2
 
     .line 74
     .end local v2    # "name2":Ljava/lang/CharSequence;
@@ -164,7 +164,7 @@
     invoke-virtual {p0, v5}, Lcom/android/server/am/AppNotRespondingDialog;->setMessage(Ljava/lang/CharSequence;)V
 
     .line 79
-    const v5, 0x1040402
+    const v5, 0x10403e6
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -183,7 +183,7 @@
     invoke-virtual {p0, v7, v5, v6}, Lcom/android/server/am/AppNotRespondingDialog;->setButton(ILjava/lang/CharSequence;Landroid/os/Message;)V
 
     .line 82
-    const v5, 0x1040404
+    const v5, 0x10403e8
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -207,7 +207,7 @@
     if-eqz v5, :cond_0
 
     .line 87
-    const v5, 0x1040403
+    const v5, 0x10403e7
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -229,7 +229,7 @@
 
     .line 91
     :cond_0
-    const v5, 0x10403fd
+    const v5, 0x10403e1
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -320,7 +320,7 @@
     iget-object v2, p3, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
 
     .line 62
-    const v4, 0x1040400
+    const v4, 0x10403e4
 
     .restart local v4    # "resid":I
     goto/16 :goto_1
@@ -337,7 +337,7 @@
 
     .line 67
     .restart local v2    # "name2":Ljava/lang/CharSequence;
-    const v4, 0x10403ff
+    const v4, 0x10403e3
 
     .restart local v4    # "resid":I
     goto/16 :goto_1
@@ -350,7 +350,7 @@
 
     .line 70
     .restart local v1    # "name1":Ljava/lang/CharSequence;
-    const v4, 0x1040401
+    const v4, 0x10403e5
 
     .restart local v4    # "resid":I
     goto/16 :goto_1

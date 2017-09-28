@@ -325,35 +325,35 @@
     .line 137
     sget-object v0, Landroid/os/storage/VolumeInfo;->sStateToDescrip:Landroid/util/SparseIntArray;
 
-    const v1, 0x10404a7
+    const v1, 0x104048b
 
     invoke-virtual {v0, v3, v1}, Landroid/util/SparseIntArray;->put(II)V
 
     .line 138
     sget-object v0, Landroid/os/storage/VolumeInfo;->sStateToDescrip:Landroid/util/SparseIntArray;
 
-    const v1, 0x10404a8
+    const v1, 0x104048c
 
     invoke-virtual {v0, v4, v1}, Landroid/util/SparseIntArray;->put(II)V
 
     .line 139
     sget-object v0, Landroid/os/storage/VolumeInfo;->sStateToDescrip:Landroid/util/SparseIntArray;
 
-    const v1, 0x10404a9
+    const v1, 0x104048d
 
     invoke-virtual {v0, v5, v1}, Landroid/util/SparseIntArray;->put(II)V
 
     .line 140
     sget-object v0, Landroid/os/storage/VolumeInfo;->sStateToDescrip:Landroid/util/SparseIntArray;
 
-    const v1, 0x10404aa
+    const v1, 0x104048e
 
     invoke-virtual {v0, v6, v1}, Landroid/util/SparseIntArray;->put(II)V
 
     .line 141
     sget-object v0, Landroid/os/storage/VolumeInfo;->sStateToDescrip:Landroid/util/SparseIntArray;
 
-    const v1, 0x10404af
+    const v1, 0x1040493
 
     invoke-virtual {v0, v7, v1}, Landroid/util/SparseIntArray;->put(II)V
 
@@ -362,7 +362,7 @@
 
     const/4 v1, 0x5
 
-    const v2, 0x10404ae
+    const v2, 0x1040492
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
@@ -371,7 +371,7 @@
 
     const/4 v1, 0x6
 
-    const v2, 0x10404ac
+    const v2, 0x1040490
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
@@ -380,7 +380,7 @@
 
     const/4 v1, 0x7
 
-    const v2, 0x10404a6
+    const v2, 0x104048a
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
@@ -389,7 +389,7 @@
 
     const/16 v1, 0x8
 
-    const v2, 0x10404ab
+    const v2, 0x104048f
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
@@ -1458,7 +1458,7 @@
 
     move-result-object v0
 
-    const v1, 0x1040523
+    const v1, 0x1040507
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

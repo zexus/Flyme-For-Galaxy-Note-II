@@ -1386,7 +1386,7 @@
     iput-object v1, v0, Lcom/android/server/notification/ManagedServices$Config;->settingsAction:Ljava/lang/String;
 
     .line 85
-    const v1, 0x10404d2
+    const v1, 0x10404b6
 
     iput v1, v0, Lcom/android/server/notification/ManagedServices$Config;->clientLabel:I
 

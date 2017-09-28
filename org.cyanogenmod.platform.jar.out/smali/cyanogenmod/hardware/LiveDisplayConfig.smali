@@ -54,6 +54,17 @@
     .end annotation
 .end field
 
+.field private final mContrastRange:Landroid/util/Range;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/util/Range",
+            "<",
+            "Ljava/lang/Float;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field private final mDefaultAutoContrast:Z
 
 .field private final mDefaultAutoOutdoorMode:Z
@@ -68,351 +79,543 @@
 
 .field private final mDefaultNightTemperature:I
 
+.field private final mHueRange:Landroid/util/Range;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/util/Range",
+            "<",
+            "Ljava/lang/Float;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final mIntensityRange:Landroid/util/Range;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/util/Range",
+            "<",
+            "Ljava/lang/Float;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final mSaturationRange:Landroid/util/Range;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/util/Range",
+            "<",
+            "Ljava/lang/Float;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final mSaturationThresholdRange:Landroid/util/Range;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/util/Range",
+            "<",
+            "Ljava/lang/Float;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
     .prologue
-    .line 290
+    .line 379
     new-instance v0, Lcyanogenmod/hardware/LiveDisplayConfig$1;
 
     invoke-direct {v0}, Lcyanogenmod/hardware/LiveDisplayConfig$1;-><init>()V
 
-    .line 289
+    .line 378
     sput-object v0, Lcyanogenmod/hardware/LiveDisplayConfig;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 40
+    .line 43
     return-void
 .end method
 
 .method private constructor <init>(Landroid/os/Parcel;)V
-    .locals 20
+    .locals 21
     .param p1, "parcel"    # Landroid/os/Parcel;
 
     .prologue
-    .line 77
+    .line 95
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 43
-    new-instance v17, Ljava/util/BitSet;
+    .line 46
+    new-instance v18, Ljava/util/BitSet;
 
-    invoke-direct/range {v17 .. v17}, Ljava/util/BitSet;-><init>()V
+    invoke-direct/range {v18 .. v18}, Ljava/util/BitSet;-><init>()V
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v18
 
     move-object/from16 v1, p0
 
     iput-object v0, v1, Lcyanogenmod/hardware/LiveDisplayConfig;->mAllModes:Ljava/util/BitSet;
 
-    .line 79
+    .line 97
     invoke-static/range {p1 .. p1}, Lcyanogenmod/os/Concierge;->receiveParcel(Landroid/os/Parcel;)Lcyanogenmod/os/Concierge$ParcelInfo;
 
-    move-result-object v15
-
-    .line 80
-    .local v15, "parcelInfo":Lcyanogenmod/os/Concierge$ParcelInfo;
-    invoke-virtual {v15}, Lcyanogenmod/os/Concierge$ParcelInfo;->getParcelVersion()I
-
-    move-result v16
-
-    .line 83
-    .local v16, "parcelableVersion":I
-    const-wide/16 v2, 0x0
-
-    .line 84
-    .local v2, "capabilities":J
-    const/4 v9, 0x0
-
-    .line 85
-    .local v9, "defaultMode":I
-    const/4 v8, -0x1
-
-    .line 86
-    .local v8, "defaultDayTemperature":I
-    const/4 v10, -0x1
-
-    .line 87
-    .local v10, "defaultNightTemperature":I
-    const/4 v4, 0x0
-
-    .line 88
-    .local v4, "defaultAutoContrast":Z
-    const/4 v5, 0x0
-
-    .line 89
-    .local v5, "defaultAutoOutdoorMode":Z
-    const/4 v6, 0x0
-
-    .line 90
-    .local v6, "defaultCABC":Z
-    const/4 v7, 0x0
-
-    .line 91
-    .local v7, "defaultColorEnhancement":Z
-    const/4 v14, 0x0
-
-    .line 92
-    .local v14, "minColorTemperature":I
-    const/4 v12, 0x0
-
-    .line 93
-    .local v12, "maxColorTemperature":I
-    const/4 v13, 0x0
-
-    .line 94
-    .local v13, "minColorBalance":I
-    const/4 v11, 0x0
-
-    .line 96
-    .local v11, "maxColorBalance":I
-    const/16 v17, 0x6
-
-    move/from16 v0, v16
-
-    move/from16 v1, v17
-
-    if-lt v0, v1, :cond_0
-
-    .line 97
-    invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readLong()J
-
-    move-result-wide v2
+    move-result-object v16
 
     .line 98
-    invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v9
-
-    .line 99
-    invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v8
-
-    .line 100
-    invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v10
-
-    .line 101
-    invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
+    .local v16, "parcelInfo":Lcyanogenmod/os/Concierge$ParcelInfo;
+    invoke-virtual/range {v16 .. v16}, Lcyanogenmod/os/Concierge$ParcelInfo;->getParcelVersion()I
 
     move-result v17
 
-    const/16 v18, 0x1
+    .line 101
+    .local v17, "parcelableVersion":I
+    const-wide/16 v2, 0x0
+
+    .line 102
+    .local v2, "capabilities":J
+    const/4 v9, 0x0
+
+    .line 103
+    .local v9, "defaultMode":I
+    const/4 v8, -0x1
+
+    .line 104
+    .local v8, "defaultDayTemperature":I
+    const/4 v10, -0x1
+
+    .line 105
+    .local v10, "defaultNightTemperature":I
+    const/4 v4, 0x0
+
+    .line 106
+    .local v4, "defaultAutoContrast":Z
+    const/4 v5, 0x0
+
+    .line 107
+    .local v5, "defaultAutoOutdoorMode":Z
+    const/4 v6, 0x0
+
+    .line 108
+    .local v6, "defaultCABC":Z
+    const/4 v7, 0x0
+
+    .line 109
+    .local v7, "defaultColorEnhancement":Z
+    const/4 v14, 0x0
+
+    .line 110
+    .local v14, "minColorTemperature":I
+    const/4 v12, 0x0
+
+    .line 111
+    .local v12, "maxColorTemperature":I
+    const/4 v13, 0x0
+
+    .line 112
+    .local v13, "minColorBalance":I
+    const/4 v11, 0x0
+
+    .line 113
+    .local v11, "maxColorBalance":I
+    const/16 v18, 0xa
+
+    move/from16 v0, v18
+
+    new-array v15, v0, [F
+
+    .line 115
+    .local v15, "paRanges":[F
+    const/16 v18, 0x6
 
     move/from16 v0, v17
 
     move/from16 v1, v18
+
+    if-lt v0, v1, :cond_0
+
+    .line 116
+    invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readLong()J
+
+    move-result-wide v2
+
+    .line 117
+    invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v9
+
+    .line 118
+    invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v8
+
+    .line 119
+    invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v10
+
+    .line 120
+    invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v18
+
+    const/16 v19, 0x1
+
+    move/from16 v0, v18
+
+    move/from16 v1, v19
 
     if-ne v0, v1, :cond_1
 
     const/4 v4, 0x1
 
-    .line 102
+    .line 121
     :goto_0
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
-    move-result v17
+    move-result v18
 
-    const/16 v18, 0x1
+    const/16 v19, 0x1
 
-    move/from16 v0, v17
+    move/from16 v0, v18
 
-    move/from16 v1, v18
+    move/from16 v1, v19
 
     if-ne v0, v1, :cond_2
 
     const/4 v5, 0x1
 
-    .line 103
+    .line 122
     :goto_1
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
-    move-result v17
+    move-result v18
 
-    const/16 v18, 0x1
+    const/16 v19, 0x1
 
-    move/from16 v0, v17
+    move/from16 v0, v18
 
-    move/from16 v1, v18
+    move/from16 v1, v19
 
     if-ne v0, v1, :cond_3
 
     const/4 v6, 0x1
 
-    .line 104
+    .line 123
     :goto_2
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
-    move-result v17
+    move-result v18
 
-    const/16 v18, 0x1
+    const/16 v19, 0x1
 
-    move/from16 v0, v17
+    move/from16 v0, v18
 
-    move/from16 v1, v18
+    move/from16 v1, v19
 
     if-ne v0, v1, :cond_4
 
     const/4 v7, 0x1
 
-    .line 105
+    .line 124
     :goto_3
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v14
 
-    .line 106
+    .line 125
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v12
 
-    .line 107
+    .line 126
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v13
 
-    .line 108
+    .line 127
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v11
 
-    .line 112
-    :cond_0
-    const/16 v17, 0x1
+    .line 128
+    move-object/from16 v0, p1
 
-    move/from16 v0, v17
+    invoke-virtual {v0, v15}, Landroid/os/Parcel;->readFloatArray([F)V
+
+    .line 132
+    :cond_0
+    const/16 v18, 0x1
+
+    move/from16 v0, v18
 
     new-array v0, v0, [J
 
-    move-object/from16 v17, v0
+    move-object/from16 v18, v0
 
-    const/16 v18, 0x0
+    const/16 v19, 0x0
 
-    aput-wide v2, v17, v18
+    aput-wide v2, v18, v19
 
-    invoke-static/range {v17 .. v17}, Ljava/util/BitSet;->valueOf([J)Ljava/util/BitSet;
+    invoke-static/range {v18 .. v18}, Ljava/util/BitSet;->valueOf([J)Ljava/util/BitSet;
 
-    move-result-object v17
+    move-result-object v18
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v18
 
     move-object/from16 v1, p0
 
     iput-object v0, v1, Lcyanogenmod/hardware/LiveDisplayConfig;->mCapabilities:Ljava/util/BitSet;
 
-    .line 113
+    .line 133
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcyanogenmod/hardware/LiveDisplayConfig;->mAllModes:Ljava/util/BitSet;
 
-    move-object/from16 v17, v0
+    move-object/from16 v18, v0
 
-    const/16 v18, 0x0
+    const/16 v19, 0x0
 
-    const/16 v19, 0x4
+    const/16 v20, 0x4
 
-    invoke-virtual/range {v17 .. v19}, Ljava/util/BitSet;->set(II)V
+    invoke-virtual/range {v18 .. v20}, Ljava/util/BitSet;->set(II)V
 
-    .line 114
+    .line 134
     move-object/from16 v0, p0
 
     iput v9, v0, Lcyanogenmod/hardware/LiveDisplayConfig;->mDefaultMode:I
 
-    .line 115
+    .line 135
     move-object/from16 v0, p0
 
     iput v8, v0, Lcyanogenmod/hardware/LiveDisplayConfig;->mDefaultDayTemperature:I
 
-    .line 116
+    .line 136
     move-object/from16 v0, p0
 
     iput v10, v0, Lcyanogenmod/hardware/LiveDisplayConfig;->mDefaultNightTemperature:I
 
-    .line 117
+    .line 137
     move-object/from16 v0, p0
 
     iput-boolean v4, v0, Lcyanogenmod/hardware/LiveDisplayConfig;->mDefaultAutoContrast:Z
 
-    .line 118
+    .line 138
     move-object/from16 v0, p0
 
     iput-boolean v5, v0, Lcyanogenmod/hardware/LiveDisplayConfig;->mDefaultAutoOutdoorMode:Z
 
-    .line 119
+    .line 139
     move-object/from16 v0, p0
 
     iput-boolean v6, v0, Lcyanogenmod/hardware/LiveDisplayConfig;->mDefaultCABC:Z
 
-    .line 120
+    .line 140
     move-object/from16 v0, p0
 
     iput-boolean v7, v0, Lcyanogenmod/hardware/LiveDisplayConfig;->mDefaultColorEnhancement:Z
 
-    .line 121
+    .line 141
     invoke-static {v14}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v17
-
-    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v18
 
-    invoke-static/range {v17 .. v18}, Landroid/util/Range;->create(Ljava/lang/Comparable;Ljava/lang/Comparable;)Landroid/util/Range;
+    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v17
+    move-result-object v19
 
-    move-object/from16 v0, v17
+    invoke-static/range {v18 .. v19}, Landroid/util/Range;->create(Ljava/lang/Comparable;Ljava/lang/Comparable;)Landroid/util/Range;
+
+    move-result-object v18
+
+    move-object/from16 v0, v18
 
     move-object/from16 v1, p0
 
     iput-object v0, v1, Lcyanogenmod/hardware/LiveDisplayConfig;->mColorTemperatureRange:Landroid/util/Range;
 
-    .line 122
+    .line 142
     invoke-static {v13}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v17
-
-    invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v18
 
-    invoke-static/range {v17 .. v18}, Landroid/util/Range;->create(Ljava/lang/Comparable;Ljava/lang/Comparable;)Landroid/util/Range;
+    invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v17
+    move-result-object v19
 
-    move-object/from16 v0, v17
+    invoke-static/range {v18 .. v19}, Landroid/util/Range;->create(Ljava/lang/Comparable;Ljava/lang/Comparable;)Landroid/util/Range;
+
+    move-result-object v18
+
+    move-object/from16 v0, v18
 
     move-object/from16 v1, p0
 
     iput-object v0, v1, Lcyanogenmod/hardware/LiveDisplayConfig;->mColorBalanceRange:Landroid/util/Range;
 
-    .line 125
-    invoke-virtual {v15}, Lcyanogenmod/os/Concierge$ParcelInfo;->complete()V
+    .line 143
+    const/16 v18, 0x0
 
-    .line 77
+    aget v18, v15, v18
+
+    invoke-static/range {v18 .. v18}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v18
+
+    const/16 v19, 0x1
+
+    aget v19, v15, v19
+
+    invoke-static/range {v19 .. v19}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v19
+
+    invoke-static/range {v18 .. v19}, Landroid/util/Range;->create(Ljava/lang/Comparable;Ljava/lang/Comparable;)Landroid/util/Range;
+
+    move-result-object v18
+
+    move-object/from16 v0, v18
+
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Lcyanogenmod/hardware/LiveDisplayConfig;->mHueRange:Landroid/util/Range;
+
+    .line 144
+    const/16 v18, 0x2
+
+    aget v18, v15, v18
+
+    invoke-static/range {v18 .. v18}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v18
+
+    const/16 v19, 0x3
+
+    aget v19, v15, v19
+
+    invoke-static/range {v19 .. v19}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v19
+
+    invoke-static/range {v18 .. v19}, Landroid/util/Range;->create(Ljava/lang/Comparable;Ljava/lang/Comparable;)Landroid/util/Range;
+
+    move-result-object v18
+
+    move-object/from16 v0, v18
+
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Lcyanogenmod/hardware/LiveDisplayConfig;->mSaturationRange:Landroid/util/Range;
+
+    .line 145
+    const/16 v18, 0x4
+
+    aget v18, v15, v18
+
+    invoke-static/range {v18 .. v18}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v18
+
+    const/16 v19, 0x5
+
+    aget v19, v15, v19
+
+    invoke-static/range {v19 .. v19}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v19
+
+    invoke-static/range {v18 .. v19}, Landroid/util/Range;->create(Ljava/lang/Comparable;Ljava/lang/Comparable;)Landroid/util/Range;
+
+    move-result-object v18
+
+    move-object/from16 v0, v18
+
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Lcyanogenmod/hardware/LiveDisplayConfig;->mIntensityRange:Landroid/util/Range;
+
+    .line 146
+    const/16 v18, 0x6
+
+    aget v18, v15, v18
+
+    invoke-static/range {v18 .. v18}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v18
+
+    const/16 v19, 0x7
+
+    aget v19, v15, v19
+
+    invoke-static/range {v19 .. v19}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v19
+
+    invoke-static/range {v18 .. v19}, Landroid/util/Range;->create(Ljava/lang/Comparable;Ljava/lang/Comparable;)Landroid/util/Range;
+
+    move-result-object v18
+
+    move-object/from16 v0, v18
+
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Lcyanogenmod/hardware/LiveDisplayConfig;->mContrastRange:Landroid/util/Range;
+
+    .line 147
+    const/16 v18, 0x8
+
+    aget v18, v15, v18
+
+    invoke-static/range {v18 .. v18}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v18
+
+    const/16 v19, 0x9
+
+    aget v19, v15, v19
+
+    invoke-static/range {v19 .. v19}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v19
+
+    invoke-static/range {v18 .. v19}, Landroid/util/Range;->create(Ljava/lang/Comparable;Ljava/lang/Comparable;)Landroid/util/Range;
+
+    move-result-object v18
+
+    move-object/from16 v0, v18
+
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Lcyanogenmod/hardware/LiveDisplayConfig;->mSaturationThresholdRange:Landroid/util/Range;
+
+    .line 150
+    invoke-virtual/range {v16 .. v16}, Lcyanogenmod/os/Concierge$ParcelInfo;->complete()V
+
+    .line 95
     return-void
 
-    .line 101
+    .line 120
     :cond_1
     const/4 v4, 0x0
 
     goto/16 :goto_0
 
-    .line 102
+    .line 121
     :cond_2
     const/4 v5, 0x0
 
     goto/16 :goto_1
 
-    .line 103
+    .line 122
     :cond_3
     const/4 v6, 0x0
 
     goto/16 :goto_2
 
-    .line 104
+    .line 123
     :cond_4
     const/4 v7, 0x0
 
@@ -429,8 +632,8 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/util/BitSet;IIIZZZZLandroid/util/Range;Landroid/util/Range;)V
-    .locals 3
+.method public constructor <init>(Ljava/util/BitSet;IIIZZZZLandroid/util/Range;Landroid/util/Range;Landroid/util/Range;Landroid/util/Range;Landroid/util/Range;Landroid/util/Range;Landroid/util/Range;)V
+    .locals 4
     .param p1, "capabilities"    # Ljava/util/BitSet;
     .param p2, "defaultMode"    # I
     .param p3, "defaultDayTemperature"    # I
@@ -451,69 +654,117 @@
             "Landroid/util/Range",
             "<",
             "Ljava/lang/Integer;",
+            ">;",
+            "Landroid/util/Range",
+            "<",
+            "Ljava/lang/Float;",
+            ">;",
+            "Landroid/util/Range",
+            "<",
+            "Ljava/lang/Float;",
+            ">;",
+            "Landroid/util/Range",
+            "<",
+            "Ljava/lang/Float;",
+            ">;",
+            "Landroid/util/Range",
+            "<",
+            "Ljava/lang/Float;",
+            ">;",
+            "Landroid/util/Range",
+            "<",
+            "Ljava/lang/Float;",
             ">;)V"
         }
     .end annotation
 
     .prologue
-    .line 63
+    .line 76
     .local p9, "colorTemperatureRange":Landroid/util/Range;, "Landroid/util/Range<Ljava/lang/Integer;>;"
     .local p10, "colorBalanceRange":Landroid/util/Range;, "Landroid/util/Range<Ljava/lang/Integer;>;"
+    .local p11, "hueRange":Landroid/util/Range;, "Landroid/util/Range<Ljava/lang/Float;>;"
+    .local p12, "saturationRange":Landroid/util/Range;, "Landroid/util/Range<Ljava/lang/Float;>;"
+    .local p13, "intensityRange":Landroid/util/Range;, "Landroid/util/Range<Ljava/lang/Float;>;"
+    .local p14, "contrastRange":Landroid/util/Range;, "Landroid/util/Range<Ljava/lang/Float;>;"
+    .local p15, "saturationThresholdRange":Landroid/util/Range;, "Landroid/util/Range<Ljava/lang/Float;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 43
-    new-instance v0, Ljava/util/BitSet;
+    .line 46
+    new-instance v1, Ljava/util/BitSet;
 
-    invoke-direct {v0}, Ljava/util/BitSet;-><init>()V
+    invoke-direct {v1}, Ljava/util/BitSet;-><init>()V
 
-    iput-object v0, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mAllModes:Ljava/util/BitSet;
+    iput-object v1, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mAllModes:Ljava/util/BitSet;
 
-    .line 64
+    .line 77
     invoke-virtual {p1}, Ljava/util/BitSet;->clone()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    check-cast v0, Ljava/util/BitSet;
+    check-cast v1, Ljava/util/BitSet;
 
-    iput-object v0, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mCapabilities:Ljava/util/BitSet;
+    iput-object v1, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mCapabilities:Ljava/util/BitSet;
 
-    .line 65
-    iget-object v0, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mAllModes:Ljava/util/BitSet;
+    .line 78
+    iget-object v1, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mAllModes:Ljava/util/BitSet;
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    const/4 v2, 0x4
+    const/4 v3, 0x4
 
-    invoke-virtual {v0, v1, v2}, Ljava/util/BitSet;->set(II)V
+    invoke-virtual {v1, v2, v3}, Ljava/util/BitSet;->set(II)V
 
-    .line 66
+    .line 79
     iput p2, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mDefaultMode:I
 
-    .line 67
+    .line 80
     iput p3, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mDefaultDayTemperature:I
 
-    .line 68
+    .line 81
     iput p4, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mDefaultNightTemperature:I
 
-    .line 69
+    .line 82
     iput-boolean p6, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mDefaultAutoContrast:Z
 
-    .line 70
+    .line 83
     iput-boolean p5, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mDefaultAutoOutdoorMode:Z
 
-    .line 71
+    .line 84
     iput-boolean p7, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mDefaultCABC:Z
 
-    .line 72
+    .line 85
     iput-boolean p8, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mDefaultColorEnhancement:Z
 
-    .line 73
+    .line 86
     iput-object p9, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mColorTemperatureRange:Landroid/util/Range;
 
-    .line 74
+    .line 87
     iput-object p10, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mColorBalanceRange:Landroid/util/Range;
 
-    .line 62
+    .line 88
+    iput-object p11, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mHueRange:Landroid/util/Range;
+
+    .line 89
+    move-object/from16 v0, p12
+
+    iput-object v0, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mSaturationRange:Landroid/util/Range;
+
+    .line 90
+    move-object/from16 v0, p13
+
+    iput-object v0, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mIntensityRange:Landroid/util/Range;
+
+    .line 91
+    move-object/from16 v0, p14
+
+    iput-object v0, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mContrastRange:Landroid/util/Range;
+
+    .line 92
+    move-object/from16 v0, p15
+
+    iput-object v0, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mSaturationThresholdRange:Landroid/util/Range;
+
+    .line 75
     return-void
 .end method
 
@@ -523,7 +774,7 @@
     .locals 1
 
     .prologue
-    .line 146
+    .line 180
     const/4 v0, 0x0
 
     return v0
@@ -542,7 +793,7 @@
     .end annotation
 
     .prologue
-    .line 285
+    .line 325
     iget-object v0, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mColorBalanceRange:Landroid/util/Range;
 
     return-object v0
@@ -561,8 +812,27 @@
     .end annotation
 
     .prologue
-    .line 276
+    .line 316
     iget-object v0, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mColorTemperatureRange:Landroid/util/Range;
+
+    return-object v0
+.end method
+
+.method public getContrastRange()Landroid/util/Range;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Landroid/util/Range",
+            "<",
+            "Ljava/lang/Float;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 354
+    iget-object v0, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mContrastRange:Landroid/util/Range;
 
     return-object v0
 .end method
@@ -571,7 +841,7 @@
     .locals 1
 
     .prologue
-    .line 240
+    .line 280
     iget-boolean v0, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mDefaultAutoContrast:Z
 
     return v0
@@ -581,7 +851,7 @@
     .locals 1
 
     .prologue
-    .line 249
+    .line 289
     iget-boolean v0, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mDefaultAutoOutdoorMode:Z
 
     return v0
@@ -591,7 +861,7 @@
     .locals 1
 
     .prologue
-    .line 258
+    .line 298
     iget-boolean v0, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mDefaultCABC:Z
 
     return v0
@@ -601,7 +871,7 @@
     .locals 1
 
     .prologue
-    .line 267
+    .line 307
     iget-boolean v0, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mDefaultColorEnhancement:Z
 
     return v0
@@ -611,7 +881,7 @@
     .locals 1
 
     .prologue
-    .line 211
+    .line 251
     iget v0, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mDefaultDayTemperature:I
 
     return v0
@@ -621,7 +891,7 @@
     .locals 1
 
     .prologue
-    .line 231
+    .line 271
     iget v0, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mDefaultMode:I
 
     return v0
@@ -631,10 +901,145 @@
     .locals 1
 
     .prologue
-    .line 222
+    .line 262
     iget v0, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mDefaultNightTemperature:I
 
     return v0
+.end method
+
+.method public getHueRange()Landroid/util/Range;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Landroid/util/Range",
+            "<",
+            "Ljava/lang/Float;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 333
+    iget-object v0, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mHueRange:Landroid/util/Range;
+
+    return-object v0
+.end method
+
+.method public getIntensityRange()Landroid/util/Range;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Landroid/util/Range",
+            "<",
+            "Ljava/lang/Float;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 347
+    iget-object v0, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mIntensityRange:Landroid/util/Range;
+
+    return-object v0
+.end method
+
+.method public getPictureAdjustmentRanges()Ljava/util/List;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List",
+            "<",
+            "Landroid/util/Range",
+            "<",
+            "Ljava/lang/Float;",
+            ">;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 373
+    const/4 v0, 0x5
+
+    new-array v0, v0, [Landroid/util/Range;
+
+    iget-object v1, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mHueRange:Landroid/util/Range;
+
+    const/4 v2, 0x0
+
+    aput-object v1, v0, v2
+
+    iget-object v1, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mSaturationRange:Landroid/util/Range;
+
+    const/4 v2, 0x1
+
+    aput-object v1, v0, v2
+
+    iget-object v1, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mIntensityRange:Landroid/util/Range;
+
+    const/4 v2, 0x2
+
+    aput-object v1, v0, v2
+
+    .line 374
+    iget-object v1, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mContrastRange:Landroid/util/Range;
+
+    const/4 v2, 0x3
+
+    aput-object v1, v0, v2
+
+    iget-object v1, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mSaturationThresholdRange:Landroid/util/Range;
+
+    const/4 v2, 0x4
+
+    aput-object v1, v0, v2
+
+    .line 373
+    invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public getSaturationRange()Landroid/util/Range;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Landroid/util/Range",
+            "<",
+            "Ljava/lang/Float;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 340
+    iget-object v0, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mSaturationRange:Landroid/util/Range;
+
+    return-object v0
+.end method
+
+.method public getSaturationThresholdRange()Landroid/util/Range;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Landroid/util/Range",
+            "<",
+            "Ljava/lang/Float;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 362
+    iget-object v0, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mSaturationThresholdRange:Landroid/util/Range;
+
+    return-object v0
 .end method
 
 .method public hasFeature(I)Z
@@ -644,14 +1049,14 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 180
+    .line 220
     if-ltz p1, :cond_1
 
     const/4 v1, 0x4
 
     if-gt p1, v1, :cond_1
 
-    .line 182
+    .line 222
     :goto_0
     if-eqz p1, :cond_2
 
@@ -661,24 +1066,24 @@
 
     move-result v0
 
-    .line 180
+    .line 220
     :cond_0
     :goto_1
     return v0
 
-    .line 181
+    .line 221
     :cond_1
     const/16 v1, 0xa
 
     if-lt p1, v1, :cond_0
 
-    const/16 v1, 0x10
+    const/16 v1, 0x11
 
     if-gt p1, v1, :cond_0
 
     goto :goto_0
 
-    .line 182
+    .line 222
     :cond_2
     const/4 v0, 0x1
 
@@ -689,7 +1094,7 @@
     .locals 2
 
     .prologue
-    .line 200
+    .line 240
     invoke-virtual {p0}, Lcyanogenmod/hardware/LiveDisplayConfig;->isAvailable()Z
 
     move-result v0
@@ -717,7 +1122,7 @@
     .locals 1
 
     .prologue
-    .line 191
+    .line 231
     iget-object v0, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mCapabilities:Ljava/util/BitSet;
 
     invoke-virtual {v0}, Ljava/util/BitSet;->isEmpty()Z
@@ -741,12 +1146,12 @@
     .locals 3
 
     .prologue
-    .line 130
+    .line 155
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 131
+    .line 156
     .local v0, "sb":Ljava/lang/StringBuilder;
     const-string/jumbo v1, "capabilities="
 
@@ -762,7 +1167,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 132
+    .line 157
     const-string/jumbo v1, " defaultMode="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -773,7 +1178,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 133
+    .line 158
     const-string/jumbo v1, " defaultDayTemperature="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -784,7 +1189,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 134
+    .line 159
     const-string/jumbo v1, " defaultNightTemperature="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -795,7 +1200,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 135
+    .line 160
     const-string/jumbo v1, " defaultAutoOutdoorMode="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -806,7 +1211,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    .line 136
+    .line 161
     const-string/jumbo v1, " defaultAutoContrast="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -817,7 +1222,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    .line 137
+    .line 162
     const-string/jumbo v1, " defaultCABC="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -828,7 +1233,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    .line 138
+    .line 163
     const-string/jumbo v1, " defaultColorEnhancement="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -839,7 +1244,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    .line 139
+    .line 164
     const-string/jumbo v1, " colorTemperatureRange="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -850,7 +1255,18 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 140
+    .line 165
+    iget-object v1, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mCapabilities:Ljava/util/BitSet;
+
+    const/16 v2, 0x10
+
+    invoke-virtual {v1, v2}, Ljava/util/BitSet;->get(I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 166
     const-string/jumbo v1, " colorBalanceRange="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -861,7 +1277,75 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 141
+    .line 168
+    :cond_0
+    iget-object v1, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mCapabilities:Ljava/util/BitSet;
+
+    const/16 v2, 0x11
+
+    invoke-virtual {v1, v2}, Ljava/util/BitSet;->get(I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    .line 169
+    const-string/jumbo v1, " hueRange="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mHueRange:Landroid/util/Range;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 170
+    const-string/jumbo v1, " saturationRange="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mSaturationRange:Landroid/util/Range;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 171
+    const-string/jumbo v1, " intensityRange="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mIntensityRange:Landroid/util/Range;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 172
+    const-string/jumbo v1, " contrastRange="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mContrastRange:Landroid/util/Range;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 173
+    const-string/jumbo v1, " saturationThresholdRange="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mSaturationThresholdRange:Landroid/util/Range;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 175
+    :cond_1
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -879,12 +1363,12 @@
 
     const/4 v5, 0x0
 
-    .line 152
+    .line 186
     invoke-static {p1}, Lcyanogenmod/os/Concierge;->prepareParcel(Landroid/os/Parcel;)Lcyanogenmod/os/Concierge$ParcelInfo;
 
     move-result-object v1
 
-    .line 155
+    .line 189
     .local v1, "parcelInfo":Lcyanogenmod/os/Concierge$ParcelInfo;
     iget-object v2, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mCapabilities:Ljava/util/BitSet;
 
@@ -892,7 +1376,7 @@
 
     move-result-object v0
 
-    .line 156
+    .line 190
     .local v0, "caps":[J
     if-eqz v0, :cond_0
 
@@ -905,22 +1389,22 @@
     :goto_0
     invoke-virtual {p1, v2, v3}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 157
+    .line 191
     iget v2, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mDefaultMode:I
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 158
+    .line 192
     iget v2, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mDefaultDayTemperature:I
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 159
+    .line 193
     iget v2, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mDefaultNightTemperature:I
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 160
+    .line 194
     iget-boolean v2, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mDefaultAutoContrast:Z
 
     if-eqz v2, :cond_1
@@ -930,7 +1414,7 @@
     :goto_1
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 161
+    .line 195
     iget-boolean v2, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mDefaultAutoOutdoorMode:Z
 
     if-eqz v2, :cond_2
@@ -940,7 +1424,7 @@
     :goto_2
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 162
+    .line 196
     iget-boolean v2, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mDefaultCABC:Z
 
     if-eqz v2, :cond_3
@@ -950,15 +1434,17 @@
     :goto_3
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 163
+    .line 197
     iget-boolean v2, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mDefaultColorEnhancement:Z
 
     if-eqz v2, :cond_4
 
+    move v2, v4
+
     :goto_4
-    invoke-virtual {p1, v4}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 164
+    .line 198
     iget-object v2, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mColorTemperatureRange:Landroid/util/Range;
 
     invoke-virtual {v2}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
@@ -973,7 +1459,7 @@
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 165
+    .line 199
     iget-object v2, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mColorTemperatureRange:Landroid/util/Range;
 
     invoke-virtual {v2}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
@@ -988,7 +1474,7 @@
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 166
+    .line 200
     iget-object v2, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mColorBalanceRange:Landroid/util/Range;
 
     invoke-virtual {v2}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
@@ -1003,7 +1489,7 @@
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 167
+    .line 201
     iget-object v2, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mColorBalanceRange:Landroid/util/Range;
 
     invoke-virtual {v2}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
@@ -1018,39 +1504,208 @@
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 170
+    .line 202
+    const/16 v2, 0xa
+
+    new-array v3, v2, [F
+
+    .line 203
+    iget-object v2, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mHueRange:Landroid/util/Range;
+
+    invoke-virtual {v2}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/Float;
+
+    invoke-virtual {v2}, Ljava/lang/Float;->floatValue()F
+
+    move-result v2
+
+    aput v2, v3, v5
+
+    iget-object v2, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mHueRange:Landroid/util/Range;
+
+    invoke-virtual {v2}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/Float;
+
+    invoke-virtual {v2}, Ljava/lang/Float;->floatValue()F
+
+    move-result v2
+
+    aput v2, v3, v4
+
+    .line 204
+    iget-object v2, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mSaturationRange:Landroid/util/Range;
+
+    invoke-virtual {v2}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/Float;
+
+    invoke-virtual {v2}, Ljava/lang/Float;->floatValue()F
+
+    move-result v2
+
+    const/4 v4, 0x2
+
+    aput v2, v3, v4
+
+    iget-object v2, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mSaturationRange:Landroid/util/Range;
+
+    invoke-virtual {v2}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/Float;
+
+    invoke-virtual {v2}, Ljava/lang/Float;->floatValue()F
+
+    move-result v2
+
+    const/4 v4, 0x3
+
+    aput v2, v3, v4
+
+    .line 205
+    iget-object v2, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mIntensityRange:Landroid/util/Range;
+
+    invoke-virtual {v2}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/Float;
+
+    invoke-virtual {v2}, Ljava/lang/Float;->floatValue()F
+
+    move-result v2
+
+    const/4 v4, 0x4
+
+    aput v2, v3, v4
+
+    iget-object v2, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mIntensityRange:Landroid/util/Range;
+
+    invoke-virtual {v2}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/Float;
+
+    invoke-virtual {v2}, Ljava/lang/Float;->floatValue()F
+
+    move-result v2
+
+    const/4 v4, 0x5
+
+    aput v2, v3, v4
+
+    .line 206
+    iget-object v2, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mContrastRange:Landroid/util/Range;
+
+    invoke-virtual {v2}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/Float;
+
+    invoke-virtual {v2}, Ljava/lang/Float;->floatValue()F
+
+    move-result v2
+
+    const/4 v4, 0x6
+
+    aput v2, v3, v4
+
+    iget-object v2, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mContrastRange:Landroid/util/Range;
+
+    invoke-virtual {v2}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/Float;
+
+    invoke-virtual {v2}, Ljava/lang/Float;->floatValue()F
+
+    move-result v2
+
+    const/4 v4, 0x7
+
+    aput v2, v3, v4
+
+    .line 207
+    iget-object v2, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mSaturationThresholdRange:Landroid/util/Range;
+
+    invoke-virtual {v2}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/Float;
+
+    invoke-virtual {v2}, Ljava/lang/Float;->floatValue()F
+
+    move-result v2
+
+    const/16 v4, 0x8
+
+    aput v2, v3, v4
+
+    iget-object v2, p0, Lcyanogenmod/hardware/LiveDisplayConfig;->mSaturationThresholdRange:Landroid/util/Range;
+
+    invoke-virtual {v2}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/Float;
+
+    invoke-virtual {v2}, Ljava/lang/Float;->floatValue()F
+
+    move-result v2
+
+    const/16 v4, 0x9
+
+    aput v2, v3, v4
+
+    .line 202
+    invoke-virtual {p1, v3}, Landroid/os/Parcel;->writeFloatArray([F)V
+
+    .line 210
     invoke-virtual {v1}, Lcyanogenmod/os/Concierge$ParcelInfo;->complete()V
 
-    .line 150
+    .line 184
     return-void
 
-    .line 156
+    .line 190
     :cond_0
     const-wide/16 v2, 0x0
 
-    goto :goto_0
+    goto/16 :goto_0
 
     :cond_1
     move v2, v5
 
-    .line 160
-    goto :goto_1
+    .line 194
+    goto/16 :goto_1
 
     :cond_2
     move v2, v5
 
-    .line 161
-    goto :goto_2
+    .line 195
+    goto/16 :goto_2
 
     :cond_3
     move v2, v5
 
-    .line 162
-    goto :goto_3
+    .line 196
+    goto/16 :goto_3
 
     :cond_4
-    move v4, v5
+    move v2, v5
 
-    .line 163
-    goto :goto_4
+    .line 197
+    goto/16 :goto_4
 .end method

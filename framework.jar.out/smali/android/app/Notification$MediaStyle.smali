@@ -70,7 +70,7 @@
     .prologue
     const/4 v3, -0x1
 
-    const v1, 0x102037e
+    const v1, 0x102036f
 
     .line 4485
     iget-object v2, p1, Landroid/app/Notification$Action;->actionIntent:Landroid/app/PendingIntent;
@@ -95,7 +95,7 @@
     move-result-object v2
 
     .line 4487
-    const v4, 0x1090085
+    const v4, 0x1090083
 
     .line 4486
     invoke-direct {v0, v2, v4}, Landroid/app/Notification$BuilderRemoteViews;-><init>(Landroid/content/pm/ApplicationInfo;I)V
@@ -158,13 +158,13 @@
     if-gt p1, v0, :cond_0
 
     .line 4547
-    const v0, 0x109008a
+    const v0, 0x1090088
 
     return v0
 
     .line 4549
     :cond_0
-    const v0, 0x1090089
+    const v0, 0x1090087
 
     return v0
 .end method
@@ -175,7 +175,7 @@
 
     .prologue
     .line 4554
-    const v0, 0x1020042
+    const v0, 0x1020040
 
     const/16 v1, 0x8
 
@@ -189,7 +189,7 @@
     .locals 8
 
     .prologue
-    const v7, 0x1020387
+    const v7, 0x1020378
 
     const/4 v6, 0x0
 
@@ -289,7 +289,7 @@
     .locals 11
 
     .prologue
-    const v8, 0x1020387
+    const v8, 0x1020378
 
     const/4 v10, 0x0
 
@@ -297,7 +297,7 @@
     iget-object v6, p0, Landroid/app/Notification$MediaStyle;->mBuilder:Landroid/app/Notification$Builder;
 
     .line 4501
-    const v7, 0x109008e
+    const v7, 0x109008c
 
     .line 4500
     invoke-static {v6, v7, v10}, Landroid/app/Notification$Builder;->-wrap1(Landroid/app/Notification$Builder;IZ)Landroid/widget/RemoteViews;
@@ -506,7 +506,7 @@
     if-eqz v2, :cond_1
 
     .line 4568
-    const v2, 0x1020393
+    const v2, 0x1020384
 
     invoke-virtual {p1, v2, v1}, Landroid/widget/RemoteViews;->setTextColor(II)V
 
@@ -518,12 +518,12 @@
     invoke-virtual {p1, v2, v1}, Landroid/widget/RemoteViews;->setTextColor(II)V
 
     .line 4574
-    const v2, 0x1020077
+    const v2, 0x1020075
 
     invoke-virtual {p1, v2, v1}, Landroid/widget/RemoteViews;->setTextColor(II)V
 
     .line 4575
-    const v2, 0x1020397
+    const v2, 0x1020388
 
     invoke-virtual {p1, v2, v1}, Landroid/widget/RemoteViews;->setTextColor(II)V
 
@@ -532,7 +532,7 @@
 
     .line 4570
     :cond_1
-    const v2, 0x102008e
+    const v2, 0x102008c
 
     invoke-virtual {p1, v2, v1}, Landroid/widget/RemoteViews;->setTextColor(II)V
 

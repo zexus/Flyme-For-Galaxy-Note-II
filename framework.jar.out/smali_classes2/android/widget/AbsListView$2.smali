@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/widget/AbsListView;->setFastScrollEnabled(Z)V
+    value = Landroid/widget/AbsListView;->setFastScrollAlwaysVisible(Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,20 +20,20 @@
 # instance fields
 .field final synthetic this$0:Landroid/widget/AbsListView;
 
-.field final synthetic val$enabled:Z
+.field final synthetic val$alwaysShow:Z
 
 
 # direct methods
 .method constructor <init>(Landroid/widget/AbsListView;Z)V
     .locals 0
     .param p1, "this$0"    # Landroid/widget/AbsListView;
-    .param p2, "val$enabled"    # Z
+    .param p2, "val$alwaysShow"    # Z
 
     .prologue
-    .line 1286
+    .line 1326
     iput-object p1, p0, Landroid/widget/AbsListView$2;->this$0:Landroid/widget/AbsListView;
 
-    iput-boolean p2, p0, Landroid/widget/AbsListView$2;->val$enabled:Z
+    iput-boolean p2, p0, Landroid/widget/AbsListView$2;->val$alwaysShow:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -46,13 +46,13 @@
     .locals 2
 
     .prologue
-    .line 1289
+    .line 1329
     iget-object v0, p0, Landroid/widget/AbsListView$2;->this$0:Landroid/widget/AbsListView;
 
-    iget-boolean v1, p0, Landroid/widget/AbsListView$2;->val$enabled:Z
+    iget-boolean v1, p0, Landroid/widget/AbsListView$2;->val$alwaysShow:Z
 
-    invoke-static {v0, v1}, Landroid/widget/AbsListView;->-wrap9(Landroid/widget/AbsListView;Z)V
+    invoke-static {v0, v1}, Landroid/widget/AbsListView;->-wrap8(Landroid/widget/AbsListView;Z)V
 
-    .line 1288
+    .line 1328
     return-void
 .end method

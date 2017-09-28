@@ -247,7 +247,7 @@
     .locals 11
 
     .prologue
-    const v10, 0x10404e0
+    const v10, 0x10404c4
 
     const/4 v1, 0x0
 
@@ -339,7 +339,7 @@
     invoke-direct {v3, v0}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;)V
 
     .line 605
-    const v5, 0x10806ec
+    const v5, 0x1080647
 
     .line 604
     invoke-virtual {v3, v5}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
@@ -394,7 +394,7 @@
     move-result-object v3
 
     .line 614
-    const v5, 0x10404e1
+    const v5, 0x10404c5
 
     invoke-virtual {v0, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1363,7 +1363,7 @@
 
     .line 174
     .local v4, "res":Landroid/content/res/Resources;
-    const v5, 0x10e004d
+    const v5, 0x10e004b
 
     .line 173
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getInteger(I)I
@@ -1373,7 +1373,7 @@
     iput v5, p0, Lcom/android/server/UiModeManagerService;->mDefaultUiModeType:I
 
     .line 176
-    const v5, 0x10e004b
+    const v5, 0x10e0049
 
     .line 175
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getInteger(I)I
@@ -1388,7 +1388,7 @@
     iput-boolean v5, p0, Lcom/android/server/UiModeManagerService;->mCarModeKeepsScreenOn:Z
 
     .line 178
-    const v5, 0x10e0049
+    const v5, 0x10e0047
 
     .line 177
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getInteger(I)I
@@ -1438,7 +1438,7 @@
     iput-boolean v5, p0, Lcom/android/server/UiModeManagerService;->mWatch:Z
 
     .line 186
-    const v5, 0x10e004e
+    const v5, 0x10e004c
 
     .line 185
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getInteger(I)I

@@ -238,7 +238,7 @@
     move-result-object v3
 
     .line 77
-    const v4, 0x104009c
+    const v4, 0x104009b
 
     .line 76
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -362,7 +362,7 @@
     move-result-object v3
 
     .line 241
-    const v5, 0x3f060002
+    const v5, 0x3f080002
 
     .line 240
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -383,7 +383,7 @@
     .line 243
     iget-object v3, p0, Lcom/android/server/wifi/WifiApConfigStore;->mContext:Landroid/content/Context;
 
-    const v5, 0x104043c
+    const v5, 0x1040420
 
     invoke-virtual {v3, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -415,7 +415,7 @@
     move-result-object v3
 
     .line 250
-    const v5, 0x3f05000b
+    const v5, 0x3f07000b
 
     .line 249
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getBoolean(I)Z
@@ -441,7 +441,7 @@
     move-result-object v3
 
     .line 254
-    const v5, 0x3f060003
+    const v5, 0x3f080003
 
     .line 253
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;

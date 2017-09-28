@@ -737,7 +737,7 @@
     invoke-direct {v2, v9}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;)V
 
     .line 756
-    const v3, 0x1080459
+    const v3, 0x1080422
 
     .line 755
     invoke-virtual {v2, v3}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
@@ -759,7 +759,7 @@
     aput-object p2, v5, v6
 
     .line 757
-    const v6, 0x10405ea
+    const v6, 0x10405ce
 
     invoke-virtual {v3, v6, v5}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -775,7 +775,7 @@
 
     iget-object v3, v0, Lcom/android/server/print/PrintManagerService$PrintManagerImpl;->mContext:Landroid/content/Context;
 
-    const v5, 0x10405eb
+    const v5, 0x10405cf
 
     invoke-virtual {v3, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

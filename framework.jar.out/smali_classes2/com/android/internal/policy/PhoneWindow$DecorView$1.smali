@@ -30,7 +30,7 @@
     .param p2, "val$state"    # Lcom/android/internal/policy/PhoneWindow$ColorViewState;
 
     .prologue
-    .line 3301
+    .line 3295
     iput-object p1, p0, Lcom/android/internal/policy/PhoneWindow$DecorView$1;->this$1:Lcom/android/internal/policy/PhoneWindow$DecorView;
 
     iput-object p2, p0, Lcom/android/internal/policy/PhoneWindow$DecorView$1;->val$state:Lcom/android/internal/policy/PhoneWindow$ColorViewState;
@@ -46,7 +46,7 @@
     .locals 2
 
     .prologue
-    .line 3304
+    .line 3298
     iget-object v0, p0, Lcom/android/internal/policy/PhoneWindow$DecorView$1;->val$state:Lcom/android/internal/policy/PhoneWindow$ColorViewState;
 
     iget-object v0, v0, Lcom/android/internal/policy/PhoneWindow$ColorViewState;->view:Landroid/view/View;
@@ -55,7 +55,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 3305
+    .line 3299
     iget-object v0, p0, Lcom/android/internal/policy/PhoneWindow$DecorView$1;->val$state:Lcom/android/internal/policy/PhoneWindow$ColorViewState;
 
     iget-object v0, v0, Lcom/android/internal/policy/PhoneWindow$ColorViewState;->view:Landroid/view/View;
@@ -64,6 +64,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 3303
+    .line 3297
     return-void
 .end method

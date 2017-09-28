@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/server/usage/UsageStatsService;
 
     .prologue
-    .line 268
+    .line 266
     iput-object p1, p0, Lcom/android/server/usage/UsageStatsService$1;->this$0:Lcom/android/server/usage/UsageStatsService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .param p1, "displayId"    # I
 
     .prologue
-    .line 270
+    .line 268
     return-void
 .end method
 
@@ -51,10 +51,10 @@
     .param p1, "displayId"    # I
 
     .prologue
-    .line 277
+    .line 275
     if-nez p1, :cond_0
 
-    .line 278
+    .line 276
     iget-object v0, p0, Lcom/android/server/usage/UsageStatsService$1;->this$0:Lcom/android/server/usage/UsageStatsService;
 
     invoke-static {v0}, Lcom/android/server/usage/UsageStatsService;->-get0(Lcom/android/server/usage/UsageStatsService;)Ljava/lang/Object;
@@ -63,7 +63,7 @@
 
     monitor-enter v1
 
-    .line 279
+    .line 277
     :try_start_0
     iget-object v0, p0, Lcom/android/server/usage/UsageStatsService$1;->this$0:Lcom/android/server/usage/UsageStatsService;
 
@@ -73,11 +73,11 @@
 
     monitor-exit v1
 
-    .line 276
+    .line 274
     :cond_0
     return-void
 
-    .line 278
+    .line 276
     :catchall_0
     move-exception v0
 
@@ -91,6 +91,6 @@
     .param p1, "displayId"    # I
 
     .prologue
-    .line 273
+    .line 271
     return-void
 .end method

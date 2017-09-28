@@ -1110,7 +1110,7 @@
 
     .line 678
     .local v1, "result":Landroid/net/Uri;
-    const-string/jumbo v2, "_id IN (SELECT _id FROM calls ORDER BY date DESC LIMIT -1 OFFSET 5000)"
+    const-string/jumbo v2, "_id IN (SELECT _id FROM calls ORDER BY date DESC LIMIT -1 OFFSET 500)"
 
     .line 680
     const/4 v3, 0x0

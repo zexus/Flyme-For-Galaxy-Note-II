@@ -43,12 +43,10 @@
 .end method
 
 .method public processMessage(Landroid/os/Message;)Z
-    .locals 12
+    .locals 11
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    const/4 v11, 0x1
-
     const/4 v10, -0x3
 
     .line 392
@@ -72,7 +70,7 @@
 
     sparse-switch v7, :sswitch_data_0
 
-    .line 506
+    .line 497
     const/4 v7, 0x0
 
     return v7
@@ -89,10 +87,12 @@
 
     invoke-static {v7, v8}, Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine;->-wrap2(Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine;Lcom/android/internal/util/IState;)V
 
-    .line 509
+    .line 500
     :cond_0
     :goto_0
-    return v11
+    const/4 v7, 0x1
+
+    return v7
 
     .line 399
     :sswitch_1
@@ -330,25 +330,22 @@
 
     .line 447
     :sswitch_d
-    invoke-static {v11}, Lcom/android/server/wifi/WifiNative;->getScanResults(Z)[Landroid/net/wifi/WifiScanner$ScanData;
-
-    move-result-object v6
-
-    .line 448
-    .local v6, "results":[Landroid/net/wifi/WifiScanner$ScanData;
-    if-nez v6, :cond_3
-
-    .line 449
     iget-object v7, p0, Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine$StartedState;->this$1:Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine;
 
-    const-string/jumbo v8, "Wifi HAL SCAN results NULL"
+    iget-object v7, v7, Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine;->this$0:Lcom/android/server/wifi/WifiScanningServiceImpl;
 
-    invoke-static {v7, v8}, Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine;->-wrap1(Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine;Ljava/lang/String;)V
+    invoke-virtual {v7}, Lcom/android/server/wifi/WifiScanningServiceImpl;->reportScanResults()Z
 
     goto/16 :goto_0
 
+    .line 450
+    :sswitch_e
+    iget-object v4, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v4, Landroid/net/wifi/ScanResult;
+
     .line 452
-    :cond_3
+    .local v4, "result":Landroid/net/wifi/ScanResult;
     iget-object v7, p0, Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine$StartedState;->this$1:Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine;
 
     iget-object v7, v7, Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine;->this$0:Lcom/android/server/wifi/WifiScanningServiceImpl;
@@ -381,22 +378,22 @@
 
     .line 454
     .local v1, "ci2":Lcom/android/server/wifi/WifiScanningServiceImpl$ClientInfo;
-    invoke-virtual {v1, v6}, Lcom/android/server/wifi/WifiScanningServiceImpl$ClientInfo;->reportScanResults([Landroid/net/wifi/WifiScanner$ScanData;)V
+    invoke-virtual {v1, v4}, Lcom/android/server/wifi/WifiScanningServiceImpl$ClientInfo;->reportFullScanResult(Landroid/net/wifi/ScanResult;)V
 
     goto :goto_1
 
-    .line 459
+    .line 460
     .end local v1    # "ci2":Lcom/android/server/wifi/WifiScanningServiceImpl$ClientInfo;
     .end local v2    # "ci2$iterator":Ljava/util/Iterator;
     .end local v3    # "clients":Ljava/util/Collection;, "Ljava/util/Collection<Lcom/android/server/wifi/WifiScanningServiceImpl$ClientInfo;>;"
-    .end local v6    # "results":[Landroid/net/wifi/WifiScanner$ScanData;
-    :sswitch_e
-    iget-object v4, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+    .end local v4    # "result":Landroid/net/wifi/ScanResult;
+    :sswitch_f
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    check-cast v4, Landroid/net/wifi/ScanResult;
+    check-cast v5, [Landroid/net/wifi/ScanResult;
 
-    .line 461
-    .local v4, "result":Landroid/net/wifi/ScanResult;
+    .line 462
+    .local v5, "results":[Landroid/net/wifi/ScanResult;
     iget-object v7, p0, Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine$StartedState;->this$1:Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine;
 
     iget-object v7, v7, Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine;->this$0:Lcom/android/server/wifi/WifiScanningServiceImpl;
@@ -407,7 +404,7 @@
 
     move-result-object v3
 
-    .line 462
+    .line 463
     .restart local v3    # "clients":Ljava/util/Collection;, "Ljava/util/Collection<Lcom/android/server/wifi/WifiScanningServiceImpl$ClientInfo;>;"
     invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -427,9 +424,11 @@
 
     check-cast v1, Lcom/android/server/wifi/WifiScanningServiceImpl$ClientInfo;
 
-    .line 463
+    .line 464
     .restart local v1    # "ci2":Lcom/android/server/wifi/WifiScanningServiceImpl$ClientInfo;
-    invoke-virtual {v1, v4}, Lcom/android/server/wifi/WifiScanningServiceImpl$ClientInfo;->reportFullScanResult(Landroid/net/wifi/ScanResult;)V
+    const v7, 0x27009
+
+    invoke-virtual {v1, v7, v5}, Lcom/android/server/wifi/WifiScanningServiceImpl$ClientInfo;->reportHotlistResults(I[Landroid/net/wifi/ScanResult;)V
 
     goto :goto_2
 
@@ -437,14 +436,14 @@
     .end local v1    # "ci2":Lcom/android/server/wifi/WifiScanningServiceImpl$ClientInfo;
     .end local v2    # "ci2$iterator":Ljava/util/Iterator;
     .end local v3    # "clients":Ljava/util/Collection;, "Ljava/util/Collection<Lcom/android/server/wifi/WifiScanningServiceImpl$ClientInfo;>;"
-    .end local v4    # "result":Landroid/net/wifi/ScanResult;
-    :sswitch_f
+    .end local v5    # "results":[Landroid/net/wifi/ScanResult;
+    :sswitch_10
     iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v5, [Landroid/net/wifi/ScanResult;
 
     .line 471
-    .local v5, "results":[Landroid/net/wifi/ScanResult;
+    .restart local v5    # "results":[Landroid/net/wifi/ScanResult;
     iget-object v7, p0, Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine$StartedState;->this$1:Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine;
 
     iget-object v7, v7, Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine;->this$0:Lcom/android/server/wifi/WifiScanningServiceImpl;
@@ -477,7 +476,7 @@
 
     .line 473
     .restart local v1    # "ci2":Lcom/android/server/wifi/WifiScanningServiceImpl$ClientInfo;
-    const v7, 0x27009
+    const v7, 0x2700a
 
     invoke-virtual {v1, v7, v5}, Lcom/android/server/wifi/WifiScanningServiceImpl$ClientInfo;->reportHotlistResults(I[Landroid/net/wifi/ScanResult;)V
 
@@ -488,13 +487,47 @@
     .end local v2    # "ci2$iterator":Ljava/util/Iterator;
     .end local v3    # "clients":Ljava/util/Collection;, "Ljava/util/Collection<Lcom/android/server/wifi/WifiScanningServiceImpl$ClientInfo;>;"
     .end local v5    # "results":[Landroid/net/wifi/ScanResult;
-    :sswitch_10
+    :sswitch_11
     iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v5, [Landroid/net/wifi/ScanResult;
 
-    .line 480
+    .line 479
     .restart local v5    # "results":[Landroid/net/wifi/ScanResult;
+    iget-object v7, p0, Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine$StartedState;->this$1:Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine;
+
+    iget-object v7, v7, Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine;->this$0:Lcom/android/server/wifi/WifiScanningServiceImpl;
+
+    invoke-virtual {v7, v5}, Lcom/android/server/wifi/WifiScanningServiceImpl;->reportWifiChanged([Landroid/net/wifi/ScanResult;)V
+
+    goto/16 :goto_0
+
+    .line 483
+    .end local v5    # "results":[Landroid/net/wifi/ScanResult;
+    :sswitch_12
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, [Landroid/net/wifi/ScanResult;
+
+    .line 484
+    .restart local v5    # "results":[Landroid/net/wifi/ScanResult;
+    iget-object v7, p0, Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine$StartedState;->this$1:Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine;
+
+    iget-object v7, v7, Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine;->this$0:Lcom/android/server/wifi/WifiScanningServiceImpl;
+
+    invoke-virtual {v7, v5}, Lcom/android/server/wifi/WifiScanningServiceImpl;->reportWifiStabilized([Landroid/net/wifi/ScanResult;)V
+
+    goto/16 :goto_0
+
+    .line 488
+    .end local v5    # "results":[Landroid/net/wifi/ScanResult;
+    :sswitch_13
+    iget-object v6, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v6, [Landroid/net/wifi/WifiScanner$ScanData;
+
+    .line 489
+    .local v6, "results":[Landroid/net/wifi/WifiScanner$ScanData;
     iget-object v7, p0, Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine$StartedState;->this$1:Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine;
 
     iget-object v7, v7, Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine;->this$0:Lcom/android/server/wifi/WifiScanningServiceImpl;
@@ -505,7 +538,7 @@
 
     move-result-object v3
 
-    .line 481
+    .line 490
     .restart local v3    # "clients":Ljava/util/Collection;, "Ljava/util/Collection<Lcom/android/server/wifi/WifiScanningServiceImpl$ClientInfo;>;"
     invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -517,7 +550,7 @@
 
     move-result v7
 
-    if-eqz v7, :cond_0
+    if-eqz v7, :cond_3
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -525,99 +558,15 @@
 
     check-cast v1, Lcom/android/server/wifi/WifiScanningServiceImpl$ClientInfo;
 
-    .line 482
-    .restart local v1    # "ci2":Lcom/android/server/wifi/WifiScanningServiceImpl$ClientInfo;
-    const v7, 0x2700a
-
-    invoke-virtual {v1, v7, v5}, Lcom/android/server/wifi/WifiScanningServiceImpl$ClientInfo;->reportHotlistResults(I[Landroid/net/wifi/ScanResult;)V
-
-    goto :goto_4
-
-    .line 487
-    .end local v1    # "ci2":Lcom/android/server/wifi/WifiScanningServiceImpl$ClientInfo;
-    .end local v2    # "ci2$iterator":Ljava/util/Iterator;
-    .end local v3    # "clients":Ljava/util/Collection;, "Ljava/util/Collection<Lcom/android/server/wifi/WifiScanningServiceImpl$ClientInfo;>;"
-    .end local v5    # "results":[Landroid/net/wifi/ScanResult;
-    :sswitch_11
-    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v5, [Landroid/net/wifi/ScanResult;
-
-    .line 488
-    .restart local v5    # "results":[Landroid/net/wifi/ScanResult;
-    iget-object v7, p0, Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine$StartedState;->this$1:Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine;
-
-    iget-object v7, v7, Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine;->this$0:Lcom/android/server/wifi/WifiScanningServiceImpl;
-
-    invoke-virtual {v7, v5}, Lcom/android/server/wifi/WifiScanningServiceImpl;->reportWifiChanged([Landroid/net/wifi/ScanResult;)V
-
-    goto/16 :goto_0
-
-    .line 492
-    .end local v5    # "results":[Landroid/net/wifi/ScanResult;
-    :sswitch_12
-    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v5, [Landroid/net/wifi/ScanResult;
-
-    .line 493
-    .restart local v5    # "results":[Landroid/net/wifi/ScanResult;
-    iget-object v7, p0, Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine$StartedState;->this$1:Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine;
-
-    iget-object v7, v7, Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine;->this$0:Lcom/android/server/wifi/WifiScanningServiceImpl;
-
-    invoke-virtual {v7, v5}, Lcom/android/server/wifi/WifiScanningServiceImpl;->reportWifiStabilized([Landroid/net/wifi/ScanResult;)V
-
-    goto/16 :goto_0
-
-    .line 497
-    .end local v5    # "results":[Landroid/net/wifi/ScanResult;
-    :sswitch_13
-    iget-object v6, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v6, [Landroid/net/wifi/WifiScanner$ScanData;
-
-    .line 498
-    .restart local v6    # "results":[Landroid/net/wifi/WifiScanner$ScanData;
-    iget-object v7, p0, Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine$StartedState;->this$1:Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine;
-
-    iget-object v7, v7, Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine;->this$0:Lcom/android/server/wifi/WifiScanningServiceImpl;
-
-    iget-object v7, v7, Lcom/android/server/wifi/WifiScanningServiceImpl;->mClients:Ljava/util/HashMap;
-
-    invoke-virtual {v7}, Ljava/util/HashMap;->values()Ljava/util/Collection;
-
-    move-result-object v3
-
-    .line 499
-    .restart local v3    # "clients":Ljava/util/Collection;, "Ljava/util/Collection<Lcom/android/server/wifi/WifiScanningServiceImpl$ClientInfo;>;"
-    invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    .restart local v2    # "ci2$iterator":Ljava/util/Iterator;
-    :goto_5
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_4
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/android/server/wifi/WifiScanningServiceImpl$ClientInfo;
-
-    .line 500
+    .line 491
     .restart local v1    # "ci2":Lcom/android/server/wifi/WifiScanningServiceImpl$ClientInfo;
     invoke-virtual {v1, v6}, Lcom/android/server/wifi/WifiScanningServiceImpl$ClientInfo;->reportScanResults([Landroid/net/wifi/WifiScanner$ScanData;)V
 
-    goto :goto_5
+    goto :goto_4
 
-    .line 502
+    .line 493
     .end local v1    # "ci2":Lcom/android/server/wifi/WifiScanningServiceImpl$ClientInfo;
-    :cond_4
+    :cond_3
     iget-object v7, p0, Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine$StartedState;->this$1:Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine;
 
     iget-object v8, p0, Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine$StartedState;->this$1:Lcom/android/server/wifi/WifiScanningServiceImpl$WifiScanningStateMachine;
@@ -631,8 +580,6 @@
     goto/16 :goto_0
 
     .line 394
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x27000 -> :sswitch_1

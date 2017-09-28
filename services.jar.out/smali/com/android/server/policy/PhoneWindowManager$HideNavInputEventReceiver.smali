@@ -26,13 +26,13 @@
     .param p3, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 4311
+    .line 3953
     iput-object p1, p0, Lcom/android/server/policy/PhoneWindowManager$HideNavInputEventReceiver;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    .line 4312
+    .line 3954
     invoke-direct {p0, p2, p3}, Landroid/view/InputEventReceiver;-><init>(Landroid/view/InputChannel;Landroid/os/Looper;)V
 
-    .line 4311
+    .line 3953
     return-void
 .end method
 
@@ -43,17 +43,17 @@
     .param p1, "event"    # Landroid/view/InputEvent;
 
     .prologue
-    .line 4317
+    .line 3959
     const/4 v3, 0x0
 
-    .line 4319
+    .line 3961
     .local v3, "handled":Z
     :try_start_0
     instance-of v6, p1, Landroid/view/MotionEvent;
 
     if-eqz v6, :cond_2
 
-    .line 4320
+    .line 3962
     invoke-virtual {p1}, Landroid/view/InputEvent;->getSource()I
 
     move-result v6
@@ -62,14 +62,14 @@
 
     if-eqz v6, :cond_2
 
-    .line 4321
+    .line 3963
     move-object v0, p1
 
     check-cast v0, Landroid/view/MotionEvent;
 
     move-object v4, v0
 
-    .line 4322
+    .line 3964
     .local v4, "motionEvent":Landroid/view/MotionEvent;
     invoke-virtual {v4}, Landroid/view/MotionEvent;->getAction()I
 
@@ -77,10 +77,10 @@
 
     if-nez v6, :cond_2
 
-    .line 4324
+    .line 3966
     const/4 v2, 0x0
 
-    .line 4325
+    .line 3967
     .local v2, "changed":Z
     iget-object v6, p0, Lcom/android/server/policy/PhoneWindowManager$HideNavInputEventReceiver;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
@@ -94,7 +94,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 4331
+    .line 3973
     :try_start_1
     iget-object v6, p0, Lcom/android/server/policy/PhoneWindowManager$HideNavInputEventReceiver;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
@@ -106,7 +106,7 @@
 
     or-int/lit8 v5, v6, 0x4
 
-    .line 4335
+    .line 3977
     .local v5, "newVal":I
     iget-object v6, p0, Lcom/android/server/policy/PhoneWindowManager$HideNavInputEventReceiver;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
@@ -114,15 +114,15 @@
 
     if-eq v6, v5, :cond_0
 
-    .line 4336
+    .line 3978
     iget-object v6, p0, Lcom/android/server/policy/PhoneWindowManager$HideNavInputEventReceiver;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     iput v5, v6, Lcom/android/server/policy/PhoneWindowManager;->mResettingSystemUiFlags:I
 
-    .line 4337
+    .line 3979
     const/4 v2, 0x1
 
-    .line 4342
+    .line 3984
     :cond_0
     iget-object v6, p0, Lcom/android/server/policy/PhoneWindowManager$HideNavInputEventReceiver;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
@@ -130,22 +130,22 @@
 
     or-int/lit8 v5, v6, 0x2
 
-    .line 4344
+    .line 3986
     iget-object v6, p0, Lcom/android/server/policy/PhoneWindowManager$HideNavInputEventReceiver;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     iget v6, v6, Lcom/android/server/policy/PhoneWindowManager;->mForceClearedSystemUiFlags:I
 
     if-eq v6, v5, :cond_1
 
-    .line 4345
+    .line 3987
     iget-object v6, p0, Lcom/android/server/policy/PhoneWindowManager$HideNavInputEventReceiver;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     iput v5, v6, Lcom/android/server/policy/PhoneWindowManager;->mForceClearedSystemUiFlags:I
 
-    .line 4346
+    .line 3988
     const/4 v2, 0x1
 
-    .line 4347
+    .line 3989
     iget-object v6, p0, Lcom/android/server/policy/PhoneWindowManager$HideNavInputEventReceiver;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     iget-object v6, v6, Lcom/android/server/policy/PhoneWindowManager;->mHandler:Landroid/os/Handler;
@@ -166,10 +166,10 @@
     :try_start_2
     monitor-exit v7
 
-    .line 4350
+    .line 3992
     if-eqz v2, :cond_2
 
-    .line 4351
+    .line 3993
     iget-object v6, p0, Lcom/android/server/policy/PhoneWindowManager$HideNavInputEventReceiver;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     iget-object v6, v6, Lcom/android/server/policy/PhoneWindowManager;->mWindowManagerFuncs:Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
@@ -178,17 +178,17 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 4356
+    .line 3998
     .end local v2    # "changed":Z
     .end local v4    # "motionEvent":Landroid/view/MotionEvent;
     .end local v5    # "newVal":I
     :cond_2
     invoke-virtual {p0, p1, v3}, Lcom/android/server/policy/PhoneWindowManager$HideNavInputEventReceiver;->finishInputEvent(Landroid/view/InputEvent;Z)V
 
-    .line 4316
+    .line 3958
     return-void
 
-    .line 4325
+    .line 3967
     .restart local v2    # "changed":Z
     .restart local v4    # "motionEvent":Landroid/view/MotionEvent;
     :catchall_0
@@ -201,15 +201,15 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    .line 4355
+    .line 3997
     .end local v2    # "changed":Z
     .end local v4    # "motionEvent":Landroid/view/MotionEvent;
     :catchall_1
     move-exception v6
 
-    .line 4356
+    .line 3998
     invoke-virtual {p0, p1, v3}, Lcom/android/server/policy/PhoneWindowManager$HideNavInputEventReceiver;->finishInputEvent(Landroid/view/InputEvent;Z)V
 
-    .line 4355
+    .line 3997
     throw v6
 .end method

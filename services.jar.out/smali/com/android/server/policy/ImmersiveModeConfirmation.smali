@@ -54,15 +54,7 @@
     return v0
 .end method
 
-.method static synthetic -get1(Lcom/android/server/policy/ImmersiveModeConfirmation;)Landroid/content/Context;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mContext:Landroid/content/Context;
-
-    return-object v0
-.end method
-
-.method static synthetic -get2(Lcom/android/server/policy/ImmersiveModeConfirmation;)Landroid/view/WindowManager;
+.method static synthetic -get1(Lcom/android/server/policy/ImmersiveModeConfirmation;)Landroid/view/WindowManager;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mWindowManager:Landroid/view/WindowManager;
@@ -146,7 +138,7 @@
     move-result-object v0
 
     .line 76
-    const v1, 0x10e0098
+    const v1, 0x10e0096
 
     .line 75
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
@@ -442,7 +434,7 @@
     invoke-virtual {v0, v1}, Landroid/view/WindowManager$LayoutParams;->setTitle(Ljava/lang/CharSequence;)V
 
     .line 173
-    const v1, 0x103031f
+    const v1, 0x10302f8
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 

@@ -285,7 +285,7 @@
     const-string/jumbo v1, "android.intent.extra.client_label"
 
     .line 2010
-    const v2, 0x10404ce
+    const v2, 0x10404b2
 
     .line 2009
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;

@@ -24,13 +24,13 @@
     .param p1, "client"    # Landroid/hardware/hdmi/HdmiPlaybackClient;
 
     .prologue
-    .line 1716
+    .line 1484
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1717
+    .line 1485
     iput-object p1, p0, Lcom/android/server/policy/PhoneWindowManager$HdmiControl;->mClient:Landroid/hardware/hdmi/HdmiPlaybackClient;
 
-    .line 1716
+    .line 1484
     return-void
 .end method
 
@@ -50,15 +50,15 @@
     .locals 2
 
     .prologue
-    .line 1721
+    .line 1489
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$HdmiControl;->mClient:Landroid/hardware/hdmi/HdmiPlaybackClient;
 
     if-nez v0, :cond_0
 
-    .line 1722
+    .line 1490
     return-void
 
-    .line 1724
+    .line 1492
     :cond_0
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$HdmiControl;->mClient:Landroid/hardware/hdmi/HdmiPlaybackClient;
 
@@ -68,6 +68,6 @@
 
     invoke-virtual {v0, v1}, Landroid/hardware/hdmi/HdmiPlaybackClient;->oneTouchPlay(Landroid/hardware/hdmi/HdmiPlaybackClient$OneTouchPlayCallback;)V
 
-    .line 1720
+    .line 1488
     return-void
 .end method

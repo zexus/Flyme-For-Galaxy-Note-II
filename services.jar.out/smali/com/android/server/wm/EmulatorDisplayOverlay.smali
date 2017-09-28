@@ -128,7 +128,7 @@
     iput-boolean v1, p0, Lcom/android/server/wm/EmulatorDisplayOverlay;->mDrawNeeded:Z
 
     .line 74
-    const v1, 0x10802d4
+    const v1, 0x10802bb
 
     .line 73
     invoke-virtual {p1, v1}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;

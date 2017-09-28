@@ -182,6 +182,9 @@
 .method public abstract getUserRotationMode()I
 .end method
 
+.method public abstract getWinKeyguardPanelLw()Landroid/view/WindowManagerPolicy$WindowState;
+.end method
+
 .method public abstract getWinShowWhenLockedLw()Landroid/view/WindowManagerPolicy$WindowState;
 .end method
 
@@ -248,9 +251,6 @@
 .method public abstract lockNow(Landroid/os/Bundle;)V
 .end method
 
-.method public abstract navigationBarCanMove()Z
-.end method
-
 .method public abstract needsNavigationBar()Z
 .end method
 
@@ -314,9 +314,6 @@
 .method public abstract setLiveLockscreenEdgeDetector(Z)V
 .end method
 
-.method public abstract setPackageName(Ljava/lang/String;)V
-.end method
-
 .method public abstract setRotationLw(I)V
 .end method
 
@@ -324,9 +321,6 @@
 .end method
 
 .method public abstract setUserRotationMode(II)V
-.end method
-
-.method public abstract showBootMessage(Landroid/content/pm/ApplicationInfo;IIZ)V
 .end method
 
 .method public abstract showGlobalActions()V
@@ -351,6 +345,9 @@
 .end method
 
 .method public abstract systemReady()V
+.end method
+
+.method public abstract updateBootProgress(ILandroid/content/pm/ApplicationInfo;II)V
 .end method
 
 .method public abstract userActivity()V

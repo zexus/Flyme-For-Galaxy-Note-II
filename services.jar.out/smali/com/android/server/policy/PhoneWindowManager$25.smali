@@ -3,12 +3,12 @@
 .source "PhoneWindowManager.java"
 
 # interfaces
-.implements Landroid/content/ServiceConnection;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/policy/PhoneWindowManager;->takeScreenshot()V
+    value = Lcom/android/server/policy/PhoneWindowManager;->updateSystemUiVisibilityLw()I
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,15 +20,30 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/server/policy/PhoneWindowManager;
 
+.field final synthetic val$needsMenu:Z
+
+.field final synthetic val$visibility:I
+
+.field final synthetic val$win:Landroid/view/WindowManagerPolicy$WindowState;
+
 
 # direct methods
-.method constructor <init>(Lcom/android/server/policy/PhoneWindowManager;)V
+.method constructor <init>(Lcom/android/server/policy/PhoneWindowManager;ILandroid/view/WindowManagerPolicy$WindowState;Z)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/policy/PhoneWindowManager;
+    .param p2, "val$visibility"    # I
+    .param p3, "val$win"    # Landroid/view/WindowManagerPolicy$WindowState;
+    .param p4, "val$needsMenu"    # Z
 
     .prologue
-    .line 5909
+    .line 7521
     iput-object p1, p0, Lcom/android/server/policy/PhoneWindowManager$25;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+
+    iput p2, p0, Lcom/android/server/policy/PhoneWindowManager$25;->val$visibility:I
+
+    iput-object p3, p0, Lcom/android/server/policy/PhoneWindowManager$25;->val$win:Landroid/view/WindowManagerPolicy$WindowState;
+
+    iput-boolean p4, p0, Lcom/android/server/policy/PhoneWindowManager$25;->val$needsMenu:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,173 +52,59 @@
 
 
 # virtual methods
-.method public onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
-    .locals 8
-    .param p1, "name"    # Landroid/content/ComponentName;
-    .param p2, "service"    # Landroid/os/IBinder;
+.method public run()V
+    .locals 6
 
     .prologue
-    .line 5912
-    iget-object v5, p0, Lcom/android/server/policy/PhoneWindowManager$25;->this$0:Lcom/android/server/policy/PhoneWindowManager;
-
-    iget-object v6, v5, Lcom/android/server/policy/PhoneWindowManager;->mScreenshotLock:Ljava/lang/Object;
-
-    monitor-enter v6
-
-    .line 5913
-    :try_start_0
-    iget-object v5, p0, Lcom/android/server/policy/PhoneWindowManager$25;->this$0:Lcom/android/server/policy/PhoneWindowManager;
-
-    iget-object v5, v5, Lcom/android/server/policy/PhoneWindowManager;->mScreenshotConnection:Landroid/content/ServiceConnection;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-eq v5, p0, :cond_0
-
-    monitor-exit v6
-
-    .line 5914
-    return-void
-
-    .line 5916
-    :cond_0
-    :try_start_1
-    new-instance v2, Landroid/os/Messenger;
-
-    invoke-direct {v2, p2}, Landroid/os/Messenger;-><init>(Landroid/os/IBinder;)V
-
-    .line 5917
-    .local v2, "messenger":Landroid/os/Messenger;
     const/4 v5, 0x0
 
-    const/4 v7, 0x1
+    .line 7525
+    :try_start_0
+    iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager$25;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    invoke-static {v5, v7}, Landroid/os/Message;->obtain(Landroid/os/Handler;I)Landroid/os/Message;
+    invoke-virtual {v2}, Lcom/android/server/policy/PhoneWindowManager;->getStatusBarService()Lcom/android/internal/statusbar/IStatusBarService;
+
+    move-result-object v1
+
+    .line 7526
+    .local v1, "statusbar":Lcom/android/internal/statusbar/IStatusBarService;
+    if-eqz v1, :cond_0
+
+    .line 7527
+    iget v2, p0, Lcom/android/server/policy/PhoneWindowManager$25;->val$visibility:I
+
+    iget-object v3, p0, Lcom/android/server/policy/PhoneWindowManager$25;->val$win:Landroid/view/WindowManagerPolicy$WindowState;
+
+    invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 5918
-    .local v3, "msg":Landroid/os/Message;
-    move-object v4, p0
+    const/4 v4, -0x1
 
-    .line 5919
-    .local v4, "myConn":Landroid/content/ServiceConnection;
-    new-instance v1, Lcom/android/server/policy/PhoneWindowManager$25$1;
+    invoke-interface {v1, v2, v4, v3}, Lcom/android/internal/statusbar/IStatusBarService;->setSystemUiVisibility(IILjava/lang/String;)V
 
-    iget-object v5, p0, Lcom/android/server/policy/PhoneWindowManager$25;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+    .line 7528
+    iget-boolean v2, p0, Lcom/android/server/policy/PhoneWindowManager$25;->val$needsMenu:Z
 
-    iget-object v5, v5, Lcom/android/server/policy/PhoneWindowManager;->mHandler:Landroid/os/Handler;
+    invoke-interface {v1, v2}, Lcom/android/internal/statusbar/IStatusBarService;->topAppWindowChanged(Z)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    invoke-virtual {v5}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
-
-    move-result-object v5
-
-    invoke-direct {v1, p0, v5, v4}, Lcom/android/server/policy/PhoneWindowManager$25$1;-><init>(Lcom/android/server/policy/PhoneWindowManager$25;Landroid/os/Looper;Landroid/content/ServiceConnection;)V
-
-    .line 5931
-    .local v1, "h":Landroid/os/Handler;
-    new-instance v5, Landroid/os/Messenger;
-
-    invoke-direct {v5, v1}, Landroid/os/Messenger;-><init>(Landroid/os/Handler;)V
-
-    iput-object v5, v3, Landroid/os/Message;->replyTo:Landroid/os/Messenger;
-
-    .line 5932
-    const/4 v5, 0x0
-
-    iput v5, v3, Landroid/os/Message;->arg2:I
-
-    const/4 v5, 0x0
-
-    iput v5, v3, Landroid/os/Message;->arg1:I
-
-    .line 5933
-    iget-object v5, p0, Lcom/android/server/policy/PhoneWindowManager$25;->this$0:Lcom/android/server/policy/PhoneWindowManager;
-
-    iget-object v5, v5, Lcom/android/server/policy/PhoneWindowManager;->mStatusBar:Landroid/view/WindowManagerPolicy$WindowState;
-
-    if-eqz v5, :cond_1
-
-    iget-object v5, p0, Lcom/android/server/policy/PhoneWindowManager$25;->this$0:Lcom/android/server/policy/PhoneWindowManager;
-
-    iget-object v5, v5, Lcom/android/server/policy/PhoneWindowManager;->mStatusBar:Landroid/view/WindowManagerPolicy$WindowState;
-
-    invoke-interface {v5}, Landroid/view/WindowManagerPolicy$WindowState;->isVisibleLw()Z
-
-    move-result v5
-
-    if-eqz v5, :cond_1
-
-    .line 5934
-    const/4 v5, 0x1
-
-    iput v5, v3, Landroid/os/Message;->arg1:I
-
-    .line 5935
-    :cond_1
-    iget-object v5, p0, Lcom/android/server/policy/PhoneWindowManager$25;->this$0:Lcom/android/server/policy/PhoneWindowManager;
-
-    iget-object v5, v5, Lcom/android/server/policy/PhoneWindowManager;->mNavigationBar:Landroid/view/WindowManagerPolicy$WindowState;
-
-    if-eqz v5, :cond_2
-
-    iget-object v5, p0, Lcom/android/server/policy/PhoneWindowManager$25;->this$0:Lcom/android/server/policy/PhoneWindowManager;
-
-    iget-object v5, v5, Lcom/android/server/policy/PhoneWindowManager;->mNavigationBar:Landroid/view/WindowManagerPolicy$WindowState;
-
-    invoke-interface {v5}, Landroid/view/WindowManagerPolicy$WindowState;->isVisibleLw()Z
-
-    move-result v5
-
-    if-eqz v5, :cond_2
-
-    .line 5936
-    const/4 v5, 0x1
-
-    iput v5, v3, Landroid/os/Message;->arg2:I
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 5938
-    :cond_2
-    :try_start_2
-    invoke-virtual {v2, v3}, Landroid/os/Messenger;->send(Landroid/os/Message;)V
-    :try_end_2
-    .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
+    .line 7523
+    .end local v1    # "statusbar":Lcom/android/internal/statusbar/IStatusBarService;
+    :cond_0
     :goto_0
-    monitor-exit v6
-
-    .line 5911
     return-void
 
-    .line 5939
+    .line 7530
     :catch_0
     move-exception v0
 
+    .line 7532
     .local v0, "e":Landroid/os/RemoteException;
+    iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager$25;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+
+    iput-object v5, v2, Lcom/android/server/policy/PhoneWindowManager;->mStatusBarService:Lcom/android/internal/statusbar/IStatusBarService;
+
     goto :goto_0
-
-    .line 5912
-    .end local v0    # "e":Landroid/os/RemoteException;
-    .end local v1    # "h":Landroid/os/Handler;
-    .end local v2    # "messenger":Landroid/os/Messenger;
-    .end local v3    # "msg":Landroid/os/Message;
-    .end local v4    # "myConn":Landroid/content/ServiceConnection;
-    :catchall_0
-    move-exception v5
-
-    monitor-exit v6
-
-    throw v5
-.end method
-
-.method public onServiceDisconnected(Landroid/content/ComponentName;)V
-    .locals 0
-    .param p1, "name"    # Landroid/content/ComponentName;
-
-    .prologue
-    .line 5944
-    return-void
 .end method

@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Landroid/widget/ListPopupWindow;
 
     .prologue
-    .line 1809
+    .line 1795
     iput-object p1, p0, Landroid/widget/ListPopupWindow$ListSelectorHider;->this$0:Landroid/widget/ListPopupWindow;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,11 +51,11 @@
     .locals 1
 
     .prologue
-    .line 1811
+    .line 1797
     iget-object v0, p0, Landroid/widget/ListPopupWindow$ListSelectorHider;->this$0:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/ListPopupWindow;->clearListSelection()V
 
-    .line 1810
+    .line 1796
     return-void
 .end method

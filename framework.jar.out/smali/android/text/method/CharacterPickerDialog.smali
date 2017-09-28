@@ -210,12 +210,12 @@
     iput v2, v1, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     .line 75
-    const v2, 0x109003d
+    const v2, 0x109003c
 
     invoke-virtual {p0, v2}, Landroid/text/method/CharacterPickerDialog;->setContentView(I)V
 
     .line 77
-    const v2, 0x102031e
+    const v2, 0x1020318
 
     invoke-virtual {p0, v2}, Landroid/text/method/CharacterPickerDialog;->findViewById(I)Landroid/view/View;
 
@@ -239,7 +239,7 @@
     invoke-virtual {v0, p0}, Landroid/widget/GridView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
     .line 81
-    const v2, 0x102031f
+    const v2, 0x1020319
 
     invoke-virtual {p0, v2}, Landroid/text/method/CharacterPickerDialog;->findViewById(I)Landroid/view/View;
 

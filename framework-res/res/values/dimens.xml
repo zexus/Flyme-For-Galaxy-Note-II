@@ -165,9 +165,6 @@
     <dimen name="chooser_grid_padding">0.0dip</dimen>
     <item type="dimen" name="time_picker_column_start_material">0</item>
     <item type="dimen" name="time_picker_column_end_material">1</item>
-    <dimen name="edge_gesture_trigger_distance">12.0dip</dimen>
-    <dimen name="edge_gesture_perpendicular_distance">15.0dip</dimen>
-    <dimen name="edge_gesture_trigger_thickness">12.0dip</dimen>
     <dimen name="global_actions_avatar_size">40.0dip</dimen>
     <dimen name="timepicker_text_inset_inner">58.0dip</dimen>
     <dimen name="timepicker_radial_picker_dimen">296.0dip</dimen>
@@ -298,10 +295,4 @@
     <dimen name="day_picker_padding_top">6.0dip</dimen>
     <dimen name="day_picker_button_margin_top">0.0dip</dimen>
     <dimen name="datepicker_view_animator_height">226.0dip</dimen>
-    <dimen name="dexopt_icon_margin">6.0dip</dimen>
-    <dimen name="dexopt_icon_size">42.0dip</dimen>
-    <dimen name="dexopt_logo_size">400.0dip</dimen>
-    <dimen name="dexopt_margin">10.0dip</dimen>
-    <dimen name="dexopt_message">10.0dip</dimen>
-    <item type="dimen" name="APKTOOL_DUMMY_a9">false</item>
 </resources>

@@ -165,8 +165,6 @@
 
 .field public static final config_enableNetworkLocationOverlay:I = 0x112005a
 
-.field public static final config_enableScreenrecordChord:I = 0x11200c8
-
 .field public static final config_enableScreenshotChord:I = 0x112002f
 
 .field public static final config_enableTranslucentDecor:I = 0x1120050
@@ -179,7 +177,7 @@
 
 .field public static final config_enable_puk_unlock_screen:I = 0x1120052
 
-.field public static final config_fetch_apn_from_omh_card:I = 0x11200c5
+.field public static final config_fetch_apn_from_omh_card:I = 0x11200c3
 
 .field public static final config_fingerprintRestrictedToSystemAndOwner:I = 0x11200af
 
@@ -198,8 +196,6 @@
 .field public static final config_hasRemovableLid:I = 0x11200bc
 
 .field public static final config_hotswapCapable:I = 0x1120051
-
-.field public static final config_hwKeysPref:I = 0x11200c9
 
 .field public static final config_intrusiveBatteryLed:I = 0x1120049
 
@@ -221,7 +217,7 @@
 
 .field public static final config_overrideRemoteViewsActivityTransition:I = 0x11200aa
 
-.field public static final config_persistUsbDriveNotification:I = 0x11200c4
+.field public static final config_persistUsbDriveNotification:I = 0x11200c2
 
 .field public static final config_powerDecoupleAutoSuspendModeFromDisplay:I = 0x112007d
 
@@ -253,11 +249,11 @@
 
 .field public static final config_sf_slowBlur:I = 0x1120011
 
+.field public static final config_showBatteryFullyChargedNotification:I = 0x11200c0
+
 .field public static final config_showMenuShortcutsWhenKeyboardPresent:I = 0x112006d
 
 .field public static final config_showNavigationBar:I = 0x1120073
-
-.field public static final config_show_IMESwitcher:I = 0x11200c0
 
 .field public static final config_show_cmIMESwitcher:I = 0x11200ba
 
@@ -317,15 +313,11 @@
 
 .field public static final config_useFixedVolume:I = 0x112008d
 
-.field public static final config_useSystemClockforRotationSensor:I = 0x11200c2
-
-.field public static final config_useSystemClockforSensors:I = 0x11200c3
+.field public static final config_useSystemClockforRotationSensor:I = 0x11200c1
 
 .field public static final config_useVolumeKeySounds:I = 0x1120012
 
 .field public static final config_use_sim_language_file:I = 0x11200ab
-
-.field public static final config_use_stackblur:I = 0x11200c1
 
 .field public static final config_use_strict_phone_number_comparation:I = 0x1120046
 
@@ -373,7 +365,7 @@
 
 .field public static final config_windowShowCircularMask:I = 0x1120093
 
-.field public static final def_custom_dateformat:I = 0x11200c6
+.field public static final def_custom_dateformat:I = 0x11200c4
 
 .field public static final editable_voicemailnumber:I = 0x11200a4
 
@@ -401,7 +393,7 @@
     .locals 0
 
     .prologue
-    .line 14617
+    .line 14558
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

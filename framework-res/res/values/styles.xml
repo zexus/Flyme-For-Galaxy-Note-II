@@ -3287,7 +3287,7 @@
         <item name="backgroundDimEnabled">false</item>
         <item name="colorBackgroundCacheHint">@null</item>
     </style>
-    <style name="Theme.Material.Settings" parent="@style/Theme.Material.DayNight.DarkActionBar">
+    <style name="Theme.Material.Settings" parent="@style/Theme.Material.Light.DarkActionBar">
         <item name="presentationTheme">@style/Theme.Material.Settings.Dialog.Presentation</item>
         <item name="colorPrimary">@color/material_blue_grey_900</item>
         <item name="colorPrimaryDark">@color/material_blue_grey_950</item>
@@ -3891,7 +3891,7 @@
         <item name="dropDownWidth">wrap_content</item>
         <item name="dropDownHorizontalOffset">0.0dip</item>
         <item name="dropDownVerticalOffset">0.0dip</item>
-        <item name="popupAnimationStyle">@null</item>
+        <item name="popupAnimationStyle">@empty</item>
         <item name="popupElevation">@dimen/floating_window_z</item>
         <item name="popupEnterTransition">@transition/popup_window_enter</item>
         <item name="popupExitTransition">@transition/popup_window_exit</item>
@@ -3990,7 +3990,7 @@
         <item name="dropDownWidth">wrap_content</item>
         <item name="dropDownHorizontalOffset">0.0dip</item>
         <item name="dropDownVerticalOffset">0.0dip</item>
-        <item name="popupAnimationStyle">@null</item>
+        <item name="popupAnimationStyle">@empty</item>
         <item name="overlapAnchor">true</item>
         <item name="popupElevation">@dimen/floating_window_z</item>
         <item name="popupEnterTransition">@transition/popup_window_enter</item>
@@ -4013,8 +4013,8 @@
         <item name="gravity">fill_horizontal|center</item>
         <item name="divider">?dividerVertical</item>
         <item name="singleLine">true</item>
-        <item name="tabStripLeft">@null</item>
-        <item name="tabStripRight">@null</item>
+        <item name="tabStripLeft">@empty</item>
+        <item name="tabStripRight">@empty</item>
         <item name="tabStripEnabled">false</item>
         <item name="measureWithLargestChild">true</item>
         <item name="showDividers">none</item>
@@ -4183,21 +4183,6 @@
         <item name="windowMinWidthMajor">@dimen/dialog_min_width_major</item>
         <item name="windowMinWidthMinor">@dimen/dialog_min_width_minor</item>
     </style>
-    <style name="Theme.Material.DayNight" parent="@style/Theme.Material.Light" />
-    <style name="Theme.Material.DayNight.DarkActionBar" parent="@style/Theme.Material.Light.DarkActionBar" />
-    <style name="Theme.Material.DayNight.Dialog" parent="@style/Theme.Material.DayNight.BaseDialog" />
-    <style name="Theme.Material.DayNight.Dialog.Alert" parent="@style/Theme.Material.DayNight.Dialog.BaseAlert" />
-    <style name="Theme.Material.DayNight.Dialog.MinWidth" parent="@style/Theme.Material.Light.Dialog.MinWidth" />
-    <style name="Theme.Material.DayNight.Dialog.NoActionBar" parent="@style/Theme.Material.Light.Dialog.NoActionBar" />
-    <style name="Theme.Material.DayNight.Dialog.NoActionBar.MinWidth" parent="@style/Theme.Material.Light.Dialog.NoActionBar.MinWidth" />
-    <style name="Theme.Material.DayNight.Dialog.Presentation" parent="@style/Theme.Material.Light.Dialog.Presentation" />
-    <style name="Theme.Material.DayNight.DialogWhenLarge" parent="@style/Theme.Material.Light.DialogWhenLarge" />
-    <style name="Theme.Material.DayNight.DialogWhenLarge.NoActionBar" parent="@style/Theme.Material.Light.DialogWhenLarge.NoActionBar" />
-    <style name="Theme.Material.DayNight.NoActionBar" parent="@style/Theme.Material.Light.NoActionBar" />
-    <style name="Theme.Material.DayNight.NoActionBar.Fullscreen" parent="@style/Theme.Material.Light.NoActionBar.Fullscreen" />
-    <style name="Theme.Material.DayNight.NoActionBar.Overscan" parent="@style/Theme.Material.Light.NoActionBar.Overscan" />
-    <style name="Theme.Material.DayNight.NoActionBar.TranslucentDecor" parent="@style/Theme.Material.Light.NoActionBar.TranslucentDecor" />
-    <style name="Theme.Material.DayNight.Panel" parent="@style/Theme.Material.Light.Panel" />
     <style name="Theme.Material.Light.Dialog.HeavyWeightSwitcherActivity" parent="@style/Theme.Material.Light.Dialog" />
     <style name="Theme.Material.Light.Dialog.ChooseAccountActivity" parent="@style/Theme.Material.Light.Dialog" />
     <style name="Theme.Material.Light.Dialog.ChooseTypeAndAccountActivity" parent="@style/Theme.Material.Light.Dialog" />
@@ -4207,45 +4192,6 @@
     <style name="Theme.Material.Light.Dialog.SyncActivityTooManyDeletes" parent="@style/Theme.Material.Light.Dialog" />
     <style name="Theme.Material.Light.Dialog.Alert.NetInitiatedActivity" parent="@style/Theme.Material.Light.Dialog.Alert" />
     <style name="Theme.Power.Dialog" parent="@style/Theme.DeviceDefault.Light.DarkActionBar" />
-    <style name="Animation.RecentScreen" parent="@style/Animation">
-        <item name="windowEnterAnimation">@anim/recent_screen_enter</item>
-        <item name="windowExitAnimation">@anim/recent_screen_exit</item>
-    </style>
-    <style name="Animation.RecentScreen.Left" parent="@style/Animation.RecentScreen">
-        <item name="windowEnterAnimation">@anim/recent_screen_enter_left</item>
-        <item name="windowExitAnimation">@anim/recent_screen_exit_left</item>
-    </style>
-    <style name="PowerMenuBottomAnimation">
-        <item name="windowEnterAnimation">@anim/slide_in_up</item>
-        <item name="windowExitAnimation">@anim/slide_out_down</item>
-    </style>
-    <style name="PowerMenuTopAnimation">
-        <item name="windowEnterAnimation">@anim/slide_in_down</item>
-        <item name="windowExitAnimation">@anim/slide_out_up</item>
-    </style>
-    <style name="PowerMenuRotateAnimation">
-        <item name="windowEnterAnimation">@anim/rotate</item>
-    </style>
-    <style name="PowerMenuflyAnimation">
-        <item name="windowEnterAnimation">@anim/recent_enter</item>
-        <item name="windowExitAnimation">@anim/recent_exit</item>
-    </style>
-    <style name="PowerMenuTnAnimation">
-        <item name="windowEnterAnimation">@anim/tn_toast_enter</item>
-        <item name="windowExitAnimation">@anim/tn_toast_exit</item>
-    </style>
-    <style name="PowerMenuTranslucentAnimation">
-        <item name="windowEnterAnimation">@anim/translucent_enter</item>
-        <item name="windowExitAnimation">@anim/translucent_exit</item>
-    </style>
-    <style name="PowerMenuXylonAnimation">
-        <item name="windowEnterAnimation">@anim/xylon_toast_enter</item>
-        <item name="windowExitAnimation">@anim/xylon_toast_exit</item>
-    </style>
-    <style name="PowerMenuCardAnimation">
-        <item name="windowEnterAnimation">@anim/honami_toast_enter</item>
-        <item name="windowExitAnimation">@anim/honami_toast_exit</item>
-    </style>
     <style name="WindowTitleBackground">
         <item name="background">@drawable/title_bar</item>
     </style>
@@ -4303,62 +4249,6 @@
     <style name="Animation.TypingFilterRestore" parent="@style/Animation">
         <item name="windowEnterAnimation">@null</item>
         <item name="windowExitAnimation">@anim/shrink_fade_out_center</item>
-    </style>
-    <style name="Animation.Toast.Fade" parent="@style/Animation.Toast">
-        <item name="windowEnterAnimation">@anim/fade_in</item>
-        <item name="windowExitAnimation">@anim/fade_out</item>
-    </style>
-    <style name="Animation.Toast.SlideRight" parent="@style/Animation.Toast">
-        <item name="windowEnterAnimation">@anim/slide_in_right</item>
-        <item name="windowExitAnimation">@anim/slide_out_right</item>
-    </style>
-    <style name="Animation.Toast.SlideLeft" parent="@style/Animation.Toast">
-        <item name="windowEnterAnimation">@anim/slide_in_left</item>
-        <item name="windowExitAnimation">@anim/slide_out_left</item>
-    </style>
-    <style name="Animation.Toast.SlideRightLeft" parent="@style/Animation.Toast">
-        <item name="windowEnterAnimation">@anim/slide_in_right</item>
-        <item name="windowExitAnimation">@anim/slide_out_left</item>
-    </style>
-    <style name="Animation.Toast.SlideLeftRight" parent="@style/Animation.Toast">
-        <item name="windowEnterAnimation">@anim/slide_in_left</item>
-        <item name="windowExitAnimation">@anim/slide_out_right</item>
-    </style>
-    <style name="Animation.Toast.Xylon" parent="@style/Animation.Toast">
-        <item name="windowEnterAnimation">@anim/xylon_toast_enter</item>
-        <item name="windowExitAnimation">@anim/xylon_toast_exit</item>
-    </style>
-    <style name="Animation.Toast.Toko" parent="@style/Animation.Toast">
-        <item name="windowEnterAnimation">@anim/toko_toast_enter</item>
-        <item name="windowExitAnimation">@anim/toko_toast_exit</item>
-    </style>
-    <style name="Animation.Toast.Tn" parent="@style/Animation.Toast">
-        <item name="windowEnterAnimation">@anim/tn_toast_enter</item>
-        <item name="windowExitAnimation">@anim/tn_toast_exit</item>
-    </style>
-    <style name="Animation.Toast.Honami" parent="@style/Animation.Toast">
-        <item name="windowEnterAnimation">@anim/honami_toast_enter</item>
-        <item name="windowExitAnimation">@anim/honami_toast_exit</item>
-    </style>
-    <style name="Animation.Toast.FastFade" parent="@style/Animation.Toast">
-        <item name="windowEnterAnimation">@anim/fast_fade_in</item>
-        <item name="windowExitAnimation">@anim/fast_fade_out</item>
-    </style>
-    <style name="Animation.Toast.GrowFade" parent="@style/Animation.Toast">
-        <item name="windowEnterAnimation">@anim/grow_fade_in</item>
-        <item name="windowExitAnimation">@anim/fast_fade_out</item>
-    </style>
-    <style name="Animation.Toast.GrowFadeCenter" parent="@style/Animation.Toast">
-        <item name="windowEnterAnimation">@anim/grow_fade_in_center</item>
-        <item name="windowExitAnimation">@anim/fast_fade_out</item>
-    </style>
-    <style name="Animation.Toast.GrowFadeBottom" parent="@style/Animation.Toast">
-        <item name="windowEnterAnimation">@anim/grow_fade_in_from_bottom</item>
-        <item name="windowExitAnimation">@anim/fast_fade_out</item>
-    </style>
-    <style name="Animation.Toast.Translucent" parent="@style/Animation.Toast">
-        <item name="windowEnterAnimation">@anim/translucent_enter</item>
-        <item name="windowExitAnimation">@anim/translucent_exit</item>
     </style>
     <style name="Animation.DropDownDown" parent="@style/Animation">
         <item name="windowEnterAnimation">@anim/grow_fade_in</item>
@@ -5340,9 +5230,9 @@
         <item name="minHeight">@dimen/alert_dialog_button_bar_height</item>
     </style>
     <style name="Widget.Material.SearchView.ActionBar" parent="@style/Widget.Material.SearchView">
-        <item name="queryBackground">@null</item>
-        <item name="submitBackground">@null</item>
-        <item name="searchHintIcon">@null</item>
+        <item name="queryBackground">@empty</item>
+        <item name="submitBackground">@empty</item>
+        <item name="searchHintIcon">@empty</item>
         <item name="defaultQueryHint">@string/search_hint</item>
     </style>
     <style name="Widget.Material.TextView.ListSeparator" parent="@style/Widget.TextView.ListSeparator">
@@ -5449,16 +5339,16 @@
         <item name="windowExitAnimation">@anim/popup_exit_material</item>
     </style>
     <style name="AlertDialog.Material" parent="@style/AlertDialog">
-        <item name="fullDark">@null</item>
-        <item name="topDark">@null</item>
-        <item name="centerDark">@null</item>
-        <item name="bottomDark">@null</item>
-        <item name="fullBright">@null</item>
-        <item name="topBright">@null</item>
-        <item name="centerBright">@null</item>
-        <item name="bottomBright">@null</item>
-        <item name="bottomMedium">@null</item>
-        <item name="centerMedium">@null</item>
+        <item name="fullDark">@empty</item>
+        <item name="topDark">@empty</item>
+        <item name="centerDark">@empty</item>
+        <item name="bottomDark">@empty</item>
+        <item name="fullBright">@empty</item>
+        <item name="topBright">@empty</item>
+        <item name="centerBright">@empty</item>
+        <item name="bottomBright">@empty</item>
+        <item name="bottomMedium">@empty</item>
+        <item name="centerMedium">@empty</item>
         <item name="layout">@layout/alert_dialog_material</item>
         <item name="listLayout">@layout/select_dialog_material</item>
         <item name="multiChoiceItemLayout">@layout/select_dialog_multichoice_material</item>
@@ -5677,28 +5567,6 @@
         <item name="windowTranslucentNavigation">false</item>
         <item name="colorControlActivated">?colorControlHighlight</item>
         <item name="windowDrawsSystemBarBackgrounds">false</item>
-    </style>
-    <style name="Theme.DeviceDefault.FloatingWindow" parent="@style/Theme.DeviceDefault">
-        <item name="windowFrame">@null</item>
-        <item name="windowIsFloating">false</item>
-        <item name="windowIsTranslucent">true</item>
-        <item name="windowContentOverlay">@null</item>
-        <item name="windowAnimationStyle">@style/Animation.Dialog</item>
-        <item name="windowFullscreen">false</item>
-        <item name="windowSoftInputMode">stateAlwaysHidden|adjustPan</item>
-        <item name="windowActionModeOverlay">true</item>
-        <item name="windowCloseOnTouchOutside">true</item>
-    </style>
-    <style name="Theme.DeviceDefault.FloatingWindowLight" parent="@style/Theme.Material.Light.Dialog">
-        <item name="windowFrame">@null</item>
-        <item name="windowIsFloating">false</item>
-        <item name="windowIsTranslucent">true</item>
-        <item name="windowContentOverlay">@null</item>
-        <item name="windowAnimationStyle">@style/Animation.Dialog</item>
-        <item name="windowFullscreen">false</item>
-        <item name="windowSoftInputMode">stateAlwaysHidden|adjustPan</item>
-        <item name="windowActionModeOverlay">true</item>
-        <item name="windowCloseOnTouchOutside">true</item>
     </style>
     <style name="Theme.Holo.Dialog.FixedSize" parent="@style/Theme.Holo.Dialog">
         <item name="windowFixedWidthMajor">@dimen/dialog_fixed_width_major</item>
@@ -5937,48 +5805,41 @@
         <item name="windowMinWidthMajor">@dimen/dialog_min_width_major</item>
         <item name="windowMinWidthMinor">@dimen/dialog_min_width_minor</item>
     </style>
-    <style name="Theme.Material.Settings.NoActionBar" parent="@style/Theme.Material.DayNight.NoActionBar">
+    <style name="Theme.Material.Settings.NoActionBar" parent="@style/Theme.Material.Light.NoActionBar">
         <item name="presentationTheme">@style/Theme.Material.Settings.Dialog.Presentation</item>
         <item name="colorPrimary">@color/material_blue_grey_900</item>
         <item name="colorPrimaryDark">@color/material_blue_grey_950</item>
         <item name="panelMenuListTheme">@style/Theme.Material.Settings.CompactMenu</item>
         <item name="searchDialogTheme">@style/Theme.Material.Settings.SearchBar</item>
     </style>
-    <style name="Theme.Material.Settings.BaseDialog" parent="@style/Theme.Material.DayNight.BaseDialog">
+    <style name="Theme.Material.Settings.BaseDialog" parent="@style/Theme.Material.Light.BaseDialog">
         <item name="colorPrimary">@color/material_blue_grey_900</item>
         <item name="colorPrimaryDark">@color/material_blue_grey_950</item>
     </style>
-    <style name="Theme.Material.Settings.Dialog.BaseAlert" parent="@style/Theme.Material.DayNight.Dialog.BaseAlert">
+    <style name="Theme.Material.Settings.Dialog.BaseAlert" parent="@style/Theme.Material.Light.Dialog.BaseAlert">
         <item name="colorPrimary">@color/material_blue_grey_900</item>
         <item name="colorPrimaryDark">@color/material_blue_grey_950</item>
     </style>
-    <style name="Theme.Material.Settings.DialogWhenLarge" parent="@style/Theme.Material.DayNight.DialogWhenLarge.DarkActionBar">
+    <style name="Theme.Material.Settings.DialogWhenLarge" parent="@style/Theme.Material.Light.DialogWhenLarge.DarkActionBar">
         <item name="colorPrimary">@color/material_blue_grey_900</item>
         <item name="colorPrimaryDark">@color/material_blue_grey_950</item>
     </style>
-    <style name="Theme.Material.Settings.DialogWhenLarge.NoActionBar" parent="@style/Theme.Material.DayNight.DialogWhenLarge.NoActionBar">
+    <style name="Theme.Material.Settings.DialogWhenLarge.NoActionBar" parent="@style/Theme.Material.Light.DialogWhenLarge.NoActionBar">
         <item name="colorPrimary">@color/material_blue_grey_900</item>
         <item name="colorPrimaryDark">@color/material_blue_grey_950</item>
     </style>
-    <style name="Theme.Material.Settings.Dialog.Presentation" parent="@style/Theme.Material.DayNight.Dialog.Presentation">
+    <style name="Theme.Material.Settings.Dialog.Presentation" parent="@style/Theme.Material.Light.Dialog.Presentation">
         <item name="colorPrimary">@color/material_blue_grey_900</item>
         <item name="colorPrimaryDark">@color/material_blue_grey_950</item>
     </style>
-    <style name="Theme.Material.Settings.SearchBar" parent="@style/Theme.Material.DayNight.SearchBar">
+    <style name="Theme.Material.Settings.SearchBar" parent="@style/Theme.Material.Light.SearchBar">
         <item name="colorPrimary">@color/material_blue_grey_900</item>
         <item name="colorPrimaryDark">@color/material_blue_grey_950</item>
     </style>
-    <style name="Theme.Material.Settings.CompactMenu" parent="@style/Theme.Material.DayNight.CompactMenu">
+    <style name="Theme.Material.Settings.CompactMenu" parent="@style/Theme.Material.Light.CompactMenu">
         <item name="colorPrimary">@color/material_blue_grey_900</item>
         <item name="colorPrimaryDark">@color/material_blue_grey_950</item>
     </style>
-    <style name="Theme.Material.DayNight.BaseDialog" parent="@style/Theme.Material.Light.BaseDialog" />
-    <style name="Theme.Material.DayNight.Dialog.FixedSize" parent="@style/Theme.Material.Light.Dialog.FixedSize" />
-    <style name="Theme.Material.DayNight.Dialog.NoActionBar.FixedSize" parent="@style/Theme.Material.Light.Dialog.NoActionBar.FixedSize" />
-    <style name="Theme.Material.DayNight.DialogWhenLarge.DarkActionBar" parent="@style/Theme.Material.Light.DialogWhenLarge.DarkActionBar" />
-    <style name="Theme.Material.DayNight.Dialog.BaseAlert" parent="@style/Theme.Material.Light.Dialog.BaseAlert" />
-    <style name="Theme.Material.DayNight.SearchBar" parent="@style/Theme.Material.Light.SearchBar" />
-    <style name="Theme.Material.DayNight.CompactMenu" parent="@style/Theme.Material.Light.CompactMenu" />
     <style name="Theme.MicroBase" parent="@style/Theme.Material.NoActionBar">
         <item name="windowBackground">@color/black</item>
         <item name="windowIsFloating">false</item>

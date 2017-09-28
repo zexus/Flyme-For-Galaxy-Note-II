@@ -760,7 +760,7 @@
 
     .line 316
     .local v3, "layoutInflater":Landroid/view/LayoutInflater;
-    const v6, 0x109003c
+    const v6, 0x109003b
 
     const/4 v7, 0x0
 
@@ -790,7 +790,7 @@
     iput-object v6, p0, Landroid/widget/CalendarViewLegacyDelegate;->mListView:Landroid/widget/ListView;
 
     .line 320
-    const v6, 0x102031d
+    const v6, 0x1020317
 
     invoke-virtual {v1, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -801,7 +801,7 @@
     iput-object v6, p0, Landroid/widget/CalendarViewLegacyDelegate;->mDayNamesHeader:Landroid/view/ViewGroup;
 
     .line 321
-    const v6, 0x102031c
+    const v6, 0x1020316
 
     invoke-virtual {v1, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

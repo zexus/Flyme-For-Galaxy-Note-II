@@ -1,6 +1,9 @@
 .class Lcom/android/server/policy/PhoneWindowManager$4;
-.super Landroid/os/UEventObserver;
+.super Ljava/lang/Object;
 .source "PhoneWindowManager.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # annotations
@@ -24,38 +27,51 @@
     .param p1, "this$0"    # Lcom/android/server/policy/PhoneWindowManager;
 
     .prologue
-    .line 883
+    .line 1391
     iput-object p1, p0, Lcom/android/server/policy/PhoneWindowManager$4;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    invoke-direct {p0}, Landroid/os/UEventObserver;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onUEvent(Landroid/os/UEventObserver$UEvent;)V
+.method public run()V
     .locals 3
-    .param p1, "event"    # Landroid/os/UEventObserver$UEvent;
 
     .prologue
-    .line 886
+    const/4 v2, 0x0
+
+    .line 1394
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$4;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    const-string/jumbo v1, "1"
+    const/4 v1, 0x1
 
-    const-string/jumbo v2, "SWITCH_STATE"
+    iput-boolean v1, v0, Lcom/android/server/policy/PhoneWindowManager;->mEndCallKeyHandled:Z
 
-    invoke-virtual {p1, v2}, Landroid/os/UEventObserver$UEvent;->get(Ljava/lang/String;)Ljava/lang/String;
+    .line 1395
+    iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$4;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    move-result-object v2
+    const/4 v1, 0x0
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1, v2, v2}, Lcom/android/server/policy/PhoneWindowManager;->performHapticFeedbackLw(Landroid/view/WindowManagerPolicy$WindowState;IZ)Z
 
-    move-result v1
+    move-result v0
 
-    invoke-virtual {v0, v1}, Lcom/android/server/policy/PhoneWindowManager;->setHdmiPlugged(Z)V
+    if-nez v0, :cond_0
 
-    .line 885
+    .line 1396
+    iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$4;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+
+    invoke-static {v0}, Lcom/android/server/policy/PhoneWindowManager;->-wrap11(Lcom/android/server/policy/PhoneWindowManager;)V
+
+    .line 1398
+    :cond_0
+    iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$4;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+
+    invoke-virtual {v0}, Lcom/android/server/policy/PhoneWindowManager;->showGlobalActionsInternal()V
+
+    .line 1393
     return-void
 .end method

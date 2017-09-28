@@ -1923,7 +1923,7 @@
     move-result-object v17
 
     .line 272
-    const v18, 0x10e000c
+    const v18, 0x10e000a
 
     .line 271
     invoke-virtual/range {v17 .. v18}, Landroid/content/res/Resources;->getInteger(I)I
@@ -1937,7 +1937,7 @@
     move-result-object v17
 
     .line 274
-    const v18, 0x10e000b
+    const v18, 0x10e0009
 
     .line 273
     invoke-virtual/range {v17 .. v18}, Landroid/content/res/Resources;->getInteger(I)I
@@ -2005,7 +2005,7 @@
     if-eqz v7, :cond_6
 
     .line 289
-    const-string/jumbo v17, "XXXXXX"
+    const-string/jumbo v17, "ActivityManager"
 
     const-string/jumbo v18, "choosing minFree values for 64 Bit"
 
@@ -2114,7 +2114,7 @@
 
     .line 294
     :cond_6
-    const-string/jumbo v17, "XXXXXX"
+    const-string/jumbo v17, "ActivityManager"
 
     const-string/jumbo v18, "choosing minFree values for 32 Bit"
 
@@ -2404,7 +2404,7 @@
 
     move-result-object v17
 
-    const v18, 0x10e000e
+    const v18, 0x10e000c
 
     invoke-virtual/range {v17 .. v18}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2416,7 +2416,7 @@
 
     move-result-object v17
 
-    const v18, 0x10e000d
+    const v18, 0x10e000b
 
     invoke-virtual/range {v17 .. v18}, Landroid/content/res/Resources;->getInteger(I)I
 

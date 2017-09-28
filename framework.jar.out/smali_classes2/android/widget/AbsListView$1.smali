@@ -1,11 +1,14 @@
 .class Landroid/widget/AbsListView$1;
-.super Landroid/os/Handler;
+.super Ljava/lang/Object;
 .source "AbsListView.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/widget/AbsListView;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Landroid/widget/AbsListView;->setFastScrollEnabled(Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,50 +20,39 @@
 # instance fields
 .field final synthetic this$0:Landroid/widget/AbsListView;
 
+.field final synthetic val$enabled:Z
+
 
 # direct methods
-.method constructor <init>(Landroid/widget/AbsListView;)V
+.method constructor <init>(Landroid/widget/AbsListView;Z)V
     .locals 0
     .param p1, "this$0"    # Landroid/widget/AbsListView;
+    .param p2, "val$enabled"    # Z
 
     .prologue
-    .line 3786
+    .line 1262
     iput-object p1, p0, Landroid/widget/AbsListView$1;->this$0:Landroid/widget/AbsListView;
 
-    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
+    iput-boolean p2, p0, Landroid/widget/AbsListView$1;->val$enabled:Z
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public handleMessage(Landroid/os/Message;)V
+.method public run()V
     .locals 2
-    .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 3788
-    iget-object v1, p0, Landroid/widget/AbsListView$1;->this$0:Landroid/widget/AbsListView;
-
+    .line 1265
     iget-object v0, p0, Landroid/widget/AbsListView$1;->this$0:Landroid/widget/AbsListView;
 
-    invoke-static {v0}, Landroid/widget/AbsListView;->-get8(Landroid/widget/AbsListView;)Z
+    iget-boolean v1, p0, Landroid/widget/AbsListView$1;->val$enabled:Z
 
-    move-result v0
+    invoke-static {v0, v1}, Landroid/widget/AbsListView;->-wrap9(Landroid/widget/AbsListView;Z)V
 
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x0
-
-    :goto_0
-    invoke-static {v1, v0}, Landroid/widget/AbsListView;->-set1(Landroid/widget/AbsListView;Z)Z
-
-    .line 3787
+    .line 1264
     return-void
-
-    .line 3788
-    :cond_0
-    const/4 v0, 0x1
-
-    goto :goto_0
 .end method

@@ -10192,7 +10192,7 @@
     move-result-object v29
 
     .line 1296
-    const v30, 0x1040167
+    const v30, 0x104014b
 
     .line 1295
     invoke-virtual/range {v29 .. v30}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
@@ -11532,7 +11532,7 @@
 
     move-result-object v0
 
-    const v1, 0x1040305
+    const v1, 0x10402e9
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 

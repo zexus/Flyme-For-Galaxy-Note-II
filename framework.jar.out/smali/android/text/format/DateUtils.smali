@@ -1215,7 +1215,7 @@
 
     .line 794
     .local v12, "result":Ljava/lang/String;
-    const v2, 0x10403c6
+    const v2, 0x10403aa
 
     .line 808
     .local v2, "prepositionId":I
@@ -1283,7 +1283,7 @@
 
     .line 801
     .restart local v12    # "result":Ljava/lang/String;
-    const v2, 0x10403c5
+    const v2, 0x10403a9
 
     .restart local v2    # "prepositionId":I
     goto :goto_0
@@ -1311,7 +1311,7 @@
 
     .line 806
     .restart local v12    # "result":Ljava/lang/String;
-    const v2, 0x10403c5
+    const v2, 0x10403a9
 
     .restart local v2    # "prepositionId":I
     goto :goto_0
@@ -1395,7 +1395,7 @@
     sput-object v0, Landroid/text/format/DateUtils;->sLastConfig:Landroid/content/res/Configuration;
 
     .line 346
-    const v2, 0x10403d9
+    const v2, 0x10403bd
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1404,7 +1404,7 @@
     sput-object v2, Landroid/text/format/DateUtils;->sElapsedFormatMMSS:Ljava/lang/String;
 
     .line 347
-    const v2, 0x10403da
+    const v2, 0x10403be
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

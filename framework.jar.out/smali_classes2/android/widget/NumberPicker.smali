@@ -22,7 +22,7 @@
 
 
 # static fields
-.field private static final DEFAULT_LAYOUT_RESOURCE_ID:I = 0x1090095
+.field private static final DEFAULT_LAYOUT_RESOURCE_ID:I = 0x1090093
 
 .field private static final DEFAULT_LONG_PRESS_UPDATE_INTERVAL:J = 0x12cL
 
@@ -699,7 +699,7 @@
     .local v6, "attributesArray":Landroid/content/res/TypedArray;
     const/16 v18, 0x1
 
-    const v19, 0x1090095
+    const v19, 0x1090093
 
     .line 607
     move/from16 v0, v18
@@ -712,7 +712,7 @@
 
     .line 610
     .local v13, "layoutResId":I
-    const v18, 0x1090095
+    const v18, 0x1090093
 
     move/from16 v0, v18
 
@@ -1245,7 +1245,7 @@
     if-nez v18, :cond_7
 
     .line 707
-    const v18, 0x1020399
+    const v18, 0x102038a
 
     move-object/from16 v0, p0
 
@@ -1296,7 +1296,7 @@
     if-nez v18, :cond_8
 
     .line 716
-    const v18, 0x102039b
+    const v18, 0x102038c
 
     move-object/from16 v0, p0
 
@@ -1338,7 +1338,7 @@
 
     .line 724
     :goto_4
-    const v18, 0x102039a
+    const v18, 0x102038b
 
     move-object/from16 v0, p0
 

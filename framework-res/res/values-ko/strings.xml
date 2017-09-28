@@ -151,33 +151,6 @@
     <string name="time_of_day" formatted="false">%p %-l:%M:%S</string>
     <string name="date_and_time" formatted="false">%Y년 %-m월 %-e일 %p %-l:%M:%S</string>
     <string name="date_time">%1$s %2$s</string>
-    <string name="reboot_systemui">시스템UI 다시 시작</string>
-    <string name="animation_fade">서서히 사라짐</string>
-    <string name="animation_slide_right">오른쪽으로 슬라이드</string>
-    <string name="animation_slide_left">왼쪽으로 슬라이드</string>
-    <string name="animation_slide_right_no_fade">오른쪽으로 슬라이드 (페이드 없음)</string>
-    <string name="animation_slide_left_no_fade">왼쪽으로 슬라이드 (페이드 없음)</string>
-    <string name="animation_slide_up">아래로 슬라이드</string>
-    <string name="animation_slide_down">위로 슬라이드</string>
-    <string name="animation_default">기본값</string>
-    <string name="animation_translucent">반투명</string>
-    <string name="animation_grow_shrink">커지기 (위에서)</string>
-    <string name="animation_grow_shrink_center">커지기 (가운데에서)</string>
-    <string name="animation_grow_shrink_bottom">커지기 (아래에서)</string>
-    <string name="animation_grow_shrink_left">커지기 (왼쪽에서)</string>
-    <string name="animation_grow_shrink_right">커지기 (오른쪽에서)</string>
-    <string name="action_null">공백</string>
-    <string name="default_string">기본값</string>
-    <string name="global_action_onthego">On-The-Go 모드</string>
-    <string name="global_action_torch">손전등</string>
-    <string name="floating_window_snap_top">상단에 맞춤</string>
-    <string name="floating_window_snap_bottom">하단에 맞춤</string>
-    <string name="floating_window_snap_left">왼쪽에 맞춤</string>
-    <string name="floating_window_snap_right">오른쪽에 맞춤</string>
-    <string name="floating_window_minimize">최소화</string>
-    <string name="adb_not_connected_notification_title">ADB inactive</string>
-    <string name="adb_active_custom_tile_not_connected">inactive</string>
-    <string name="system_error_vendorprint">Your vendor image does not match the system. Please flash the %s vendor image for your device</string>
     <string name="byteShort">B</string>
     <string name="kilobyteShort">KB</string>
     <string name="megabyteShort">MB</string>

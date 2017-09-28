@@ -151,12 +151,12 @@
     .locals 1
 
     .prologue
-    .line 234
+    .line 226
     iget-object v0, p0, Landroid/widget/PopupMenu;->mPopup:Lcom/android/internal/view/menu/MenuPopupHelper;
 
     invoke-virtual {v0}, Lcom/android/internal/view/menu/MenuPopupHelper;->dismiss()V
 
-    .line 233
+    .line 225
     return-void
 .end method
 
@@ -247,17 +247,17 @@
     .param p2, "allMenusAreClosing"    # Z
 
     .prologue
-    .line 281
+    .line 261
     iget-object v0, p0, Landroid/widget/PopupMenu;->mDismissListener:Landroid/widget/PopupMenu$OnDismissListener;
 
     if-eqz v0, :cond_0
 
-    .line 282
+    .line 262
     iget-object v0, p0, Landroid/widget/PopupMenu;->mDismissListener:Landroid/widget/PopupMenu$OnDismissListener;
 
     invoke-interface {v0, p0}, Landroid/widget/PopupMenu$OnDismissListener;->onDismiss(Landroid/widget/PopupMenu;)V
 
-    .line 280
+    .line 260
     :cond_0
     return-void
 .end method
@@ -267,7 +267,7 @@
     .param p1, "menu"    # Lcom/android/internal/view/menu/SubMenuBuilder;
 
     .prologue
-    .line 304
+    .line 284
     return-void
 .end method
 
@@ -277,12 +277,12 @@
     .param p2, "item"    # Landroid/view/MenuItem;
 
     .prologue
-    .line 271
+    .line 251
     iget-object v0, p0, Landroid/widget/PopupMenu;->mMenuItemClickListener:Landroid/widget/PopupMenu$OnMenuItemClickListener;
 
     if-eqz v0, :cond_0
 
-    .line 272
+    .line 252
     iget-object v0, p0, Landroid/widget/PopupMenu;->mMenuItemClickListener:Landroid/widget/PopupMenu$OnMenuItemClickListener;
 
     invoke-interface {v0, p2}, Landroid/widget/PopupMenu$OnMenuItemClickListener;->onMenuItemClick(Landroid/view/MenuItem;)Z
@@ -291,7 +291,7 @@
 
     return v0
 
-    .line 274
+    .line 254
     :cond_0
     const/4 v0, 0x0
 
@@ -303,7 +303,7 @@
     .param p1, "menu"    # Lcom/android/internal/view/menu/MenuBuilder;
 
     .prologue
-    .line 310
+    .line 290
     return-void
 .end method
 
@@ -314,14 +314,14 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 290
+    .line 270
     if-nez p1, :cond_0
 
     const/4 v0, 0x0
 
     return v0
 
-    .line 292
+    .line 272
     :cond_0
     invoke-virtual {p1}, Lcom/android/internal/view/menu/MenuBuilder;->hasVisibleItems()Z
 
@@ -329,10 +329,10 @@
 
     if-nez v0, :cond_1
 
-    .line 293
+    .line 273
     return v3
 
-    .line 297
+    .line 277
     :cond_1
     new-instance v0, Lcom/android/internal/view/menu/MenuPopupHelper;
 
@@ -344,37 +344,8 @@
 
     invoke-virtual {v0}, Lcom/android/internal/view/menu/MenuPopupHelper;->show()V
 
-    .line 298
+    .line 278
     return v3
-.end method
-
-.method public setAllowLeftOverdraw(Z)V
-    .locals 1
-    .param p1, "enabled"    # Z
-
-    .prologue
-    .line 246
-    iget-object v0, p0, Landroid/widget/PopupMenu;->mPopup:Lcom/android/internal/view/menu/MenuPopupHelper;
-
-    invoke-virtual {v0, p1}, Lcom/android/internal/view/menu/MenuPopupHelper;->setAllowLeftOverdraw(Z)V
-
-    .line 245
-    return-void
-.end method
-
-.method public setForceShowIcon()V
-    .locals 2
-
-    .prologue
-    .line 218
-    iget-object v0, p0, Landroid/widget/PopupMenu;->mPopup:Lcom/android/internal/view/menu/MenuPopupHelper;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Lcom/android/internal/view/menu/MenuPopupHelper;->setForceShowIcon(Z)V
-
-    .line 217
-    return-void
 .end method
 
 .method public setGravity(I)V
@@ -396,10 +367,10 @@
     .param p1, "listener"    # Landroid/widget/PopupMenu$OnDismissListener;
 
     .prologue
-    .line 264
+    .line 244
     iput-object p1, p0, Landroid/widget/PopupMenu;->mDismissListener:Landroid/widget/PopupMenu$OnDismissListener;
 
-    .line 263
+    .line 243
     return-void
 .end method
 
@@ -408,10 +379,10 @@
     .param p1, "listener"    # Landroid/widget/PopupMenu$OnMenuItemClickListener;
 
     .prologue
-    .line 255
+    .line 235
     iput-object p1, p0, Landroid/widget/PopupMenu;->mMenuItemClickListener:Landroid/widget/PopupMenu$OnMenuItemClickListener;
 
-    .line 254
+    .line 234
     return-void
 .end method
 

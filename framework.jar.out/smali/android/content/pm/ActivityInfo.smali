@@ -1104,37 +1104,32 @@
 .end method
 
 .method public getRealConfigChanged()I
-    .locals 3
+    .locals 2
 
     .prologue
-    .line 629
-    iget v0, p0, Landroid/content/pm/ActivityInfo;->configChanges:I
-
-    or-int/lit16 v0, v0, 0x100
-
-    or-int/lit16 v1, v0, 0x400
-
-    .line 630
+    .line 628
     iget-object v0, p0, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     iget v0, v0, Landroid/content/pm/ApplicationInfo;->targetSdkVersion:I
 
-    const/16 v2, 0xd
+    const/16 v1, 0xd
 
-    if-ge v0, v2, :cond_0
-
-    .line 631
-    const/16 v0, 0x800
+    if-ge v0, v1, :cond_0
 
     .line 629
-    :goto_0
-    or-int/2addr v0, v1
+    iget v0, p0, Landroid/content/pm/ActivityInfo;->configChanges:I
 
+    or-int/lit16 v0, v0, 0x400
+
+    or-int/lit16 v0, v0, 0x800
+
+    .line 628
+    :goto_0
     return v0
 
     .line 631
     :cond_0
-    const/4 v0, 0x0
+    iget v0, p0, Landroid/content/pm/ActivityInfo;->configChanges:I
 
     goto :goto_0
 .end method

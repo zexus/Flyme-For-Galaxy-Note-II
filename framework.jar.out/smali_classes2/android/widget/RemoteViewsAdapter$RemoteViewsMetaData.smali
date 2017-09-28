@@ -139,7 +139,7 @@
     invoke-direct {v9, v10}, Ljava/lang/Integer;-><init>(I)V
 
     .line 476
-    const v10, 0x1020048
+    const v10, 0x1020046
 
     invoke-virtual {v8, v10, v9}, Landroid/view/View;->setTagInternal(ILjava/lang/Object;)V
 
@@ -221,7 +221,7 @@
     .end local v5    # "firstView":Landroid/view/View;
     :cond_1
     :goto_1
-    const v9, 0x10900bf
+    const v9, 0x10900bd
 
     .line 508
     const/4 v10, 0x0

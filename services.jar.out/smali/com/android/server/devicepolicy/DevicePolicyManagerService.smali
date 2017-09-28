@@ -84,7 +84,7 @@
 
 .field private static final LOG_TAG:Ljava/lang/String; = "DevicePolicyManagerService"
 
-.field private static final MONITORING_CERT_NOTIFICATION_ID:I = 0x1040189
+.field private static final MONITORING_CERT_NOTIFICATION_ID:I = 0x104016d
 
 .field private static final MS_PER_DAY:J = 0x5265c00L
 
@@ -6987,7 +6987,7 @@
     .line 3412
     iget-object v2, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mContext:Landroid/content/Context;
 
-    const v3, 0x1040190
+    const v3, 0x1040174
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -7012,7 +7012,7 @@
     .line 3415
     iget-object v3, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mContext:Landroid/content/Context;
 
-    const v4, 0x104018d
+    const v4, 0x1040171
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

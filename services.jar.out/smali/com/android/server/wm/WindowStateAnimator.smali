@@ -439,7 +439,6 @@
 
     invoke-static/range {p0 .. p0}, Lcom/android/server/wm/WindowStateAnimator$FlymeInjector;->setSystemDecorRectTop(Lcom/android/server/wm/WindowStateAnimator;)V
 
-
     iget-boolean v6, v4, Lcom/android/server/wm/WindowState;->mEnforceSizeCompat:Z
 
     if-eqz v6, :cond_0

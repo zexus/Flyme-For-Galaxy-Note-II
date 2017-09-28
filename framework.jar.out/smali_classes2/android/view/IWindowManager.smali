@@ -127,22 +127,6 @@
     .end annotation
 .end method
 
-.method public abstract getAppFullscreenViewRect()Landroid/graphics/Rect;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract getAppMinimumViewRect()Landroid/graphics/Rect;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract getAppOrientation(Landroid/view/IApplicationToken;)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -168,14 +152,6 @@
 .end method
 
 .method public abstract getCurrentAnimatorScale()F
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract getFloatViewRect()Landroid/graphics/Rect;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -232,14 +208,6 @@
 .end method
 
 .method public abstract getRotation()I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract getSystemUIVisibility()I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -343,23 +311,7 @@
     .end annotation
 .end method
 
-.method public abstract navigationBarCanMove()Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract needsNavigationBar()Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract notifyFloatActivityTouched(Landroid/os/IBinder;Z)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

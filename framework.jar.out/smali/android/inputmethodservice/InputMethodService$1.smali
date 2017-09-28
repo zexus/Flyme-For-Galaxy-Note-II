@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Landroid/inputmethodservice/InputMethodService;
 
     .prologue
-    .line 354
+    .line 326
     iput-object p1, p0, Landroid/inputmethodservice/InputMethodService$1;->this$0:Landroid/inputmethodservice/InputMethodService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .param p1, "info"    # Landroid/view/ViewTreeObserver$InternalInsetsInfo;
 
     .prologue
-    .line 356
+    .line 328
     iget-object v1, p0, Landroid/inputmethodservice/InputMethodService$1;->this$0:Landroid/inputmethodservice/InputMethodService;
 
     invoke-virtual {v1}, Landroid/inputmethodservice/InputMethodService;->isExtractViewShown()Z
@@ -51,7 +51,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 359
+    .line 331
     iget-object v1, p0, Landroid/inputmethodservice/InputMethodService$1;->this$0:Landroid/inputmethodservice/InputMethodService;
 
     invoke-virtual {v1}, Landroid/inputmethodservice/InputMethodService;->getWindow()Landroid/app/Dialog;
@@ -103,7 +103,7 @@
 
     invoke-virtual {v1, v2}, Landroid/inputmethodservice/InputMethodService;->onComputeInsets(Landroid/inputmethodservice/InputMethodService$Insets;)V
 
-    .line 366
+    .line 338
     iget-object v1, p1, Landroid/view/ViewTreeObserver$InternalInsetsInfo;->contentInsets:Landroid/graphics/Rect;
 
     iget-object v2, p0, Landroid/inputmethodservice/InputMethodService$1;->this$0:Landroid/inputmethodservice/InputMethodService;
@@ -114,7 +114,7 @@
 
     iput v2, v1, Landroid/graphics/Rect;->top:I
 
-    .line 367
+    .line 339
     iget-object v1, p1, Landroid/view/ViewTreeObserver$InternalInsetsInfo;->visibleInsets:Landroid/graphics/Rect;
 
     iget-object v2, p0, Landroid/inputmethodservice/InputMethodService$1;->this$0:Landroid/inputmethodservice/InputMethodService;
@@ -125,7 +125,7 @@
 
     iput v2, v1, Landroid/graphics/Rect;->top:I
 
-    .line 368
+    .line 340
     iget-object v1, p1, Landroid/view/ViewTreeObserver$InternalInsetsInfo;->touchableRegion:Landroid/graphics/Region;
 
     iget-object v2, p0, Landroid/inputmethodservice/InputMethodService$1;->this$0:Landroid/inputmethodservice/InputMethodService;
@@ -136,7 +136,7 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Region;->set(Landroid/graphics/Region;)Z
 
-    .line 369
+    .line 341
     iget-object v1, p0, Landroid/inputmethodservice/InputMethodService$1;->this$0:Landroid/inputmethodservice/InputMethodService;
 
     iget-object v1, v1, Landroid/inputmethodservice/InputMethodService;->mTmpInsets:Landroid/inputmethodservice/InputMethodService$Insets;

@@ -194,7 +194,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Landroid/graphics/Bitmap;I)V
-    .locals 0
+    .locals 2
     .param p1, "label"    # Ljava/lang/String;
     .param p2, "icon"    # Landroid/graphics/Bitmap;
     .param p3, "colorPrimary"    # I
@@ -203,7 +203,28 @@
     .line 594
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 595
+    if-eqz p3, :cond_0
+
+    invoke-static {p3}, Landroid/graphics/Color;->alpha(I)I
+
+    move-result v0
+
+    const/16 v1, 0xff
+
+    if-eq v0, v1, :cond_0
+
+    .line 596
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    const-string/jumbo v1, "A TaskDescription\'s primary color should be opaque"
+
+    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
     .line 599
+    :cond_0
     iput-object p1, p0, Landroid/app/ActivityManager$TaskDescription;->mLabel:Ljava/lang/String;
 
     .line 600

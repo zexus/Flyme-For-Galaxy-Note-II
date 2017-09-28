@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 10395
+    .line 10394
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -50,18 +50,18 @@
 
     const/4 v2, -0x1
 
-    .line 10397
+    .line 10396
     iget v0, p1, Landroid/content/pm/ResolveInfo;->priority:I
 
-    .line 10398
+    .line 10397
     .local v0, "v1":I
     iget v1, p2, Landroid/content/pm/ResolveInfo;->priority:I
 
-    .line 10400
+    .line 10399
     .local v1, "v2":I
     if-eq v0, v1, :cond_1
 
-    .line 10401
+    .line 10400
     if-le v0, v1, :cond_0
 
     :goto_0
@@ -72,17 +72,17 @@
 
     goto :goto_0
 
-    .line 10403
+    .line 10402
     :cond_1
     iget v0, p1, Landroid/content/pm/ResolveInfo;->preferredOrder:I
 
-    .line 10404
+    .line 10403
     iget v1, p2, Landroid/content/pm/ResolveInfo;->preferredOrder:I
 
-    .line 10405
+    .line 10404
     if-eq v0, v1, :cond_3
 
-    .line 10406
+    .line 10405
     if-le v0, v1, :cond_2
 
     :goto_1
@@ -93,7 +93,7 @@
 
     goto :goto_1
 
-    .line 10408
+    .line 10407
     :cond_3
     iget-boolean v4, p1, Landroid/content/pm/ResolveInfo;->isDefault:Z
 
@@ -101,7 +101,7 @@
 
     if-eq v4, v5, :cond_5
 
-    .line 10409
+    .line 10408
     iget-boolean v4, p1, Landroid/content/pm/ResolveInfo;->isDefault:Z
 
     if-eqz v4, :cond_4
@@ -114,17 +114,17 @@
 
     goto :goto_2
 
-    .line 10411
+    .line 10410
     :cond_5
     iget v0, p1, Landroid/content/pm/ResolveInfo;->match:I
 
-    .line 10412
+    .line 10411
     iget v1, p2, Landroid/content/pm/ResolveInfo;->match:I
 
-    .line 10414
+    .line 10413
     if-eq v0, v1, :cond_7
 
-    .line 10415
+    .line 10414
     if-le v0, v1, :cond_6
 
     :goto_3
@@ -135,7 +135,7 @@
 
     goto :goto_3
 
-    .line 10417
+    .line 10416
     :cond_7
     iget-boolean v4, p1, Landroid/content/pm/ResolveInfo;->system:Z
 
@@ -143,7 +143,7 @@
 
     if-eq v4, v5, :cond_9
 
-    .line 10418
+    .line 10417
     iget-boolean v4, p1, Landroid/content/pm/ResolveInfo;->system:Z
 
     if-eqz v4, :cond_8
@@ -156,7 +156,7 @@
 
     goto :goto_4
 
-    .line 10420
+    .line 10419
     :cond_9
     const/4 v2, 0x0
 
@@ -169,7 +169,7 @@
     .param p2, "r2"    # Ljava/lang/Object;
 
     .prologue
-    .line 10396
+    .line 10395
     check-cast p1, Landroid/content/pm/ResolveInfo;
 
     .end local p1    # "r1":Ljava/lang/Object;

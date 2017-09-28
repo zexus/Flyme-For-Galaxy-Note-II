@@ -29,10 +29,6 @@
 
 .field public static final darker_gray:I = 0x1060000
 
-.field public static final dexopt_background:I = 0x1060105
-
-.field public static final dexopt_text:I = 0x1060106
-
 .field public static final holo_blue_bright:I = 0x106001b
 
 .field public static final holo_blue_dark:I = 0x1060013
@@ -91,7 +87,7 @@
 
 .field public static final tab_indicator_text:I = 0x1060009
 
-.field public static final tab_indicator_text_v4:I = 0x1060141
+.field public static final tab_indicator_text_v4:I = 0x106013d
 
 .field public static final tertiary_text_dark:I = 0x1060010
 
@@ -139,7 +135,7 @@
     .locals 0
 
     .prologue
-    .line 15644
+    .line 15586
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

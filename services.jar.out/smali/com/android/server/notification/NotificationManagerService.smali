@@ -155,20 +155,6 @@
 
 .field private mAm:Landroid/app/IActivityManager;
 
-.field private mAnnoyingNotificationThreshold:J
-
-.field private mAnnoyingNotifications:Ljava/util/HashMap;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/HashMap",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/Long;",
-            ">;"
-        }
-    .end annotation
-.end field
-
 .field private mAppOps:Landroid/app/AppOpsManager;
 
 .field private mAppUsageStats:Landroid/app/usage/UsageStatsManagerInternal;
@@ -672,15 +658,7 @@
     return-object v0
 .end method
 
-.method static synthetic -set0(Lcom/android/server/notification/NotificationManagerService;J)J
-    .locals 1
-
-    iput-wide p1, p0, Lcom/android/server/notification/NotificationManagerService;->mAnnoyingNotificationThreshold:J
-
-    return-wide p1
-.end method
-
-.method static synthetic -set1(Lcom/android/server/notification/NotificationManagerService;Z)Z
+.method static synthetic -set0(Lcom/android/server/notification/NotificationManagerService;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/server/notification/NotificationManagerService;->mAutoGenerateNotificationColor:Z
@@ -688,15 +666,15 @@
     return p1
 .end method
 
-.method static synthetic -set10(Lcom/android/server/notification/NotificationManagerService;I)I
+.method static synthetic -set1(Lcom/android/server/notification/NotificationManagerService;I)I
     .locals 0
 
-    iput p1, p0, Lcom/android/server/notification/NotificationManagerService;->mNotificationLedBrightnessLevel:I
+    iput p1, p0, Lcom/android/server/notification/NotificationManagerService;->mCallState:I
 
     return p1
 .end method
 
-.method static synthetic -set11(Lcom/android/server/notification/NotificationManagerService;Z)Z
+.method static synthetic -set10(Lcom/android/server/notification/NotificationManagerService;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/server/notification/NotificationManagerService;->mNotificationPulseEnabled:Z
@@ -704,7 +682,7 @@
     return p1
 .end method
 
-.method static synthetic -set12(Lcom/android/server/notification/NotificationManagerService;Z)Z
+.method static synthetic -set11(Lcom/android/server/notification/NotificationManagerService;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/server/notification/NotificationManagerService;->mScreenOn:Z
@@ -712,7 +690,7 @@
     return p1
 .end method
 
-.method static synthetic -set13(Lcom/android/server/notification/NotificationManagerService;Z)Z
+.method static synthetic -set12(Lcom/android/server/notification/NotificationManagerService;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/server/notification/NotificationManagerService;->mScreenOnEnabled:Z
@@ -720,7 +698,7 @@
     return p1
 .end method
 
-.method static synthetic -set14(Lcom/android/server/notification/NotificationManagerService;Ljava/lang/String;)Ljava/lang/String;
+.method static synthetic -set13(Lcom/android/server/notification/NotificationManagerService;Ljava/lang/String;)Ljava/lang/String;
     .locals 0
 
     iput-object p1, p0, Lcom/android/server/notification/NotificationManagerService;->mSoundNotificationKey:Ljava/lang/String;
@@ -728,7 +706,7 @@
     return-object p1
 .end method
 
-.method static synthetic -set15(Lcom/android/server/notification/NotificationManagerService;Ljava/lang/String;)Ljava/lang/String;
+.method static synthetic -set14(Lcom/android/server/notification/NotificationManagerService;Ljava/lang/String;)Ljava/lang/String;
     .locals 0
 
     iput-object p1, p0, Lcom/android/server/notification/NotificationManagerService;->mVibrateNotificationKey:Ljava/lang/String;
@@ -739,7 +717,7 @@
 .method static synthetic -set2(Lcom/android/server/notification/NotificationManagerService;I)I
     .locals 0
 
-    iput p1, p0, Lcom/android/server/notification/NotificationManagerService;->mCallState:I
+    iput p1, p0, Lcom/android/server/notification/NotificationManagerService;->mDefaultNotificationColor:I
 
     return p1
 .end method
@@ -747,7 +725,7 @@
 .method static synthetic -set3(Lcom/android/server/notification/NotificationManagerService;I)I
     .locals 0
 
-    iput p1, p0, Lcom/android/server/notification/NotificationManagerService;->mDefaultNotificationColor:I
+    iput p1, p0, Lcom/android/server/notification/NotificationManagerService;->mDefaultNotificationLedOff:I
 
     return p1
 .end method
@@ -755,20 +733,12 @@
 .method static synthetic -set4(Lcom/android/server/notification/NotificationManagerService;I)I
     .locals 0
 
-    iput p1, p0, Lcom/android/server/notification/NotificationManagerService;->mDefaultNotificationLedOff:I
-
-    return p1
-.end method
-
-.method static synthetic -set5(Lcom/android/server/notification/NotificationManagerService;I)I
-    .locals 0
-
     iput p1, p0, Lcom/android/server/notification/NotificationManagerService;->mDefaultNotificationLedOn:I
 
     return p1
 .end method
 
-.method static synthetic -set6(Lcom/android/server/notification/NotificationManagerService;Z)Z
+.method static synthetic -set5(Lcom/android/server/notification/NotificationManagerService;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/server/notification/NotificationManagerService;->mDisableDuckingWhileMedia:Z
@@ -776,7 +746,7 @@
     return p1
 .end method
 
-.method static synthetic -set7(Lcom/android/server/notification/NotificationManagerService;Z)Z
+.method static synthetic -set6(Lcom/android/server/notification/NotificationManagerService;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/server/notification/NotificationManagerService;->mDisableNotificationEffects:Z
@@ -784,7 +754,7 @@
     return p1
 .end method
 
-.method static synthetic -set8(Lcom/android/server/notification/NotificationManagerService;Z)Z
+.method static synthetic -set7(Lcom/android/server/notification/NotificationManagerService;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/server/notification/NotificationManagerService;->mInCall:Z
@@ -792,10 +762,18 @@
     return p1
 .end method
 
-.method static synthetic -set9(Lcom/android/server/notification/NotificationManagerService;Z)Z
+.method static synthetic -set8(Lcom/android/server/notification/NotificationManagerService;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/server/notification/NotificationManagerService;->mMultipleLedsEnabledSetting:Z
+
+    return p1
+.end method
+
+.method static synthetic -set9(Lcom/android/server/notification/NotificationManagerService;I)I
+    .locals 0
+
+    iput p1, p0, Lcom/android/server/notification/NotificationManagerService;->mNotificationLedBrightnessLevel:I
 
     return p1
 .end method
@@ -1287,14 +1265,14 @@
 
     sput-object v0, Lcom/android/server/notification/NotificationManagerService;->UPDATE_MSG_URI:Landroid/net/Uri;
 
-    .line 345
+    .line 342
     invoke-static {}, Landroid/os/Process;->myUid()I
 
     move-result v0
 
     sput v0, Lcom/android/server/notification/NotificationManagerService;->MY_UID:I
 
-    .line 346
+    .line 343
     invoke-static {}, Landroid/os/Process;->myPid()I
 
     move-result v0
@@ -1323,7 +1301,7 @@
 
     const/4 v3, 0x0
 
-    .line 1171
+    .line 1158
     invoke-direct {p0, p1}, Lcom/android/server/SystemService;-><init>(Landroid/content/Context;)V
 
     .line 232
@@ -1433,96 +1411,72 @@
 
     iput-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mPolicyAccess:Lcom/android/server/notification/NotificationManagerService$PolicyAccess;
 
-    .line 308
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mLights:Ljava/util/ArrayList;
 
-    .line 310
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mAnnoyingNotifications:Ljava/util/HashMap;
-
-    .line 311
-    const-wide/16 v0, -0x1
-
-    iput-wide v0, p0, Lcom/android/server/notification/NotificationManagerService;->mAnnoyingNotificationThreshold:J
-
-    .line 322
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mBlockedPackages:Ljava/util/HashSet;
 
-    .line 336
     new-instance v0, Lcom/android/server/notification/ManagedServices$UserProfiles;
 
     invoke-direct {v0}, Lcom/android/server/notification/ManagedServices$UserProfiles;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mUserProfiles:Lcom/android/server/notification/ManagedServices$UserProfiles;
 
-    .line 562
     new-instance v0, Lcom/android/server/notification/NotificationManagerService$1;
 
     invoke-direct {v0, p0}, Lcom/android/server/notification/NotificationManagerService$1;-><init>(Lcom/android/server/notification/NotificationManagerService;)V
 
     iput-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mNotificationDelegate:Lcom/android/server/notification/NotificationDelegate;
 
-    .line 758
     new-instance v0, Lcom/android/server/notification/NotificationManagerService$2;
 
     invoke-direct {v0, p0}, Lcom/android/server/notification/NotificationManagerService$2;-><init>(Lcom/android/server/notification/NotificationManagerService;)V
 
     iput-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mPackageIntentReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 835
     new-instance v0, Lcom/android/server/notification/NotificationManagerService$3;
 
     invoke-direct {v0, p0}, Lcom/android/server/notification/NotificationManagerService$3;-><init>(Lcom/android/server/notification/NotificationManagerService;)V
 
     iput-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mIntentReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 1110
     new-instance v0, Lcom/android/server/notification/NotificationManagerService$4;
 
     invoke-direct {v0, p0}, Lcom/android/server/notification/NotificationManagerService$4;-><init>(Lcom/android/server/notification/NotificationManagerService;)V
 
     iput-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mMediaSessionReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 1150
     new-instance v0, Lcom/android/server/notification/NotificationManagerService$5;
 
     invoke-direct {v0, p0}, Lcom/android/server/notification/NotificationManagerService$5;-><init>(Lcom/android/server/notification/NotificationManagerService;)V
 
     iput-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mBuzzBeepBlinked:Ljava/lang/Runnable;
 
-    .line 1408
     new-instance v0, Lcom/android/server/notification/NotificationManagerService$FlymeExtNotificationManagerServiceInternal;
 
     invoke-direct {v0, p0}, Lcom/android/server/notification/NotificationManagerService$FlymeExtNotificationManagerServiceInternal;-><init>(Lcom/android/server/notification/NotificationManagerService;)V
 
     iput-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mService:Landroid/os/IBinder;
 
-    .line 2376
     new-instance v0, Lcom/android/server/notification/NotificationManagerService$7;
 
     invoke-direct {v0, p0}, Lcom/android/server/notification/NotificationManagerService$7;-><init>(Lcom/android/server/notification/NotificationManagerService;)V
 
     iput-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mInternalService:Lcom/android/server/notification/NotificationManagerInternal;
 
-    .line 1172
     new-instance v0, Landroid/util/SparseIntArray;
 
     invoke-direct {v0}, Landroid/util/SparseIntArray;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mSpamCache:Landroid/util/SparseIntArray;
 
-    .line 1170
     return-void
 .end method
 
@@ -1531,7 +1485,7 @@
     .param p1, "record"    # Lcom/android/server/notification/NotificationRecord;
 
     .prologue
-    .line 3055
+    .line 3007
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mZenModeHelper:Lcom/android/server/notification/ZenModeHelper;
 
     invoke-virtual {v0, p1}, Lcom/android/server/notification/ZenModeHelper;->shouldIntercept(Lcom/android/server/notification/NotificationRecord;)Z
@@ -1540,7 +1494,7 @@
 
     invoke-virtual {p1, v0}, Lcom/android/server/notification/NotificationRecord;->setIntercepted(Z)Z
 
-    .line 3054
+    .line 3006
     return-void
 .end method
 
@@ -1551,12 +1505,12 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 2884
+    .line 2836
     iget-object v0, p0, Landroid/app/Notification;->audioAttributes:Landroid/media/AudioAttributes;
 
     if-eqz v0, :cond_0
 
-    .line 2885
+    .line 2837
     sget-object v0, Landroid/app/Notification;->AUDIO_ATTRIBUTES_DEFAULT:Landroid/media/AudioAttributes;
 
     iget-object v1, p0, Landroid/app/Notification;->audioAttributes:Landroid/media/AudioAttributes;
@@ -1567,7 +1521,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 2888
+    .line 2840
     :cond_0
     iget v0, p0, Landroid/app/Notification;->audioStreamType:I
 
@@ -1581,15 +1535,15 @@
 
     if-ge v0, v1, :cond_2
 
-    .line 2890
+    .line 2842
     new-instance v0, Landroid/media/AudioAttributes$Builder;
 
     invoke-direct {v0}, Landroid/media/AudioAttributes$Builder;-><init>()V
 
-    .line 2891
+    .line 2843
     iget v1, p0, Landroid/app/Notification;->audioStreamType:I
 
-    .line 2890
+    .line 2842
     invoke-virtual {v0, v1}, Landroid/media/AudioAttributes$Builder;->setInternalLegacyStreamType(I)Landroid/media/AudioAttributes$Builder;
 
     move-result-object v0
@@ -1600,13 +1554,13 @@
 
     return-object v0
 
-    .line 2887
+    .line 2839
     :cond_1
     iget-object v0, p0, Landroid/app/Notification;->audioAttributes:Landroid/media/AudioAttributes;
 
     return-object v0
 
-    .line 2893
+    .line 2845
     :cond_2
     iget v0, p0, Landroid/app/Notification;->audioStreamType:I
 
@@ -1614,12 +1568,12 @@
 
     if-ne v0, v1, :cond_3
 
-    .line 2894
+    .line 2846
     sget-object v0, Landroid/app/Notification;->AUDIO_ATTRIBUTES_DEFAULT:Landroid/media/AudioAttributes;
 
     return-object v0
 
-    .line 2896
+    .line 2848
     :cond_3
     const-string/jumbo v0, "NotificationService"
 
@@ -1643,29 +1597,29 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2897
+    .line 2849
     sget-object v0, Landroid/app/Notification;->AUDIO_ATTRIBUTES_DEFAULT:Landroid/media/AudioAttributes;
 
     return-object v0
 .end method
 
 .method private buzzBeepBlinkLocked(Lcom/android/server/notification/NotificationRecord;)V
-    .locals 36
+    .locals 35
     .param p1, "record"    # Lcom/android/server/notification/NotificationRecord;
 
     .prologue
-    .line 2717
+    .line 2671
     const/4 v14, 0x0
 
-    .line 2718
+    .line 2672
     .local v14, "buzz":Z
     const/4 v12, 0x0
 
-    .line 2719
+    .line 2673
     .local v12, "beep":Z
     const/4 v13, 0x0
 
-    .line 2721
+    .line 2675
     .local v13, "blink":Z
     move-object/from16 v0, p1
 
@@ -1675,18 +1629,8 @@
 
     move-result-object v26
 
-    .line 2722
+    .line 2678
     .local v26, "notification":Landroid/app/Notification;
-    move-object/from16 v0, p1
-
-    iget-object v4, v0, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
-
-    invoke-virtual {v4}, Landroid/service/notification/StatusBarNotification;->getPackageName()Ljava/lang/String;
-
-    move-result-object v27
-
-    .line 2725
-    .local v27, "pkg":Ljava/lang/String;
     move-object/from16 v0, p1
 
     iget v4, v0, Lcom/android/server/notification/NotificationRecord;->score:I
@@ -1697,7 +1641,7 @@
 
     const/4 v10, 0x1
 
-    .line 2726
+    .line 2679
     .local v10, "aboveThreshold":Z
     :goto_0
     if-eqz v10, :cond_0
@@ -1711,7 +1655,7 @@
     :cond_0
     const/4 v15, 0x0
 
-    .line 2727
+    .line 2680
     .local v15, "canInterrupt":Z
     :goto_1
     sget-boolean v4, Lcom/android/server/notification/NotificationManagerService;->DBG:Z
@@ -1724,11 +1668,11 @@
 
     if-eqz v4, :cond_2
 
-    .line 2728
+    .line 2681
     :cond_1
     const-string/jumbo v4, "NotificationService"
 
-    .line 2729
+    .line 2682
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -1739,9 +1683,15 @@
 
     move-result-object v5
 
-    move-object/from16 v0, v27
+    move-object/from16 v0, p1
 
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v6, v0, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
+
+    invoke-virtual {v6}, Landroid/service/notification/StatusBarNotification;->getPackageName()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v5
 
@@ -1755,20 +1705,20 @@
 
     move-result-object v5
 
-    .line 2730
+    .line 2683
     const-string/jumbo v6, " intercept="
 
-    .line 2729
+    .line 2682
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v5
 
-    .line 2730
+    .line 2683
     invoke-virtual/range {p1 .. p1}, Lcom/android/server/notification/NotificationRecord;->isIntercepted()Z
 
     move-result v6
 
-    .line 2729
+    .line 2682
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v5
@@ -1777,17 +1727,17 @@
 
     move-result-object v5
 
-    .line 2728
+    .line 2681
     invoke-static {v4, v5}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2734
+    .line 2687
     :cond_2
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
-    move-result-wide v32
+    move-result-wide v30
 
-    .line 2736
-    .local v32, "token":J
+    .line 2689
+    .local v30, "token":J
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
     :try_end_0
@@ -1795,38 +1745,38 @@
 
     move-result v18
 
-    .line 2738
+    .line 2691
     .local v18, "currentUser":I
-    invoke-static/range {v32 .. v33}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+    invoke-static/range {v30 .. v31}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 2742
+    .line 2695
     invoke-direct/range {p0 .. p1}, Lcom/android/server/notification/NotificationManagerService;->disableNotificationEffects(Lcom/android/server/notification/NotificationRecord;)Ljava/lang/String;
 
     move-result-object v19
 
-    .line 2743
+    .line 2696
     .local v19, "disableEffects":Ljava/lang/String;
     if-eqz v19, :cond_3
 
-    .line 2744
+    .line 2697
     move-object/from16 v0, p1
 
     move-object/from16 v1, v19
 
     invoke-static {v0, v1}, Lcom/android/server/notification/ZenLog;->traceDisableEffects(Lcom/android/server/notification/NotificationRecord;Ljava/lang/String;)V
 
-    .line 2747
+    .line 2700
     :cond_3
     if-nez v19, :cond_4
 
-    .line 2748
+    .line 2701
     move-object/from16 v0, p1
 
     iget-boolean v4, v0, Lcom/android/server/notification/NotificationRecord;->isUpdate:Z
 
     if-eqz v4, :cond_b
 
-    .line 2749
+    .line 2702
     move-object/from16 v0, v26
 
     iget v4, v0, Landroid/app/Notification;->flags:I
@@ -1835,7 +1785,7 @@
 
     if-eqz v4, :cond_b
 
-    .line 2863
+    .line 2815
     :cond_4
     :goto_2
     move-object/from16 v0, p0
@@ -1848,10 +1798,10 @@
 
     invoke-virtual {v4, v5}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    move-result v35
+    move-result v34
 
-    .line 2864
-    .local v35, "wasShowLights":Z
+    .line 2816
+    .local v34, "wasShowLights":Z
     if-nez v15, :cond_23
 
     invoke-direct/range {p0 .. p1}, Lcom/android/server/notification/NotificationManagerService;->isLedNotificationForcedOn(Lcom/android/server/notification/NotificationRecord;)Z
@@ -1860,7 +1810,7 @@
 
     if-nez v4, :cond_23
 
-    .line 2865
+    .line 2817
     if-nez v15, :cond_24
 
     move-object/from16 v0, p0
@@ -1871,7 +1821,7 @@
 
     move-result v16
 
-    .line 2866
+    .line 2818
     :goto_3
     move-object/from16 v0, v26
 
@@ -1883,7 +1833,7 @@
 
     if-eqz v16, :cond_25
 
-    .line 2867
+    .line 2819
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/server/notification/NotificationManagerService;->mLights:Ljava/util/ArrayList;
@@ -1894,25 +1844,30 @@
 
     invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 2820
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/notification/NotificationManagerService;->updateLightsLocked()V
 
     invoke-direct/range {p0 .. p1}, Lcom/android/server/notification/NotificationManagerService;->notifyFlymeWakeupScreen(Lcom/android/server/notification/NotificationRecord;)V
 
+    .line 2821
     move-object/from16 v0, p0
 
     iget-boolean v4, v0, Lcom/android/server/notification/NotificationManagerService;->mUseAttentionLight:Z
 
     if-eqz v4, :cond_5
 
+    .line 2822
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/server/notification/NotificationManagerService;->mAttentionLight:Lcom/android/server/lights/Light;
 
     invoke-virtual {v4}, Lcom/android/server/lights/Light;->pulse()V
 
+    .line 2824
     :cond_5
     const/4 v13, 0x1
 
+    .line 2828
     :cond_6
     :goto_4
     if-nez v14, :cond_7
@@ -1921,13 +1876,13 @@
 
     if-eqz v13, :cond_8
 
-    .line 2877
+    .line 2829
     :cond_7
     invoke-virtual/range {p1 .. p1}, Lcom/android/server/notification/NotificationRecord;->getKey()Ljava/lang/String;
 
     move-result-object v7
 
-    .line 2878
+    .line 2830
     if-eqz v14, :cond_26
 
     const/4 v4, 0x1
@@ -1946,11 +1901,11 @@
 
     const/4 v4, 0x1
 
-    .line 2877
+    .line 2829
     :goto_7
     invoke-static {v7, v6, v5, v4}, Lcom/android/server/EventLogTags;->writeNotificationAlert(Ljava/lang/String;III)V
 
-    .line 2879
+    .line 2831
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/server/notification/NotificationManagerService;->mHandler:Lcom/android/server/notification/NotificationManagerService$WorkerHandler;
@@ -1961,42 +1916,42 @@
 
     invoke-virtual {v4, v5}, Lcom/android/server/notification/NotificationManagerService$WorkerHandler;->post(Ljava/lang/Runnable;)Z
 
-    .line 2716
+    .line 2670
     :cond_8
     return-void
 
-    .line 2725
+    .line 2678
     .end local v10    # "aboveThreshold":Z
     .end local v15    # "canInterrupt":Z
     .end local v18    # "currentUser":I
     .end local v19    # "disableEffects":Ljava/lang/String;
-    .end local v32    # "token":J
-    .end local v35    # "wasShowLights":Z
+    .end local v30    # "token":J
+    .end local v34    # "wasShowLights":Z
     :cond_9
     const/4 v10, 0x0
 
     .restart local v10    # "aboveThreshold":Z
     goto/16 :goto_0
 
-    .line 2726
+    .line 2679
     :cond_a
     const/4 v15, 0x1
 
     .restart local v15    # "canInterrupt":Z
     goto/16 :goto_1
 
-    .line 2737
-    .restart local v32    # "token":J
+    .line 2690
+    .restart local v30    # "token":J
     :catchall_0
     move-exception v4
 
-    .line 2738
-    invoke-static/range {v32 .. v33}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+    .line 2691
+    invoke-static/range {v30 .. v31}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 2737
+    .line 2690
     throw v4
 
-    .line 2750
+    .line 2703
     .restart local v18    # "currentUser":I
     .restart local v19    # "disableEffects":Ljava/lang/String;
     :cond_b
@@ -2008,7 +1963,7 @@
 
     if-eq v4, v5, :cond_c
 
-    .line 2751
+    .line 2704
     invoke-virtual/range {p1 .. p1}, Lcom/android/server/notification/NotificationRecord;->getUserId()I
 
     move-result v4
@@ -2017,38 +1972,27 @@
 
     if-ne v4, v0, :cond_12
 
-    .line 2747
+    .line 2700
     :cond_c
     :goto_8
     if-eqz v15, :cond_4
 
-    .line 2754
+    .line 2707
     move-object/from16 v0, p0
 
     iget-boolean v4, v0, Lcom/android/server/notification/NotificationManagerService;->mSystemReady:Z
 
-    .line 2747
+    .line 2700
     if-eqz v4, :cond_4
 
-    .line 2755
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v27
-
-    invoke-direct {v0, v1}, Lcom/android/server/notification/NotificationManagerService;->notificationIsAnnoying(Ljava/lang/String;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_4
-
-    .line 2756
+    .line 2708
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/server/notification/NotificationManagerService;->mAudioManager:Landroid/media/AudioManager;
 
     if-eqz v4, :cond_4
 
-    .line 2757
+    .line 2709
     sget-boolean v4, Lcom/android/server/notification/NotificationManagerService;->DBG:Z
 
     if-eqz v4, :cond_d
@@ -2059,7 +2003,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2759
+    .line 2711
     :cond_d
     move-object/from16 v0, p1
 
@@ -2075,7 +2019,7 @@
 
     invoke-virtual {v0, v1, v4}, Lcom/android/server/notification/NotificationManagerService;->sendAccessibilityEvent(Landroid/app/Notification;Ljava/lang/CharSequence;)V
 
-    .line 2767
+    .line 2719
     move-object/from16 v0, v26
 
     iget v4, v0, Landroid/app/Notification;->defaults:I
@@ -2084,50 +2028,50 @@
 
     if-nez v4, :cond_13
 
-    .line 2768
+    .line 2720
     sget-object v4, Landroid/provider/Settings$System;->DEFAULT_NOTIFICATION_URI:Landroid/net/Uri;
 
-    .line 2769
+    .line 2721
     move-object/from16 v0, v26
 
     iget-object v5, v0, Landroid/app/Notification;->sound:Landroid/net/Uri;
 
-    .line 2768
+    .line 2720
     invoke-virtual {v4, v5}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
 
-    move-result v31
+    move-result v32
 
-    .line 2771
+    .line 2723
     :goto_9
-    const/16 v30, 0x0
+    const/16 v29, 0x0
 
-    .line 2772
-    .local v30, "soundUri":Landroid/net/Uri;
+    .line 2724
+    .local v29, "soundUri":Landroid/net/Uri;
     const/16 v22, 0x0
 
-    .line 2774
+    .line 2726
     .local v22, "hasValidSound":Z
-    if-eqz v31, :cond_15
+    if-eqz v32, :cond_15
 
-    .line 2775
-    sget-object v30, Landroid/provider/Settings$System;->DEFAULT_NOTIFICATION_URI:Landroid/net/Uri;
+    .line 2727
+    sget-object v29, Landroid/provider/Settings$System;->DEFAULT_NOTIFICATION_URI:Landroid/net/Uri;
 
-    .line 2778
-    .local v30, "soundUri":Landroid/net/Uri;
+    .line 2730
+    .local v29, "soundUri":Landroid/net/Uri;
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/notification/NotificationManagerService;->getContext()Landroid/content/Context;
 
     move-result-object v4
 
     invoke-virtual {v4}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    move-result-object v29
+    move-result-object v28
 
-    .line 2780
-    .local v29, "resolver":Landroid/content/ContentResolver;
+    .line 2732
+    .local v28, "resolver":Landroid/content/ContentResolver;
     const-string/jumbo v4, "notification_sound"
 
-    .line 2779
-    move-object/from16 v0, v29
+    .line 2731
+    move-object/from16 v0, v28
 
     invoke-static {v0, v4}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
@@ -2137,9 +2081,9 @@
 
     const/16 v22, 0x1
 
-    .line 2786
-    .end local v29    # "resolver":Landroid/content/ContentResolver;
-    .end local v30    # "soundUri":Landroid/net/Uri;
+    .line 2738
+    .end local v28    # "resolver":Landroid/content/ContentResolver;
+    .end local v29    # "soundUri":Landroid/net/Uri;
     :cond_e
     :goto_a
     if-eqz v22, :cond_f
@@ -2156,7 +2100,7 @@
 
     if-eqz v4, :cond_17
 
-    .line 2816
+    .line 2768
     :cond_f
     :goto_b
     move-object/from16 v0, v26
@@ -2167,14 +2111,14 @@
 
     const/16 v21, 0x1
 
-    .line 2821
+    .line 2773
     .local v21, "hasCustomVibrate":Z
     :goto_c
     if-nez v21, :cond_1d
 
     if-eqz v22, :cond_1d
 
-    .line 2823
+    .line 2775
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/server/notification/NotificationManagerService;->mAudioManager:Landroid/media/AudioManager;
@@ -2183,15 +2127,12 @@
 
     move-result v4
 
-    .line 2824
     const/4 v5, 0x1
 
-    .line 2823
     if-ne v4, v5, :cond_1c
 
     const/16 v17, 0x1
 
-    .line 2828
     .local v17, "convertSoundToVibration":Z
     :goto_d
     move-object/from16 v0, v26
@@ -2202,18 +2143,18 @@
 
     if-eqz v4, :cond_1e
 
-    const/16 v34, 0x1
+    const/16 v33, 0x1
 
-    .line 2830
-    .local v34, "useDefaultVibrate":Z
+    .line 2782
+    .local v33, "useDefaultVibrate":Z
     :goto_e
-    if-nez v34, :cond_10
+    if-nez v33, :cond_10
 
     if-nez v17, :cond_10
 
     if-eqz v21, :cond_4
 
-    .line 2831
+    .line 2783
     :cond_10
     move-object/from16 v0, p0
 
@@ -2225,7 +2166,7 @@
 
     if-eqz v4, :cond_4
 
-    .line 2833
+    .line 2785
     invoke-virtual/range {p1 .. p1}, Lcom/android/server/notification/NotificationRecord;->getKey()Ljava/lang/String;
 
     move-result-object v4
@@ -2234,18 +2175,18 @@
 
     iput-object v4, v0, Lcom/android/server/notification/NotificationManagerService;->mVibrateNotificationKey:Ljava/lang/String;
 
-    .line 2835
-    if-nez v34, :cond_11
+    .line 2787
+    if-nez v33, :cond_11
 
     if-eqz v17, :cond_21
 
-    .line 2838
+    .line 2790
     :cond_11
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v24
 
-    .line 2840
+    .line 2792
     .local v24, "identity":J
     :try_start_1
     move-object/from16 v0, p0
@@ -2268,14 +2209,14 @@
 
     move-result-object v6
 
-    .line 2841
-    if-eqz v34, :cond_1f
+    .line 2793
+    if-eqz v33, :cond_1f
 
     move-object/from16 v0, p0
 
     iget-object v7, v0, Lcom/android/server/notification/NotificationManagerService;->mDefaultVibrationPattern:[J
 
-    .line 2843
+    .line 2795
     :goto_f
     move-object/from16 v0, v26
 
@@ -2285,7 +2226,7 @@
 
     if-eqz v8, :cond_20
 
-    .line 2844
+    .line 2796
     const/4 v8, 0x0
 
     :goto_10
@@ -2293,25 +2234,25 @@
 
     move-result-object v9
 
-    .line 2840
+    .line 2792
     invoke-virtual/range {v4 .. v9}, Landroid/os/Vibrator;->vibrate(ILjava/lang/String;[JILandroid/media/AudioAttributes;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
-    .line 2845
+    .line 2797
     const/4 v14, 0x1
 
-    .line 2847
+    .line 2799
     invoke-static/range {v24 .. v25}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     goto/16 :goto_2
 
-    .line 2752
+    .line 2705
     .end local v17    # "convertSoundToVibration":Z
     .end local v21    # "hasCustomVibrate":Z
     .end local v22    # "hasValidSound":Z
     .end local v24    # "identity":J
-    .end local v34    # "useDefaultVibrate":Z
+    .end local v33    # "useDefaultVibrate":Z
     :cond_12
     move-object/from16 v0, p0
 
@@ -2325,31 +2266,31 @@
 
     move-result v4
 
-    .line 2747
+    .line 2700
     if-eqz v4, :cond_4
 
     goto/16 :goto_8
 
-    .line 2767
+    .line 2719
     :cond_13
-    const/16 v31, 0x1
+    const/16 v32, 0x1
 
-    .local v31, "useDefaultSound":Z
+    .local v32, "useDefaultSound":Z
     goto/16 :goto_9
 
-    .line 2779
-    .end local v31    # "useDefaultSound":Z
+    .line 2731
+    .end local v32    # "useDefaultSound":Z
     .restart local v22    # "hasValidSound":Z
-    .restart local v29    # "resolver":Landroid/content/ContentResolver;
-    .restart local v30    # "soundUri":Landroid/net/Uri;
+    .restart local v28    # "resolver":Landroid/content/ContentResolver;
+    .restart local v29    # "soundUri":Landroid/net/Uri;
     :cond_14
     const/16 v22, 0x0
 
     goto/16 :goto_a
 
-    .line 2781
-    .end local v29    # "resolver":Landroid/content/ContentResolver;
-    .local v30, "soundUri":Landroid/net/Uri;
+    .line 2733
+    .end local v28    # "resolver":Landroid/content/ContentResolver;
+    .local v29, "soundUri":Landroid/net/Uri;
     :cond_15
     move-object/from16 v0, v26
 
@@ -2357,16 +2298,16 @@
 
     if-eqz v4, :cond_e
 
-    .line 2782
+    .line 2734
     move-object/from16 v0, v26
 
     iget-object v0, v0, Landroid/app/Notification;->sound:Landroid/net/Uri;
 
-    move-object/from16 v30, v0
+    move-object/from16 v29, v0
 
-    .line 2783
-    .local v30, "soundUri":Landroid/net/Uri;
-    if-eqz v30, :cond_16
+    .line 2735
+    .local v29, "soundUri":Landroid/net/Uri;
+    if-eqz v29, :cond_16
 
     const/16 v22, 0x1
 
@@ -2377,8 +2318,8 @@
 
     goto/16 :goto_a
 
-    .line 2788
-    .end local v30    # "soundUri":Landroid/net/Uri;
+    .line 2740
+    .end local v29    # "soundUri":Landroid/net/Uri;
     :cond_17
     move-object/from16 v0, v26
 
@@ -2390,14 +2331,14 @@
 
     const/16 v23, 0x1
 
-    .line 2789
+    .line 2741
     .local v23, "looping":Z
     :goto_11
     invoke-static/range {v26 .. v26}, Lcom/android/server/notification/NotificationManagerService;->audioAttributesForNotification(Landroid/app/Notification;)Landroid/media/AudioAttributes;
 
     move-result-object v11
 
-    .line 2790
+    .line 2742
     .local v11, "audioAttributes":Landroid/media/AudioAttributes;
     invoke-virtual/range {p1 .. p1}, Lcom/android/server/notification/NotificationRecord;->getKey()Ljava/lang/String;
 
@@ -2407,24 +2348,24 @@
 
     iput-object v4, v0, Lcom/android/server/notification/NotificationManagerService;->mSoundNotificationKey:Ljava/lang/String;
 
-    .line 2793
+    .line 2745
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/server/notification/NotificationManagerService;->mAudioManager:Landroid/media/AudioManager;
 
-    .line 2794
+    .line 2746
     invoke-static {v11}, Landroid/media/AudioAttributes;->toLegacyStreamType(Landroid/media/AudioAttributes;)I
 
     move-result v5
 
-    .line 2793
+    .line 2745
     invoke-virtual {v4, v5}, Landroid/media/AudioManager;->getStreamVolume(I)I
 
     move-result v4
 
     if-eqz v4, :cond_f
 
-    .line 2795
+    .line 2747
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/server/notification/NotificationManagerService;->mAudioManager:Landroid/media/AudioManager;
@@ -2435,12 +2376,12 @@
 
     if-nez v4, :cond_f
 
-    .line 2796
+    .line 2748
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v24
 
-    .line 2799
+    .line 2751
     .restart local v24    # "identity":J
     :try_start_2
     move-object/from16 v0, p0
@@ -2449,13 +2390,13 @@
 
     invoke-virtual {v4}, Landroid/media/AudioManager;->getRingtonePlayer()Landroid/media/IRingtonePlayer;
 
-    move-result-object v28
+    move-result-object v27
 
-    .line 2800
-    .local v28, "player":Landroid/media/IRingtonePlayer;
-    if-eqz v28, :cond_19
+    .line 2752
+    .local v27, "player":Landroid/media/IRingtonePlayer;
+    if-eqz v27, :cond_19
 
-    .line 2801
+    .line 2753
     sget-boolean v4, Lcom/android/server/notification/NotificationManagerService;->DBG:Z
 
     if-eqz v4, :cond_18
@@ -2472,16 +2413,16 @@
 
     move-result-object v5
 
-    move-object/from16 v0, v30
+    move-object/from16 v0, v29
 
     invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v5
 
-    .line 2802
+    .line 2754
     const-string/jumbo v6, " with attributes "
 
-    .line 2801
+    .line 2753
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v5
@@ -2496,7 +2437,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2803
+    .line 2755
     :cond_18
     move-object/from16 v0, p1
 
@@ -2506,9 +2447,9 @@
 
     move-result-object v4
 
-    move-object/from16 v0, v28
+    move-object/from16 v0, v27
 
-    move-object/from16 v1, v30
+    move-object/from16 v1, v29
 
     move/from16 v2, v23
 
@@ -2517,50 +2458,50 @@
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 2805
+    .line 2757
     const/4 v12, 0x1
 
-    .line 2809
+    .line 2761
     :cond_19
     invoke-static/range {v24 .. v25}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     goto/16 :goto_b
 
-    .line 2788
+    .line 2740
     .end local v11    # "audioAttributes":Landroid/media/AudioAttributes;
     .end local v23    # "looping":Z
     .end local v24    # "identity":J
-    .end local v28    # "player":Landroid/media/IRingtonePlayer;
+    .end local v27    # "player":Landroid/media/IRingtonePlayer;
     :cond_1a
     const/16 v23, 0x0
 
     .restart local v23    # "looping":Z
     goto :goto_11
 
-    .line 2807
+    .line 2759
     .restart local v11    # "audioAttributes":Landroid/media/AudioAttributes;
     .restart local v24    # "identity":J
     :catch_0
     move-exception v20
 
-    .line 2809
+    .line 2761
     .local v20, "e":Landroid/os/RemoteException;
     invoke-static/range {v24 .. v25}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     goto/16 :goto_b
 
-    .line 2808
+    .line 2760
     .end local v20    # "e":Landroid/os/RemoteException;
     :catchall_1
     move-exception v4
 
-    .line 2809
+    .line 2761
     invoke-static/range {v24 .. v25}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 2808
+    .line 2760
     throw v4
 
-    .line 2816
+    .line 2768
     .end local v11    # "audioAttributes":Landroid/media/AudioAttributes;
     .end local v23    # "looping":Z
     .end local v24    # "identity":J
@@ -2570,14 +2511,14 @@
     .restart local v21    # "hasCustomVibrate":Z
     goto/16 :goto_c
 
-    .line 2823
+    .line 2775
     :cond_1c
     const/16 v17, 0x0
 
     .restart local v17    # "convertSoundToVibration":Z
     goto/16 :goto_d
 
-    .line 2821
+    .line 2773
     .end local v17    # "convertSoundToVibration":Z
     :cond_1d
     const/16 v17, 0x0
@@ -2585,14 +2526,14 @@
     .restart local v17    # "convertSoundToVibration":Z
     goto/16 :goto_d
 
-    .line 2828
+    .line 2780
     :cond_1e
-    const/16 v34, 0x0
+    const/16 v33, 0x0
 
-    .restart local v34    # "useDefaultVibrate":Z
+    .restart local v33    # "useDefaultVibrate":Z
     goto/16 :goto_e
 
-    .line 2842
+    .line 2794
     .restart local v24    # "identity":J
     :cond_1f
     :try_start_3
@@ -2604,23 +2545,23 @@
 
     goto/16 :goto_f
 
-    .line 2844
+    .line 2796
     :cond_20
     const/4 v8, -0x1
 
     goto/16 :goto_10
 
-    .line 2846
+    .line 2798
     :catchall_2
     move-exception v4
 
-    .line 2847
+    .line 2799
     invoke-static/range {v24 .. v25}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 2846
+    .line 2798
     throw v4
 
-    .line 2849
+    .line 2801
     .end local v24    # "identity":J
     :cond_21
     move-object/from16 v0, v26
@@ -2633,7 +2574,7 @@
 
     if-le v4, v5, :cond_4
 
-    .line 2852
+    .line 2804
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/server/notification/NotificationManagerService;->mVibrator:Landroid/os/Vibrator;
@@ -2654,12 +2595,12 @@
 
     move-result-object v6
 
-    .line 2853
+    .line 2805
     move-object/from16 v0, v26
 
     iget-object v7, v0, Landroid/app/Notification;->vibrate:[J
 
-    .line 2854
+    .line 2806
     move-object/from16 v0, v26
 
     iget v8, v0, Landroid/app/Notification;->flags:I
@@ -2668,7 +2609,7 @@
 
     if-eqz v8, :cond_22
 
-    .line 2855
+    .line 2807
     const/4 v8, 0x0
 
     :goto_12
@@ -2676,33 +2617,33 @@
 
     move-result-object v9
 
-    .line 2852
+    .line 2804
     invoke-virtual/range {v4 .. v9}, Landroid/os/Vibrator;->vibrate(ILjava/lang/String;[JILandroid/media/AudioAttributes;)V
 
-    .line 2856
+    .line 2808
     const/4 v14, 0x1
 
     goto/16 :goto_2
 
-    .line 2855
+    .line 2807
     :cond_22
     const/4 v8, -0x1
 
     goto :goto_12
 
-    .line 2864
+    .line 2816
     .end local v17    # "convertSoundToVibration":Z
     .end local v21    # "hasCustomVibrate":Z
     .end local v22    # "hasValidSound":Z
-    .end local v34    # "useDefaultVibrate":Z
-    .restart local v35    # "wasShowLights":Z
+    .end local v33    # "useDefaultVibrate":Z
+    .restart local v34    # "wasShowLights":Z
     :cond_23
     const/16 v16, 0x1
 
     .local v16, "canInterruptWithLight":Z
     goto/16 :goto_3
 
-    .line 2865
+    .line 2817
     .end local v16    # "canInterruptWithLight":Z
     :cond_24
     const/16 v16, 0x0
@@ -2710,17 +2651,17 @@
     .restart local v16    # "canInterruptWithLight":Z
     goto/16 :goto_3
 
-    .line 2873
+    .line 2825
     .end local v16    # "canInterruptWithLight":Z
     :cond_25
-    if-eqz v35, :cond_6
+    if-eqz v34, :cond_6
 
-    .line 2874
+    .line 2826
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/notification/NotificationManagerService;->updateLightsLocked()V
 
     goto/16 :goto_4
 
-    .line 2878
+    .line 2830
     :cond_26
     const/4 v4, 0x0
 
@@ -2746,10 +2687,10 @@
     .param p0, "state"    # I
 
     .prologue
-    .line 3697
+    .line 3649
     packed-switch p0, :pswitch_data_0
 
-    .line 3701
+    .line 3653
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2770,25 +2711,25 @@
 
     return-object v0
 
-    .line 3698
+    .line 3650
     :pswitch_0
     const-string/jumbo v0, "CALL_STATE_IDLE"
 
     return-object v0
 
-    .line 3699
+    .line 3651
     :pswitch_1
     const-string/jumbo v0, "CALL_STATE_RINGING"
 
     return-object v0
 
-    .line 3700
+    .line 3652
     :pswitch_2
     const-string/jumbo v0, "CALL_STATE_OFFHOOK"
 
     return-object v0
 
-    .line 3697
+    .line 3649
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -2806,12 +2747,12 @@
     .param p5, "reason"    # I
 
     .prologue
-    .line 3451
+    .line 3403
     invoke-virtual/range {p1 .. p1}, Lcom/android/server/notification/NotificationRecord;->getNotification()Landroid/app/Notification;
 
     move-result-object v16
 
-    .line 3452
+    .line 3404
     .local v16, "n":Landroid/app/Notification;
     invoke-virtual/range {v16 .. v16}, Landroid/app/Notification;->isGroupSummary()Z
 
@@ -2819,10 +2760,10 @@
 
     if-nez v2, :cond_0
 
-    .line 3453
+    .line 3405
     return-void
 
-    .line 3456
+    .line 3408
     :cond_0
     move-object/from16 v0, p1
 
@@ -2832,17 +2773,17 @@
 
     move-result-object v4
 
-    .line 3457
+    .line 3409
     .local v4, "pkg":Ljava/lang/String;
     invoke-virtual/range {p1 .. p1}, Lcom/android/server/notification/NotificationRecord;->getUserId()I
 
     move-result v7
 
-    .line 3459
+    .line 3411
     .local v7, "userId":I
     if-nez v4, :cond_2
 
-    .line 3460
+    .line 3412
     sget-boolean v2, Lcom/android/server/notification/NotificationManagerService;->DBG:Z
 
     if-eqz v2, :cond_1
@@ -2873,11 +2814,11 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3461
+    .line 3413
     :cond_1
     return-void
 
-    .line 3464
+    .line 3416
     :cond_2
     move-object/from16 v0, p0
 
@@ -2887,7 +2828,7 @@
 
     move-result v12
 
-    .line 3465
+    .line 3417
     .local v12, "N":I
     add-int/lit8 v15, v12, -0x1
 
@@ -2895,7 +2836,7 @@
     :goto_0
     if-ltz v15, :cond_4
 
-    .line 3466
+    .line 3418
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/notification/NotificationManagerService;->mNotificationList:Ljava/util/ArrayList;
@@ -2906,11 +2847,11 @@
 
     check-cast v13, Lcom/android/server/notification/NotificationRecord;
 
-    .line 3467
+    .line 3419
     .local v13, "childR":Lcom/android/server/notification/NotificationRecord;
     iget-object v14, v13, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
 
-    .line 3468
+    .line 3420
     .local v14, "childSbn":Landroid/service/notification/StatusBarNotification;
     invoke-virtual {v13}, Lcom/android/server/notification/NotificationRecord;->getNotification()Landroid/app/Notification;
 
@@ -2922,7 +2863,7 @@
 
     if-eqz v2, :cond_3
 
-    .line 3469
+    .line 3421
     invoke-virtual {v13}, Lcom/android/server/notification/NotificationRecord;->getGroupKey()Ljava/lang/String;
 
     move-result-object v2
@@ -2935,15 +2876,15 @@
 
     move-result v2
 
-    .line 3468
+    .line 3420
     if-eqz v2, :cond_3
 
-    .line 3470
+    .line 3422
     invoke-virtual {v14}, Landroid/service/notification/StatusBarNotification;->getId()I
 
     move-result v5
 
-    .line 3471
+    .line 3423
     invoke-virtual {v14}, Landroid/service/notification/StatusBarNotification;->getTag()Ljava/lang/String;
 
     move-result-object v6
@@ -2960,17 +2901,17 @@
 
     move-object/from16 v11, p4
 
-    .line 3470
+    .line 3422
     invoke-static/range {v2 .. v11}, Lcom/android/server/EventLogTags;->writeNotificationCancel(IILjava/lang/String;ILjava/lang/String;IIIILjava/lang/String;)V
 
-    .line 3472
+    .line 3424
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/notification/NotificationManagerService;->mNotificationList:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v15}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 3473
+    .line 3425
     const/4 v2, 0x0
 
     move-object/from16 v0, p0
@@ -2979,13 +2920,13 @@
 
     invoke-direct {v0, v13, v2, v1}, Lcom/android/server/notification/NotificationManagerService;->cancelNotificationLocked(Lcom/android/server/notification/NotificationRecord;ZI)V
 
-    .line 3465
+    .line 3417
     :cond_3
     add-int/lit8 v15, v15, -0x1
 
     goto :goto_0
 
-    .line 3450
+    .line 3402
     .end local v13    # "childR":Lcom/android/server/notification/NotificationRecord;
     .end local v14    # "childSbn":Landroid/service/notification/StatusBarNotification;
     :cond_4
@@ -2999,10 +2940,10 @@
     .param p3, "reason"    # I
 
     .prologue
-    .line 3200
+    .line 3152
     if-eqz p2, :cond_0
 
-    .line 3201
+    .line 3153
     invoke-virtual/range {p1 .. p1}, Lcom/android/server/notification/NotificationRecord;->getNotification()Landroid/app/Notification;
 
     move-result-object v12
@@ -3011,7 +2952,7 @@
 
     if-eqz v12, :cond_0
 
-    .line 3203
+    .line 3155
     :try_start_0
     invoke-virtual/range {p1 .. p1}, Lcom/android/server/notification/NotificationRecord;->getNotification()Landroid/app/Notification;
 
@@ -3023,7 +2964,7 @@
     :try_end_0
     .catch Landroid/app/PendingIntent$CanceledException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3213
+    .line 3165
     :cond_0
     :goto_0
     invoke-virtual/range {p1 .. p1}, Lcom/android/server/notification/NotificationRecord;->getNotification()Landroid/app/Notification;
@@ -3036,14 +2977,14 @@
 
     if-eqz v12, :cond_1
 
-    .line 3214
+    .line 3166
     const/4 v12, 0x1
 
     move-object/from16 v0, p1
 
     iput-boolean v12, v0, Lcom/android/server/notification/NotificationRecord;->isCanceled:Z
 
-    .line 3215
+    .line 3167
     iget-object v12, p0, Lcom/android/server/notification/NotificationManagerService;->mListeners:Lcom/android/server/notification/NotificationManagerService$NotificationListeners;
 
     move-object/from16 v0, p1
@@ -3052,13 +2993,13 @@
 
     invoke-virtual {v12, v13}, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->notifyRemovedLocked(Landroid/service/notification/StatusBarNotification;)V
 
-    .line 3218
+    .line 3170
     :cond_1
     invoke-virtual/range {p1 .. p1}, Lcom/android/server/notification/NotificationRecord;->getKey()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 3221
+    .line 3173
     .local v2, "canceledKey":Ljava/lang/String;
     iget-object v12, p0, Lcom/android/server/notification/NotificationManagerService;->mSoundNotificationKey:Ljava/lang/String;
 
@@ -3068,17 +3009,17 @@
 
     if-eqz v12, :cond_3
 
-    .line 3222
+    .line 3174
     const/4 v12, 0x0
 
     iput-object v12, p0, Lcom/android/server/notification/NotificationManagerService;->mSoundNotificationKey:Ljava/lang/String;
 
-    .line 3223
+    .line 3175
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v8
 
-    .line 3225
+    .line 3177
     .local v8, "identity":J
     :try_start_1
     iget-object v12, p0, Lcom/android/server/notification/NotificationManagerService;->mAudioManager:Landroid/media/AudioManager;
@@ -3087,21 +3028,21 @@
 
     move-result-object v7
 
-    .line 3226
+    .line 3178
     .local v7, "player":Landroid/media/IRingtonePlayer;
     if-eqz v7, :cond_2
 
-    .line 3227
+    .line 3179
     invoke-interface {v7}, Landroid/media/IRingtonePlayer;->stopAsync()V
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 3231
+    .line 3183
     :cond_2
     invoke-static {v8, v9}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 3236
+    .line 3188
     .end local v7    # "player":Landroid/media/IRingtonePlayer;
     .end local v8    # "identity":J
     :cond_3
@@ -3114,17 +3055,17 @@
 
     if-eqz v12, :cond_4
 
-    .line 3237
+    .line 3189
     const/4 v12, 0x0
 
     iput-object v12, p0, Lcom/android/server/notification/NotificationManagerService;->mVibrateNotificationKey:Ljava/lang/String;
 
-    .line 3238
+    .line 3190
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v8
 
-    .line 3240
+    .line 3192
     .restart local v8    # "identity":J
     :try_start_2
     iget-object v12, p0, Lcom/android/server/notification/NotificationManagerService;->mVibrator:Landroid/os/Vibrator;
@@ -3163,12 +3104,12 @@
 
     invoke-virtual {v12, v13}, Landroid/util/ArrayMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 3265
+    .line 3217
     invoke-virtual/range {p1 .. p1}, Lcom/android/server/notification/NotificationRecord;->getGroupKey()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 3266
+    .line 3218
     .local v5, "groupKey":Ljava/lang/String;
     iget-object v12, p0, Lcom/android/server/notification/NotificationManagerService;->mSummaryByGroupKey:Landroid/util/ArrayMap;
 
@@ -3178,7 +3119,7 @@
 
     check-cast v6, Lcom/android/server/notification/NotificationRecord;
 
-    .line 3267
+    .line 3219
     .local v6, "groupSummary":Lcom/android/server/notification/NotificationRecord;
     if-eqz v6, :cond_5
 
@@ -3196,12 +3137,12 @@
 
     if-eqz v12, :cond_5
 
-    .line 3268
+    .line 3220
     iget-object v12, p0, Lcom/android/server/notification/NotificationManagerService;->mSummaryByGroupKey:Landroid/util/ArrayMap;
 
     invoke-virtual {v12, v5}, Landroid/util/ArrayMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 3272
+    .line 3224
     :cond_5
     iget-object v12, p0, Lcom/android/server/notification/NotificationManagerService;->mArchive:Lcom/android/server/notification/NotificationManagerService$Archive;
 
@@ -3211,12 +3152,12 @@
 
     invoke-virtual {v12, v13}, Lcom/android/server/notification/NotificationManagerService$Archive;->record(Landroid/service/notification/StatusBarNotification;)V
 
-    .line 3274
+    .line 3226
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v10
 
-    .line 3276
+    .line 3228
     .local v10, "now":J
     move-object/from16 v0, p1
 
@@ -3236,15 +3177,15 @@
 
     move-result v14
 
-    .line 3275
+    .line 3227
     move/from16 v0, p3
 
     invoke-static {v2, v0, v12, v13, v14}, Lcom/android/server/EventLogTags;->writeNotificationCanceled(Ljava/lang/String;IIII)V
 
-    .line 3198
+    .line 3150
     return-void
 
-    .line 3204
+    .line 3156
     .end local v2    # "canceledKey":Ljava/lang/String;
     .end local v5    # "groupKey":Ljava/lang/String;
     .end local v6    # "groupSummary":Lcom/android/server/notification/NotificationRecord;
@@ -3252,7 +3193,7 @@
     :catch_0
     move-exception v4
 
-    .line 3207
+    .line 3159
     .local v4, "ex":Landroid/app/PendingIntent$CanceledException;
     const-string/jumbo v12, "NotificationService"
 
@@ -3286,41 +3227,41 @@
 
     goto/16 :goto_0
 
-    .line 3229
+    .line 3181
     .end local v4    # "ex":Landroid/app/PendingIntent$CanceledException;
     .restart local v2    # "canceledKey":Ljava/lang/String;
     .restart local v8    # "identity":J
     :catch_1
     move-exception v3
 
-    .line 3231
+    .line 3183
     .local v3, "e":Landroid/os/RemoteException;
     invoke-static {v8, v9}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     goto/16 :goto_1
 
-    .line 3230
+    .line 3182
     .end local v3    # "e":Landroid/os/RemoteException;
     :catchall_0
     move-exception v12
 
-    .line 3231
+    .line 3183
     invoke-static {v8, v9}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 3230
+    .line 3182
     throw v12
 
-    .line 3242
+    .line 3194
     :catchall_1
     move-exception v12
 
-    .line 3243
+    .line 3195
     invoke-static {v8, v9}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 3242
+    .line 3194
     throw v12
 
-    .line 3256
+    .line 3208
     .end local v8    # "identity":J
     :pswitch_1
     iget-object v12, p0, Lcom/android/server/notification/NotificationManagerService;->mUsageStats:Lcom/android/server/notification/NotificationUsageStats;
@@ -3331,7 +3272,7 @@
 
     goto/16 :goto_2
 
-    .line 3260
+    .line 3212
     :pswitch_2
     iget-object v12, p0, Lcom/android/server/notification/NotificationManagerService;->mUsageStats:Lcom/android/server/notification/NotificationUsageStats;
 
@@ -3341,7 +3282,7 @@
 
     goto/16 :goto_2
 
-    .line 3251
+    .line 3203
     nop
 
     :pswitch_data_0
@@ -3363,17 +3304,17 @@
     .locals 3
 
     .prologue
-    .line 3670
+    .line 3622
     invoke-static {}, Lcom/android/server/notification/NotificationManagerService;->isCallerSystem()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 3671
+    .line 3623
     return-void
 
-    .line 3673
+    .line 3625
     :cond_0
     new-instance v0, Ljava/lang/SecurityException;
 
@@ -3409,46 +3350,46 @@
     .param p0, "pkg"    # Ljava/lang/String;
 
     .prologue
-    .line 3677
+    .line 3629
     invoke-static {}, Lcom/android/server/notification/NotificationManagerService;->isCallerSystem()Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 3678
+    .line 3630
     return-void
 
-    .line 3680
+    .line 3632
     :cond_0
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v2
 
-    .line 3682
+    .line 3634
     .local v2, "uid":I
     :try_start_0
     invoke-static {}, Landroid/app/AppGlobals;->getPackageManager()Landroid/content/pm/IPackageManager;
 
     move-result-object v3
 
-    .line 3683
+    .line 3635
     invoke-static {}, Landroid/os/UserHandle;->getCallingUserId()I
 
     move-result v4
 
     const/4 v5, 0x0
 
-    .line 3682
+    .line 3634
     invoke-interface {v3, p0, v5, v4}, Landroid/content/pm/IPackageManager;->getApplicationInfo(Ljava/lang/String;II)Landroid/content/pm/ApplicationInfo;
 
     move-result-object v0
 
-    .line 3684
+    .line 3636
     .local v0, "ai":Landroid/content/pm/ApplicationInfo;
     if-nez v0, :cond_1
 
-    .line 3685
+    .line 3637
     new-instance v3, Ljava/lang/SecurityException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -3475,12 +3416,12 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3691
+    .line 3643
     .end local v0    # "ai":Landroid/content/pm/ApplicationInfo;
     :catch_0
     move-exception v1
 
-    .line 3692
+    .line 3644
     .local v1, "re":Landroid/os/RemoteException;
     new-instance v3, Ljava/lang/SecurityException;
 
@@ -3516,7 +3457,7 @@
 
     throw v3
 
-    .line 3687
+    .line 3639
     .end local v1    # "re":Landroid/os/RemoteException;
     .restart local v0    # "ai":Landroid/content/pm/ApplicationInfo;
     :cond_1
@@ -3529,7 +3470,7 @@
 
     if-nez v3, :cond_2
 
-    .line 3688
+    .line 3640
     new-instance v3, Ljava/lang/SecurityException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -3556,18 +3497,18 @@
 
     move-result-object v4
 
-    .line 3689
+    .line 3641
     const-string/jumbo v5, " which is owned by uid "
 
-    .line 3688
+    .line 3640
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    .line 3689
+    .line 3641
     iget v5, v0, Landroid/content/pm/ApplicationInfo;->uid:I
 
-    .line 3688
+    .line 3640
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v4
@@ -3582,7 +3523,7 @@
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 3676
+    .line 3628
     :cond_2
     return-void
 .end method
@@ -3595,7 +3536,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 517
+    .line 514
     iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService;->mAppOps:Landroid/app/AppOpsManager;
 
     const/16 v2, 0xb
@@ -3619,7 +3560,7 @@
     .param p2, "high"    # I
 
     .prologue
-    .line 3149
+    .line 3101
     if-ge p0, p1, :cond_0
 
     .end local p1    # "low":I
@@ -3645,7 +3586,7 @@
     .param p1, "record"    # Lcom/android/server/notification/NotificationRecord;
 
     .prologue
-    .line 2175
+    .line 2149
     invoke-virtual {p0}, Lcom/android/server/notification/NotificationManagerService;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -3676,12 +3617,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 2181
+    .line 2155
     const-string/jumbo v1, "listenerHints"
 
     return-object v1
 
-    .line 2183
+    .line 2157
     :cond_1
     iget v1, p0, Lcom/android/server/notification/NotificationManagerService;->mCallState:I
 
@@ -3695,17 +3636,17 @@
 
     if-eqz v1, :cond_3
 
-    .line 2187
+    .line 2161
     :cond_2
     const/4 v1, 0x0
 
     return-object v1
 
-    .line 2184
+    .line 2158
     :cond_3
     if-nez v0, :cond_2
 
-    .line 2185
+    .line 2159
     const-string/jumbo v1, "callState"
 
     return-object v1
@@ -3717,12 +3658,12 @@
     .param p2, "filter"    # Lcom/android/server/notification/NotificationManagerService$DumpFilter;
 
     .prologue
-    .line 2191
+    .line 2165
     new-instance v2, Lorg/json/JSONObject;
 
     invoke-direct {v2}, Lorg/json/JSONObject;-><init>()V
 
-    .line 2193
+    .line 2167
     .local v2, "dump":Lorg/json/JSONObject;
     :try_start_0
     const-string/jumbo v10, "service"
@@ -3731,21 +3672,21 @@
 
     invoke-virtual {v2, v10, v11}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 2194
+    .line 2168
     new-instance v1, Lorg/json/JSONArray;
 
     invoke-direct {v1}, Lorg/json/JSONArray;-><init>()V
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 2196
+    .line 2170
     .local v1, "bans":Lorg/json/JSONArray;
     :try_start_1
     invoke-direct {p0, p2}, Lcom/android/server/notification/NotificationManagerService;->getPackageBans(Lcom/android/server/notification/NotificationManagerService$DumpFilter;)Landroid/util/ArrayMap;
 
     move-result-object v5
 
-    .line 2197
+    .line 2171
     .local v5, "packageBans":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/Integer;Ljava/util/ArrayList<Ljava/lang/String;>;>;"
     invoke-virtual {v5}, Landroid/util/ArrayMap;->keySet()Ljava/util/Set;
 
@@ -3769,7 +3710,7 @@
 
     check-cast v8, Ljava/lang/Integer;
 
-    .line 2198
+    .line 2172
     .local v8, "userId":Ljava/lang/Integer;
     invoke-virtual {v5, v8}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -3795,24 +3736,24 @@
 
     check-cast v6, Ljava/lang/String;
 
-    .line 2199
+    .line 2173
     .local v6, "packageName":Ljava/lang/String;
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
 
-    .line 2200
+    .line 2174
     .local v0, "ban":Lorg/json/JSONObject;
     const-string/jumbo v10, "userId"
 
     invoke-virtual {v0, v10, v8}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 2201
+    .line 2175
     const-string/jumbo v10, "packageName"
 
     invoke-virtual {v0, v10, v6}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 2202
+    .line 2176
     invoke-virtual {v1, v0}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
     :try_end_1
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_1 .. :try_end_1} :catch_0
@@ -3820,7 +3761,7 @@
 
     goto :goto_0
 
-    .line 2205
+    .line 2179
     .end local v0    # "ban":Lorg/json/JSONObject;
     .end local v5    # "packageBans":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/Integer;Ljava/util/ArrayList<Ljava/lang/String;>;>;"
     .end local v6    # "packageName":Ljava/lang/String;
@@ -3830,14 +3771,14 @@
     :catch_0
     move-exception v3
 
-    .line 2208
+    .line 2182
     :cond_1
     :try_start_2
     const-string/jumbo v10, "bans"
 
     invoke-virtual {v2, v10, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 2209
+    .line 2183
     const-string/jumbo v10, "stats"
 
     iget-object v11, p0, Lcom/android/server/notification/NotificationManagerService;->mUsageStats:Lcom/android/server/notification/NotificationUsageStats;
@@ -3850,19 +3791,19 @@
     :try_end_2
     .catch Lorg/json/JSONException; {:try_start_2 .. :try_end_2} :catch_1
 
-    .line 2213
+    .line 2187
     .end local v1    # "bans":Lorg/json/JSONArray;
     :goto_1
     invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 2190
+    .line 2164
     return-void
 
-    .line 2210
+    .line 2184
     :catch_1
     move-exception v4
 
-    .line 2211
+    .line 2185
     .local v4, "e":Lorg/json/JSONException;
     invoke-virtual {v4}, Lorg/json/JSONException;->printStackTrace()V
 
@@ -3874,7 +3815,7 @@
     .param p1, "target"    # Lcom/android/server/notification/NotificationRecord;
 
     .prologue
-    .line 3060
+    .line 3012
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mRankingHelper:Lcom/android/server/notification/RankingHelper;
 
     iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService;->mNotificationList:Ljava/util/ArrayList;
@@ -3891,28 +3832,28 @@
     .param p1, "ledNotification"    # Lcom/android/server/notification/NotificationRecord;
 
     .prologue
-    .line 3592
+    .line 3544
     iget-boolean v6, p0, Lcom/android/server/notification/NotificationManagerService;->mAutoGenerateNotificationColor:Z
 
     if-nez v6, :cond_0
 
-    .line 3593
+    .line 3545
     iget v6, p0, Lcom/android/server/notification/NotificationManagerService;->mDefaultNotificationColor:I
 
     return v6
 
-    .line 3595
+    .line 3547
     :cond_0
     iget-boolean v6, p0, Lcom/android/server/notification/NotificationManagerService;->mMultiColorNotificationLed:Z
 
     if-nez v6, :cond_1
 
-    .line 3596
+    .line 3548
     iget v6, p0, Lcom/android/server/notification/NotificationManagerService;->mDefaultNotificationColor:I
 
     return v6
 
-    .line 3598
+    .line 3550
     :cond_1
     iget-object v6, p1, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
 
@@ -3920,17 +3861,17 @@
 
     move-result-object v4
 
-    .line 3599
+    .line 3551
     .local v4, "packageName":Ljava/lang/String;
     invoke-direct {p0, v4}, Lcom/android/server/notification/NotificationManagerService;->mapPackage(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 3600
+    .line 3552
     .local v3, "mapping":Ljava/lang/String;
     iget v0, p0, Lcom/android/server/notification/NotificationManagerService;->mDefaultNotificationColor:I
 
-    .line 3602
+    .line 3554
     .local v0, "color":I
     iget-object v6, p0, Lcom/android/server/notification/NotificationManagerService;->mGeneratedPackageLedColors:Ljava/util/Map;
 
@@ -3940,7 +3881,7 @@
 
     if-eqz v6, :cond_2
 
-    .line 3603
+    .line 3555
     iget-object v6, p0, Lcom/android/server/notification/NotificationManagerService;->mGeneratedPackageLedColors:Ljava/util/Map;
 
     invoke-interface {v6, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -3955,7 +3896,7 @@
 
     return v6
 
-    .line 3606
+    .line 3558
     :cond_2
     invoke-virtual {p0}, Lcom/android/server/notification/NotificationManagerService;->getContext()Landroid/content/Context;
 
@@ -3965,7 +3906,7 @@
 
     move-result-object v5
 
-    .line 3609
+    .line 3561
     .local v5, "pm":Landroid/content/pm/PackageManager;
     :try_start_0
     invoke-virtual {v5, v3}, Landroid/content/pm/PackageManager;->getApplicationIcon(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
@@ -3974,13 +3915,13 @@
 
     move-result-object v2
 
-    .line 3615
+    .line 3567
     .local v2, "icon":Landroid/graphics/drawable/Drawable;
     invoke-static {v2}, Lcyanogenmod/util/ColorUtils;->generateAlertColorFromDrawable(Landroid/graphics/drawable/Drawable;)I
 
     move-result v0
 
-    .line 3616
+    .line 3568
     iget-object v6, p0, Lcom/android/server/notification/NotificationManagerService;->mGeneratedPackageLedColors:Ljava/util/Map;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3989,15 +3930,15 @@
 
     invoke-interface {v6, v3, v7}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 3618
+    .line 3570
     return v0
 
-    .line 3610
+    .line 3562
     .end local v2    # "icon":Landroid/graphics/drawable/Drawable;
     :catch_0
     move-exception v1
 
-    .line 3611
+    .line 3563
     .local v1, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     const-string/jumbo v6, "NotificationService"
 
@@ -4007,7 +3948,7 @@
 
     invoke-static {v6, v7, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 3612
+    .line 3564
     return v0
 .end method
 
@@ -4016,14 +3957,14 @@
     .param p1, "ledNotification"    # Lcom/android/server/notification/NotificationRecord;
 
     .prologue
-    .line 3587
+    .line 3539
     iget-object v1, p1, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
 
     invoke-virtual {v1}, Landroid/service/notification/StatusBarNotification;->getPackageName()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 3588
+    .line 3540
     .local v0, "packageName":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService;->mNotificationPulseCustomLedValues:Ljava/util/HashMap;
 
@@ -4048,19 +3989,19 @@
     .param p3, "def"    # [J
 
     .prologue
-    .line 1158
+    .line 1145
     invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getIntArray(I)[I
 
     move-result-object v0
 
-    .line 1159
+    .line 1146
     .local v0, "ar":[I
     if-nez v0, :cond_0
 
-    .line 1160
+    .line 1147
     return-object p3
 
-    .line 1162
+    .line 1149
     :cond_0
     array-length v4, v0
 
@@ -4068,12 +4009,12 @@
 
     move v2, p2
 
-    .line 1163
+    .line 1150
     .local v2, "len":I
     :goto_0
     new-array v3, v2, [J
 
-    .line 1164
+    .line 1151
     .local v3, "out":[J
     const/4 v1, 0x0
 
@@ -4081,19 +4022,19 @@
     :goto_1
     if-ge v1, v2, :cond_2
 
-    .line 1165
+    .line 1152
     aget v4, v0, v1
 
     int-to-long v4, v4
 
     aput-wide v4, v3, v1
 
-    .line 1164
+    .line 1151
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 1162
+    .line 1149
     .end local v1    # "i":I
     .end local v2    # "len":I
     .end local v3    # "out":[J
@@ -4103,7 +4044,7 @@
     .restart local v2    # "len":I
     goto :goto_0
 
-    .line 1167
+    .line 1154
     .restart local v1    # "i":I
     .restart local v3    # "out":[J
     :cond_2
@@ -4135,18 +4076,18 @@
     .end annotation
 
     .prologue
-    .line 2349
+    .line 2323
     new-instance v1, Landroid/util/ArrayMap;
 
     invoke-direct {v1}, Landroid/util/ArrayMap;-><init>()V
 
-    .line 2350
+    .line 2324
     .local v1, "packageBans":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/Integer;Ljava/util/ArrayList<Ljava/lang/String;>;>;"
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2351
+    .line 2325
     .local v5, "packageNames":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     invoke-virtual {p0}, Lcom/android/server/notification/NotificationManagerService;->getContext()Landroid/content/Context;
 
@@ -4179,7 +4120,7 @@
 
     check-cast v8, Landroid/content/pm/UserInfo;
 
-    .line 2352
+    .line 2326
     .local v8, "user":Landroid/content/pm/UserInfo;
     invoke-virtual {v8}, Landroid/content/pm/UserInfo;->getUserHandle()Landroid/os/UserHandle;
 
@@ -4189,7 +4130,7 @@
 
     move-result v10
 
-    .line 2353
+    .line 2327
     .local v10, "userId":I
     invoke-virtual {p0}, Lcom/android/server/notification/NotificationManagerService;->getContext()Landroid/content/Context;
 
@@ -4199,7 +4140,7 @@
 
     move-result-object v3
 
-    .line 2354
+    .line 2328
     .local v3, "packageManager":Landroid/content/pm/PackageManager;
     const/4 v11, 0x0
 
@@ -4207,13 +4148,13 @@
 
     move-result-object v6
 
-    .line 2355
+    .line 2329
     .local v6, "packages":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/PackageInfo;>;"
     invoke-interface {v6}, Ljava/util/List;->size()I
 
     move-result v2
 
-    .line 2356
+    .line 2330
     .local v2, "packageCount":I
     const/4 v0, 0x0
 
@@ -4221,7 +4162,7 @@
     :goto_1
     if-ge v0, v2, :cond_3
 
-    .line 2357
+    .line 2331
     invoke-interface {v6, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v11
@@ -4230,7 +4171,7 @@
 
     iget-object v4, v11, Landroid/content/pm/PackageInfo;->packageName:Ljava/lang/String;
 
-    .line 2358
+    .line 2332
     .local v4, "packageName":Ljava/lang/String;
     if-eqz p1, :cond_1
 
@@ -4240,13 +4181,13 @@
 
     if-eqz v11, :cond_2
 
-    .line 2359
+    .line 2333
     :cond_1
     invoke-virtual {v3, v4, v10}, Landroid/content/pm/PackageManager;->getPackageUid(Ljava/lang/String;I)I
 
     move-result v7
 
-    .line 2360
+    .line 2334
     .local v7, "uid":I
     invoke-direct {p0, v4, v7}, Lcom/android/server/notification/NotificationManagerService;->checkNotificationOp(Ljava/lang/String;I)Z
 
@@ -4254,17 +4195,17 @@
 
     if-nez v11, :cond_2
 
-    .line 2361
+    .line 2335
     invoke-virtual {v5, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2356
+    .line 2330
     .end local v7    # "uid":I
     :cond_2
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 2365
+    .line 2339
     .end local v4    # "packageName":Ljava/lang/String;
     :cond_3
     invoke-virtual {v5}, Ljava/util/ArrayList;->isEmpty()Z
@@ -4273,14 +4214,14 @@
 
     if-nez v11, :cond_0
 
-    .line 2366
+    .line 2340
     invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v11
 
     invoke-virtual {v1, v11, v5}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2367
+    .line 2341
     new-instance v5, Ljava/util/ArrayList;
 
     .end local v5    # "packageNames":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
@@ -4289,7 +4230,7 @@
     .restart local v5    # "packageNames":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     goto :goto_0
 
-    .line 2370
+    .line 2344
     .end local v0    # "p":I
     .end local v2    # "packageCount":I
     .end local v3    # "packageManager":Landroid/content/pm/PackageManager;
@@ -4306,7 +4247,7 @@
     .param p2, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 3153
+    .line 3105
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -4338,30 +4279,30 @@
     .param p4, "callingPid"    # I
 
     .prologue
-    .line 2612
+    .line 2586
     move-object/from16 v0, p1
 
     iget-object v15, v0, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
 
-    .line 2613
+    .line 2587
     .local v15, "sbn":Landroid/service/notification/StatusBarNotification;
     invoke-virtual {v15}, Landroid/service/notification/StatusBarNotification;->getNotification()Landroid/app/Notification;
 
     move-result-object v9
 
-    .line 2614
+    .line 2588
     .local v9, "n":Landroid/app/Notification;
     invoke-virtual {v15}, Landroid/service/notification/StatusBarNotification;->getGroupKey()Ljava/lang/String;
 
     move-result-object v7
 
-    .line 2615
+    .line 2589
     .local v7, "group":Ljava/lang/String;
     invoke-virtual {v9}, Landroid/app/Notification;->isGroupSummary()Z
 
     move-result v8
 
-    .line 2617
+    .line 2591
     .local v8, "isSummary":Z
     if-eqz p2, :cond_3
 
@@ -4373,7 +4314,7 @@
 
     move-result-object v12
 
-    .line 2618
+    .line 2592
     :goto_0
     if-eqz p2, :cond_4
 
@@ -4385,7 +4326,7 @@
 
     move-result-object v10
 
-    .line 2619
+    .line 2593
     :goto_1
     if-eqz p2, :cond_5
 
@@ -4393,11 +4334,11 @@
 
     move-result v11
 
-    .line 2621
+    .line 2595
     :goto_2
     if-eqz v11, :cond_0
 
-    .line 2622
+    .line 2596
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/server/notification/NotificationManagerService;->mSummaryByGroupKey:Landroid/util/ArrayMap;
@@ -4408,20 +4349,20 @@
 
     check-cast v14, Lcom/android/server/notification/NotificationRecord;
 
-    .line 2623
+    .line 2597
     .local v14, "removedSummary":Lcom/android/server/notification/NotificationRecord;
     move-object/from16 v0, p2
 
     if-eq v14, v0, :cond_0
 
-    .line 2625
+    .line 2599
     if-eqz v14, :cond_6
 
     invoke-virtual {v14}, Lcom/android/server/notification/NotificationRecord;->getKey()Ljava/lang/String;
 
     move-result-object v13
 
-    .line 2626
+    .line 2600
     .local v13, "removedKey":Ljava/lang/String;
     :goto_3
     const-string/jumbo v1, "NotificationService"
@@ -4444,10 +4385,10 @@
 
     move-result-object v2
 
-    .line 2627
+    .line 2601
     const-string/jumbo v3, ", removed="
 
-    .line 2626
+    .line 2600
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -4462,13 +4403,13 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2630
+    .line 2604
     .end local v13    # "removedKey":Ljava/lang/String;
     .end local v14    # "removedSummary":Lcom/android/server/notification/NotificationRecord;
     :cond_0
     if-eqz v8, :cond_1
 
-    .line 2631
+    .line 2605
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/server/notification/NotificationManagerService;->mSummaryByGroupKey:Landroid/util/ArrayMap;
@@ -4477,7 +4418,7 @@
 
     invoke-virtual {v1, v7, v0}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2638
+    .line 2612
     :cond_1
     if-eqz v11, :cond_2
 
@@ -4489,19 +4430,19 @@
 
     if-eqz v1, :cond_7
 
-    .line 2611
+    .line 2585
     :cond_2
     :goto_4
     return-void
 
-    .line 2617
+    .line 2591
     :cond_3
     const/4 v12, 0x0
 
     .local v12, "oldN":Landroid/app/Notification;
     goto :goto_0
 
-    .line 2618
+    .line 2592
     .end local v12    # "oldN":Landroid/app/Notification;
     :cond_4
     const/4 v10, 0x0
@@ -4509,7 +4450,7 @@
     .local v10, "oldGroup":Ljava/lang/String;
     goto :goto_1
 
-    .line 2619
+    .line 2593
     .end local v10    # "oldGroup":Ljava/lang/String;
     :cond_5
     const/4 v11, 0x0
@@ -4517,7 +4458,7 @@
     .local v11, "oldIsSummary":Z
     goto :goto_2
 
-    .line 2625
+    .line 2599
     .end local v11    # "oldIsSummary":Z
     .restart local v14    # "removedSummary":Lcom/android/server/notification/NotificationRecord;
     :cond_6
@@ -4526,13 +4467,13 @@
     .restart local v13    # "removedKey":Ljava/lang/String;
     goto :goto_3
 
-    .line 2639
+    .line 2613
     .end local v13    # "removedKey":Ljava/lang/String;
     .end local v14    # "removedSummary":Lcom/android/server/notification/NotificationRecord;
     :cond_7
     const/4 v5, 0x0
 
-    .line 2640
+    .line 2614
     const/16 v6, 0xc
 
     move-object/from16 v1, p0
@@ -4543,7 +4484,7 @@
 
     move/from16 v4, p4
 
-    .line 2639
+    .line 2613
     invoke-direct/range {v1 .. v6}, Lcom/android/server/notification/NotificationManagerService;->cancelGroupChildrenLocked(Lcom/android/server/notification/NotificationRecord;IILjava/lang/String;I)V
 
     goto :goto_4
@@ -4554,12 +4495,12 @@
     .param p1, "hints"    # I
 
     .prologue
-    .line 3089
+    .line 3041
     iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService;->mNotificationList:Ljava/util/ArrayList;
 
     monitor-enter v1
 
-    .line 3090
+    .line 3042
     :try_start_0
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mListeners:Lcom/android/server/notification/NotificationManagerService$NotificationListeners;
 
@@ -4569,10 +4510,10 @@
 
     monitor-exit v1
 
-    .line 3088
+    .line 3040
     return-void
 
-    .line 3089
+    .line 3041
     :catchall_0
     move-exception v0
 
@@ -4586,12 +4527,12 @@
     .param p1, "interruptionFilter"    # I
 
     .prologue
-    .line 3095
+    .line 3047
     iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService;->mNotificationList:Ljava/util/ArrayList;
 
     monitor-enter v1
 
-    .line 3096
+    .line 3048
     :try_start_0
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mListeners:Lcom/android/server/notification/NotificationManagerService$NotificationListeners;
 
@@ -4601,10 +4542,10 @@
 
     monitor-exit v1
 
-    .line 3094
+    .line 3046
     return-void
 
-    .line 3095
+    .line 3047
     :catchall_0
     move-exception v0
 
@@ -4617,12 +4558,12 @@
     .locals 8
 
     .prologue
-    .line 3031
+    .line 2983
     iget-object v6, p0, Lcom/android/server/notification/NotificationManagerService;->mNotificationList:Ljava/util/ArrayList;
 
     monitor-enter v6
 
-    .line 3032
+    .line 2984
     :try_start_0
     iget-object v5, p0, Lcom/android/server/notification/NotificationManagerService;->mNotificationList:Ljava/util/ArrayList;
 
@@ -4630,17 +4571,17 @@
 
     move-result v0
 
-    .line 3033
+    .line 2985
     .local v0, "N":I
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 3034
+    .line 2986
     .local v2, "orderBefore":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     new-array v4, v0, [I
 
-    .line 3035
+    .line 2987
     .local v4, "visibilities":[I
     const/4 v1, 0x0
 
@@ -4648,7 +4589,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 3036
+    .line 2988
     iget-object v5, p0, Lcom/android/server/notification/NotificationManagerService;->mNotificationList:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -4657,7 +4598,7 @@
 
     check-cast v3, Lcom/android/server/notification/NotificationRecord;
 
-    .line 3037
+    .line 2989
     .local v3, "r":Lcom/android/server/notification/NotificationRecord;
     invoke-virtual {v3}, Lcom/android/server/notification/NotificationRecord;->getKey()Ljava/lang/String;
 
@@ -4665,24 +4606,24 @@
 
     invoke-virtual {v2, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3038
+    .line 2990
     invoke-virtual {v3}, Lcom/android/server/notification/NotificationRecord;->getPackageVisibilityOverride()I
 
     move-result v5
 
     aput v5, v4, v1
 
-    .line 3039
+    .line 2991
     iget-object v5, p0, Lcom/android/server/notification/NotificationManagerService;->mRankingHelper:Lcom/android/server/notification/RankingHelper;
 
     invoke-virtual {v5, v3}, Lcom/android/server/notification/RankingHelper;->extractSignals(Lcom/android/server/notification/NotificationRecord;)V
 
-    .line 3035
+    .line 2987
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 3041
+    .line 2993
     .end local v3    # "r":Lcom/android/server/notification/NotificationRecord;
     :cond_0
     const/4 v1, 0x0
@@ -4690,14 +4631,14 @@
     :goto_1
     if-ge v1, v0, :cond_3
 
-    .line 3042
+    .line 2994
     iget-object v5, p0, Lcom/android/server/notification/NotificationManagerService;->mRankingHelper:Lcom/android/server/notification/RankingHelper;
 
     iget-object v7, p0, Lcom/android/server/notification/NotificationManagerService;->mNotificationList:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v7}, Lcom/android/server/notification/RankingHelper;->sort(Ljava/util/ArrayList;)V
 
-    .line 3043
+    .line 2995
     iget-object v5, p0, Lcom/android/server/notification/NotificationManagerService;->mNotificationList:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -4706,7 +4647,7 @@
 
     check-cast v3, Lcom/android/server/notification/NotificationRecord;
 
-    .line 3044
+    .line 2996
     .restart local v3    # "r":Lcom/android/server/notification/NotificationRecord;
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -4724,7 +4665,7 @@
 
     if-eqz v5, :cond_1
 
-    .line 3045
+    .line 2997
     aget v5, v4, v1
 
     invoke-virtual {v3}, Lcom/android/server/notification/NotificationRecord;->getPackageVisibilityOverride()I
@@ -4733,7 +4674,7 @@
 
     if-eq v5, v7, :cond_2
 
-    .line 3046
+    .line 2998
     :cond_1
     invoke-direct {p0}, Lcom/android/server/notification/NotificationManagerService;->scheduleSendRankingUpdate()V
     :try_end_0
@@ -4741,10 +4682,10 @@
 
     monitor-exit v6
 
-    .line 3047
+    .line 2999
     return-void
 
-    .line 3041
+    .line 2993
     :cond_2
     add-int/lit8 v1, v1, 0x1
 
@@ -4754,10 +4695,10 @@
     :cond_3
     monitor-exit v6
 
-    .line 3030
+    .line 2982
     return-void
 
-    .line 3031
+    .line 2983
     .end local v0    # "N":I
     .end local v1    # "i":I
     .end local v2    # "orderBefore":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
@@ -4775,7 +4716,7 @@
     .param p1, "message"    # Landroid/os/Message;
 
     .prologue
-    .line 3001
+    .line 2953
     iget-object v9, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     instance-of v9, v9, Lcom/android/server/notification/RankingReconsideration;
@@ -4784,22 +4725,22 @@
 
     return-void
 
-    .line 3002
+    .line 2954
     :cond_0
     iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v5, Lcom/android/server/notification/RankingReconsideration;
 
-    .line 3003
+    .line 2955
     .local v5, "recon":Lcom/android/server/notification/RankingReconsideration;
     invoke-virtual {v5}, Lcom/android/server/notification/RankingReconsideration;->run()V
 
-    .line 3005
+    .line 2957
     iget-object v10, p0, Lcom/android/server/notification/NotificationManagerService;->mNotificationList:Ljava/util/ArrayList;
 
     monitor-enter v10
 
-    .line 3006
+    .line 2958
     :try_start_0
     iget-object v9, p0, Lcom/android/server/notification/NotificationManagerService;->mNotificationsByKey:Landroid/util/ArrayMap;
 
@@ -4815,60 +4756,60 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 3007
+    .line 2959
     .local v6, "record":Lcom/android/server/notification/NotificationRecord;
     if-nez v6, :cond_1
 
     monitor-exit v10
 
-    .line 3008
+    .line 2960
     return-void
 
-    .line 3010
+    .line 2962
     :cond_1
     :try_start_1
     invoke-direct {p0, v6}, Lcom/android/server/notification/NotificationManagerService;->findNotificationRecordIndexLocked(Lcom/android/server/notification/NotificationRecord;)I
 
     move-result v2
 
-    .line 3011
+    .line 2963
     .local v2, "indexBefore":I
     invoke-virtual {v6}, Lcom/android/server/notification/NotificationRecord;->isIntercepted()Z
 
     move-result v4
 
-    .line 3012
+    .line 2964
     .local v4, "interceptBefore":Z
     invoke-virtual {v6}, Lcom/android/server/notification/NotificationRecord;->getPackageVisibilityOverride()I
 
     move-result v8
 
-    .line 3013
+    .line 2965
     .local v8, "visibilityBefore":I
     invoke-virtual {v5, v6}, Lcom/android/server/notification/RankingReconsideration;->applyChangesLocked(Lcom/android/server/notification/NotificationRecord;)V
 
-    .line 3014
+    .line 2966
     invoke-direct {p0, v6}, Lcom/android/server/notification/NotificationManagerService;->applyZenModeLocked(Lcom/android/server/notification/NotificationRecord;)V
 
-    .line 3015
+    .line 2967
     iget-object v9, p0, Lcom/android/server/notification/NotificationManagerService;->mRankingHelper:Lcom/android/server/notification/RankingHelper;
 
     iget-object v11, p0, Lcom/android/server/notification/NotificationManagerService;->mNotificationList:Ljava/util/ArrayList;
 
     invoke-virtual {v9, v11}, Lcom/android/server/notification/RankingHelper;->sort(Ljava/util/ArrayList;)V
 
-    .line 3016
+    .line 2968
     invoke-direct {p0, v6}, Lcom/android/server/notification/NotificationManagerService;->findNotificationRecordIndexLocked(Lcom/android/server/notification/NotificationRecord;)I
 
     move-result v1
 
-    .line 3017
+    .line 2969
     .local v1, "indexAfter":I
     invoke-virtual {v6}, Lcom/android/server/notification/NotificationRecord;->isIntercepted()Z
 
     move-result v3
 
-    .line 3018
+    .line 2970
     .local v3, "interceptAfter":Z
     invoke-virtual {v6}, Lcom/android/server/notification/NotificationRecord;->getPackageVisibilityOverride()I
     :try_end_1
@@ -4876,7 +4817,7 @@
 
     move-result v7
 
-    .line 3019
+    .line 2971
     .local v7, "visibilityAfter":I
     if-ne v2, v1, :cond_2
 
@@ -4885,7 +4826,7 @@
     :cond_2
     const/4 v0, 0x1
 
-    .line 3021
+    .line 2973
     .local v0, "changed":Z
     :goto_0
     if-eqz v4, :cond_3
@@ -4896,17 +4837,17 @@
     :goto_1
     monitor-exit v10
 
-    .line 3025
+    .line 2977
     if-eqz v0, :cond_4
 
-    .line 3026
+    .line 2978
     invoke-direct {p0}, Lcom/android/server/notification/NotificationManagerService;->scheduleSendRankingUpdate()V
 
-    .line 3000
+    .line 2952
     :cond_4
     return-void
 
-    .line 3020
+    .line 2972
     .end local v0    # "changed":Z
     :cond_5
     if-eq v8, v7, :cond_6
@@ -4923,7 +4864,7 @@
     .restart local v0    # "changed":Z
     goto :goto_0
 
-    .line 3022
+    .line 2974
     :cond_7
     :try_start_2
     invoke-direct {p0, v6}, Lcom/android/server/notification/NotificationManagerService;->buzzBeepBlinkLocked(Lcom/android/server/notification/NotificationRecord;)V
@@ -4932,7 +4873,7 @@
 
     goto :goto_1
 
-    .line 3005
+    .line 2957
     .end local v0    # "changed":Z
     .end local v1    # "indexAfter":I
     .end local v2    # "indexBefore":I
@@ -4953,7 +4894,7 @@
     .locals 5
 
     .prologue
-    .line 469
+    .line 466
     sget-boolean v2, Lcom/android/server/notification/NotificationManagerService;->DBG:Z
 
     if-eqz v2, :cond_0
@@ -4964,13 +4905,13 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 470
+    .line 467
     :cond_0
     iget-object v3, p0, Lcom/android/server/notification/NotificationManagerService;->mPolicyFile:Landroid/util/AtomicFile;
 
     monitor-enter v3
 
-    .line 473
+    .line 470
     :try_start_0
     iget-object v2, p0, Lcom/android/server/notification/NotificationManagerService;->mPolicyFile:Landroid/util/AtomicFile;
 
@@ -4981,14 +4922,14 @@
 
     move-result-object v1
 
-    .line 480
+    .line 477
     .local v1, "stream":Ljava/io/FileOutputStream;
     const/4 v2, 0x0
 
     :try_start_1
     invoke-direct {p0, v1, v2}, Lcom/android/server/notification/NotificationManagerService;->writePolicyXml(Ljava/io/OutputStream;Z)V
 
-    .line 481
+    .line 478
     iget-object v2, p0, Lcom/android/server/notification/NotificationManagerService;->mPolicyFile:Landroid/util/AtomicFile;
 
     invoke-virtual {v2, v1}, Landroid/util/AtomicFile;->finishWrite(Ljava/io/FileOutputStream;)V
@@ -4999,7 +4940,7 @@
     :goto_0
     monitor-exit v3
 
-    .line 487
+    .line 484
     invoke-virtual {p0}, Lcom/android/server/notification/NotificationManagerService;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -5010,15 +4951,15 @@
 
     invoke-static {v2}, Landroid/app/backup/BackupManager;->dataChanged(Ljava/lang/String;)V
 
-    .line 468
+    .line 465
     return-void
 
-    .line 474
+    .line 471
     .end local v1    # "stream":Ljava/io/FileOutputStream;
     :catch_0
     move-exception v0
 
-    .line 475
+    .line 472
     .local v0, "e":Ljava/io/IOException;
     :try_start_2
     const-string/jumbo v2, "NotificationService"
@@ -5031,16 +4972,16 @@
 
     monitor-exit v3
 
-    .line 476
+    .line 473
     return-void
 
-    .line 482
+    .line 479
     .end local v0    # "e":Ljava/io/IOException;
     .restart local v1    # "stream":Ljava/io/FileOutputStream;
     :catch_1
     move-exception v0
 
-    .line 483
+    .line 480
     .restart local v0    # "e":Ljava/io/IOException;
     :try_start_3
     const-string/jumbo v2, "NotificationService"
@@ -5049,7 +4990,7 @@
 
     invoke-static {v2, v4, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 484
+    .line 481
     iget-object v2, p0, Lcom/android/server/notification/NotificationManagerService;->mPolicyFile:Landroid/util/AtomicFile;
 
     invoke-virtual {v2, v1}, Landroid/util/AtomicFile;->failWrite(Ljava/io/FileOutputStream;)V
@@ -5058,7 +4999,7 @@
 
     goto :goto_0
 
-    .line 470
+    .line 467
     .end local v0    # "e":Ljava/io/IOException;
     .end local v1    # "stream":Ljava/io/FileOutputStream;
     :catchall_0
@@ -5073,12 +5014,12 @@
     .locals 2
 
     .prologue
-    .line 3070
+    .line 3022
     iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService;->mNotificationList:Ljava/util/ArrayList;
 
     monitor-enter v1
 
-    .line 3071
+    .line 3023
     :try_start_0
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mListeners:Lcom/android/server/notification/NotificationManagerService$NotificationListeners;
 
@@ -5088,10 +5029,10 @@
 
     monitor-exit v1
 
-    .line 3069
+    .line 3021
     return-void
 
-    .line 3070
+    .line 3022
     :catchall_0
     move-exception v0
 
@@ -5105,7 +5046,7 @@
     .param p1, "record"    # Lcom/android/server/notification/NotificationManagerService$ToastRecord;
 
     .prologue
-    .line 2957
+    .line 2909
     sget-boolean v1, Lcom/android/server/notification/NotificationManagerService;->DBG:Z
 
     if-eqz v1, :cond_0
@@ -5146,13 +5087,13 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2958
+    .line 2910
     :cond_0
     iget-object v2, p0, Lcom/android/server/notification/NotificationManagerService;->mToastQueue:Ljava/util/ArrayList;
 
     monitor-enter v2
 
-    .line 2959
+    .line 2911
     :try_start_0
     iget-object v1, p1, Lcom/android/server/notification/NotificationManagerService$ToastRecord;->pkg:Ljava/lang/String;
 
@@ -5162,11 +5103,11 @@
 
     move-result v0
 
-    .line 2960
+    .line 2912
     .local v0, "index":I
     if-ltz v0, :cond_1
 
-    .line 2961
+    .line 2913
     invoke-virtual {p0, v0}, Lcom/android/server/notification/NotificationManagerService;->cancelToastLocked(I)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -5174,10 +5115,10 @@
     :cond_1
     monitor-exit v2
 
-    .line 2955
+    .line 2907
     return-void
 
-    .line 2958
+    .line 2910
     .end local v0    # "index":I
     :catchall_0
     move-exception v1
@@ -5191,10 +5132,10 @@
     .locals 7
 
     .prologue
-    .line 1333
+    .line 1320
     invoke-direct {p0}, Lcom/android/server/notification/NotificationManagerService;->loadPolicyFile()V
 
-    .line 1335
+    .line 1322
     invoke-virtual {p0}, Lcom/android/server/notification/NotificationManagerService;->getContext()Landroid/content/Context;
 
     move-result-object v5
@@ -5203,7 +5144,7 @@
 
     move-result-object v4
 
-    .line 1336
+    .line 1323
     .local v4, "pm":Landroid/content/pm/PackageManager;
     iget-object v5, p0, Lcom/android/server/notification/NotificationManagerService;->mBlockedPackages:Ljava/util/HashSet;
 
@@ -5225,11 +5166,11 @@
 
     check-cast v2, Ljava/lang/String;
 
-    .line 1337
+    .line 1324
     .local v2, "pkg":Ljava/lang/String;
     const/4 v1, 0x0
 
-    .line 1339
+    .line 1326
     .local v1, "info":Landroid/content/pm/PackageInfo;
     const/4 v5, 0x0
 
@@ -5238,7 +5179,7 @@
 
     move-result-object v1
 
-    .line 1340
+    .line 1327
     .local v1, "info":Landroid/content/pm/PackageInfo;
     iget-object v5, v1, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
@@ -5252,7 +5193,7 @@
 
     goto :goto_0
 
-    .line 1341
+    .line 1328
     .end local v1    # "info":Landroid/content/pm/PackageInfo;
     :catch_0
     move-exception v0
@@ -5260,7 +5201,7 @@
     .local v0, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     goto :goto_0
 
-    .line 1345
+    .line 1332
     .end local v0    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     .end local v2    # "pkg":Ljava/lang/String;
     :cond_0
@@ -5268,7 +5209,7 @@
 
     invoke-virtual {v5}, Ljava/util/HashSet;->clear()V
 
-    .line 1332
+    .line 1319
     return-void
 .end method
 
@@ -5276,7 +5217,7 @@
     .locals 1
 
     .prologue
-    .line 3666
+    .line 3618
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v0
@@ -5295,23 +5236,23 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 3479
+    .line 3431
     if-eqz p1, :cond_0
 
-    .line 3480
+    .line 3432
     iget-object v1, p1, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
 
     invoke-virtual {v1}, Landroid/service/notification/StatusBarNotification;->getNotification()Landroid/app/Notification;
 
     move-result-object v0
 
-    .line 3481
+    .line 3433
     .local v0, "n":Landroid/app/Notification;
     iget-object v1, v0, Landroid/app/Notification;->extras:Landroid/os/Bundle;
 
     if-eqz v1, :cond_0
 
-    .line 3482
+    .line 3434
     iget-object v1, v0, Landroid/app/Notification;->extras:Landroid/os/Bundle;
 
     const-string/jumbo v2, "android.forceShowLights"
@@ -5322,7 +5263,7 @@
 
     return v1
 
-    .line 3485
+    .line 3437
     .end local v0    # "n":Landroid/app/Notification;
     :cond_0
     return v3
@@ -5336,24 +5277,24 @@
     .prologue
     const/4 v7, -0x1
 
-    .line 3157
+    .line 3109
     invoke-static {p1}, Lcom/android/internal/util/cm/SpamFilter;->getNormalizedNotificationContent(Landroid/app/Notification;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 3159
+    .line 3111
     .local v0, "normalizedContent":Ljava/lang/CharSequence;
     invoke-direct {p0, v0, p2}, Lcom/android/server/notification/NotificationManagerService;->getSpamCacheHash(Ljava/lang/CharSequence;Ljava/lang/String;)I
 
     move-result v2
 
-    .line 3161
+    .line 3113
     .local v2, "notificationHash":I
     iget-object v5, p0, Lcom/android/server/notification/NotificationManagerService;->mSpamCache:Landroid/util/SparseIntArray;
 
     monitor-enter v5
 
-    .line 3162
+    .line 3114
     :try_start_0
     iget-object v4, p0, Lcom/android/server/notification/NotificationManagerService;->mSpamCache:Landroid/util/SparseIntArray;
 
@@ -5368,15 +5309,15 @@
     .local v3, "notificationId":I
     monitor-exit v5
 
-    .line 3164
+    .line 3116
     if-eq v3, v7, :cond_0
 
-    .line 3165
+    .line 3117
     invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 3166
+    .line 3118
     .local v1, "notifIdString":Ljava/lang/String;
     iget-object v4, p0, Lcom/android/server/notification/NotificationManagerService;->mSpamExecutor:Ljava/util/concurrent/ExecutorService;
 
@@ -5386,7 +5327,7 @@
 
     invoke-interface {v4, v5}, Ljava/util/concurrent/ExecutorService;->submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;
 
-    .line 3176
+    .line 3128
     .end local v1    # "notifIdString":Ljava/lang/String;
     :cond_0
     if-eq v3, v7, :cond_1
@@ -5396,7 +5337,7 @@
     :goto_0
     return v4
 
-    .line 3161
+    .line 3113
     .end local v3    # "notificationId":I
     :catchall_0
     move-exception v4
@@ -5405,7 +5346,7 @@
 
     throw v4
 
-    .line 3176
+    .line 3128
     .restart local v3    # "notificationId":I
     :cond_1
     const/4 v4, 0x0
@@ -5422,12 +5363,12 @@
 
     const/4 v2, 0x0
 
-    .line 3661
+    .line 3613
     invoke-static {p0}, Landroid/os/UserHandle;->getAppId(I)I
 
     move-result v0
 
-    .line 3662
+    .line 3614
     .local v0, "appid":I
     const/16 v3, 0x3e8
 
@@ -5455,7 +5396,7 @@
     .param p2, "listener"    # Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;
 
     .prologue
-    .line 3762
+    .line 3714
     invoke-virtual {p1}, Landroid/service/notification/StatusBarNotification;->getUserId()I
 
     move-result v0
@@ -5466,12 +5407,12 @@
 
     if-nez v0, :cond_0
 
-    .line 3763
+    .line 3715
     const/4 v0, 0x0
 
     return v0
 
-    .line 3766
+    .line 3718
     :cond_0
     const/4 v0, 0x1
 
@@ -5482,7 +5423,7 @@
     .locals 3
 
     .prologue
-    .line 3706
+    .line 3658
     invoke-virtual {p0}, Lcom/android/server/notification/NotificationManagerService;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -5495,13 +5436,13 @@
 
     invoke-direct {v1, p0}, Lcom/android/server/notification/NotificationManagerService$12;-><init>(Lcom/android/server/notification/NotificationManagerService;)V
 
-    .line 3713
+    .line 3665
     const/16 v2, 0x20
 
-    .line 3706
+    .line 3658
     invoke-virtual {v0, v1, v2}, Landroid/telephony/TelephonyManager;->listen(Landroid/telephony/PhoneStateListener;I)V
 
-    .line 3705
+    .line 3657
     return-void
 .end method
 
@@ -5509,7 +5450,7 @@
     .locals 8
 
     .prologue
-    .line 441
+    .line 438
     sget-boolean v5, Lcom/android/server/notification/NotificationManagerService;->DBG:Z
 
     if-eqz v5, :cond_0
@@ -5520,13 +5461,13 @@
 
     invoke-static {v5, v6}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 442
+    .line 439
     :cond_0
     iget-object v6, p0, Lcom/android/server/notification/NotificationManagerService;->mPolicyFile:Landroid/util/AtomicFile;
 
     monitor-enter v6
 
-    .line 443
+    .line 440
     :try_start_0
     iget-object v5, p0, Lcom/android/server/notification/NotificationManagerService;->mBlockedPackages:Ljava/util/HashSet;
 
@@ -5534,10 +5475,10 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 445
+    .line 442
     const/4 v4, 0x0
 
-    .line 447
+    .line 444
     .local v4, "infile":Ljava/io/FileInputStream;
     :try_start_1
     iget-object v5, p0, Lcom/android/server/notification/NotificationManagerService;->mPolicyFile:Landroid/util/AtomicFile;
@@ -5546,7 +5487,7 @@
 
     move-result-object v4
 
-    .line 448
+    .line 445
     .local v4, "infile":Ljava/io/FileInputStream;
     const/4 v5, 0x0
 
@@ -5558,7 +5499,7 @@
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 458
+    .line 455
     :try_start_2
     invoke-static {v4}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
     :try_end_2
@@ -5568,14 +5509,14 @@
     :goto_0
     monitor-exit v6
 
-    .line 440
+    .line 437
     return-void
 
-    .line 455
+    .line 452
     :catch_0
     move-exception v3
 
-    .line 456
+    .line 453
     .local v3, "e":Lorg/xmlpull/v1/XmlPullParserException;
     :try_start_3
     const-string/jumbo v5, "NotificationService"
@@ -5586,7 +5527,7 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    .line 458
+    .line 455
     :try_start_4
     invoke-static {v4}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
     :try_end_4
@@ -5594,7 +5535,7 @@
 
     goto :goto_0
 
-    .line 442
+    .line 439
     .end local v3    # "e":Lorg/xmlpull/v1/XmlPullParserException;
     :catchall_0
     move-exception v5
@@ -5603,11 +5544,11 @@
 
     throw v5
 
-    .line 453
+    .line 450
     :catch_1
     move-exception v2
 
-    .line 454
+    .line 451
     .local v2, "e":Ljava/lang/NumberFormatException;
     :try_start_5
     const-string/jumbo v5, "NotificationService"
@@ -5618,7 +5559,7 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    .line 458
+    .line 455
     :try_start_6
     invoke-static {v4}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
     :try_end_6
@@ -5626,12 +5567,12 @@
 
     goto :goto_0
 
-    .line 451
+    .line 448
     .end local v2    # "e":Ljava/lang/NumberFormatException;
     :catch_2
     move-exception v1
 
-    .line 452
+    .line 449
     .local v1, "e":Ljava/io/IOException;
     :try_start_7
     const-string/jumbo v5, "NotificationService"
@@ -5642,32 +5583,32 @@
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_1
 
-    .line 458
+    .line 455
     :try_start_8
     invoke-static {v4}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
     goto :goto_0
 
-    .line 449
+    .line 446
     .end local v1    # "e":Ljava/io/IOException;
     :catch_3
     move-exception v0
 
-    .line 458
+    .line 455
     .local v0, "e":Ljava/io/FileNotFoundException;
     invoke-static {v4}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
     goto :goto_0
 
-    .line 457
+    .line 454
     .end local v0    # "e":Ljava/io/FileNotFoundException;
     :catchall_1
     move-exception v5
 
-    .line 458
+    .line 455
     invoke-static {v4}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
-    .line 457
+    .line 454
     throw v5
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_0
@@ -5678,10 +5619,10 @@
     .param p1, "info"    # Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;
 
     .prologue
-    .line 3723
+    .line 3675
     const/4 v7, -0x1
 
-    .line 3724
+    .line 3676
     .local v7, "speedBumpIndex":I
     iget-object v9, p0, Lcom/android/server/notification/NotificationManagerService;->mNotificationList:Ljava/util/ArrayList;
 
@@ -5689,25 +5630,25 @@
 
     move-result v0
 
-    .line 3725
+    .line 3677
     .local v0, "N":I
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 3726
+    .line 3678
     .local v4, "keys":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 3727
+    .line 3679
     .local v2, "interceptedKeys":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     new-instance v8, Landroid/os/Bundle;
 
     invoke-direct {v8}, Landroid/os/Bundle;-><init>()V
 
-    .line 3728
+    .line 3680
     .local v8, "visibilityOverrides":Landroid/os/Bundle;
     const/4 v1, 0x0
 
@@ -5715,7 +5656,7 @@
     :goto_0
     if-ge v1, v0, :cond_4
 
-    .line 3729
+    .line 3681
     iget-object v9, p0, Lcom/android/server/notification/NotificationManagerService;->mNotificationList:Ljava/util/ArrayList;
 
     invoke-virtual {v9, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -5724,7 +5665,7 @@
 
     check-cast v6, Lcom/android/server/notification/NotificationRecord;
 
-    .line 3730
+    .line 3682
     .local v6, "record":Lcom/android/server/notification/NotificationRecord;
     iget-object v9, v6, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
 
@@ -5734,14 +5675,14 @@
 
     if-nez v9, :cond_1
 
-    .line 3728
+    .line 3680
     :cond_0
     :goto_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 3733
+    .line 3685
     :cond_1
     iget-object v9, v6, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
 
@@ -5751,14 +5692,14 @@
 
     invoke-virtual {v4, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3734
+    .line 3686
     invoke-virtual {v6}, Lcom/android/server/notification/NotificationRecord;->isIntercepted()Z
 
     move-result v9
 
     if-eqz v9, :cond_2
 
-    .line 3735
+    .line 3687
     iget-object v9, v6, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
 
     invoke-virtual {v9}, Landroid/service/notification/StatusBarNotification;->getKey()Ljava/lang/String;
@@ -5767,54 +5708,54 @@
 
     invoke-virtual {v2, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3737
+    .line 3689
     :cond_2
     invoke-virtual {v6}, Lcom/android/server/notification/NotificationRecord;->getPackageVisibilityOverride()I
 
     move-result v9
 
-    .line 3738
+    .line 3690
     const/16 v10, -0x3e8
 
-    .line 3737
+    .line 3689
     if-eq v9, v10, :cond_3
 
-    .line 3739
+    .line 3691
     iget-object v9, v6, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
 
     invoke-virtual {v9}, Landroid/service/notification/StatusBarNotification;->getKey()Ljava/lang/String;
 
     move-result-object v9
 
-    .line 3740
+    .line 3692
     invoke-virtual {v6}, Lcom/android/server/notification/NotificationRecord;->getPackageVisibilityOverride()I
 
     move-result v10
 
-    .line 3739
+    .line 3691
     invoke-virtual {v8, v9, v10}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 3743
+    .line 3695
     :cond_3
     const/4 v9, -0x1
 
     if-ne v7, v9, :cond_0
 
-    .line 3745
+    .line 3697
     invoke-virtual {v6}, Lcom/android/server/notification/NotificationRecord;->isRecentlyIntrusive()Z
 
     move-result v9
 
     if-nez v9, :cond_0
 
-    .line 3750
+    .line 3702
     invoke-virtual {v6}, Lcom/android/server/notification/NotificationRecord;->getPackagePriority()I
 
     move-result v9
 
     if-gtz v9, :cond_0
 
-    .line 3751
+    .line 3703
     iget-object v9, v6, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
 
     invoke-virtual {v9}, Landroid/service/notification/StatusBarNotification;->getNotification()Landroid/app/Notification;
@@ -5827,7 +5768,7 @@
 
     if-ne v9, v10, :cond_0
 
-    .line 3752
+    .line 3704
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v9
@@ -5836,7 +5777,7 @@
 
     goto :goto_1
 
-    .line 3755
+    .line 3707
     .end local v6    # "record":Lcom/android/server/notification/NotificationRecord;
     :cond_4
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
@@ -5851,7 +5792,7 @@
 
     check-cast v5, [Ljava/lang/String;
 
-    .line 3756
+    .line 3708
     .local v5, "keysAr":[Ljava/lang/String;
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
@@ -5865,7 +5806,7 @@
 
     check-cast v3, [Ljava/lang/String;
 
-    .line 3757
+    .line 3709
     .local v3, "interceptedKeysAr":[Ljava/lang/String;
     new-instance v9, Landroid/service/notification/NotificationRankingUpdate;
 
@@ -5879,7 +5820,7 @@
     .param p1, "pkg"    # Ljava/lang/String;
 
     .prologue
-    .line 3622
+    .line 3574
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mPackageNameMappings:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
@@ -5888,10 +5829,10 @@
 
     if-nez v0, :cond_0
 
-    .line 3623
+    .line 3575
     return-object p1
 
-    .line 3625
+    .line 3577
     :cond_0
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mPackageNameMappings:Ljava/util/Map;
 
@@ -5912,7 +5853,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 507
+    .line 504
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mAppOps:Landroid/app/AppOpsManager;
 
     const/16 v1, 0xb
@@ -5923,7 +5864,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 509
+    .line 506
     const-string/jumbo v0, "NotificationService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -5946,105 +5887,14 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 510
+    .line 507
     return v3
 
-    .line 512
+    .line 509
     :cond_0
     const/4 v0, 0x1
 
     return v0
-.end method
-
-.method private notificationIsAnnoying(Ljava/lang/String;)Z
-    .locals 7
-    .param p1, "pkg"    # Ljava/lang/String;
-
-    .prologue
-    const/4 v6, 0x0
-
-    .line 2697
-    if-eqz p1, :cond_0
-
-    .line 2698
-    iget-wide v2, p0, Lcom/android/server/notification/NotificationManagerService;->mAnnoyingNotificationThreshold:J
-
-    const-wide/16 v4, 0x0
-
-    cmp-long v2, v2, v4
-
-    if-gtz v2, :cond_1
-
-    .line 2700
-    :cond_0
-    return v6
-
-    .line 2699
-    :cond_1
-    const-string/jumbo v2, "android"
-
-    invoke-virtual {v2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    .line 2697
-    if-nez v2, :cond_0
-
-    .line 2703
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v0
-
-    .line 2704
-    .local v0, "currentTime":J
-    iget-object v2, p0, Lcom/android/server/notification/NotificationManagerService;->mAnnoyingNotifications:Ljava/util/HashMap;
-
-    invoke-virtual {v2, p1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    .line 2705
-    iget-object v2, p0, Lcom/android/server/notification/NotificationManagerService;->mAnnoyingNotifications:Ljava/util/HashMap;
-
-    invoke-virtual {v2, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/Long;
-
-    invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v2
-
-    sub-long v2, v0, v2
-
-    .line 2706
-    iget-wide v4, p0, Lcom/android/server/notification/NotificationManagerService;->mAnnoyingNotificationThreshold:J
-
-    .line 2705
-    cmp-long v2, v2, v4
-
-    if-gez v2, :cond_2
-
-    .line 2708
-    const/4 v2, 0x1
-
-    return v2
-
-    .line 2711
-    :cond_2
-    iget-object v2, p0, Lcom/android/server/notification/NotificationManagerService;->mAnnoyingNotifications:Ljava/util/HashMap;
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v3
-
-    invoke-virtual {v2, p1, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 2712
-    return v6
 .end method
 
 .method private notificationMatchesCurrentProfiles(Lcom/android/server/notification/NotificationRecord;I)Z
@@ -6053,14 +5903,14 @@
     .param p2, "userId"    # I
 
     .prologue
-    .line 3348
+    .line 3300
     invoke-direct {p0, p1, p2}, Lcom/android/server/notification/NotificationManagerService;->notificationMatchesUserId(Lcom/android/server/notification/NotificationRecord;I)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 3349
+    .line 3301
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mUserProfiles:Lcom/android/server/notification/ManagedServices$UserProfiles;
 
     invoke-virtual {p1}, Lcom/android/server/notification/NotificationRecord;->getUserId()I
@@ -6071,7 +5921,7 @@
 
     move-result v0
 
-    .line 3348
+    .line 3300
     :goto_0
     return v0
 
@@ -6091,22 +5941,22 @@
 
     const/4 v2, -0x1
 
-    .line 3335
+    .line 3287
     if-eq p2, v2, :cond_0
 
-    .line 3337
+    .line 3289
     invoke-virtual {p1}, Lcom/android/server/notification/NotificationRecord;->getUserId()I
 
     move-result v1
 
     if-ne v1, v2, :cond_1
 
-    .line 3333
+    .line 3285
     :cond_0
     :goto_0
     return v0
 
-    .line 3339
+    .line 3291
     :cond_1
     invoke-virtual {p1}, Lcom/android/server/notification/NotificationRecord;->getUserId()I
 
@@ -6124,17 +5974,17 @@
     .param p1, "customLedValuesString"    # Ljava/lang/String;
 
     .prologue
-    .line 3555
+    .line 3507
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v6
 
     if-eqz v6, :cond_0
 
-    .line 3556
+    .line 3508
     return-void
 
-    .line 3559
+    .line 3511
     :cond_0
     const-string/jumbo v6, "\\|"
 
@@ -6151,7 +6001,7 @@
 
     aget-object v4, v7, v6
 
-    .line 3560
+    .line 3512
     .local v4, "packageValuesString":Ljava/lang/String;
     const-string/jumbo v9, "="
 
@@ -6159,7 +6009,7 @@
 
     move-result-object v3
 
-    .line 3561
+    .line 3513
     .local v3, "packageValues":[Ljava/lang/String;
     array-length v9, v3
 
@@ -6167,26 +6017,26 @@
 
     if-eq v9, v10, :cond_1
 
-    .line 3562
+    .line 3514
     const-string/jumbo v9, "NotificationService"
 
     const-string/jumbo v10, "Error parsing custom led values for unknown package"
 
     invoke-static {v9, v10}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3559
+    .line 3511
     :goto_1
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
 
-    .line 3565
+    .line 3517
     :cond_1
     const/4 v9, 0x0
 
     aget-object v2, v3, v9
 
-    .line 3566
+    .line 3518
     .local v2, "packageName":Ljava/lang/String;
     const/4 v9, 0x1
 
@@ -6198,7 +6048,7 @@
 
     move-result-object v5
 
-    .line 3567
+    .line 3519
     .local v5, "values":[Ljava/lang/String;
     array-length v9, v5
 
@@ -6206,7 +6056,7 @@
 
     if-eq v9, v10, :cond_2
 
-    .line 3568
+    .line 3520
     const-string/jumbo v9, "NotificationService"
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -6219,20 +6069,20 @@
 
     move-result-object v10
 
-    .line 3569
+    .line 3521
     const/4 v11, 0x1
 
     aget-object v11, v3, v11
 
-    .line 3568
+    .line 3520
     invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v10
 
-    .line 3569
+    .line 3521
     const-string/jumbo v11, "\' for "
 
-    .line 3568
+    .line 3520
     invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -6249,13 +6099,13 @@
 
     goto :goto_1
 
-    .line 3572
+    .line 3524
     :cond_2
     new-instance v1, Lcom/android/server/notification/NotificationManagerService$NotificationLedValues;
 
     invoke-direct {v1, p0}, Lcom/android/server/notification/NotificationManagerService$NotificationLedValues;-><init>(Lcom/android/server/notification/NotificationManagerService;)V
 
-    .line 3574
+    .line 3526
     .local v1, "ledValues":Lcom/android/server/notification/NotificationManagerService$NotificationLedValues;
     const/4 v9, 0x0
 
@@ -6268,7 +6118,7 @@
 
     iput v9, v1, Lcom/android/server/notification/NotificationManagerService$NotificationLedValues;->color:I
 
-    .line 3575
+    .line 3527
     const/4 v9, 0x1
 
     aget-object v9, v5, v9
@@ -6279,7 +6129,7 @@
 
     iput v9, v1, Lcom/android/server/notification/NotificationManagerService$NotificationLedValues;->onMS:I
 
-    .line 3576
+    .line 3528
     const/4 v9, 0x2
 
     aget-object v9, v5, v9
@@ -6292,18 +6142,18 @@
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3582
+    .line 3534
     iget-object v9, p0, Lcom/android/server/notification/NotificationManagerService;->mNotificationPulseCustomLedValues:Ljava/util/HashMap;
 
     invoke-virtual {v9, v2, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_1
 
-    .line 3577
+    .line 3529
     :catch_0
     move-exception v0
 
-    .line 3578
+    .line 3530
     .local v0, "e":Ljava/lang/NumberFormatException;
     const-string/jumbo v9, "NotificationService"
 
@@ -6317,20 +6167,20 @@
 
     move-result-object v10
 
-    .line 3579
+    .line 3531
     const/4 v11, 0x1
 
     aget-object v11, v3, v11
 
-    .line 3578
+    .line 3530
     invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v10
 
-    .line 3579
+    .line 3531
     const-string/jumbo v11, "\' for "
 
-    .line 3578
+    .line 3530
     invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v10
@@ -6347,7 +6197,7 @@
 
     goto/16 :goto_1
 
-    .line 3554
+    .line 3506
     .end local v0    # "e":Ljava/lang/NumberFormatException;
     .end local v1    # "ledValues":Lcom/android/server/notification/NotificationManagerService$NotificationLedValues;
     .end local v2    # "packageName":Ljava/lang/String;
@@ -6375,12 +6225,12 @@
 
     const/4 v6, 0x1
 
-    .line 411
+    .line 408
     invoke-static {}, Landroid/util/Xml;->newPullParser()Lorg/xmlpull/v1/XmlPullParser;
 
     move-result-object v0
 
-    .line 412
+    .line 409
     .local v0, "parser":Lorg/xmlpull/v1/XmlPullParser;
     sget-object v4, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
@@ -6390,10 +6240,10 @@
 
     invoke-interface {v0, p1, v4}, Lorg/xmlpull/v1/XmlPullParser;->setInput(Ljava/io/InputStream;Ljava/lang/String;)V
 
-    .line 416
+    .line 413
     const/4 v3, 0x1
 
-    .line 417
+    .line 414
     .local v3, "version":I
     :goto_0
     invoke-interface {v0}, Lorg/xmlpull/v1/XmlPullParser;->next()I
@@ -6403,18 +6253,18 @@
     .local v2, "type":I
     if-eq v2, v6, :cond_4
 
-    .line 418
+    .line 415
     invoke-interface {v0}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 419
+    .line 416
     .local v1, "tag":Ljava/lang/String;
     const/4 v4, 0x2
 
     if-ne v2, v4, :cond_0
 
-    .line 420
+    .line 417
     const-string/jumbo v4, "notification-policy"
 
     invoke-virtual {v4, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -6423,33 +6273,33 @@
 
     if-eqz v4, :cond_1
 
-    .line 422
+    .line 419
     const-string/jumbo v4, "version"
 
     invoke-interface {v0, v7, v4}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 421
+    .line 418
     invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v3
 
-    .line 435
+    .line 432
     :cond_0
     :goto_1
     iget-object v4, p0, Lcom/android/server/notification/NotificationManagerService;->mZenModeHelper:Lcom/android/server/notification/ZenModeHelper;
 
     invoke-virtual {v4, v0, p2}, Lcom/android/server/notification/ZenModeHelper;->readXml(Lorg/xmlpull/v1/XmlPullParser;Z)V
 
-    .line 436
+    .line 433
     iget-object v4, p0, Lcom/android/server/notification/NotificationManagerService;->mRankingHelper:Lcom/android/server/notification/RankingHelper;
 
     invoke-virtual {v4, v0, p2}, Lcom/android/server/notification/RankingHelper;->readXml(Lorg/xmlpull/v1/XmlPullParser;Z)V
 
     goto :goto_0
 
-    .line 423
+    .line 420
     :cond_1
     const-string/jumbo v4, "blocked-packages"
 
@@ -6459,7 +6309,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 424
+    .line 421
     :cond_2
     :goto_2
     invoke-interface {v0}, Lorg/xmlpull/v1/XmlPullParser;->next()I
@@ -6468,12 +6318,12 @@
 
     if-eq v2, v6, :cond_0
 
-    .line 425
+    .line 422
     invoke-interface {v0}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 426
+    .line 423
     const-string/jumbo v4, "package"
 
     invoke-virtual {v4, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -6482,22 +6332,22 @@
 
     if-eqz v4, :cond_3
 
-    .line 427
+    .line 424
     iget-object v4, p0, Lcom/android/server/notification/NotificationManagerService;->mBlockedPackages:Ljava/util/HashSet;
 
-    .line 428
+    .line 425
     const-string/jumbo v5, "name"
 
     invoke-interface {v0, v7, v5}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 427
+    .line 424
     invoke-virtual {v4, v5}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     goto :goto_2
 
-    .line 429
+    .line 426
     :cond_3
     const-string/jumbo v4, "blocked-packages"
 
@@ -6513,7 +6363,7 @@
 
     goto :goto_1
 
-    .line 410
+    .line 407
     .end local v1    # "tag":Ljava/lang/String;
     :cond_4
     return-void
@@ -6527,12 +6377,12 @@
     .param p4, "callingPid"    # I
 
     .prologue
-    .line 2661
+    .line 2635
     sget-boolean v0, Lcom/android/server/notification/NotificationManagerService;->ENABLE_CHILD_NOTIFICATIONS:Z
 
     if-nez v0, :cond_5
 
-    .line 2663
+    .line 2637
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mListeners:Lcom/android/server/notification/NotificationManagerService$NotificationListeners;
 
     invoke-virtual {v0}, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->notificationGroupsDesired()Z
@@ -6541,22 +6391,22 @@
 
     if-eqz v0, :cond_0
 
-    .line 2664
+    .line 2638
     const/4 v0, 0x0
 
     return v0
 
-    .line 2667
+    .line 2641
     :cond_0
     iget-object v9, p1, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
 
-    .line 2668
+    .line 2642
     .local v9, "sbn":Landroid/service/notification/StatusBarNotification;
     invoke-virtual {v9}, Landroid/service/notification/StatusBarNotification;->getGroupKey()Ljava/lang/String;
 
     move-result-object v6
 
-    .line 2669
+    .line 2643
     .local v6, "group":Ljava/lang/String;
     invoke-virtual {v9}, Landroid/service/notification/StatusBarNotification;->getNotification()Landroid/app/Notification;
 
@@ -6566,7 +6416,7 @@
 
     move-result v8
 
-    .line 2670
+    .line 2644
     .local v8, "isSummary":Z
     invoke-virtual {v9}, Landroid/service/notification/StatusBarNotification;->getNotification()Landroid/app/Notification;
 
@@ -6576,7 +6426,7 @@
 
     move-result v7
 
-    .line 2672
+    .line 2646
     .local v7, "isChild":Z
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mSummaryByGroupKey:Landroid/util/ArrayMap;
 
@@ -6586,18 +6436,18 @@
 
     check-cast v10, Lcom/android/server/notification/NotificationRecord;
 
-    .line 2673
+    .line 2647
     .local v10, "summary":Lcom/android/server/notification/NotificationRecord;
     if-eqz v7, :cond_4
 
     if-eqz v10, :cond_4
 
-    .line 2675
+    .line 2649
     sget-boolean v0, Lcom/android/server/notification/NotificationManagerService;->DBG:Z
 
     if-eqz v0, :cond_1
 
-    .line 2676
+    .line 2650
     const-string/jumbo v0, "NotificationService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -6624,12 +6474,12 @@
 
     move-result-object v1
 
-    .line 2677
+    .line 2651
     invoke-virtual {v10}, Lcom/android/server/notification/NotificationRecord;->getKey()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 2676
+    .line 2650
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
@@ -6640,16 +6490,16 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2680
+    .line 2654
     :cond_1
     if-eqz p2, :cond_3
 
-    .line 2681
+    .line 2655
     sget-boolean v0, Lcom/android/server/notification/NotificationManagerService;->DBG:Z
 
     if-eqz v0, :cond_2
 
-    .line 2682
+    .line 2656
     const-string/jumbo v0, "NotificationService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -6676,7 +6526,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2684
+    .line 2658
     :cond_2
     const/4 v0, 0x0
 
@@ -6684,20 +6534,20 @@
 
     invoke-direct {p0, p2, v0, v1}, Lcom/android/server/notification/NotificationManagerService;->cancelNotificationLocked(Lcom/android/server/notification/NotificationRecord;ZI)V
 
-    .line 2686
+    .line 2660
     :cond_3
     const/4 v0, 0x1
 
     return v0
 
-    .line 2687
+    .line 2661
     :cond_4
     if-eqz v8, :cond_5
 
-    .line 2689
+    .line 2663
     const/4 v4, 0x0
 
-    .line 2690
+    .line 2664
     const/16 v5, 0xd
 
     move-object v0, p0
@@ -6708,10 +6558,10 @@
 
     move v3, p4
 
-    .line 2689
+    .line 2663
     invoke-direct/range {v0 .. v5}, Lcom/android/server/notification/NotificationManagerService;->cancelGroupChildrenLocked(Lcom/android/server/notification/NotificationRecord;IILjava/lang/String;I)V
 
-    .line 2693
+    .line 2667
     .end local v6    # "group":Ljava/lang/String;
     .end local v7    # "isChild":Z
     .end local v8    # "isSummary":Z
@@ -6730,25 +6580,25 @@
     .prologue
     const/16 v2, 0x8
 
-    .line 3081
+    .line 3033
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mHandler:Lcom/android/server/notification/NotificationManagerService$WorkerHandler;
 
     invoke-virtual {v0, v2}, Lcom/android/server/notification/NotificationManagerService$WorkerHandler;->removeMessages(I)V
 
-    .line 3082
+    .line 3034
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mHandler:Lcom/android/server/notification/NotificationManagerService$WorkerHandler;
 
-    .line 3085
+    .line 3037
     const/4 v1, 0x0
 
-    .line 3082
+    .line 3034
     invoke-virtual {v0, v2, p1, v1}, Lcom/android/server/notification/NotificationManagerService$WorkerHandler;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 3080
+    .line 3032
     return-void
 .end method
 
@@ -6759,12 +6609,12 @@
     .prologue
     const/4 v2, 0x7
 
-    .line 3076
+    .line 3028
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mHandler:Lcom/android/server/notification/NotificationManagerService$WorkerHandler;
 
     invoke-virtual {v0, v2}, Lcom/android/server/notification/NotificationManagerService$WorkerHandler;->removeMessages(I)V
 
-    .line 3077
+    .line 3029
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mHandler:Lcom/android/server/notification/NotificationManagerService$WorkerHandler;
 
     const/4 v1, 0x0
@@ -6775,7 +6625,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 3075
+    .line 3027
     return-void
 .end method
 
@@ -6785,25 +6635,25 @@
     .prologue
     const/4 v2, 0x6
 
-    .line 3064
+    .line 3016
     iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService;->mHandler:Lcom/android/server/notification/NotificationManagerService$WorkerHandler;
 
     invoke-virtual {v1, v2}, Lcom/android/server/notification/NotificationManagerService$WorkerHandler;->removeMessages(I)V
 
-    .line 3065
+    .line 3017
     iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService;->mHandler:Lcom/android/server/notification/NotificationManagerService$WorkerHandler;
 
     invoke-static {v1, v2}, Landroid/os/Message;->obtain(Landroid/os/Handler;I)Landroid/os/Message;
 
     move-result-object v0
 
-    .line 3066
+    .line 3018
     .local v0, "m":Landroid/os/Message;
     iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService;->mHandler:Lcom/android/server/notification/NotificationManagerService$WorkerHandler;
 
     invoke-virtual {v1, v0}, Lcom/android/server/notification/NotificationManagerService$WorkerHandler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 3063
+    .line 3015
     return-void
 .end method
 
@@ -6812,12 +6662,12 @@
     .param p1, "r"    # Lcom/android/server/notification/NotificationManagerService$ToastRecord;
 
     .prologue
-    .line 2949
+    .line 2901
     iget-object v3, p0, Lcom/android/server/notification/NotificationManagerService;->mHandler:Lcom/android/server/notification/NotificationManagerService$WorkerHandler;
 
     invoke-virtual {v3, p1}, Lcom/android/server/notification/NotificationManagerService$WorkerHandler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
-    .line 2950
+    .line 2902
     iget-object v3, p0, Lcom/android/server/notification/NotificationManagerService;->mHandler:Lcom/android/server/notification/NotificationManagerService$WorkerHandler;
 
     const/4 v4, 0x2
@@ -6826,7 +6676,7 @@
 
     move-result-object v2
 
-    .line 2951
+    .line 2903
     .local v2, "m":Landroid/os/Message;
     iget v3, p1, Lcom/android/server/notification/NotificationManagerService$ToastRecord;->duration:I
 
@@ -6839,16 +6689,16 @@
     :goto_0
     int-to-long v0, v3
 
-    .line 2952
+    .line 2904
     .local v0, "delay":J
     iget-object v3, p0, Lcom/android/server/notification/NotificationManagerService;->mHandler:Lcom/android/server/notification/NotificationManagerService$WorkerHandler;
 
     invoke-virtual {v3, v2, v0, v1}, Lcom/android/server/notification/NotificationManagerService$WorkerHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 2947
+    .line 2899
     return-void
 
-    .line 2951
+    .line 2903
     .end local v0    # "delay":J
     :cond_0
     const/16 v3, 0x7d0
@@ -6861,7 +6711,7 @@
     .param p1, "action"    # Ljava/lang/String;
 
     .prologue
-    .line 1325
+    .line 1312
     invoke-virtual {p0}, Lcom/android/server/notification/NotificationManagerService;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -6870,23 +6720,23 @@
 
     invoke-direct {v1, p1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1326
+    .line 1313
     const/high16 v2, 0x40000000    # 2.0f
 
-    .line 1325
+    .line 1312
     invoke-virtual {v1, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
     move-result-object v1
 
-    .line 1326
+    .line 1313
     sget-object v2, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
 
     const/4 v3, 0x0
 
-    .line 1325
+    .line 1312
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;Ljava/lang/String;)V
 
-    .line 1324
+    .line 1311
     return-void
 .end method
 
@@ -6894,15 +6744,15 @@
     .locals 4
 
     .prologue
-    .line 1130
+    .line 1117
     iget-boolean v2, p0, Lcom/android/server/notification/NotificationManagerService;->mSystemReady:Z
 
     if-nez v2, :cond_0
 
-    .line 1131
+    .line 1118
     return-void
 
-    .line 1134
+    .line 1121
     :cond_0
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/notification/NotificationManagerService;->getContext()Landroid/content/Context;
@@ -6915,23 +6765,23 @@
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1138
+    .line 1125
     :goto_0
     iget-boolean v2, p0, Lcom/android/server/notification/NotificationManagerService;->mDisableDuckingWhileMedia:Z
 
     if-eqz v2, :cond_1
 
-    .line 1139
+    .line 1126
     invoke-direct {p0}, Lcom/android/server/notification/NotificationManagerService;->updateForActiveSessions()V
 
-    .line 1140
+    .line 1127
     new-instance v1, Landroid/content/IntentFilter;
 
     const-string/jumbo v2, "cyanogenmod.intent.action.ACTION_AUDIO_SESSIONS_CHANGED"
 
     invoke-direct {v1, v2}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
-    .line 1142
+    .line 1129
     .local v1, "intentFilter":Landroid/content/IntentFilter;
     invoke-virtual {p0}, Lcom/android/server/notification/NotificationManagerService;->getContext()Landroid/content/Context;
 
@@ -6941,12 +6791,12 @@
 
     invoke-virtual {v2, v3, v1}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 1129
+    .line 1116
     .end local v1    # "intentFilter":Landroid/content/IntentFilter;
     :cond_1
     return-void
 
-    .line 1135
+    .line 1122
     :catch_0
     move-exception v0
 
@@ -6960,7 +6810,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1392
+    .line 1379
     iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService;->mListenersDisablingEffects:Landroid/util/ArraySet;
 
     invoke-virtual {v1}, Landroid/util/ArraySet;->isEmpty()Z
@@ -6969,7 +6819,7 @@
 
     if-nez v1, :cond_0
 
-    .line 1393
+    .line 1380
     iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService;->mListenersDisablingEffects:Landroid/util/ArraySet;
 
     invoke-virtual {v1, v2}, Landroid/util/ArraySet;->valueAt(I)Ljava/lang/Object;
@@ -6980,7 +6830,7 @@
 
     iget-object v0, v1, Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;->component:Landroid/content/ComponentName;
 
-    .line 1394
+    .line 1381
     :goto_0
     iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService;->mEffectsSuppressor:Landroid/content/ComponentName;
 
@@ -6992,24 +6842,24 @@
 
     return-void
 
-    .line 1393
+    .line 1380
     :cond_0
     const/4 v0, 0x0
 
     .local v0, "suppressor":Landroid/content/ComponentName;
     goto :goto_0
 
-    .line 1395
+    .line 1382
     .end local v0    # "suppressor":Landroid/content/ComponentName;
     :cond_1
     iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService;->mEffectsSuppressor:Landroid/content/ComponentName;
 
     invoke-static {v1, v0}, Lcom/android/server/notification/ZenLog;->traceEffectsSuppressorChanged(Landroid/content/ComponentName;Landroid/content/ComponentName;)V
 
-    .line 1396
+    .line 1383
     iput-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mEffectsSuppressor:Landroid/content/ComponentName;
 
-    .line 1397
+    .line 1384
     iget-object v3, p0, Lcom/android/server/notification/NotificationManagerService;->mZenModeHelper:Lcom/android/server/notification/ZenModeHelper;
 
     if-eqz v0, :cond_2
@@ -7019,18 +6869,18 @@
     :goto_1
     invoke-virtual {v3, v1}, Lcom/android/server/notification/ZenModeHelper;->setEffectsSuppressed(Z)V
 
-    .line 1398
+    .line 1385
     const-string/jumbo v1, "android.os.action.ACTION_EFFECTS_SUPPRESSOR_CHANGED"
 
     invoke-direct {p0, v1}, Lcom/android/server/notification/NotificationManagerService;->sendRegisteredOnlyBroadcast(Ljava/lang/String;)V
 
-    .line 1391
+    .line 1378
     return-void
 
     :cond_2
     move v1, v2
 
-    .line 1397
+    .line 1384
     goto :goto_1
 .end method
 
@@ -7040,7 +6890,7 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 1118
+    .line 1105
     invoke-virtual {p0}, Lcom/android/server/notification/NotificationManagerService;->getContext()Landroid/content/Context;
 
     move-result-object v4
@@ -7049,7 +6899,7 @@
 
     move-result-object v0
 
-    .line 1119
+    .line 1106
     .local v0, "manager":Lcyanogenmod/media/CMAudioManager;
     const/4 v4, 0x3
 
@@ -7057,11 +6907,11 @@
 
     move-result-object v3
 
-    .line 1120
+    .line 1107
     .local v3, "sessions":Ljava/util/List;, "Ljava/util/List<Lcyanogenmod/media/AudioSessionInfo;>;"
     iput-boolean v5, p0, Lcom/android/server/notification/NotificationManagerService;->mActiveMedia:Z
 
-    .line 1121
+    .line 1108
     invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -7080,7 +6930,7 @@
 
     check-cast v1, Lcyanogenmod/media/AudioSessionInfo;
 
-    .line 1122
+    .line 1109
     .local v1, "sessionInfo":Lcyanogenmod/media/AudioSessionInfo;
     invoke-virtual {v1}, Lcyanogenmod/media/AudioSessionInfo;->getSessionId()I
 
@@ -7088,12 +6938,12 @@
 
     if-lez v4, :cond_0
 
-    .line 1123
+    .line 1110
     const/4 v4, 0x1
 
     iput-boolean v4, p0, Lcom/android/server/notification/NotificationManagerService;->mActiveMedia:Z
 
-    .line 1117
+    .line 1104
     .end local v1    # "sessionInfo":Lcyanogenmod/media/AudioSessionInfo;
     :cond_1
     return-void
@@ -7103,14 +6953,14 @@
     .locals 2
 
     .prologue
-    .line 1402
+    .line 1389
     iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService;->mZenModeHelper:Lcom/android/server/notification/ZenModeHelper;
 
     invoke-virtual {v1}, Lcom/android/server/notification/ZenModeHelper;->getZenModeListenerInterruptionFilter()I
 
     move-result v0
 
-    .line 1403
+    .line 1390
     .local v0, "interruptionFilter":I
     iget v1, p0, Lcom/android/server/notification/NotificationManagerService;->mInterruptionFilter:I
 
@@ -7118,14 +6968,14 @@
 
     return-void
 
-    .line 1404
+    .line 1391
     :cond_0
     iput v0, p0, Lcom/android/server/notification/NotificationManagerService;->mInterruptionFilter:I
 
-    .line 1405
+    .line 1392
     invoke-direct {p0, v0}, Lcom/android/server/notification/NotificationManagerService;->scheduleInterruptionFilterChanged(I)V
 
-    .line 1401
+    .line 1388
     return-void
 .end method
 
@@ -7133,7 +6983,7 @@
     .locals 3
 
     .prologue
-    .line 1384
+    .line 1371
     iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService;->mListenersDisablingEffects:Landroid/util/ArraySet;
 
     invoke-virtual {v1}, Landroid/util/ArraySet;->isEmpty()Z
@@ -7144,7 +6994,7 @@
 
     const/4 v0, 0x0
 
-    .line 1385
+    .line 1372
     .local v0, "hints":I
     :goto_0
     iget v1, p0, Lcom/android/server/notification/NotificationManagerService;->mListenerHints:I
@@ -7153,7 +7003,7 @@
 
     return-void
 
-    .line 1384
+    .line 1371
     .end local v0    # "hints":I
     :cond_0
     const/4 v0, 0x1
@@ -7161,7 +7011,7 @@
     .restart local v0    # "hints":I
     goto :goto_0
 
-    .line 1386
+    .line 1373
     :cond_1
     iget v1, p0, Lcom/android/server/notification/NotificationManagerService;->mListenerHints:I
 
@@ -7173,13 +7023,13 @@
 
     invoke-static {v1, v0, v2}, Lcom/android/server/notification/ZenLog;->traceListenerHintsChanged(III)V
 
-    .line 1387
+    .line 1374
     iput v0, p0, Lcom/android/server/notification/NotificationManagerService;->mListenerHints:I
 
-    .line 1388
+    .line 1375
     invoke-direct {p0, v0}, Lcom/android/server/notification/NotificationManagerService;->scheduleListenerHintsChanged(I)V
 
-    .line 1383
+    .line 1370
     return-void
 .end method
 
@@ -7187,12 +7037,12 @@
     .locals 2
 
     .prologue
-    .line 3655
+    .line 3607
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mNotificationList:Ljava/util/ArrayList;
 
     monitor-enter v0
 
-    .line 3656
+    .line 3608
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/notification/NotificationManagerService;->updateLightsLocked()V
     :try_end_0
@@ -7200,10 +7050,10 @@
 
     monitor-exit v0
 
-    .line 3654
+    .line 3606
     return-void
 
-    .line 3655
+    .line 3607
     :catchall_0
     move-exception v1
 
@@ -7227,12 +7077,12 @@
 
     const/4 v3, 0x0
 
-    .line 491
+    .line 488
     new-instance v0, Lcom/android/internal/util/FastXmlSerializer;
 
     invoke-direct {v0}, Lcom/android/internal/util/FastXmlSerializer;-><init>()V
 
-    .line 492
+    .line 489
     .local v0, "out":Lorg/xmlpull/v1/XmlSerializer;
     sget-object v1, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
@@ -7242,19 +7092,19 @@
 
     invoke-interface {v0, p1, v1}, Lorg/xmlpull/v1/XmlSerializer;->setOutput(Ljava/io/OutputStream;Ljava/lang/String;)V
 
-    .line 493
+    .line 490
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v1
 
     invoke-interface {v0, v3, v1}, Lorg/xmlpull/v1/XmlSerializer;->startDocument(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    .line 494
+    .line 491
     const-string/jumbo v1, "notification-policy"
 
     invoke-interface {v0, v3, v1}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 495
+    .line 492
     const-string/jumbo v1, "version"
 
     invoke-static {v2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -7263,25 +7113,25 @@
 
     invoke-interface {v0, v3, v1, v2}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 496
+    .line 493
     iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService;->mZenModeHelper:Lcom/android/server/notification/ZenModeHelper;
 
     invoke-virtual {v1, v0, p2}, Lcom/android/server/notification/ZenModeHelper;->writeXml(Lorg/xmlpull/v1/XmlSerializer;Z)V
 
-    .line 497
+    .line 494
     iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService;->mRankingHelper:Lcom/android/server/notification/RankingHelper;
 
     invoke-virtual {v1, v0, p2}, Lcom/android/server/notification/RankingHelper;->writeXml(Lorg/xmlpull/v1/XmlSerializer;Z)V
 
-    .line 498
+    .line 495
     const-string/jumbo v1, "notification-policy"
 
     invoke-interface {v0, v3, v1}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 499
+    .line 496
     invoke-interface {v0}, Lorg/xmlpull/v1/XmlSerializer;->endDocument()V
 
-    .line 490
+    .line 487
     return-void
 .end method
 
@@ -7297,12 +7147,12 @@
     .param p6, "includeCurrentProfiles"    # Z
 
     .prologue
-    .line 3411
+    .line 3363
     if-nez p5, :cond_1
 
     const/4 v8, 0x0
 
-    .line 3413
+    .line 3365
     :goto_0
     const/4 v3, 0x0
 
@@ -7318,13 +7168,13 @@
 
     move/from16 v7, p4
 
-    .line 3412
+    .line 3364
     invoke-static/range {v1 .. v8}, Lcom/android/server/EventLogTags;->writeNotificationCancelAll(IILjava/lang/String;IIIILjava/lang/String;)V
 
-    .line 3415
+    .line 3367
     const/4 v12, 0x0
 
-    .line 3416
+    .line 3368
     .local v12, "canceledNotifications":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/notification/NotificationRecord;>;"
     iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService;->mNotificationList:Ljava/util/ArrayList;
 
@@ -7332,7 +7182,7 @@
 
     move-result v11
 
-    .line 3417
+    .line 3369
     .local v11, "N":I
     add-int/lit8 v13, v11, -0x1
 
@@ -7341,7 +7191,7 @@
     :goto_1
     if-ltz v13, :cond_5
 
-    .line 3418
+    .line 3370
     iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService;->mNotificationList:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -7350,11 +7200,11 @@
 
     check-cast v14, Lcom/android/server/notification/NotificationRecord;
 
-    .line 3419
+    .line 3371
     .local v14, "r":Lcom/android/server/notification/NotificationRecord;
     if-eqz p6, :cond_2
 
-    .line 3420
+    .line 3372
     move/from16 v0, p3
 
     invoke-direct {p0, v14, v0}, Lcom/android/server/notification/NotificationManagerService;->notificationMatchesCurrentProfiles(Lcom/android/server/notification/NotificationRecord;I)Z
@@ -7363,14 +7213,14 @@
 
     if-nez v1, :cond_3
 
-    .line 3417
+    .line 3369
     :cond_0
     :goto_2
     add-int/lit8 v13, v13, -0x1
 
     goto :goto_1
 
-    .line 3411
+    .line 3363
     .end local v11    # "N":I
     .end local v13    # "i":I
     .end local v14    # "r":Lcom/android/server/notification/NotificationRecord;
@@ -7386,7 +7236,7 @@
     .local v8, "listenerName":Ljava/lang/String;
     goto :goto_0
 
-    .line 3424
+    .line 3376
     .end local v8    # "listenerName":Ljava/lang/String;
     .restart local v11    # "N":I
     .restart local v13    # "i":I
@@ -7400,7 +7250,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 3429
+    .line 3381
     :cond_3
     invoke-virtual {v14}, Lcom/android/server/notification/NotificationRecord;->getFlags()I
 
@@ -7410,33 +7260,33 @@
 
     if-nez v1, :cond_0
 
-    .line 3431
+    .line 3383
     iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService;->mNotificationList:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v13}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 3432
+    .line 3384
     const/4 v1, 0x1
 
     move/from16 v0, p4
 
     invoke-direct {p0, v14, v1, v0}, Lcom/android/server/notification/NotificationManagerService;->cancelNotificationLocked(Lcom/android/server/notification/NotificationRecord;ZI)V
 
-    .line 3434
+    .line 3386
     if-nez v12, :cond_4
 
-    .line 3435
+    .line 3387
     new-instance v12, Ljava/util/ArrayList;
 
     invoke-direct {v12}, Ljava/util/ArrayList;-><init>()V
 
-    .line 3437
+    .line 3389
     :cond_4
     invoke-virtual {v12, v14}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_2
 
-    .line 3440
+    .line 3392
     .end local v14    # "r":Lcom/android/server/notification/NotificationRecord;
     :cond_5
     if-eqz v12, :cond_6
@@ -7445,7 +7295,7 @@
 
     move-result v10
 
-    .line 3441
+    .line 3393
     .local v10, "M":I
     :goto_3
     const/4 v13, 0x0
@@ -7453,14 +7303,14 @@
     :goto_4
     if-ge v13, v10, :cond_7
 
-    .line 3442
+    .line 3394
     invoke-virtual {v12, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v5
 
     check-cast v5, Lcom/android/server/notification/NotificationRecord;
 
-    .line 3443
+    .line 3395
     const/16 v9, 0xc
 
     move-object v4, p0
@@ -7469,15 +7319,15 @@
 
     move/from16 v7, p2
 
-    .line 3442
+    .line 3394
     invoke-direct/range {v4 .. v9}, Lcom/android/server/notification/NotificationManagerService;->cancelGroupChildrenLocked(Lcom/android/server/notification/NotificationRecord;IILjava/lang/String;I)V
 
-    .line 3441
+    .line 3393
     add-int/lit8 v13, v13, 0x1
 
     goto :goto_4
 
-    .line 3440
+    .line 3392
     .end local v10    # "M":I
     :cond_6
     const/4 v10, 0x0
@@ -7485,11 +7335,11 @@
     .restart local v10    # "M":I
     goto :goto_3
 
-    .line 3445
+    .line 3397
     :cond_7
     invoke-virtual {p0}, Lcom/android/server/notification/NotificationManagerService;->updateLightsLocked()V
 
-    .line 3410
+    .line 3362
     return-void
 .end method
 
@@ -7506,7 +7356,7 @@
     .param p9, "listener"    # Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;
 
     .prologue
-    .line 3359
+    .line 3311
     if-nez p9, :cond_1
 
     const/4 v8, 0x0
@@ -7526,15 +7376,15 @@
 
     move/from16 v7, p8
 
-    .line 3360
+    .line 3312
     invoke-static/range {v1 .. v8}, Lcom/android/server/EventLogTags;->writeNotificationCancelAll(IILjava/lang/String;IIIILjava/lang/String;)V
 
-    .line 3364
+    .line 3316
     iget-object v2, p0, Lcom/android/server/notification/NotificationManagerService;->mNotificationList:Ljava/util/ArrayList;
 
     monitor-enter v2
 
-    .line 3365
+    .line 3317
     :try_start_0
     iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService;->mNotificationList:Ljava/util/ArrayList;
 
@@ -7542,11 +7392,11 @@
 
     move-result v11
 
-    .line 3366
+    .line 3318
     .local v11, "N":I
     const/4 v12, 0x0
 
-    .line 3367
+    .line 3319
     .local v12, "canceledNotifications":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/notification/NotificationRecord;>;"
     add-int/lit8 v13, v11, -0x1
 
@@ -7555,7 +7405,7 @@
     :goto_1
     if-ltz v13, :cond_7
 
-    .line 3368
+    .line 3320
     iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService;->mNotificationList:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -7564,7 +7414,7 @@
 
     check-cast v14, Lcom/android/server/notification/NotificationRecord;
 
-    .line 3369
+    .line 3321
     .local v14, "r":Lcom/android/server/notification/NotificationRecord;
     move/from16 v0, p7
 
@@ -7576,14 +7426,14 @@
 
     if-nez v1, :cond_2
 
-    .line 3367
+    .line 3319
     :cond_0
     :goto_2
     add-int/lit8 v13, v13, -0x1
 
     goto :goto_1
 
-    .line 3359
+    .line 3311
     .end local v11    # "N":I
     .end local v13    # "i":I
     .end local v14    # "r":Lcom/android/server/notification/NotificationRecord;
@@ -7599,7 +7449,7 @@
     .local v8, "listenerName":Ljava/lang/String;
     goto :goto_0
 
-    .line 3373
+    .line 3325
     .end local v8    # "listenerName":Ljava/lang/String;
     .restart local v11    # "N":I
     .restart local v13    # "i":I
@@ -7616,7 +7466,7 @@
 
     if-eqz p3, :cond_0
 
-    .line 3376
+    .line 3328
     :cond_3
     invoke-virtual {v14}, Lcom/android/server/notification/NotificationRecord;->getFlags()I
 
@@ -7628,7 +7478,7 @@
 
     if-ne v1, v0, :cond_0
 
-    .line 3379
+    .line 3331
     invoke-virtual {v14}, Lcom/android/server/notification/NotificationRecord;->getFlags()I
 
     move-result v1
@@ -7637,7 +7487,7 @@
 
     if-nez v1, :cond_0
 
-    .line 3382
+    .line 3334
     if-eqz p3, :cond_4
 
     iget-object v1, v14, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
@@ -7654,39 +7504,39 @@
 
     if-eqz v1, :cond_0
 
-    .line 3385
+    .line 3337
     :cond_4
     if-nez v12, :cond_5
 
-    .line 3386
+    .line 3338
     new-instance v12, Ljava/util/ArrayList;
 
     invoke-direct {v12}, Ljava/util/ArrayList;-><init>()V
 
-    .line 3388
+    .line 3340
     :cond_5
     invoke-virtual {v12, v14}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 3389
+    .line 3341
     if-nez p6, :cond_6
 
-    .line 3390
+    .line 3342
     const/4 v1, 0x1
 
     monitor-exit v2
 
     return v1
 
-    .line 3392
+    .line 3344
     :cond_6
     :try_start_2
     iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService;->mNotificationList:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v13}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 3393
+    .line 3345
     const/4 v1, 0x0
 
     move/from16 v0, p8
@@ -7697,7 +7547,7 @@
 
     goto :goto_2
 
-    .line 3364
+    .line 3316
     .end local v11    # "N":I
     .end local v13    # "i":I
     .end local v14    # "r":Lcom/android/server/notification/NotificationRecord;
@@ -7708,7 +7558,7 @@
 
     throw v1
 
-    .line 3395
+    .line 3347
     .restart local v11    # "N":I
     .restart local v13    # "i":I
     :cond_7
@@ -7716,27 +7566,27 @@
 
     if-eqz v12, :cond_8
 
-    .line 3396
+    .line 3348
     :try_start_3
     invoke-virtual {v12}, Ljava/util/ArrayList;->size()I
 
     move-result v10
 
-    .line 3397
+    .line 3349
     .local v10, "M":I
     const/4 v13, 0x0
 
     :goto_3
     if-ge v13, v10, :cond_8
 
-    .line 3398
+    .line 3350
     invoke-virtual {v12, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v5
 
     check-cast v5, Lcom/android/server/notification/NotificationRecord;
 
-    .line 3399
+    .line 3351
     const/16 v9, 0xc
 
     move-object v4, p0
@@ -7745,25 +7595,25 @@
 
     move/from16 v7, p2
 
-    .line 3398
+    .line 3350
     invoke-direct/range {v4 .. v9}, Lcom/android/server/notification/NotificationManagerService;->cancelGroupChildrenLocked(Lcom/android/server/notification/NotificationRecord;IILjava/lang/String;I)V
 
-    .line 3397
+    .line 3349
     add-int/lit8 v13, v13, 0x1
 
     goto :goto_3
 
-    .line 3402
+    .line 3354
     .end local v10    # "M":I
     :cond_8
     if-eqz v12, :cond_9
 
-    .line 3403
+    .line 3355
     invoke-virtual {p0}, Lcom/android/server/notification/NotificationManagerService;->updateLightsLocked()V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 3405
+    .line 3357
     :cond_9
     if-eqz v12, :cond_a
 
@@ -7795,7 +7645,7 @@
     .param p11, "listener"    # Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;
 
     .prologue
-    .line 3291
+    .line 3243
     iget-object v13, p0, Lcom/android/server/notification/NotificationManagerService;->mHandler:Lcom/android/server/notification/NotificationManagerService$WorkerHandler;
 
     new-instance v0, Lcom/android/server/notification/NotificationManagerService$11;
@@ -7828,7 +7678,7 @@
 
     invoke-virtual {v13, v0}, Lcom/android/server/notification/NotificationManagerService$WorkerHandler;->post(Ljava/lang/Runnable;)Z
 
-    .line 3286
+    .line 3238
     return-void
 .end method
 
@@ -7837,7 +7687,7 @@
     .param p1, "index"    # I
 
     .prologue
-    .line 2928
+    .line 2880
     iget-object v2, p0, Lcom/android/server/notification/NotificationManagerService;->mToastQueue:Ljava/util/ArrayList;
 
     invoke-virtual {v2, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -7846,7 +7696,7 @@
 
     check-cast v1, Lcom/android/server/notification/NotificationManagerService$ToastRecord;
 
-    .line 2930
+    .line 2882
     .local v1, "record":Lcom/android/server/notification/NotificationManagerService$ToastRecord;
     :try_start_0
     iget-object v2, v1, Lcom/android/server/notification/NotificationManagerService$ToastRecord;->callback:Landroid/app/ITransientNotification;
@@ -7855,18 +7705,18 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2937
+    .line 2889
     :goto_0
     iget-object v2, p0, Lcom/android/server/notification/NotificationManagerService;->mToastQueue:Ljava/util/ArrayList;
 
     invoke-virtual {v2, p1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 2938
+    .line 2890
     iget v2, v1, Lcom/android/server/notification/NotificationManagerService$ToastRecord;->pid:I
 
     invoke-virtual {p0, v2}, Lcom/android/server/notification/NotificationManagerService;->keepProcessAliveLocked(I)V
 
-    .line 2939
+    .line 2891
     iget-object v2, p0, Lcom/android/server/notification/NotificationManagerService;->mToastQueue:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
@@ -7875,18 +7725,18 @@
 
     if-lez v2, :cond_0
 
-    .line 2943
+    .line 2895
     invoke-virtual {p0}, Lcom/android/server/notification/NotificationManagerService;->showNextToastLocked()V
 
-    .line 2927
+    .line 2879
     :cond_0
     return-void
 
-    .line 2931
+    .line 2883
     :catch_0
     move-exception v0
 
-    .line 2932
+    .line 2884
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v2, "NotificationService"
 
@@ -7906,18 +7756,18 @@
 
     move-result-object v3
 
-    .line 2933
+    .line 2885
     const-string/jumbo v4, " in package "
 
-    .line 2932
+    .line 2884
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
-    .line 2933
+    .line 2885
     iget-object v4, v1, Lcom/android/server/notification/NotificationManagerService$ToastRecord;->pkg:Ljava/lang/String;
 
-    .line 2932
+    .line 2884
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
@@ -7937,7 +7787,7 @@
     .param p2, "filter"    # Lcom/android/server/notification/NotificationManagerService$DumpFilter;
 
     .prologue
-    .line 2217
+    .line 2191
     const-string/jumbo v20, "Current Notification Manager state"
 
     move-object/from16 v0, p1
@@ -7946,7 +7796,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2218
+    .line 2192
     move-object/from16 v0, p2
 
     iget-boolean v0, v0, Lcom/android/server/notification/NotificationManagerService$DumpFilter;->filtered:Z
@@ -7955,7 +7805,7 @@
 
     if-eqz v20, :cond_0
 
-    .line 2219
+    .line 2193
     const-string/jumbo v20, " (filtered to "
 
     move-object/from16 v0, p1
@@ -7974,7 +7824,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2221
+    .line 2195
     :cond_0
     const/16 v20, 0x3a
 
@@ -7984,7 +7834,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(C)V
 
-    .line 2223
+    .line 2197
     move-object/from16 v0, p2
 
     iget-boolean v0, v0, Lcom/android/server/notification/NotificationManagerService$DumpFilter;->filtered:Z
@@ -7999,11 +7849,11 @@
 
     move/from16 v19, v0
 
-    .line 2225
+    .line 2199
     :goto_0
     if-nez v19, :cond_4
 
-    .line 2226
+    .line 2200
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/notification/NotificationManagerService;->mToastQueue:Ljava/util/ArrayList;
@@ -8012,7 +7862,7 @@
 
     monitor-enter v21
 
-    .line 2227
+    .line 2201
     :try_start_0
     move-object/from16 v0, p0
 
@@ -8024,11 +7874,11 @@
 
     move-result v4
 
-    .line 2228
+    .line 2202
     .local v4, "N":I
     if-lez v4, :cond_3
 
-    .line 2229
+    .line 2203
     const-string/jumbo v20, "  Toast Queue:"
 
     move-object/from16 v0, p1
@@ -8037,14 +7887,14 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2230
+    .line 2204
     const/4 v8, 0x0
 
     .local v8, "i":I
     :goto_1
     if-ge v8, v4, :cond_2
 
-    .line 2231
+    .line 2205
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/notification/NotificationManagerService;->mToastQueue:Ljava/util/ArrayList;
@@ -8071,12 +7921,12 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/server/notification/NotificationManagerService$ToastRecord;->dump(Ljava/io/PrintWriter;Ljava/lang/String;Lcom/android/server/notification/NotificationManagerService$DumpFilter;)V
 
-    .line 2230
+    .line 2204
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_1
 
-    .line 2223
+    .line 2197
     .end local v4    # "N":I
     .end local v8    # "i":I
     :cond_1
@@ -8085,7 +7935,7 @@
     .local v19, "zenOnly":Z
     goto :goto_0
 
-    .line 2233
+    .line 2207
     .end local v19    # "zenOnly":Z
     .restart local v4    # "N":I
     .restart local v8    # "i":I
@@ -8104,7 +7954,7 @@
     :cond_3
     monitor-exit v21
 
-    .line 2238
+    .line 2212
     .end local v4    # "N":I
     :cond_4
     move-object/from16 v0, p0
@@ -8115,10 +7965,10 @@
 
     monitor-enter v21
 
-    .line 2239
+    .line 2213
     if-nez v19, :cond_f
 
-    .line 2240
+    .line 2214
     :try_start_1
     move-object/from16 v0, p0
 
@@ -8130,11 +7980,11 @@
 
     move-result v4
 
-    .line 2241
+    .line 2215
     .restart local v4    # "N":I
     if-lez v4, :cond_8
 
-    .line 2242
+    .line 2216
     const-string/jumbo v20, "  Notification List:"
 
     move-object/from16 v0, p1
@@ -8143,14 +7993,14 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2243
+    .line 2217
     const/4 v8, 0x0
 
     .restart local v8    # "i":I
     :goto_2
     if-ge v8, v4, :cond_7
 
-    .line 2244
+    .line 2218
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/notification/NotificationManagerService;->mNotificationList:Ljava/util/ArrayList;
@@ -8165,7 +8015,7 @@
 
     check-cast v11, Lcom/android/server/notification/NotificationRecord;
 
-    .line 2245
+    .line 2219
     .local v11, "nr":Lcom/android/server/notification/NotificationRecord;
     move-object/from16 v0, p2
 
@@ -8189,7 +8039,7 @@
 
     if-eqz v20, :cond_6
 
-    .line 2246
+    .line 2220
     :cond_5
     const-string/jumbo v20, "    "
 
@@ -8215,13 +8065,13 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 2243
+    .line 2217
     :cond_6
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_2
 
-    .line 2226
+    .line 2200
     .end local v4    # "N":I
     .end local v8    # "i":I
     .end local v11    # "nr":Lcom/android/server/notification/NotificationRecord;
@@ -8232,7 +8082,7 @@
 
     throw v20
 
-    .line 2248
+    .line 2222
     .restart local v4    # "N":I
     .restart local v8    # "i":I
     :cond_7
@@ -8245,7 +8095,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2251
+    .line 2225
     .end local v8    # "i":I
     :cond_8
     move-object/from16 v0, p2
@@ -8256,7 +8106,7 @@
 
     if-nez v20, :cond_c
 
-    .line 2252
+    .line 2226
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/notification/NotificationManagerService;->mLights:Ljava/util/ArrayList;
@@ -8267,10 +8117,10 @@
 
     move-result v4
 
-    .line 2253
+    .line 2227
     if-lez v4, :cond_b
 
-    .line 2254
+    .line 2228
     const-string/jumbo v20, "  Lights List:"
 
     move-object/from16 v0, p1
@@ -8279,21 +8129,21 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2255
+    .line 2229
     const/4 v8, 0x0
 
     .restart local v8    # "i":I
     :goto_3
     if-ge v8, v4, :cond_a
 
-    .line 2256
+    .line 2230
     add-int/lit8 v20, v4, -0x1
 
     move/from16 v0, v20
 
     if-ne v8, v0, :cond_9
 
-    .line 2257
+    .line 2231
     const-string/jumbo v20, "  > "
 
     move-object/from16 v0, p1
@@ -8302,7 +8152,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2261
+    .line 2235
     :goto_4
     move-object/from16 v0, p0
 
@@ -8324,12 +8174,12 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2255
+    .line 2229
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_3
 
-    .line 2259
+    .line 2233
     :cond_9
     const-string/jumbo v20, "    "
 
@@ -8343,7 +8193,7 @@
 
     goto :goto_4
 
-    .line 2238
+    .line 2212
     .end local v4    # "N":I
     .end local v8    # "i":I
     :catchall_1
@@ -8353,7 +8203,7 @@
 
     throw v20
 
-    .line 2263
+    .line 2237
     .restart local v4    # "N":I
     .restart local v8    # "i":I
     :cond_a
@@ -8366,7 +8216,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2265
+    .line 2239
     .end local v8    # "i":I
     :cond_b
     new-instance v20, Ljava/lang/StringBuilder;
@@ -8407,7 +8257,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2266
+    .line 2240
     new-instance v20, Ljava/lang/StringBuilder;
 
     invoke-direct/range {v20 .. v20}, Ljava/lang/StringBuilder;-><init>()V
@@ -8446,7 +8296,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2267
+    .line 2241
     new-instance v20, Ljava/lang/StringBuilder;
 
     invoke-direct/range {v20 .. v20}, Ljava/lang/StringBuilder;-><init>()V
@@ -8485,7 +8335,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2268
+    .line 2242
     new-instance v20, Ljava/lang/StringBuilder;
 
     invoke-direct/range {v20 .. v20}, Ljava/lang/StringBuilder;-><init>()V
@@ -8524,7 +8374,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2269
+    .line 2243
     new-instance v20, Ljava/lang/StringBuilder;
 
     invoke-direct/range {v20 .. v20}, Ljava/lang/StringBuilder;-><init>()V
@@ -8563,7 +8413,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2270
+    .line 2244
     new-instance v20, Ljava/lang/StringBuilder;
 
     invoke-direct/range {v20 .. v20}, Ljava/lang/StringBuilder;-><init>()V
@@ -8606,7 +8456,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2271
+    .line 2245
     new-instance v20, Ljava/lang/StringBuilder;
 
     invoke-direct/range {v20 .. v20}, Ljava/lang/StringBuilder;-><init>()V
@@ -8645,7 +8495,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2273
+    .line 2247
     :cond_c
     new-instance v20, Ljava/lang/StringBuilder;
 
@@ -8689,7 +8539,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2274
+    .line 2248
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/notification/NotificationManagerService;->mArchive:Lcom/android/server/notification/NotificationManagerService$Archive;
@@ -8700,11 +8550,11 @@
 
     move-result-object v9
 
-    .line 2275
+    .line 2249
     .local v9, "iter":Ljava/util/Iterator;, "Ljava/util/Iterator<Landroid/service/notification/StatusBarNotification;>;"
     const/4 v8, 0x0
 
-    .line 2276
+    .line 2250
     .restart local v8    # "i":I
     :cond_d
     invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
@@ -8713,14 +8563,14 @@
 
     if-eqz v20, :cond_f
 
-    .line 2277
+    .line 2251
     invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v16
 
     check-cast v16, Landroid/service/notification/StatusBarNotification;
 
-    .line 2278
+    .line 2252
     .local v16, "sbn":Landroid/service/notification/StatusBarNotification;
     if-eqz p2, :cond_e
 
@@ -8734,7 +8584,7 @@
 
     if-eqz v20, :cond_d
 
-    .line 2279
+    .line 2253
     :cond_e
     new-instance v20, Ljava/lang/StringBuilder;
 
@@ -8768,7 +8618,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2280
+    .line 2254
     add-int/lit8 v8, v8, 0x1
 
     const/16 v20, 0x5
@@ -8777,7 +8627,7 @@
 
     if-lt v8, v0, :cond_d
 
-    .line 2281
+    .line 2255
     invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v20
@@ -8792,7 +8642,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2287
+    .line 2261
     .end local v4    # "N":I
     .end local v8    # "i":I
     .end local v9    # "iter":Ljava/util/Iterator;, "Ljava/util/Iterator<Landroid/service/notification/StatusBarNotification;>;"
@@ -8800,7 +8650,7 @@
     :cond_f
     if-nez v19, :cond_10
 
-    .line 2288
+    .line 2262
     const-string/jumbo v20, "\n  Usage Stats:"
 
     move-object/from16 v0, p1
@@ -8809,7 +8659,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2289
+    .line 2263
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/notification/NotificationManagerService;->mUsageStats:Lcom/android/server/notification/NotificationUsageStats;
@@ -8828,7 +8678,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/server/notification/NotificationUsageStats;->dump(Ljava/io/PrintWriter;Ljava/lang/String;Lcom/android/server/notification/NotificationManagerService$DumpFilter;)V
 
-    .line 2292
+    .line 2266
     :cond_10
     move-object/from16 v0, p2
 
@@ -8840,7 +8690,7 @@
 
     if-eqz v19, :cond_12
 
-    .line 2293
+    .line 2267
     :cond_11
     const-string/jumbo v20, "\n  Zen Mode:"
 
@@ -8850,7 +8700,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2294
+    .line 2268
     const-string/jumbo v20, "    mInterruptionFilter="
 
     move-object/from16 v0, p1
@@ -8871,7 +8721,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 2295
+    .line 2269
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/notification/NotificationManagerService;->mZenModeHelper:Lcom/android/server/notification/ZenModeHelper;
@@ -8888,7 +8738,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/server/notification/ZenModeHelper;->dump(Ljava/io/PrintWriter;Ljava/lang/String;)V
 
-    .line 2297
+    .line 2271
     const-string/jumbo v20, "\n  Zen Log:"
 
     move-object/from16 v0, p1
@@ -8897,7 +8747,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2298
+    .line 2272
     const-string/jumbo v20, "    "
 
     move-object/from16 v0, p1
@@ -8906,11 +8756,11 @@
 
     invoke-static {v0, v1}, Lcom/android/server/notification/ZenLog;->dump(Ljava/io/PrintWriter;Ljava/lang/String;)V
 
-    .line 2301
+    .line 2275
     :cond_12
     if-nez v19, :cond_15
 
-    .line 2302
+    .line 2276
     const-string/jumbo v20, "\n  Ranking Config:"
 
     move-object/from16 v0, p1
@@ -8919,7 +8769,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2303
+    .line 2277
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/notification/NotificationManagerService;->mRankingHelper:Lcom/android/server/notification/RankingHelper;
@@ -8938,7 +8788,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/server/notification/RankingHelper;->dump(Ljava/io/PrintWriter;Ljava/lang/String;Lcom/android/server/notification/NotificationManagerService$DumpFilter;)V
 
-    .line 2305
+    .line 2279
     const-string/jumbo v20, "\n  Notification listeners:"
 
     move-object/from16 v0, p1
@@ -8947,7 +8797,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2306
+    .line 2280
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/notification/NotificationManagerService;->mListeners:Lcom/android/server/notification/NotificationManagerService$NotificationListeners;
@@ -8962,7 +8812,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->dump(Ljava/io/PrintWriter;Lcom/android/server/notification/NotificationManagerService$DumpFilter;)V
 
-    .line 2307
+    .line 2281
     const-string/jumbo v20, "    mListenerHints: "
 
     move-object/from16 v0, p1
@@ -8983,7 +8833,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 2308
+    .line 2282
     const-string/jumbo v20, "    mListenersDisablingEffects: ("
 
     move-object/from16 v0, p1
@@ -8992,7 +8842,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2309
+    .line 2283
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/notification/NotificationManagerService;->mListenersDisablingEffects:Landroid/util/ArraySet;
@@ -9003,7 +8853,7 @@
 
     move-result v4
 
-    .line 2310
+    .line 2284
     .restart local v4    # "N":I
     const/4 v8, 0x0
 
@@ -9011,7 +8861,7 @@
     :goto_5
     if-ge v8, v4, :cond_14
 
-    .line 2311
+    .line 2285
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/notification/NotificationManagerService;->mListenersDisablingEffects:Landroid/util/ArraySet;
@@ -9026,7 +8876,7 @@
 
     check-cast v10, Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;
 
-    .line 2312
+    .line 2286
     .local v10, "listener":Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;
     if-lez v8, :cond_13
 
@@ -9038,7 +8888,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->print(C)V
 
-    .line 2313
+    .line 2287
     :cond_13
     iget-object v0, v10, Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;->component:Landroid/content/ComponentName;
 
@@ -9050,12 +8900,12 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/Object;)V
 
-    .line 2310
+    .line 2284
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_5
 
-    .line 2315
+    .line 2289
     .end local v10    # "listener":Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;
     :cond_14
     const/16 v20, 0x29
@@ -9066,7 +8916,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(C)V
 
-    .line 2317
+    .line 2291
     .end local v4    # "N":I
     .end local v8    # "i":I
     :cond_15
@@ -9078,7 +8928,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2318
+    .line 2292
     const-string/jumbo v20, "    mPolicyAccess: "
 
     move-object/from16 v0, p1
@@ -9099,7 +8949,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 2320
+    .line 2294
     const-string/jumbo v20, "\n  Condition providers:"
 
     move-object/from16 v0, p1
@@ -9108,7 +8958,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2321
+    .line 2295
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/notification/NotificationManagerService;->mConditionProviders:Lcom/android/server/notification/ConditionProviders;
@@ -9123,7 +8973,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/server/notification/ConditionProviders;->dump(Ljava/io/PrintWriter;Lcom/android/server/notification/NotificationManagerService$DumpFilter;)V
 
-    .line 2323
+    .line 2297
     const-string/jumbo v20, "\n  Group summaries:"
 
     move-object/from16 v0, p1
@@ -9132,7 +8982,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2324
+    .line 2298
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/notification/NotificationManagerService;->mSummaryByGroupKey:Landroid/util/ArrayMap;
@@ -9162,7 +9012,7 @@
 
     check-cast v6, Ljava/util/Map$Entry;
 
-    .line 2325
+    .line 2299
     .local v6, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/android/server/notification/NotificationRecord;>;"
     invoke-interface {v6}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -9170,7 +9020,7 @@
 
     check-cast v15, Lcom/android/server/notification/NotificationRecord;
 
-    .line 2326
+    .line 2300
     .local v15, "r":Lcom/android/server/notification/NotificationRecord;
     new-instance v20, Ljava/lang/StringBuilder;
 
@@ -9232,7 +9082,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2327
+    .line 2301
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/notification/NotificationManagerService;->mNotificationsByKey:Landroid/util/ArrayMap;
@@ -9255,7 +9105,7 @@
 
     if-eq v0, v15, :cond_16
 
-    .line 2328
+    .line 2302
     const-string/jumbo v20, "!!!!!!LEAK: Record not found in mNotificationsByKey."
 
     move-object/from16 v0, p1
@@ -9264,7 +9114,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2329
+    .line 2303
     const-string/jumbo v20, "      "
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/notification/NotificationManagerService;->getContext()Landroid/content/Context;
@@ -9291,7 +9141,7 @@
 
     goto/16 :goto_6
 
-    .line 2334
+    .line 2308
     .end local v6    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/android/server/notification/NotificationRecord;>;"
     .end local v15    # "r":Lcom/android/server/notification/NotificationRecord;
     :cond_17
@@ -9304,7 +9154,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2335
+    .line 2309
     move-object/from16 v0, p0
 
     move-object/from16 v1, p2
@@ -9313,7 +9163,7 @@
 
     move-result-object v12
 
-    .line 2336
+    .line 2310
     .local v12, "packageBans":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/Integer;Ljava/util/ArrayList<Ljava/lang/String;>;>;"
     invoke-virtual {v12}, Landroid/util/ArrayMap;->keySet()Ljava/util/Set;
 
@@ -9337,7 +9187,7 @@
 
     check-cast v17, Ljava/lang/Integer;
 
-    .line 2337
+    .line 2311
     .local v17, "userId":Ljava/lang/Integer;
     move-object/from16 v0, v17
 
@@ -9365,7 +9215,7 @@
 
     check-cast v13, Ljava/lang/String;
 
-    .line 2338
+    .line 2312
     .local v13, "packageName":Ljava/lang/String;
     new-instance v20, Ljava/lang/StringBuilder;
 
@@ -9420,7 +9270,7 @@
 
     goto :goto_7
 
-    .line 2341
+    .line 2315
     .end local v12    # "packageBans":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/Integer;Ljava/util/ArrayList<Ljava/lang/String;>;>;"
     .end local v13    # "packageName":Ljava/lang/String;
     .end local v14    # "packageName$iterator":Ljava/util/Iterator;
@@ -9432,7 +9282,7 @@
     :cond_19
     monitor-exit v21
 
-    .line 2216
+    .line 2190
     return-void
 .end method
 
@@ -9449,12 +9299,12 @@
     .param p9, "incomingUserId"    # I
 
     .prologue
-    .line 2412
+    .line 2386
     sget-boolean v1, Lcom/android/server/notification/NotificationManagerService;->DBG:Z
 
     if-eqz v1, :cond_0
 
-    .line 2413
+    .line 2387
     const-string/jumbo v1, "NotificationService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -9485,10 +9335,10 @@
 
     move-result-object v2
 
-    .line 2414
+    .line 2388
     const-string/jumbo v3, " notification="
 
-    .line 2413
+    .line 2387
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -9505,11 +9355,11 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2416
+    .line 2390
     :cond_0
     invoke-static/range {p1 .. p1}, Lcom/android/server/notification/NotificationManagerService;->checkCallerIsSystemOrSameApp(Ljava/lang/String;)V
 
-    .line 2417
+    .line 2391
     invoke-static/range {p3 .. p3}, Lcom/android/server/notification/NotificationManagerService;->isUidSystem(I)Z
 
     move-result v1
@@ -9524,7 +9374,7 @@
 
     move-result v12
 
-    .line 2418
+    .line 2392
     :goto_0
     move-object/from16 v0, p0
 
@@ -9536,7 +9386,7 @@
 
     move-result v16
 
-    .line 2421
+    .line 2395
     .local v16, "isNotificationFromListener":Z
     const-string/jumbo v6, "enqueueNotification"
 
@@ -9552,31 +9402,31 @@
 
     move-object/from16 v7, p1
 
-    .line 2420
+    .line 2394
     invoke-static/range {v1 .. v7}, Landroid/app/ActivityManager;->handleIncomingUser(IIIZZLjava/lang/String;Ljava/lang/String;)I
 
     move-result v11
 
-    .line 2422
+    .line 2396
     .local v11, "userId":I
     new-instance v10, Landroid/os/UserHandle;
 
     invoke-direct {v10, v11}, Landroid/os/UserHandle;-><init>(I)V
 
-    .line 2426
+    .line 2400
     .local v10, "user":Landroid/os/UserHandle;
     if-nez v12, :cond_1
 
     if-eqz v16, :cond_4
 
-    .line 2447
+    .line 2421
     :cond_1
     :goto_1
     if-eqz p1, :cond_2
 
     if-nez p7, :cond_8
 
-    .line 2448
+    .line 2422
     :cond_2
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
@@ -9596,10 +9446,10 @@
 
     move-result-object v2
 
-    .line 2449
+    .line 2423
     const-string/jumbo v3, " id="
 
-    .line 2448
+    .line 2422
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -9610,10 +9460,10 @@
 
     move-result-object v2
 
-    .line 2449
+    .line 2423
     const-string/jumbo v3, " notification="
 
-    .line 2448
+    .line 2422
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -9632,7 +9482,7 @@
 
     throw v1
 
-    .line 2417
+    .line 2391
     .end local v10    # "user":Landroid/os/UserHandle;
     .end local v11    # "userId":I
     .end local v16    # "isNotificationFromListener":Z
@@ -9642,7 +9492,7 @@
     .local v12, "isSystemNotification":Z
     goto :goto_0
 
-    .line 2427
+    .line 2401
     .end local v12    # "isSystemNotification":Z
     .restart local v10    # "user":Landroid/os/UserHandle;
     .restart local v11    # "userId":I
@@ -9654,10 +9504,10 @@
 
     monitor-enter v2
 
-    .line 2428
+    .line 2402
     const/4 v14, 0x0
 
-    .line 2429
+    .line 2403
     .local v14, "count":I
     :try_start_0
     move-object/from16 v0, p0
@@ -9668,7 +9518,7 @@
 
     move-result v13
 
-    .line 2430
+    .line 2404
     .local v13, "N":I
     const/4 v15, 0x0
 
@@ -9676,7 +9526,7 @@
     :goto_2
     if-ge v15, v13, :cond_5
 
-    .line 2431
+    .line 2405
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/server/notification/NotificationManagerService;->mNotificationList:Ljava/util/ArrayList;
@@ -9687,7 +9537,7 @@
 
     check-cast v17, Lcom/android/server/notification/NotificationRecord;
 
-    .line 2432
+    .line 2406
     .local v17, "r":Lcom/android/server/notification/NotificationRecord;
     move-object/from16 v0, v17
 
@@ -9715,7 +9565,7 @@
 
     if-ne v1, v11, :cond_7
 
-    .line 2433
+    .line 2407
     move-object/from16 v0, v17
 
     iget-object v1, v0, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
@@ -9752,17 +9602,17 @@
 
     goto/16 :goto_1
 
-    .line 2436
+    .line 2410
     .restart local v17    # "r":Lcom/android/server/notification/NotificationRecord;
     :cond_6
     add-int/lit8 v14, v14, 0x1
 
-    .line 2437
+    .line 2411
     const/16 v1, 0x32
 
     if-lt v14, v1, :cond_7
 
-    .line 2438
+    .line 2412
     :try_start_1
     const-string/jumbo v1, "NotificationService"
 
@@ -9780,10 +9630,10 @@
 
     move-result-object v3
 
-    .line 2439
+    .line 2413
     const-string/jumbo v4, " notifications.  Not showing more.  package="
 
-    .line 2438
+    .line 2412
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
@@ -9804,16 +9654,16 @@
 
     monitor-exit v2
 
-    .line 2440
+    .line 2414
     return-void
 
-    .line 2430
+    .line 2404
     :cond_7
     add-int/lit8 v15, v15, 0x1
 
     goto :goto_2
 
-    .line 2427
+    .line 2401
     .end local v13    # "N":I
     .end local v15    # "i":I
     .end local v17    # "r":Lcom/android/server/notification/NotificationRecord;
@@ -9824,7 +9674,7 @@
 
     throw v1
 
-    .line 2452
+    .line 2426
     .end local v14    # "count":I
     :cond_8
     invoke-virtual/range {p7 .. p7}, Landroid/app/Notification;->getSmallIcon()Landroid/graphics/drawable/Icon;
@@ -9833,14 +9683,14 @@
 
     if-eqz v1, :cond_9
 
-    .line 2453
+    .line 2427
     invoke-virtual/range {p7 .. p7}, Landroid/app/Notification;->isValid()Z
 
     move-result v1
 
     if-nez v1, :cond_9
 
-    .line 2454
+    .line 2428
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -9859,10 +9709,10 @@
 
     move-result-object v2
 
-    .line 2455
+    .line 2429
     const-string/jumbo v3, " id="
 
-    .line 2454
+    .line 2428
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -9873,10 +9723,10 @@
 
     move-result-object v2
 
-    .line 2455
+    .line 2429
     const-string/jumbo v3, " notification="
 
-    .line 2454
+    .line 2428
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -9895,7 +9745,7 @@
 
     throw v1
 
-    .line 2459
+    .line 2433
     :cond_9
     move-object/from16 v0, p0
 
@@ -9927,12 +9777,12 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/notification/NotificationManagerService$WorkerHandler;->post(Ljava/lang/Runnable;)Z
 
-    .line 2599
+    .line 2573
     const/4 v1, 0x0
 
     aput p6, p8, v1
 
-    .line 2411
+    .line 2385
     return-void
 .end method
 
@@ -9941,14 +9791,14 @@
     .param p1, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 3645
+    .line 3597
     iget-object v2, p0, Lcom/android/server/notification/NotificationManagerService;->mNotificationList:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 3646
+    .line 3598
     .local v0, "N":I
     const/4 v1, 0x0
 
@@ -9956,7 +9806,7 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 3647
+    .line 3599
     iget-object v2, p0, Lcom/android/server/notification/NotificationManagerService;->mNotificationList:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -9975,16 +9825,16 @@
 
     if-eqz v2, :cond_0
 
-    .line 3648
+    .line 3600
     return v1
 
-    .line 3646
+    .line 3598
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 3651
+    .line 3603
     :cond_1
     const/4 v2, -0x1
 
@@ -9999,16 +9849,16 @@
     .param p4, "userId"    # I
 
     .prologue
-    .line 3631
+    .line 3583
     iget-object v2, p0, Lcom/android/server/notification/NotificationManagerService;->mNotificationList:Ljava/util/ArrayList;
 
-    .line 3632
+    .line 3584
     .local v2, "list":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/notification/NotificationRecord;>;"
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .line 3633
+    .line 3585
     .local v1, "len":I
     const/4 v0, 0x0
 
@@ -10016,14 +9866,14 @@
     :goto_0
     if-ge v0, v1, :cond_1
 
-    .line 3634
+    .line 3586
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Lcom/android/server/notification/NotificationRecord;
 
-    .line 3635
+    .line 3587
     .local v3, "r":Lcom/android/server/notification/NotificationRecord;
     invoke-direct {p0, v3, p4}, Lcom/android/server/notification/NotificationManagerService;->notificationMatchesUserId(Lcom/android/server/notification/NotificationRecord;I)Z
 
@@ -10039,7 +9889,7 @@
 
     if-ne v4, p3, :cond_0
 
-    .line 3636
+    .line 3588
     iget-object v4, v3, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
 
     invoke-virtual {v4}, Landroid/service/notification/StatusBarNotification;->getTag()Ljava/lang/String;
@@ -10050,10 +9900,10 @@
 
     move-result v4
 
-    .line 3635
+    .line 3587
     if-eqz v4, :cond_0
 
-    .line 3636
+    .line 3588
     iget-object v4, v3, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
 
     invoke-virtual {v4}, Landroid/service/notification/StatusBarNotification;->getPackageName()Ljava/lang/String;
@@ -10064,19 +9914,19 @@
 
     move-result v4
 
-    .line 3635
+    .line 3587
     if-eqz v4, :cond_0
 
-    .line 3637
+    .line 3589
     return v0
 
-    .line 3633
+    .line 3585
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 3640
+    .line 3592
     .end local v3    # "r":Lcom/android/server/notification/NotificationRecord;
     :cond_1
     const/4 v4, -0x1
@@ -10090,22 +9940,22 @@
     .param p2, "callback"    # Landroid/app/ITransientNotification;
 
     .prologue
-    .line 2969
+    .line 2921
     invoke-interface {p2}, Landroid/app/ITransientNotification;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 2970
+    .line 2922
     .local v0, "cbak":Landroid/os/IBinder;
     iget-object v3, p0, Lcom/android/server/notification/NotificationManagerService;->mToastQueue:Ljava/util/ArrayList;
 
-    .line 2971
+    .line 2923
     .local v3, "list":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/notification/NotificationManagerService$ToastRecord;>;"
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    .line 2972
+    .line 2924
     .local v2, "len":I
     const/4 v1, 0x0
 
@@ -10113,14 +9963,14 @@
     :goto_0
     if-ge v1, v2, :cond_1
 
-    .line 2973
+    .line 2925
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lcom/android/server/notification/NotificationManagerService$ToastRecord;
 
-    .line 2974
+    .line 2926
     .local v4, "r":Lcom/android/server/notification/NotificationManagerService$ToastRecord;
     iget-object v5, v4, Lcom/android/server/notification/NotificationManagerService$ToastRecord;->pkg:Ljava/lang/String;
 
@@ -10138,16 +9988,16 @@
 
     if-ne v5, v0, :cond_0
 
-    .line 2975
+    .line 2927
     return v1
 
-    .line 2972
+    .line 2924
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 2978
+    .line 2930
     .end local v4    # "r":Lcom/android/server/notification/NotificationManagerService$ToastRecord;
     :cond_1
     const/4 v5, -0x1
@@ -10162,20 +10012,20 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 2984
+    .line 2936
     const/4 v5, 0x0
 
-    .line 2985
+    .line 2937
     .local v5, "toastCount":I
     iget-object v3, p0, Lcom/android/server/notification/NotificationManagerService;->mToastQueue:Ljava/util/ArrayList;
 
-    .line 2986
+    .line 2938
     .local v3, "list":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/notification/NotificationManagerService$ToastRecord;>;"
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 2987
+    .line 2939
     .local v0, "N":I
     const/4 v2, 0x0
 
@@ -10183,29 +10033,29 @@
     :goto_0
     if-ge v2, v0, :cond_1
 
-    .line 2988
+    .line 2940
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lcom/android/server/notification/NotificationManagerService$ToastRecord;
 
-    .line 2989
+    .line 2941
     .local v4, "r":Lcom/android/server/notification/NotificationManagerService$ToastRecord;
     iget v7, v4, Lcom/android/server/notification/NotificationManagerService$ToastRecord;->pid:I
 
     if-ne v7, p1, :cond_0
 
-    .line 2990
+    .line 2942
     add-int/lit8 v5, v5, 0x1
 
-    .line 2987
+    .line 2939
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 2994
+    .line 2946
     .end local v4    # "r":Lcom/android/server/notification/NotificationManagerService$ToastRecord;
     :cond_1
     :try_start_0
@@ -10222,11 +10072,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2982
+    .line 2934
     :goto_1
     return-void
 
-    .line 2995
+    .line 2947
     :catch_0
     move-exception v1
 
@@ -10239,17 +10089,17 @@
     .param p1, "phase"    # I
 
     .prologue
-    .line 1350
+    .line 1337
     const/16 v0, 0x1f4
 
     if-ne p1, v0, :cond_1
 
-    .line 1352
+    .line 1339
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/notification/NotificationManagerService;->mSystemReady:Z
 
-    .line 1355
+    .line 1342
     invoke-virtual {p0}, Lcom/android/server/notification/NotificationManagerService;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -10264,7 +10114,7 @@
 
     iput-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mAudioManager:Landroid/media/AudioManager;
 
-    .line 1356
+    .line 1343
     const-class v0, Landroid/media/AudioManagerInternal;
 
     invoke-virtual {p0, v0}, Lcom/android/server/notification/NotificationManagerService;->getLocalService(Ljava/lang/Class;)Ljava/lang/Object;
@@ -10275,41 +10125,41 @@
 
     iput-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mAudioManagerInternal:Landroid/media/AudioManagerInternal;
 
-    .line 1357
+    .line 1344
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mZenModeHelper:Lcom/android/server/notification/ZenModeHelper;
 
     invoke-virtual {v0}, Lcom/android/server/notification/ZenModeHelper;->onSystemReady()V
 
-    .line 1359
+    .line 1346
     invoke-direct {p0}, Lcom/android/server/notification/NotificationManagerService;->updateDisableDucking()V
 
-    .line 1349
+    .line 1336
     :cond_0
     :goto_0
     return-void
 
-    .line 1360
+    .line 1347
     :cond_1
     const/16 v0, 0x258
 
     if-ne p1, v0, :cond_0
 
-    .line 1363
+    .line 1350
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mSettingsObserver:Lcom/android/server/notification/NotificationManagerService$SettingsObserver;
 
     invoke-virtual {v0}, Lcom/android/server/notification/NotificationManagerService$SettingsObserver;->observe()V
 
-    .line 1364
+    .line 1351
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mSpamFilterObserver:Lcom/android/server/notification/NotificationManagerService$SpamFilterObserver;
 
     invoke-virtual {v0}, Lcom/android/server/notification/NotificationManagerService$SpamFilterObserver;->observe()V
 
-    .line 1365
+    .line 1352
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mListeners:Lcom/android/server/notification/NotificationManagerService$NotificationListeners;
 
     invoke-virtual {v0}, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->onBootPhaseAppsCanStart()V
 
-    .line 1366
+    .line 1353
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mConditionProviders:Lcom/android/server/notification/ConditionProviders;
 
     invoke-virtual {v0}, Lcom/android/server/notification/ConditionProviders;->onBootPhaseAppsCanStart()V
@@ -10321,7 +10171,7 @@
     .locals 20
 
     .prologue
-    .line 1177
+    .line 1164
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/notification/NotificationManagerService;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -10330,7 +10180,7 @@
 
     move-result-object v18
 
-    .line 1179
+    .line 1166
     .local v18, "resources":Landroid/content/res/Resources;
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -10340,7 +10190,7 @@
 
     iput-object v1, v0, Lcom/android/server/notification/NotificationManagerService;->mAm:Landroid/app/IActivityManager;
 
-    .line 1180
+    .line 1167
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/notification/NotificationManagerService;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -10357,7 +10207,7 @@
 
     iput-object v1, v0, Lcom/android/server/notification/NotificationManagerService;->mAppOps:Landroid/app/AppOpsManager;
 
-    .line 1181
+    .line 1168
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/notification/NotificationManagerService;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -10374,7 +10224,7 @@
 
     iput-object v1, v0, Lcom/android/server/notification/NotificationManagerService;->mVibrator:Landroid/os/Vibrator;
 
-    .line 1182
+    .line 1169
     const-class v1, Landroid/app/usage/UsageStatsManagerInternal;
 
     invoke-static {v1}, Lcom/android/server/LocalServices;->getService(Ljava/lang/Class;)Ljava/lang/Object;
@@ -10387,7 +10237,7 @@
 
     iput-object v1, v0, Lcom/android/server/notification/NotificationManagerService;->mAppUsageStats:Landroid/app/usage/UsageStatsManagerInternal;
 
-    .line 1184
+    .line 1171
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/notification/NotificationManagerService;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -10400,12 +10250,12 @@
 
     check-cast v1, Landroid/app/KeyguardManager;
 
-    .line 1183
+    .line 1170
     move-object/from16 v0, p0
 
     iput-object v1, v0, Lcom/android/server/notification/NotificationManagerService;->mKeyguardManager:Landroid/app/KeyguardManager;
 
-    .line 1186
+    .line 1173
     new-instance v1, Lcom/android/server/notification/NotificationManagerService$WorkerHandler;
 
     const/4 v2, 0x0
@@ -10435,7 +10285,7 @@
 
     move-result-object v13
 
-    .line 1194
+    .line 1181
     .local v13, "extractorNames":[Ljava/lang/String;
     :goto_0
     new-instance v1, Lcom/android/server/notification/NotificationUsageStats;
@@ -10450,14 +10300,14 @@
 
     iput-object v1, v0, Lcom/android/server/notification/NotificationManagerService;->mUsageStats:Lcom/android/server/notification/NotificationUsageStats;
 
-    .line 1195
+    .line 1182
     new-instance v1, Lcom/android/server/notification/RankingHelper;
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/notification/NotificationManagerService;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
-    .line 1196
+    .line 1183
     new-instance v3, Lcom/android/server/notification/NotificationManagerService$RankingWorkerHandler;
 
     move-object/from16 v0, p0
@@ -10472,19 +10322,19 @@
 
     invoke-direct {v3, v0, v5}, Lcom/android/server/notification/NotificationManagerService$RankingWorkerHandler;-><init>(Lcom/android/server/notification/NotificationManagerService;Landroid/os/Looper;)V
 
-    .line 1197
+    .line 1184
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/android/server/notification/NotificationManagerService;->mUsageStats:Lcom/android/server/notification/NotificationUsageStats;
 
-    .line 1195
+    .line 1182
     invoke-direct {v1, v2, v3, v5, v13}, Lcom/android/server/notification/RankingHelper;-><init>(Landroid/content/Context;Landroid/os/Handler;Lcom/android/server/notification/NotificationUsageStats;[Ljava/lang/String;)V
 
     move-object/from16 v0, p0
 
     iput-object v1, v0, Lcom/android/server/notification/NotificationManagerService;->mRankingHelper:Lcom/android/server/notification/RankingHelper;
 
-    .line 1199
+    .line 1186
     new-instance v1, Lcom/android/server/notification/ConditionProviders;
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/notification/NotificationManagerService;->getContext()Landroid/content/Context;
@@ -10505,7 +10355,7 @@
 
     iput-object v1, v0, Lcom/android/server/notification/NotificationManagerService;->mConditionProviders:Lcom/android/server/notification/ConditionProviders;
 
-    .line 1200
+    .line 1187
     new-instance v1, Lcom/android/server/notification/ZenModeHelper;
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/notification/NotificationManagerService;->getContext()Landroid/content/Context;
@@ -10530,7 +10380,7 @@
 
     iput-object v1, v0, Lcom/android/server/notification/NotificationManagerService;->mZenModeHelper:Lcom/android/server/notification/ZenModeHelper;
 
-    .line 1201
+    .line 1188
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/server/notification/NotificationManagerService;->mZenModeHelper:Lcom/android/server/notification/ZenModeHelper;
@@ -10543,7 +10393,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/server/notification/ZenModeHelper;->addCallback(Lcom/android/server/notification/ZenModeHelper$Callback;)V
 
-    .line 1220
+    .line 1207
     new-instance v19, Ljava/io/File;
 
     invoke-static {}, Landroid/os/Environment;->getDataDirectory()Ljava/io/File;
@@ -10556,7 +10406,7 @@
 
     invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 1221
+    .line 1208
     .local v19, "systemDir":Ljava/io/File;
     new-instance v1, Landroid/util/AtomicFile;
 
@@ -10574,10 +10424,10 @@
 
     iput-object v1, v0, Lcom/android/server/notification/NotificationManagerService;->mPolicyFile:Landroid/util/AtomicFile;
 
-    .line 1223
+    .line 1210
     invoke-direct/range {p0 .. p0}, Lcom/android/server/notification/NotificationManagerService;->importOldBlockDb()V
 
-    .line 1225
+    .line 1212
     new-instance v1, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;
 
     move-object/from16 v0, p0
@@ -10588,7 +10438,7 @@
 
     iput-object v1, v0, Lcom/android/server/notification/NotificationManagerService;->mListeners:Lcom/android/server/notification/NotificationManagerService$NotificationListeners;
 
-    .line 1226
+    .line 1213
     const-class v1, Lcom/android/server/statusbar/StatusBarManagerInternal;
 
     move-object/from16 v0, p0
@@ -10603,7 +10453,7 @@
 
     iput-object v1, v0, Lcom/android/server/notification/NotificationManagerService;->mStatusBar:Lcom/android/server/statusbar/StatusBarManagerInternal;
 
-    .line 1227
+    .line 1214
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/server/notification/NotificationManagerService;->mStatusBar:Lcom/android/server/statusbar/StatusBarManagerInternal;
@@ -10614,7 +10464,7 @@
 
     invoke-interface {v1, v2}, Lcom/android/server/statusbar/StatusBarManagerInternal;->setNotificationDelegate(Lcom/android/server/notification/NotificationDelegate;)V
 
-    .line 1229
+    .line 1216
     const-class v1, Lcom/android/server/lights/LightsManager;
 
     move-object/from16 v0, p0
@@ -10625,7 +10475,7 @@
 
     check-cast v15, Lcom/android/server/lights/LightsManager;
 
-    .line 1230
+    .line 1217
     .local v15, "lights":Lcom/android/server/lights/LightsManager;
     const/4 v1, 0x4
 
@@ -10637,7 +10487,7 @@
 
     iput-object v1, v0, Lcom/android/server/notification/NotificationManagerService;->mNotificationLight:Lcom/android/server/lights/Light;
 
-    .line 1231
+    .line 1218
     const/4 v1, 0x5
 
     invoke-virtual {v15, v1}, Lcom/android/server/lights/LightsManager;->getLight(I)Lcom/android/server/lights/Light;
@@ -10696,7 +10546,7 @@
 
     iput-boolean v1, v0, Lcom/android/server/notification/NotificationManagerService;->mMultiColorNotificationLed:Z
 
-    .line 1243
+    .line 1230
     new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
@@ -10705,7 +10555,7 @@
 
     iput-object v1, v0, Lcom/android/server/notification/NotificationManagerService;->mNotificationPulseCustomLedValues:Ljava/util/HashMap;
 
-    .line 1245
+    .line 1232
     new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
@@ -10732,7 +10582,7 @@
 
     aget-object v17, v11, v1
 
-    .line 1249
+    .line 1236
     .local v17, "mapping":Ljava/lang/String;
     const-string/jumbo v3, "\\|"
 
@@ -10742,7 +10592,7 @@
 
     move-result-object v16
 
-    .line 1250
+    .line 1237
     .local v16, "map":[Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -10758,12 +10608,12 @@
 
     invoke-interface {v3, v5, v6}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1248
+    .line 1235
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 1191
+    .line 1178
     .end local v11    # "defaultMapping":[Ljava/lang/String;
     .end local v13    # "extractorNames":[Ljava/lang/String;
     .end local v15    # "lights":Lcom/android/server/lights/LightsManager;
@@ -10773,7 +10623,7 @@
     :catch_0
     move-exception v12
 
-    .line 1192
+    .line 1179
     .local v12, "e":Landroid/content/res/Resources$NotFoundException;
     const/4 v1, 0x0
 
@@ -10782,7 +10632,7 @@
     .restart local v13    # "extractorNames":[Ljava/lang/String;
     goto/16 :goto_0
 
-    .line 1256
+    .line 1243
     .end local v12    # "e":Landroid/content/res/Resources$NotFoundException;
     .restart local v11    # "defaultMapping":[Ljava/lang/String;
     .restart local v15    # "lights":Lcom/android/server/lights/LightsManager;
@@ -10820,10 +10670,10 @@
 
     iput-object v1, v0, Lcom/android/server/notification/NotificationManagerService;->mFallbackVibrationPattern:[J
 
-    .line 1264
-    const v1, 0x3f050008
+    .line 1251
+    const v1, 0x3f070008
 
-    .line 1263
+    .line 1250
     move-object/from16 v0, v18
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
@@ -10834,10 +10684,10 @@
 
     iput-boolean v1, v0, Lcom/android/server/notification/NotificationManagerService;->mAdjustableNotificationLedBrightness:Z
 
-    .line 1266
-    const v1, 0x3f050009
+    .line 1253
+    const v1, 0x3f070009
 
-    .line 1265
+    .line 1252
     move-object/from16 v0, v18
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
@@ -10860,7 +10710,7 @@
 
     iput-boolean v1, v0, Lcom/android/server/notification/NotificationManagerService;->mUseAttentionLight:Z
 
-    .line 1274
+    .line 1261
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/notification/NotificationManagerService;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -10869,26 +10719,26 @@
 
     move-result-object v1
 
-    .line 1275
+    .line 1262
     const-string/jumbo v2, "device_provisioned"
 
     const/4 v3, 0x0
 
-    .line 1274
+    .line 1261
     invoke-static {v1, v2, v3}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 1276
+    .line 1263
     const/4 v1, 0x1
 
     move-object/from16 v0, p0
 
     iput-boolean v1, v0, Lcom/android/server/notification/NotificationManagerService;->mDisableNotificationEffects:Z
 
-    .line 1278
+    .line 1265
     :cond_1
     move-object/from16 v0, p0
 
@@ -10896,14 +10746,14 @@
 
     invoke-virtual {v1}, Lcom/android/server/notification/ZenModeHelper;->initZenMode()V
 
-    .line 1279
+    .line 1266
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/server/notification/NotificationManagerService;->mZenModeHelper:Lcom/android/server/notification/ZenModeHelper;
 
     invoke-virtual {v1}, Lcom/android/server/notification/ZenModeHelper;->readAllowLightsFromSettings()V
 
-    .line 1280
+    .line 1267
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/server/notification/NotificationManagerService;->mZenModeHelper:Lcom/android/server/notification/ZenModeHelper;
@@ -10916,7 +10766,7 @@
 
     iput v1, v0, Lcom/android/server/notification/NotificationManagerService;->mInterruptionFilter:I
 
-    .line 1282
+    .line 1269
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/server/notification/NotificationManagerService;->mUserProfiles:Lcom/android/server/notification/ManagedServices$UserProfiles;
@@ -10927,56 +10777,56 @@
 
     invoke-virtual {v1, v2}, Lcom/android/server/notification/ManagedServices$UserProfiles;->updateCache(Landroid/content/Context;)V
 
-    .line 1283
+    .line 1270
     invoke-direct/range {p0 .. p0}, Lcom/android/server/notification/NotificationManagerService;->listenForCallState()V
 
-    .line 1286
+    .line 1273
     new-instance v14, Landroid/content/IntentFilter;
 
     invoke-direct {v14}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 1287
+    .line 1274
     .local v14, "filter":Landroid/content/IntentFilter;
     const-string/jumbo v1, "android.intent.action.SCREEN_ON"
 
     invoke-virtual {v14, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 1288
+    .line 1275
     const-string/jumbo v1, "android.intent.action.SCREEN_OFF"
 
     invoke-virtual {v14, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 1289
+    .line 1276
     const-string/jumbo v1, "android.intent.action.PHONE_STATE"
 
     invoke-virtual {v14, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 1290
+    .line 1277
     const-string/jumbo v1, "android.intent.action.USER_PRESENT"
 
     invoke-virtual {v14, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 1291
+    .line 1278
     const-string/jumbo v1, "android.intent.action.USER_STOPPED"
 
     invoke-virtual {v14, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 1292
+    .line 1279
     const-string/jumbo v1, "android.intent.action.USER_SWITCHED"
 
     invoke-virtual {v14, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 1293
+    .line 1280
     const-string/jumbo v1, "android.intent.action.USER_ADDED"
 
     invoke-virtual {v14, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 1294
+    .line 1281
     const-string/jumbo v1, "android.intent.action.USER_REMOVED"
 
     invoke-virtual {v14, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 1295
+    .line 1282
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/notification/NotificationManagerService;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -10987,43 +10837,43 @@
 
     invoke-virtual {v1, v2, v14}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 1297
+    .line 1284
     new-instance v4, Landroid/content/IntentFilter;
 
     invoke-direct {v4}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 1298
+    .line 1285
     .local v4, "pkgFilter":Landroid/content/IntentFilter;
     const-string/jumbo v1, "android.intent.action.PACKAGE_ADDED"
 
     invoke-virtual {v4, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 1299
+    .line 1286
     const-string/jumbo v1, "android.intent.action.PACKAGE_REMOVED"
 
     invoke-virtual {v4, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 1300
+    .line 1287
     const-string/jumbo v1, "android.intent.action.PACKAGE_CHANGED"
 
     invoke-virtual {v4, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 1301
+    .line 1288
     const-string/jumbo v1, "android.intent.action.PACKAGE_RESTARTED"
 
     invoke-virtual {v4, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 1302
+    .line 1289
     const-string/jumbo v1, "android.intent.action.QUERY_PACKAGE_RESTART"
 
     invoke-virtual {v4, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 1303
+    .line 1290
     const-string/jumbo v1, "package"
 
     invoke-virtual {v4, v1}, Landroid/content/IntentFilter;->addDataScheme(Ljava/lang/String;)V
 
-    .line 1304
+    .line 1291
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/notification/NotificationManagerService;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -11036,20 +10886,20 @@
 
     const/4 v5, 0x0
 
-    .line 1305
+    .line 1292
     const/4 v6, 0x0
 
-    .line 1304
+    .line 1291
     invoke-virtual/range {v1 .. v6}, Landroid/content/Context;->registerReceiverAsUser(Landroid/content/BroadcastReceiver;Landroid/os/UserHandle;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
-    .line 1307
+    .line 1294
     new-instance v8, Landroid/content/IntentFilter;
 
     const-string/jumbo v1, "android.intent.action.EXTERNAL_APPLICATIONS_UNAVAILABLE"
 
     invoke-direct {v8, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
-    .line 1308
+    .line 1295
     .local v8, "sdFilter":Landroid/content/IntentFilter;
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/notification/NotificationManagerService;->getContext()Landroid/content/Context;
 
@@ -11063,13 +10913,13 @@
 
     const/4 v9, 0x0
 
-    .line 1309
+    .line 1296
     const/4 v10, 0x0
 
-    .line 1308
+    .line 1295
     invoke-virtual/range {v5 .. v10}, Landroid/content/Context;->registerReceiverAsUser(Landroid/content/BroadcastReceiver;Landroid/os/UserHandle;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
-    .line 1311
+    .line 1298
     new-instance v1, Lcom/android/server/notification/NotificationManagerService$SettingsObserver;
 
     move-object/from16 v0, p0
@@ -11084,14 +10934,14 @@
 
     iput-object v1, v0, Lcom/android/server/notification/NotificationManagerService;->mSettingsObserver:Lcom/android/server/notification/NotificationManagerService$SettingsObserver;
 
-    .line 1312
+    .line 1299
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/server/notification/NotificationManagerService;->mSettingsObserver:Lcom/android/server/notification/NotificationManagerService$SettingsObserver;
 
     invoke-virtual {v1}, Lcom/android/server/notification/NotificationManagerService$SettingsObserver;->observe()V
 
-    .line 1314
+    .line 1301
     new-instance v1, Lcom/android/server/notification/NotificationManagerService$SpamFilterObserver;
 
     move-object/from16 v0, p0
@@ -11128,7 +10978,7 @@
 
     iput-object v1, v0, Lcom/android/server/notification/NotificationManagerService;->mArchive:Lcom/android/server/notification/NotificationManagerService$Archive;
 
-    .line 1320
+    .line 1307
     const-string/jumbo v1, "notification"
 
     move-object/from16 v0, p0
@@ -11139,7 +10989,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/server/notification/NotificationManagerService;->publishBinderService(Ljava/lang/String;Landroid/os/IBinder;)V
 
-    .line 1321
+    .line 1308
     const-class v1, Lcom/android/server/notification/NotificationManagerInternal;
 
     move-object/from16 v0, p0
@@ -11152,7 +11002,7 @@
 
     invoke-direct/range {p0 .. p0}, Lcom/android/server/notification/NotificationManagerService;->initFlymeExtraFields()V
 
-    .line 1176
+    .line 1163
     return-void
 .end method
 
@@ -11162,17 +11012,17 @@
     .prologue
     const/4 v1, 0x3
 
-    .line 464
+    .line 461
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mHandler:Lcom/android/server/notification/NotificationManagerService$WorkerHandler;
 
     invoke-virtual {v0, v1}, Lcom/android/server/notification/NotificationManagerService$WorkerHandler;->removeMessages(I)V
 
-    .line 465
+    .line 462
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mHandler:Lcom/android/server/notification/NotificationManagerService$WorkerHandler;
 
     invoke-virtual {v0, v1}, Lcom/android/server/notification/NotificationManagerService$WorkerHandler;->sendEmptyMessage(I)Z
 
-    .line 463
+    .line 460
     return-void
 .end method
 
@@ -11182,7 +11032,7 @@
     .param p2, "packageName"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 3180
+    .line 3132
     invoke-virtual {p0}, Lcom/android/server/notification/NotificationManagerService;->getContext()Landroid/content/Context;
 
     move-result-object v3
@@ -11191,7 +11041,7 @@
 
     move-result-object v1
 
-    .line 3181
+    .line 3133
     .local v1, "manager":Landroid/view/accessibility/AccessibilityManager;
     invoke-virtual {v1}, Landroid/view/accessibility/AccessibilityManager;->isEnabled()Z
 
@@ -11199,10 +11049,10 @@
 
     if-nez v3, :cond_0
 
-    .line 3182
+    .line 3134
     return-void
 
-    .line 3186
+    .line 3138
     :cond_0
     const/16 v3, 0x40
 
@@ -11210,11 +11060,11 @@
 
     move-result-object v0
 
-    .line 3187
+    .line 3139
     .local v0, "event":Landroid/view/accessibility/AccessibilityEvent;
     invoke-virtual {v0, p2}, Landroid/view/accessibility/AccessibilityEvent;->setPackageName(Ljava/lang/CharSequence;)V
 
-    .line 3188
+    .line 3140
     const-class v3, Landroid/app/Notification;
 
     invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -11223,13 +11073,13 @@
 
     invoke-virtual {v0, v3}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
 
-    .line 3189
+    .line 3141
     invoke-virtual {v0, p1}, Landroid/view/accessibility/AccessibilityEvent;->setParcelableData(Landroid/os/Parcelable;)V
 
-    .line 3190
+    .line 3142
     iget-object v2, p1, Landroid/app/Notification;->tickerText:Ljava/lang/CharSequence;
 
-    .line 3191
+    .line 3143
     .local v2, "tickerText":Ljava/lang/CharSequence;
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -11237,18 +11087,18 @@
 
     if-nez v3, :cond_1
 
-    .line 3192
+    .line 3144
     invoke-virtual {v0}, Landroid/view/accessibility/AccessibilityEvent;->getText()Ljava/util/List;
 
     move-result-object v3
 
     invoke-interface {v3, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 3195
+    .line 3147
     :cond_1
     invoke-virtual {v1, v0}, Landroid/view/accessibility/AccessibilityManager;->sendAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
-    .line 3179
+    .line 3131
     return-void
 .end method
 
@@ -11263,7 +11113,7 @@
 
     const/4 v4, 0x0
 
-    .line 1371
+    .line 1358
     const-string/jumbo v1, "NotificationService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -11295,28 +11145,28 @@
 
     invoke-static {v1, v0}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1373
+    .line 1360
     iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService;->mAppOps:Landroid/app/AppOpsManager;
 
-    .line 1374
+    .line 1361
     if-eqz p3, :cond_1
 
     move v0, v4
 
-    .line 1373
+    .line 1360
     :goto_1
     const/16 v2, 0xb
 
     invoke-virtual {v1, v2, p2, p1, v0}, Landroid/app/AppOpsManager;->setMode(IILjava/lang/String;I)V
 
-    .line 1377
+    .line 1364
     if-eqz p3, :cond_2
 
-    .line 1370
+    .line 1357
     :goto_2
     return-void
 
-    .line 1371
+    .line 1358
     :cond_0
     const-string/jumbo v0, "dis"
 
@@ -11325,10 +11175,10 @@
     :cond_1
     move v0, v6
 
-    .line 1374
+    .line 1361
     goto :goto_1
 
-    .line 1378
+    .line 1365
     :cond_2
     sget v1, Lcom/android/server/notification/NotificationManagerService;->MY_UID:I
 
@@ -11338,7 +11188,7 @@
 
     move-result v7
 
-    .line 1379
+    .line 1366
     const/4 v8, 0x7
 
     const/4 v9, 0x0
@@ -11349,7 +11199,7 @@
 
     move v5, v4
 
-    .line 1378
+    .line 1365
     invoke-virtual/range {v0 .. v9}, Lcom/android/server/notification/NotificationManagerService;->cancelAllNotificationsInt(IILjava/lang/String;IIZIILcom/android/server/notification/ManagedServices$ManagedServiceInfo;)Z
 
     goto :goto_2
@@ -11361,7 +11211,7 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 2902
+    .line 2854
     iget-object v3, p0, Lcom/android/server/notification/NotificationManagerService;->mToastQueue:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -11370,11 +11220,11 @@
 
     check-cast v2, Lcom/android/server/notification/NotificationManagerService$ToastRecord;
 
-    .line 2903
+    .line 2855
     :goto_0
     if-eqz v2, :cond_3
 
-    .line 2904
+    .line 2856
     sget-boolean v3, Lcom/android/server/notification/NotificationManagerService;->DBG:Z
 
     if-eqz v3, :cond_0
@@ -11415,26 +11265,26 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2906
+    .line 2858
     :cond_0
     :try_start_0
     iget-object v3, v2, Lcom/android/server/notification/NotificationManagerService$ToastRecord;->callback:Landroid/app/ITransientNotification;
 
     invoke-interface {v3}, Landroid/app/ITransientNotification;->show()V
 
-    .line 2907
+    .line 2859
     invoke-direct {p0, v2}, Lcom/android/server/notification/NotificationManagerService;->scheduleTimeoutLocked(Lcom/android/server/notification/NotificationManagerService$ToastRecord;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2908
+    .line 2860
     return-void
 
-    .line 2909
+    .line 2861
     :catch_0
     move-exception v0
 
-    .line 2910
+    .line 2862
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v3, "NotificationService"
 
@@ -11454,18 +11304,18 @@
 
     move-result-object v4
 
-    .line 2911
+    .line 2863
     const-string/jumbo v5, " in package "
 
-    .line 2910
+    .line 2862
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    .line 2911
+    .line 2863
     iget-object v5, v2, Lcom/android/server/notification/NotificationManagerService$ToastRecord;->pkg:Ljava/lang/String;
 
-    .line 2910
+    .line 2862
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
@@ -11476,29 +11326,29 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2913
+    .line 2865
     iget-object v3, p0, Lcom/android/server/notification/NotificationManagerService;->mToastQueue:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
 
     move-result v1
 
-    .line 2914
+    .line 2866
     .local v1, "index":I
     if-ltz v1, :cond_1
 
-    .line 2915
+    .line 2867
     iget-object v3, p0, Lcom/android/server/notification/NotificationManagerService;->mToastQueue:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 2917
+    .line 2869
     :cond_1
     iget v3, v2, Lcom/android/server/notification/NotificationManagerService$ToastRecord;->pid:I
 
     invoke-virtual {p0, v3}, Lcom/android/server/notification/NotificationManagerService;->keepProcessAliveLocked(I)V
 
-    .line 2918
+    .line 2870
     iget-object v3, p0, Lcom/android/server/notification/NotificationManagerService;->mToastQueue:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
@@ -11507,7 +11357,7 @@
 
     if-lez v3, :cond_2
 
-    .line 2919
+    .line 2871
     iget-object v3, p0, Lcom/android/server/notification/NotificationManagerService;->mToastQueue:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -11519,7 +11369,7 @@
     .local v2, "record":Lcom/android/server/notification/NotificationManagerService$ToastRecord;
     goto/16 :goto_0
 
-    .line 2921
+    .line 2873
     .end local v2    # "record":Lcom/android/server/notification/NotificationManagerService$ToastRecord;
     :cond_2
     const/4 v2, 0x0
@@ -11527,7 +11377,7 @@
     .local v2, "record":Lcom/android/server/notification/NotificationManagerService$ToastRecord;
     goto/16 :goto_0
 
-    .line 2901
+    .line 2853
     .end local v0    # "e":Landroid/os/RemoteException;
     .end local v1    # "index":I
     .end local v2    # "record":Lcom/android/server/notification/NotificationManagerService$ToastRecord;
@@ -11539,10 +11389,10 @@
     .locals 11
 
     .prologue
-    .line 3492
+    .line 3444
     const/4 v2, 0x0
 
-    .line 3493
+    .line 3445
     :cond_0
     :goto_0
     if-nez v2, :cond_1
@@ -11555,33 +11405,33 @@
 
     if-eqz v8, :cond_2
 
-    .line 3505
+    .line 3457
     :cond_1
     if-nez v2, :cond_3
 
-    .line 3506
+    .line 3458
     const/4 v0, 0x0
 
-    .line 3515
+    .line 3467
     .local v0, "enableLed":Z
     :goto_1
     if-nez v0, :cond_7
 
-    .line 3516
+    .line 3468
     iget-object v8, p0, Lcom/android/server/notification/NotificationManagerService;->mNotificationLight:Lcom/android/server/lights/Light;
 
     invoke-virtual {v8}, Lcom/android/server/lights/Light;->turnOff()V
 
-    .line 3517
+    .line 3469
     iget-object v8, p0, Lcom/android/server/notification/NotificationManagerService;->mStatusBar:Lcom/android/server/statusbar/StatusBarManagerInternal;
 
     invoke-interface {v8}, Lcom/android/server/statusbar/StatusBarManagerInternal;->notificationLightOff()V
 
-    .line 3489
+    .line 3441
     :goto_2
     return-void
 
-    .line 3494
+    .line 3446
     .end local v0    # "enableLed":Z
     :cond_2
     iget-object v8, p0, Lcom/android/server/notification/NotificationManagerService;->mLights:Ljava/util/ArrayList;
@@ -11600,7 +11450,7 @@
 
     check-cast v7, Ljava/lang/String;
 
-    .line 3495
+    .line 3447
     .local v7, "owner":Ljava/lang/String;
     iget-object v8, p0, Lcom/android/server/notification/NotificationManagerService;->mNotificationsByKey:Landroid/util/ArrayMap;
 
@@ -11610,11 +11460,11 @@
 
     check-cast v2, Lcom/android/server/notification/NotificationRecord;
 
-    .line 3496
+    .line 3448
     .local v2, "ledNotification":Lcom/android/server/notification/NotificationRecord;
     if-nez v2, :cond_0
 
-    .line 3497
+    .line 3449
     const-string/jumbo v8, "NotificationService"
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -11637,14 +11487,14 @@
 
     invoke-static {v8, v9}, Landroid/util/Slog;->wtfStack(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3498
+    .line 3450
     iget-object v8, p0, Lcom/android/server/notification/NotificationManagerService;->mLights:Ljava/util/ArrayList;
 
     invoke-virtual {v8, v7}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 3507
+    .line 3459
     .end local v2    # "ledNotification":Lcom/android/server/notification/NotificationRecord;
     .end local v7    # "owner":Ljava/lang/String;
     :cond_3
@@ -11654,13 +11504,13 @@
 
     if-eqz v8, :cond_4
 
-    .line 3508
+    .line 3460
     const/4 v0, 0x1
 
     .restart local v0    # "enableLed":Z
     goto :goto_1
 
-    .line 3509
+    .line 3461
     .end local v0    # "enableLed":Z
     :cond_4
     iget-boolean v8, p0, Lcom/android/server/notification/NotificationManagerService;->mScreenOnEnabled:Z
@@ -11675,14 +11525,14 @@
 
     if-eqz v8, :cond_6
 
-    .line 3510
+    .line 3462
     :cond_5
     const/4 v0, 0x0
 
     .restart local v0    # "enableLed":Z
     goto :goto_1
 
-    .line 3512
+    .line 3464
     .end local v0    # "enableLed":Z
     :cond_6
     const/4 v0, 0x1
@@ -11690,7 +11540,7 @@
     .restart local v0    # "enableLed":Z
     goto :goto_1
 
-    .line 3519
+    .line 3471
     :cond_7
     iget-object v8, v2, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
 
@@ -11698,24 +11548,24 @@
 
     move-result-object v6
 
-    .line 3520
+    .line 3472
     .local v6, "ledno":Landroid/app/Notification;
     invoke-direct {p0, v2}, Lcom/android/server/notification/NotificationManagerService;->getLedValuesForNotification(Lcom/android/server/notification/NotificationRecord;)Lcom/android/server/notification/NotificationManagerService$NotificationLedValues;
 
     move-result-object v5
 
-    .line 3525
+    .line 3477
     .local v5, "ledValues":Lcom/android/server/notification/NotificationManagerService$NotificationLedValues;
     if-eqz v5, :cond_c
 
-    .line 3526
+    .line 3478
     iget v8, v5, Lcom/android/server/notification/NotificationManagerService$NotificationLedValues;->color:I
 
     if-eqz v8, :cond_9
 
     iget v1, v5, Lcom/android/server/notification/NotificationManagerService$NotificationLedValues;->color:I
 
-    .line 3527
+    .line 3479
     .local v1, "ledARGB":I
     :goto_3
     iget v8, v5, Lcom/android/server/notification/NotificationManagerService$NotificationLedValues;->onMS:I
@@ -11724,7 +11574,7 @@
 
     iget v4, v5, Lcom/android/server/notification/NotificationManagerService$NotificationLedValues;->onMS:I
 
-    .line 3528
+    .line 3480
     .local v4, "ledOnMS":I
     :goto_4
     iget v8, v5, Lcom/android/server/notification/NotificationManagerService$NotificationLedValues;->offMS:I
@@ -11733,32 +11583,32 @@
 
     iget v3, v5, Lcom/android/server/notification/NotificationManagerService$NotificationLedValues;->offMS:I
 
-    .line 3540
+    .line 3492
     .local v3, "ledOffMS":I
     :goto_5
     iget-object v8, p0, Lcom/android/server/notification/NotificationManagerService;->mNotificationLight:Lcom/android/server/lights/Light;
 
     iget v9, p0, Lcom/android/server/notification/NotificationManagerService;->mNotificationLedBrightnessLevel:I
 
-    .line 3541
+    .line 3493
     iget-boolean v10, p0, Lcom/android/server/notification/NotificationManagerService;->mMultipleLedsEnabledSetting:Z
 
-    .line 3540
+    .line 3492
     invoke-virtual {v8, v9, v10}, Lcom/android/server/lights/Light;->setModes(IZ)V
 
-    .line 3543
+    .line 3495
     iget-boolean v8, p0, Lcom/android/server/notification/NotificationManagerService;->mNotificationPulseEnabled:Z
 
     if-eqz v8, :cond_8
 
-    .line 3545
+    .line 3497
     iget-object v8, p0, Lcom/android/server/notification/NotificationManagerService;->mNotificationLight:Lcom/android/server/lights/Light;
 
     const/4 v9, 0x1
 
     invoke-virtual {v8, v1, v9, v4, v3}, Lcom/android/server/lights/Light;->setFlashing(IIII)V
 
-    .line 3550
+    .line 3502
     :cond_8
     iget-object v8, p0, Lcom/android/server/notification/NotificationManagerService;->mStatusBar:Lcom/android/server/statusbar/StatusBarManagerInternal;
 
@@ -11766,7 +11616,7 @@
 
     goto/16 :goto_2
 
-    .line 3526
+    .line 3478
     .end local v1    # "ledARGB":I
     .end local v3    # "ledOffMS":I
     .end local v4    # "ledOnMS":I
@@ -11776,21 +11626,21 @@
     .restart local v1    # "ledARGB":I
     goto :goto_3
 
-    .line 3527
+    .line 3479
     :cond_a
     iget v4, p0, Lcom/android/server/notification/NotificationManagerService;->mDefaultNotificationLedOn:I
 
     .restart local v4    # "ledOnMS":I
     goto :goto_4
 
-    .line 3528
+    .line 3480
     :cond_b
     iget v3, p0, Lcom/android/server/notification/NotificationManagerService;->mDefaultNotificationLedOff:I
 
     .restart local v3    # "ledOffMS":I
     goto :goto_5
 
-    .line 3529
+    .line 3481
     .end local v1    # "ledARGB":I
     .end local v3    # "ledOffMS":I
     .end local v4    # "ledOnMS":I
@@ -11801,34 +11651,34 @@
 
     if-eqz v8, :cond_d
 
-    .line 3530
+    .line 3482
     invoke-direct {p0, v2}, Lcom/android/server/notification/NotificationManagerService;->generateLedColorForNotification(Lcom/android/server/notification/NotificationRecord;)I
 
     move-result v1
 
-    .line 3531
+    .line 3483
     .restart local v1    # "ledARGB":I
     iget v4, p0, Lcom/android/server/notification/NotificationManagerService;->mDefaultNotificationLedOn:I
 
-    .line 3532
+    .line 3484
     .restart local v4    # "ledOnMS":I
     iget v3, p0, Lcom/android/server/notification/NotificationManagerService;->mDefaultNotificationLedOff:I
 
     .restart local v3    # "ledOffMS":I
     goto :goto_5
 
-    .line 3534
+    .line 3486
     .end local v1    # "ledARGB":I
     .end local v3    # "ledOffMS":I
     .end local v4    # "ledOnMS":I
     :cond_d
     iget v1, v6, Landroid/app/Notification;->ledARGB:I
 
-    .line 3535
+    .line 3487
     .restart local v1    # "ledARGB":I
     iget v4, v6, Landroid/app/Notification;->ledOnMS:I
 
-    .line 3536
+    .line 3488
     .restart local v4    # "ledOnMS":I
     iget v3, v6, Landroid/app/Notification;->ledOffMS:I
 
@@ -11869,26 +11719,22 @@
     .locals 3
 
     .prologue
-    .line 3950
     new-instance v0, Lcom/android/server/notification/NotificationFirewallImpl;
 
     invoke-direct {v0}, Lcom/android/server/notification/NotificationFirewallImpl;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mFlymeFirewall:Lcom/android/server/notification/NotificationFirewall;
 
-    .line 3951
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mRankingHelper:Lcom/android/server/notification/RankingHelper;
 
     iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService;->mFlymeFirewall:Lcom/android/server/notification/NotificationFirewall;
 
     invoke-virtual {v0, v1}, Lcom/android/server/notification/RankingHelper;->setNotificationFirewall(Lcom/android/server/notification/NotificationFirewall;)V
 
-    .line 3952
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mFlymeInterceptThread:Landroid/os/HandlerThread;
 
     if-nez v0, :cond_0
 
-    .line 3953
     new-instance v0, Landroid/os/HandlerThread;
 
     const-string v1, "intercept"
@@ -11899,13 +11745,11 @@
 
     iput-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mFlymeInterceptThread:Landroid/os/HandlerThread;
 
-    .line 3955
     :cond_0
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mFlymeInterceptThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
 
-    .line 3956
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mFlymeFirewall:Lcom/android/server/notification/NotificationFirewall;
 
     invoke-virtual {p0}, Lcom/android/server/notification/NotificationManagerService;->getContext()Landroid/content/Context;
@@ -11920,12 +11764,11 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/server/notification/NotificationFirewall;->initialize(Landroid/content/Context;Landroid/os/Looper;)V
 
-    .line 3958
     invoke-virtual {p0}, Lcom/android/server/notification/NotificationManagerService;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    const-string/jumbo v1, "power"
+    const-string v1, "power"
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -11935,13 +11778,10 @@
 
     iput-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mFlymePowerManager:Landroid/os/PowerManager;
 
-    .line 3959
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mFlymePowerManager:Landroid/os/PowerManager;
 
-    .line 3961
-    const-string/jumbo v1, "NotificationService"
+    const-string v1, "NotificationService"
 
-    .line 3959
     const v2, 0x3000001a
 
     invoke-virtual {v0, v2, v1}, Landroid/os/PowerManager;->newWakeLock(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;
@@ -11950,14 +11790,12 @@
 
     iput-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mFlymeWakeLock:Landroid/os/PowerManager$WakeLock;
 
-    .line 3962
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mFlymeWakeLock:Landroid/os/PowerManager$WakeLock;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/os/PowerManager$WakeLock;->setReferenceCounted(Z)V
 
-    .line 3948
     return-void
 .end method
 
@@ -12722,7 +12560,6 @@
     .param p1, "n"    # Landroid/service/notification/StatusBarNotification;
 
     .prologue
-    .line 2449
     invoke-virtual {p0}, Lcom/android/server/notification/NotificationManagerService;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -12731,6 +12568,5 @@
 
     invoke-static {v0, p1, v1}, Lcom/android/server/notification/CloudNotificationHelper;->callReplyIntent(Landroid/content/Context;Landroid/service/notification/StatusBarNotification;I)V
 
-    .line 2447
     return-void
 .end method

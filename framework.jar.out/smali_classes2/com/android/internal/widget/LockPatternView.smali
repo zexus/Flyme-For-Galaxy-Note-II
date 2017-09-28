@@ -2299,7 +2299,7 @@
 
     .prologue
     .line 620
-    const v0, 0x1040338
+    const v0, 0x104031c
 
     invoke-direct {p0, v0}, Lcom/android/internal/widget/LockPatternView;->sendAccessEvent(I)V
 
@@ -2323,7 +2323,7 @@
 
     .prologue
     .line 613
-    const v0, 0x104033b
+    const v0, 0x104031f
 
     invoke-direct {p0, v0}, Lcom/android/internal/widget/LockPatternView;->sendAccessEvent(I)V
 
@@ -2349,7 +2349,7 @@
 
     .prologue
     .line 606
-    const v0, 0x1040337
+    const v0, 0x104031b
 
     invoke-direct {p0, v0}, Lcom/android/internal/widget/LockPatternView;->sendAccessEvent(I)V
 

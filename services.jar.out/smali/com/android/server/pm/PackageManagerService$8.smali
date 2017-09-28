@@ -48,7 +48,7 @@
     .param p8, "val$finishedReceiver"    # Landroid/content/IIntentReceiver;
 
     .prologue
-    .line 10436
+    .line 10435
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$8;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iput-object p2, p0, Lcom/android/server/pm/PackageManagerService$8;->val$userIds:[I
@@ -76,19 +76,19 @@
     .locals 21
 
     .prologue
-    .line 10440
+    .line 10439
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
     move-result-object v2
 
-    .line 10441
+    .line 10440
     .local v2, "am":Landroid/app/IActivityManager;
     if-nez v2, :cond_0
 
     return-void
 
-    .line 10443
+    .line 10442
     :cond_0
     move-object/from16 v0, p0
 
@@ -96,12 +96,12 @@
 
     if-nez v3, :cond_5
 
-    .line 10444
+    .line 10443
     invoke-interface {v2}, Landroid/app/IActivityManager;->getRunningUserIds()[I
 
     move-result-object v17
 
-    .line 10448
+    .line 10447
     .local v17, "resolvedUserIds":[I
     :goto_0
     const/4 v3, 0x0
@@ -123,7 +123,7 @@
 
     aget v15, v17, v19
 
-    .line 10449
+    .line 10448
     .local v15, "id":I
     new-instance v4, Landroid/content/Intent;
 
@@ -131,7 +131,7 @@
 
     iget-object v5, v0, Lcom/android/server/pm/PackageManagerService$8;->val$action:Ljava/lang/String;
 
-    .line 10450
+    .line 10449
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/pm/PackageManagerService$8;->val$pkg:Ljava/lang/String;
@@ -150,11 +150,11 @@
 
     move-result-object v3
 
-    .line 10449
+    .line 10448
     :goto_2
     invoke-direct {v4, v5, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 10451
+    .line 10450
     .local v4, "intent":Landroid/content/Intent;
     move-object/from16 v0, p0
 
@@ -162,14 +162,14 @@
 
     if-eqz v3, :cond_1
 
-    .line 10452
+    .line 10451
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/pm/PackageManagerService$8;->val$extras:Landroid/os/Bundle;
 
     invoke-virtual {v4, v3}, Landroid/content/Intent;->putExtras(Landroid/os/Bundle;)Landroid/content/Intent;
 
-    .line 10454
+    .line 10453
     :cond_1
     move-object/from16 v0, p0
 
@@ -177,14 +177,14 @@
 
     if-eqz v3, :cond_2
 
-    .line 10455
+    .line 10454
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/pm/PackageManagerService$8;->val$targetPkg:Ljava/lang/String;
 
     invoke-virtual {v4, v3}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 10458
+    .line 10457
     :cond_2
     const-string/jumbo v3, "android.intent.extra.UID"
 
@@ -194,7 +194,7 @@
 
     move-result v18
 
-    .line 10459
+    .line 10458
     .local v18, "uid":I
     if-lez v18, :cond_3
 
@@ -204,7 +204,7 @@
 
     if-eq v3, v15, :cond_3
 
-    .line 10460
+    .line 10459
     invoke-static/range {v18 .. v18}, Landroid/os/UserHandle;->getAppId(I)I
 
     move-result v3
@@ -213,45 +213,45 @@
 
     move-result v18
 
-    .line 10461
+    .line 10460
     const-string/jumbo v3, "android.intent.extra.UID"
 
     move/from16 v0, v18
 
     invoke-virtual {v4, v3, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 10463
+    .line 10462
     :cond_3
     const-string/jumbo v3, "android.intent.extra.user_handle"
 
     invoke-virtual {v4, v3, v15}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 10464
+    .line 10463
     const/high16 v3, 0x4000000
 
     invoke-virtual {v4, v3}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 10472
+    .line 10471
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/pm/PackageManagerService$8;->val$intentCategory:Ljava/lang/String;
 
     if-eqz v3, :cond_4
 
-    .line 10473
+    .line 10472
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/pm/PackageManagerService$8;->val$intentCategory:Ljava/lang/String;
 
     invoke-virtual {v4, v3}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 10475
+    .line 10474
     :cond_4
     move-object/from16 v0, p0
 
     iget-object v6, v0, Lcom/android/server/pm/PackageManagerService$8;->val$finishedReceiver:Landroid/content/IIntentReceiver;
 
-    .line 10477
+    .line 10476
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/pm/PackageManagerService$8;->val$finishedReceiver:Landroid/content/IIntentReceiver;
@@ -260,13 +260,13 @@
 
     const/4 v13, 0x1
 
-    .line 10475
+    .line 10474
     :goto_3
     const/4 v3, 0x0
 
     const/4 v5, 0x0
 
-    .line 10476
+    .line 10475
     const/4 v7, 0x0
 
     const/4 v8, 0x0
@@ -277,22 +277,22 @@
 
     const/4 v11, -0x1
 
-    .line 10477
+    .line 10476
     const/4 v12, 0x0
 
     const/4 v14, 0x0
 
-    .line 10475
+    .line 10474
     invoke-interface/range {v2 .. v15}, Landroid/app/IActivityManager;->broadcastIntent(Landroid/app/IApplicationThread;Landroid/content/Intent;Ljava/lang/String;Landroid/content/IIntentReceiver;ILjava/lang/String;Landroid/os/Bundle;[Ljava/lang/String;ILandroid/os/Bundle;ZZI)I
 
-    .line 10448
+    .line 10447
     add-int/lit8 v3, v19, 0x1
 
     move/from16 v19, v3
 
     goto/16 :goto_1
 
-    .line 10446
+    .line 10445
     .end local v4    # "intent":Landroid/content/Intent;
     .end local v15    # "id":I
     .end local v17    # "resolvedUserIds":[I
@@ -309,14 +309,14 @@
     .restart local v17    # "resolvedUserIds":[I
     goto/16 :goto_0
 
-    .line 10450
+    .line 10449
     .restart local v15    # "id":I
     :cond_6
     const/4 v3, 0x0
 
     goto :goto_2
 
-    .line 10477
+    .line 10476
     .restart local v4    # "intent":Landroid/content/Intent;
     .restart local v18    # "uid":I
     :cond_7
@@ -324,7 +324,7 @@
 
     goto :goto_3
 
-    .line 10479
+    .line 10478
     .end local v2    # "am":Landroid/app/IActivityManager;
     .end local v4    # "intent":Landroid/content/Intent;
     .end local v15    # "id":I
@@ -333,7 +333,7 @@
     :catch_0
     move-exception v16
 
-    .line 10438
+    .line 10437
     :cond_8
     return-void
 .end method

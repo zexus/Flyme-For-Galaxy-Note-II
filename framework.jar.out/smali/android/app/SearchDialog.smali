@@ -177,12 +177,12 @@
     const/4 v2, 0x0
 
     .line 165
-    const v0, 0x10900d2
+    const v0, 0x10900d0
 
     invoke-virtual {p0, v0}, Landroid/app/SearchDialog;->setContentView(I)V
 
     .line 168
-    const v0, 0x10203d2
+    const v0, 0x10203c3
 
     invoke-virtual {p0, v0}, Landroid/app/SearchDialog;->findViewById(I)Landroid/view/View;
 
@@ -244,7 +244,7 @@
     .line 184
     iget-object v0, p0, Landroid/app/SearchDialog;->mSearchView:Landroid/widget/SearchView;
 
-    const v1, 0x10203d4
+    const v1, 0x10203c5
 
     invoke-virtual {v0, v1}, Landroid/widget/SearchView;->findViewById(I)Landroid/view/View;
 
@@ -257,7 +257,7 @@
     .line 186
     iget-object v0, p0, Landroid/app/SearchDialog;->mSearchView:Landroid/widget/SearchView;
 
-    const v1, 0x10203d9
+    const v1, 0x10203ca
 
     invoke-virtual {v0, v1}, Landroid/widget/SearchView;->findViewById(I)Landroid/view/View;
 
@@ -269,7 +269,7 @@
     iput-object v0, p0, Landroid/app/SearchDialog;->mSearchAutoComplete:Landroid/widget/AutoCompleteTextView;
 
     .line 187
-    const v0, 0x10203d1
+    const v0, 0x10203c2
 
     invoke-virtual {p0, v0}, Landroid/app/SearchDialog;->findViewById(I)Landroid/view/View;
 
@@ -282,7 +282,7 @@
     .line 188
     iget-object v0, p0, Landroid/app/SearchDialog;->mSearchView:Landroid/widget/SearchView;
 
-    const v1, 0x10203d8
+    const v1, 0x10203c9
 
     invoke-virtual {v0, v1}, Landroid/widget/SearchView;->findViewById(I)Landroid/view/View;
 
@@ -295,7 +295,7 @@
 
     move-result-object v0
 
-    const v1, 0x1080691
+    const v1, 0x10805f2
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

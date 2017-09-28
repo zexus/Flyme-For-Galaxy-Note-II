@@ -63,12 +63,12 @@
     .locals 1
 
     .prologue
-    .line 128
+    .line 126
     new-instance v0, Landroid/app/ComposedIconInfo$1;
 
     invoke-direct {v0}, Landroid/app/ComposedIconInfo$1;-><init>()V
 
-    .line 127
+    .line 125
     sput-object v0, Landroid/app/ComposedIconInfo;->CREATOR:Landroid/os/Parcelable$Creator;
 
     .line 22
@@ -284,21 +284,18 @@
 
     .line 77
     .local v3, "numDefaultColors":I
-    if-lez v3, :cond_2
-
-    .line 78
     new-array v4, v3, [I
 
     iput-object v4, p0, Landroid/app/ComposedIconInfo;->defaultSwatchColors:[I
 
-    .line 79
+    .line 78
     const/4 v2, 0x0
 
     .restart local v2    # "i":I
     :goto_2
     if-ge v2, v3, :cond_2
 
-    .line 80
+    .line 79
     iget-object v4, p0, Landroid/app/ComposedIconInfo;->defaultSwatchColors:[I
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
@@ -307,13 +304,12 @@
 
     aput v5, v4, v2
 
-    .line 79
+    .line 78
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_2
 
     .line 50
-    .end local v2    # "i":I
     :cond_2
     return-void
 .end method
@@ -334,7 +330,7 @@
     .locals 1
 
     .prologue
-    .line 87
+    .line 85
     const/4 v0, 0x0
 
     return v0
@@ -348,42 +344,42 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 92
+    .line 90
     iget v3, p0, Landroid/app/ComposedIconInfo;->iconScale:F
 
     invoke-virtual {p1, v3}, Landroid/os/Parcel;->writeFloat(F)V
 
-    .line 93
+    .line 91
     iget v3, p0, Landroid/app/ComposedIconInfo;->iconRotation:F
 
     invoke-virtual {p1, v3}, Landroid/os/Parcel;->writeFloat(F)V
 
-    .line 94
+    .line 92
     iget v3, p0, Landroid/app/ComposedIconInfo;->iconRotationVariance:F
 
     invoke-virtual {p1, v3}, Landroid/os/Parcel;->writeFloat(F)V
 
-    .line 95
+    .line 93
     iget v3, p0, Landroid/app/ComposedIconInfo;->iconTranslationX:F
 
     invoke-virtual {p1, v3}, Landroid/os/Parcel;->writeFloat(F)V
 
-    .line 96
+    .line 94
     iget v3, p0, Landroid/app/ComposedIconInfo;->iconTranslationY:F
 
     invoke-virtual {p1, v3}, Landroid/os/Parcel;->writeFloat(F)V
 
-    .line 97
+    .line 95
     iget v3, p0, Landroid/app/ComposedIconInfo;->iconDensity:I
 
     invoke-virtual {p1, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 98
+    .line 96
     iget v3, p0, Landroid/app/ComposedIconInfo;->iconSize:I
 
     invoke-virtual {p1, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 99
+    .line 97
     iget-object v3, p0, Landroid/app/ComposedIconInfo;->iconBacks:[I
 
     if-eqz v3, :cond_0
@@ -395,12 +391,12 @@
     :goto_0
     invoke-virtual {p1, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 100
+    .line 98
     iget-object v3, p0, Landroid/app/ComposedIconInfo;->iconBacks:[I
 
     if-eqz v3, :cond_1
 
-    .line 101
+    .line 99
     iget-object v5, p0, Landroid/app/ComposedIconInfo;->iconBacks:[I
 
     array-length v6, v5
@@ -412,11 +408,11 @@
 
     aget v1, v5, v3
 
-    .line 102
+    .line 100
     .local v1, "resId":I
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 101
+    .line 99
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
@@ -425,33 +421,33 @@
     :cond_0
     move v3, v4
 
-    .line 99
+    .line 97
     goto :goto_0
 
-    .line 105
+    .line 103
     :cond_1
     iget v3, p0, Landroid/app/ComposedIconInfo;->iconMask:I
 
     invoke-virtual {p1, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 106
+    .line 104
     iget v3, p0, Landroid/app/ComposedIconInfo;->iconUpon:I
 
     invoke-virtual {p1, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 107
+    .line 105
     iget-object v3, p0, Landroid/app/ComposedIconInfo;->colorFilter:[F
 
     if-eqz v3, :cond_2
 
-    .line 108
+    .line 106
     iget-object v3, p0, Landroid/app/ComposedIconInfo;->colorFilter:[F
 
     array-length v3, v3
 
     invoke-virtual {p1, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 109
+    .line 107
     iget-object v5, p0, Landroid/app/ComposedIconInfo;->colorFilter:[F
 
     array-length v6, v5
@@ -463,27 +459,27 @@
 
     aget v2, v5, v3
 
-    .line 110
+    .line 108
     .local v2, "val":F
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeFloat(F)V
 
-    .line 109
+    .line 107
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_2
 
-    .line 113
+    .line 111
     .end local v2    # "val":F
     :cond_2
     invoke-virtual {p1, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 115
+    .line 113
     :cond_3
     iget v3, p0, Landroid/app/ComposedIconInfo;->iconPaletteBack:I
 
     invoke-virtual {p1, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 116
+    .line 114
     iget-object v3, p0, Landroid/app/ComposedIconInfo;->swatchType:Landroid/app/ComposedIconInfo$SwatchType;
 
     invoke-virtual {v3}, Landroid/app/ComposedIconInfo$SwatchType;->ordinal()I
@@ -492,19 +488,19 @@
 
     invoke-virtual {p1, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 117
+    .line 115
     iget-object v3, p0, Landroid/app/ComposedIconInfo;->defaultSwatchColors:[I
 
     if-eqz v3, :cond_4
 
-    .line 118
+    .line 116
     iget-object v3, p0, Landroid/app/ComposedIconInfo;->defaultSwatchColors:[I
 
     array-length v3, v3
 
     invoke-virtual {p1, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 119
+    .line 117
     iget-object v3, p0, Landroid/app/ComposedIconInfo;->defaultSwatchColors:[I
 
     array-length v5, v3
@@ -514,21 +510,21 @@
 
     aget v0, v3, v4
 
-    .line 120
+    .line 118
     .local v0, "color":I
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 119
+    .line 117
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_3
 
-    .line 123
+    .line 121
     .end local v0    # "color":I
     :cond_4
     invoke-virtual {p1, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 91
+    .line 89
     :cond_5
     return-void
 .end method

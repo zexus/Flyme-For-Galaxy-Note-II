@@ -313,7 +313,7 @@
     .end annotation
 
     .prologue
-    .line 467
+    .line 463
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -322,7 +322,7 @@
 
     move-result-object v0
 
-    .line 468
+    .line 464
     .local v0, "strings":[Ljava/lang/CharSequence;
     new-instance v1, Landroid/widget/ArrayAdapter;
 
@@ -377,15 +377,17 @@
 
     .line 398
     .local v2, "item":Ljava/lang/Object;, "TT;"
-    if-nez v2, :cond_2
+    instance-of v5, v2, Ljava/lang/CharSequence;
+
+    if-eqz v5, :cond_2
 
     .line 399
-    const-string/jumbo v5, ""
+    check-cast v2, Ljava/lang/CharSequence;
 
-    invoke-virtual {v3, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 408
     .end local v2    # "item":Ljava/lang/Object;, "TT;"
+    invoke-virtual {v3, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 404
     :goto_2
     return-object v4
 
@@ -443,21 +445,6 @@
     .restart local v2    # "item":Ljava/lang/Object;, "TT;"
     .restart local v3    # "text":Landroid/widget/TextView;
     :cond_2
-    instance-of v5, v2, Ljava/lang/CharSequence;
-
-    if-eqz v5, :cond_3
-
-    .line 402
-    check-cast v2, Ljava/lang/CharSequence;
-
-    .end local v2    # "item":Ljava/lang/Object;, "TT;"
-    invoke-virtual {v3, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    goto :goto_2
-
-    .line 404
-    .restart local v2    # "item":Ljava/lang/Object;, "TT;"
-    :cond_3
     invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v5
@@ -750,7 +737,7 @@
     .param p3, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
-    .line 451
+    .line 447
     .local p0, "this":Landroid/widget/ArrayAdapter;, "Landroid/widget/ArrayAdapter<TT;>;"
     iget-object v0, p0, Landroid/widget/ArrayAdapter;->mDropDownInflater:Landroid/view/LayoutInflater;
 
@@ -758,7 +745,7 @@
 
     iget-object v1, p0, Landroid/widget/ArrayAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    .line 452
+    .line 448
     .local v1, "inflater":Landroid/view/LayoutInflater;
     :goto_0
     iget v5, p0, Landroid/widget/ArrayAdapter;->mDropDownResource:I
@@ -777,7 +764,7 @@
 
     return-object v0
 
-    .line 451
+    .line 447
     .end local v1    # "inflater":Landroid/view/LayoutInflater;
     :cond_0
     iget-object v1, p0, Landroid/widget/ArrayAdapter;->mDropDownInflater:Landroid/view/LayoutInflater;
@@ -793,7 +780,7 @@
     .local p0, "this":Landroid/widget/ArrayAdapter;, "Landroid/widget/ArrayAdapter<TT;>;"
     const/4 v0, 0x0
 
-    .line 446
+    .line 442
     iget-object v1, p0, Landroid/widget/ArrayAdapter;->mDropDownInflater:Landroid/view/LayoutInflater;
 
     if-nez v1, :cond_0
@@ -822,19 +809,19 @@
     .local p0, "this":Landroid/widget/ArrayAdapter;, "Landroid/widget/ArrayAdapter<TT;>;"
     const/4 v1, 0x0
 
-    .line 475
+    .line 471
     iget-object v0, p0, Landroid/widget/ArrayAdapter;->mFilter:Landroid/widget/ArrayAdapter$ArrayFilter;
 
     if-nez v0, :cond_0
 
-    .line 476
+    .line 472
     new-instance v0, Landroid/widget/ArrayAdapter$ArrayFilter;
 
     invoke-direct {v0, p0, v1}, Landroid/widget/ArrayAdapter$ArrayFilter;-><init>(Landroid/widget/ArrayAdapter;Landroid/widget/ArrayAdapter$ArrayFilter;)V
 
     iput-object v0, p0, Landroid/widget/ArrayAdapter;->mFilter:Landroid/widget/ArrayAdapter$ArrayFilter;
 
-    .line 478
+    .line 474
     :cond_0
     iget-object v0, p0, Landroid/widget/ArrayAdapter;->mFilter:Landroid/widget/ArrayAdapter$ArrayFilter;
 
@@ -1072,11 +1059,11 @@
     .param p1, "resource"    # I
 
     .prologue
-    .line 418
+    .line 414
     .local p0, "this":Landroid/widget/ArrayAdapter;, "Landroid/widget/ArrayAdapter<TT;>;"
     iput p1, p0, Landroid/widget/ArrayAdapter;->mDropDownResource:I
 
-    .line 417
+    .line 413
     return-void
 .end method
 
@@ -1088,17 +1075,17 @@
     .local p0, "this":Landroid/widget/ArrayAdapter;, "Landroid/widget/ArrayAdapter<TT;>;"
     const/4 v1, 0x0
 
-    .line 434
+    .line 430
     if-nez p1, :cond_0
 
-    .line 435
+    .line 431
     iput-object v1, p0, Landroid/widget/ArrayAdapter;->mDropDownInflater:Landroid/view/LayoutInflater;
 
-    .line 433
+    .line 429
     :goto_0
     return-void
 
-    .line 436
+    .line 432
     :cond_0
     iget-object v1, p0, Landroid/widget/ArrayAdapter;->mInflater:Landroid/view/LayoutInflater;
 
@@ -1112,14 +1099,14 @@
 
     if-ne p1, v1, :cond_1
 
-    .line 437
+    .line 433
     iget-object v1, p0, Landroid/widget/ArrayAdapter;->mInflater:Landroid/view/LayoutInflater;
 
     iput-object v1, p0, Landroid/widget/ArrayAdapter;->mDropDownInflater:Landroid/view/LayoutInflater;
 
     goto :goto_0
 
-    .line 439
+    .line 435
     :cond_1
     new-instance v0, Landroid/view/ContextThemeWrapper;
 
@@ -1127,7 +1114,7 @@
 
     invoke-direct {v0, v1, p1}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;Landroid/content/res/Resources$Theme;)V
 
-    .line 440
+    .line 436
     .local v0, "context":Landroid/content/Context;
     invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 

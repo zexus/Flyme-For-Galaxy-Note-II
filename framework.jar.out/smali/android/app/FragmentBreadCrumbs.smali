@@ -158,7 +158,7 @@
     const/4 v1, 0x1
 
     .line 110
-    const v2, 0x1090061
+    const v2, 0x109005f
 
     .line 108
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
@@ -659,7 +659,7 @@
     iget-object v0, p0, Landroid/app/FragmentBreadCrumbs;->mInflater:Landroid/view/LayoutInflater;
 
     .line 126
-    const v1, 0x1090063
+    const v1, 0x1090061
 
     .line 127
     const/4 v2, 0x0
@@ -992,7 +992,7 @@
     if-nez v7, :cond_3
 
     .line 328
-    const v18, 0x1020040
+    const v18, 0x102003e
 
     move/from16 v0, v18
 
@@ -1149,7 +1149,7 @@
     invoke-virtual {v5, v0}, Landroid/view/View;->setVisibility(I)V
 
     .line 348
-    const v18, 0x1020040
+    const v18, 0x102003e
 
     move/from16 v0, v18
 

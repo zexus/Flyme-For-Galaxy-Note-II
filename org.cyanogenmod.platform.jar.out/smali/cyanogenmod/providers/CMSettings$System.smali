@@ -17,7 +17,8 @@
     value = {
         Lcyanogenmod/providers/CMSettings$System$1;,
         Lcyanogenmod/providers/CMSettings$System$2;,
-        Lcyanogenmod/providers/CMSettings$System$3;
+        Lcyanogenmod/providers/CMSettings$System$3;,
+        Lcyanogenmod/providers/CMSettings$System$4;
     }
 .end annotation
 
@@ -107,6 +108,10 @@
 
 .field public static final DISPLAY_LOW_POWER:Ljava/lang/String; = "display_low_power"
 
+.field public static final DISPLAY_PICTURE_ADJUSTMENT:Ljava/lang/String; = "display_picture_adjustment"
+
+.field public static final DISPLAY_PICTURE_ADJUSTMENT_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
+
 .field public static final DISPLAY_TEMPERATURE_DAY:Ljava/lang/String; = "display_temperature_day"
 
 .field public static final DISPLAY_TEMPERATURE_DAY_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
@@ -145,17 +150,7 @@
 
 .field public static final HEADSET_CONNECT_PLAYER:Ljava/lang/String; = "headset_connect_player"
 
-.field public static final HEADS_UP_BLACKLIST_VALUES:Ljava/lang/String; = "heads_up_blacklist_values"
-
-.field public static final HEADS_UP_BLACKLIST_VALUES_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
-
-.field public static final HEADS_UP_CUSTOM_VALUES:Ljava/lang/String; = "heads_up_custom_values"
-
-.field public static final HEADS_UP_CUSTOM_VALUES_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
-
-.field public static final HEADS_UP_WHITELIST_VALUES:Ljava/lang/String; = "heads_up_whitelist_values"
-
-.field public static final HEADS_UP_WHITELIST_VALUES_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
+.field public static final HEADSET_CONNECT_PLAYER_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
 .field public static final HIGH_TOUCH_SENSITIVITY_ENABLE:Ljava/lang/String; = "high_touch_sensitivity_enable"
 
@@ -226,6 +221,17 @@
 .field public static final MENU_WAKE_SCREEN:Ljava/lang/String; = "menu_wake_screen"
 
 .field public static final MENU_WAKE_SCREENN_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
+
+.field protected static final MOVED_TO_SECURE:Landroid/util/ArraySet;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/util/ArraySet",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field public static final NAVBAR_LEFT_IN_LANDSCAPE:Ljava/lang/String; = "navigation_bar_left"
 
@@ -472,63 +478,77 @@
 
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->sNameValueCache:Lcyanogenmod/providers/CMSettings$NameValueCache;
 
-    .line 796
+    .line 444
+    new-instance v0, Landroid/util/ArraySet;
+
+    invoke-direct {v0, v7}, Landroid/util/ArraySet;-><init>(I)V
+
+    sput-object v0, Lcyanogenmod/providers/CMSettings$System;->MOVED_TO_SECURE:Landroid/util/ArraySet;
+
+    .line 445
+    sget-object v0, Lcyanogenmod/providers/CMSettings$System;->MOVED_TO_SECURE:Landroid/util/ArraySet;
+
+    const-string/jumbo v1, "dev_force_show_navbar"
+
+    invoke-virtual {v0, v1}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
+
+    .line 813
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_PLAY_QUEUE_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 807
+    .line 824
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 806
+    .line 823
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->HIGH_TOUCH_SENSITIVITY_ENABLE_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 817
+    .line 834
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 816
+    .line 833
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->SYSTEM_PROFILES_ENABLED_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 832
+    .line 849
     new-instance v0, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;
 
     invoke-direct {v0, v5, v9}, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;-><init>(II)V
 
-    .line 831
+    .line 848
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->STATUS_BAR_CLOCK_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 840
+    .line 857
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->ZEN_ALLOW_LIGHTS_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 848
+    .line 865
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->ZEN_PRIORITY_ALLOW_LIGHTS_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 861
+    .line 878
     new-instance v0, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;
 
     invoke-direct {v0, v5, v8}, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;-><init>(II)V
 
-    .line 860
+    .line 877
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->STATUS_BAR_AM_PM_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 877
+    .line 893
     new-instance v0, Lcyanogenmod/providers/CMSettings$DiscreteValueValidator;
 
-    const/4 v1, 0x6
+    const/4 v1, 0x5
 
     new-array v1, v1, [Ljava/lang/String;
 
@@ -540,47 +560,41 @@
 
     aput-object v2, v1, v7
 
-    const-string/jumbo v2, "3"
+    const-string/jumbo v2, "4"
 
     aput-object v2, v1, v8
 
-    const-string/jumbo v2, "4"
+    const-string/jumbo v2, "5"
 
     aput-object v2, v1, v9
 
-    const-string/jumbo v2, "5"
+    const-string/jumbo v2, "6"
 
     const/4 v3, 0x4
 
     aput-object v2, v1, v3
 
-    const-string/jumbo v2, "6"
-
-    const/4 v3, 0x5
-
-    aput-object v2, v1, v3
-
     invoke-direct {v0, v1}, Lcyanogenmod/providers/CMSettings$DiscreteValueValidator;-><init>([Ljava/lang/String;)V
 
-    .line 876
+    .line 892
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->STATUS_BAR_BATTERY_STYLE_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 890
+    .line 906
     new-instance v0, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;
 
     invoke-direct {v0, v5, v8}, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;-><init>(II)V
 
-    .line 889
+    .line 905
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->STATUS_BAR_SHOW_BATTERY_PERCENT_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 899
+    .line 915
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->INCREASING_RING_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 908
+    .line 924
     new-instance v0, Lcyanogenmod/providers/CMSettings$InclusiveFloatRangeValidator;
 
     const/4 v1, 0x0
@@ -589,10 +603,10 @@
 
     invoke-direct {v0, v1, v2}, Lcyanogenmod/providers/CMSettings$InclusiveFloatRangeValidator;-><init>(FF)V
 
-    .line 907
+    .line 923
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->INCREASING_RING_START_VOLUME_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 917
+    .line 933
     new-instance v0, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;
 
     const/4 v1, 0x5
@@ -601,18 +615,18 @@
 
     invoke-direct {v0, v1, v2}, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;-><init>(II)V
 
-    .line 916
+    .line 932
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->INCREASING_RING_RAMP_UP_TIME_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 927
+    .line 943
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 926
+    .line 942
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->VOLUME_ADJUST_SOUNDS_ENABLED_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 936
+    .line 952
     new-instance v0, Lcyanogenmod/providers/CMSettings$DelimitedListValidator;
 
     const/16 v1, 0xa
@@ -635,7 +649,7 @@
 
     aput-object v2, v1, v9
 
-    .line 937
+    .line 953
     const-string/jumbo v2, "recent"
 
     const/4 v3, 0x4
@@ -672,1273 +686,1274 @@
 
     const-string/jumbo v2, "|"
 
-    .line 936
+    .line 952
     invoke-direct {v0, v1, v2, v7}, Lcyanogenmod/providers/CMSettings$DelimitedListValidator;-><init>([Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 935
+    .line 951
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->NAV_BUTTONS_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 947
+    .line 963
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 946
+    .line 962
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->VOLUME_KEYS_CONTROL_RING_STREAM_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 957
+    .line 973
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 956
+    .line 972
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->NAVIGATION_BAR_MENU_ARROW_KEYS_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 976
+    .line 992
     new-instance v0, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;
 
     invoke-direct {v0, v5, v6}, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;-><init>(II)V
 
-    .line 975
+    .line 991
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->KEY_HOME_LONG_PRESS_ACTION_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 987
+    .line 1003
     new-instance v0, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;
 
     invoke-direct {v0, v5, v6}, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;-><init>(II)V
 
-    .line 986
+    .line 1002
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->KEY_HOME_DOUBLE_TAP_ACTION_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 997
+    .line 1013
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 996
+    .line 1012
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->BACK_WAKE_SCREEN_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1007
+    .line 1023
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1006
+    .line 1022
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->MENU_WAKE_SCREENN_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1017
+    .line 1033
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1016
+    .line 1032
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->VOLUME_WAKE_SCREEN_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1027
+    .line 1043
     new-instance v0, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;
 
     invoke-direct {v0, v5, v6}, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;-><init>(II)V
 
-    .line 1026
+    .line 1042
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->KEY_MENU_ACTION_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1038
+    .line 1054
     new-instance v0, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;
 
     invoke-direct {v0, v5, v6}, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;-><init>(II)V
 
-    .line 1037
+    .line 1053
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->KEY_MENU_LONG_PRESS_ACTION_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1048
+    .line 1064
     new-instance v0, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;
 
     invoke-direct {v0, v5, v6}, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;-><init>(II)V
 
-    .line 1047
+    .line 1063
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->KEY_ASSIST_ACTION_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1058
+    .line 1074
     new-instance v0, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;
 
     invoke-direct {v0, v5, v6}, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;-><init>(II)V
 
-    .line 1057
+    .line 1073
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->KEY_ASSIST_LONG_PRESS_ACTION_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1068
+    .line 1084
     new-instance v0, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;
 
     invoke-direct {v0, v5, v6}, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;-><init>(II)V
 
-    .line 1067
+    .line 1083
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->KEY_APP_SWITCH_ACTION_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1078
+    .line 1094
     new-instance v0, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;
 
     invoke-direct {v0, v5, v6}, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;-><init>(II)V
 
-    .line 1077
+    .line 1093
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->KEY_APP_SWITCH_LONG_PRESS_ACTION_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1088
+    .line 1104
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1087
+    .line 1103
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->HOME_WAKE_SCREEN_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1098
+    .line 1114
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1097
+    .line 1113
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->ASSIST_WAKE_SCREEN_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1108
+    .line 1124
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1107
+    .line 1123
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->APP_SWITCH_WAKE_SCREEN_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1118
+    .line 1134
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1117
+    .line 1133
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->CAMERA_WAKE_SCREEN_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1128
+    .line 1144
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1127
+    .line 1143
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->CAMERA_SLEEP_ON_RELEASE_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1138
+    .line 1154
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1137
+    .line 1153
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->CAMERA_LAUNCH_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1150
+    .line 1166
     new-instance v0, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;
 
     invoke-direct {v0, v5, v8}, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;-><init>(II)V
 
-    .line 1149
+    .line 1165
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->SWAP_VOLUME_KEYS_ON_ROTATION_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1160
+    .line 1176
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1159
+    .line 1175
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->BATTERY_LIGHT_ENABLED_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1170
+    .line 1186
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1169
+    .line 1185
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->BATTERY_LIGHT_PULSE_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1179
+    .line 1195
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get2()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1178
+    .line 1194
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->BATTERY_LIGHT_LOW_COLOR_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1188
+    .line 1204
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get2()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1187
+    .line 1203
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->BATTERY_LIGHT_MEDIUM_COLOR_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1197
+    .line 1213
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get2()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1196
+    .line 1212
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->BATTERY_LIGHT_FULL_COLOR_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1207
+    .line 1223
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1206
+    .line 1222
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->ENABLE_MWI_NOTIFICATION_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1217
+    .line 1233
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1216
+    .line 1232
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->PROXIMITY_ON_WAKE_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1227
+    .line 1243
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1226
+    .line 1242
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->ENABLE_FORWARD_LOOKUP_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1237
+    .line 1253
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1236
+    .line 1252
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->ENABLE_PEOPLE_LOOKUP_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1247
+    .line 1263
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1246
+    .line 1262
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->ENABLE_REVERSE_LOOKUP_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
-
-    .line 1255
-    invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get0()Lcyanogenmod/providers/CMSettings$Validator;
-
-    move-result-object v0
-
-    sput-object v0, Lcyanogenmod/providers/CMSettings$System;->FORWARD_LOOKUP_PROVIDER_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
-
-    .line 1263
-    invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get0()Lcyanogenmod/providers/CMSettings$Validator;
-
-    move-result-object v0
-
-    sput-object v0, Lcyanogenmod/providers/CMSettings$System;->PEOPLE_LOOKUP_PROVIDER_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
     .line 1271
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get0()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    sput-object v0, Lcyanogenmod/providers/CMSettings$System;->REVERSE_LOOKUP_PROVIDER_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
-
-    .line 1280
-    invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get0()Lcyanogenmod/providers/CMSettings$Validator;
-
-    move-result-object v0
+    sput-object v0, Lcyanogenmod/providers/CMSettings$System;->FORWARD_LOOKUP_PROVIDER_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
     .line 1279
-    sput-object v0, Lcyanogenmod/providers/CMSettings$System;->DIALER_OPENCNAM_ACCOUNT_SID_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
-
-    .line 1289
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get0()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1288
+    sput-object v0, Lcyanogenmod/providers/CMSettings$System;->PEOPLE_LOOKUP_PROVIDER_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
+
+    .line 1287
+    invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get0()Lcyanogenmod/providers/CMSettings$Validator;
+
+    move-result-object v0
+
+    sput-object v0, Lcyanogenmod/providers/CMSettings$System;->REVERSE_LOOKUP_PROVIDER_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
+
+    .line 1296
+    invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get0()Lcyanogenmod/providers/CMSettings$Validator;
+
+    move-result-object v0
+
+    .line 1295
+    sput-object v0, Lcyanogenmod/providers/CMSettings$System;->DIALER_OPENCNAM_ACCOUNT_SID_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
+
+    .line 1305
+    invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get0()Lcyanogenmod/providers/CMSettings$Validator;
+
+    move-result-object v0
+
+    .line 1304
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->DIALER_OPENCNAM_AUTH_TOKEN_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1298
+    .line 1314
     new-instance v0, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;
 
     const v1, 0x186a0
 
     invoke-direct {v0, v5, v1}, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;-><init>(II)V
 
-    .line 1297
+    .line 1313
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->DISPLAY_TEMPERATURE_DAY_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1307
+    .line 1323
     new-instance v0, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;
 
     const v1, 0x186a0
 
     invoke-direct {v0, v5, v1}, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;-><init>(II)V
 
-    .line 1306
+    .line 1322
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->DISPLAY_TEMPERATURE_NIGHT_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1316
+    .line 1332
     new-instance v0, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;
 
     const/4 v1, 0x4
 
     invoke-direct {v0, v5, v1}, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;-><init>(II)V
 
-    .line 1315
+    .line 1331
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->DISPLAY_TEMPERATURE_MODE_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1326
+    .line 1342
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
-
-    .line 1325
-    sput-object v0, Lcyanogenmod/providers/CMSettings$System;->DISPLAY_AUTO_OUTDOOR_MODE_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
     .line 1341
+    sput-object v0, Lcyanogenmod/providers/CMSettings$System;->DISPLAY_AUTO_OUTDOOR_MODE_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
+
+    .line 1357
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1340
+    .line 1356
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->DISPLAY_CABC_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1351
+    .line 1367
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1350
+    .line 1366
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->DISPLAY_COLOR_ENHANCE_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1361
+    .line 1377
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1360
+    .line 1376
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->DISPLAY_AUTO_CONTRAST_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1370
+    .line 1386
     new-instance v0, Lcyanogenmod/providers/CMSettings$System$1;
 
     invoke-direct {v0}, Lcyanogenmod/providers/CMSettings$System$1;-><init>()V
 
-    .line 1369
+    .line 1385
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->DISPLAY_COLOR_ADJUSTMENT_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1394
+    .line 1410
     new-instance v0, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;
 
     const/4 v1, -0x3
 
     invoke-direct {v0, v1, v7}, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;-><init>(II)V
 
-    .line 1393
+    .line 1409
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->LIVE_DISPLAY_HINTED_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1404
+    .line 1420
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1403
+    .line 1419
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->DOUBLE_TAP_SLEEP_GESTURE_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1414
+    .line 1430
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1413
+    .line 1429
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->STATUS_BAR_SHOW_WEATHER_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1424
+    .line 1440
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1423
+    .line 1439
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->RECENTS_SHOW_SEARCH_BAR_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1434
+    .line 1450
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1433
+    .line 1449
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->NAVBAR_LEFT_IN_LANDSCAPE_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1443
+    .line 1459
     new-instance v0, Lcyanogenmod/providers/CMSettings$System$2;
 
     invoke-direct {v0}, Lcyanogenmod/providers/CMSettings$System$2;-><init>()V
 
-    .line 1442
+    .line 1458
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->T9_SEARCH_INPUT_LOCALE_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1460
+    .line 1476
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1459
+    .line 1475
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->BLUETOOTH_ACCEPT_ALL_FILES_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1471
+    .line 1487
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1470
+    .line 1486
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->LOCKSCREEN_PIN_SCRAMBLE_LAYOUT_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1481
+    .line 1497
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1480
+    .line 1496
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->LOCKSCREEN_ROTATION_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1491
+    .line 1507
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1490
+    .line 1506
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->SHOW_ALARM_ICON_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1501
+    .line 1517
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1500
+    .line 1516
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->STATUS_BAR_IME_SWITCHER_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1511
+    .line 1527
     new-instance v0, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;
 
-    invoke-direct {v0, v5, v9}, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;-><init>(II)V
+    invoke-direct {v0, v5, v8}, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;-><init>(II)V
 
-    .line 1510
+    .line 1526
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->STATUS_BAR_QUICK_QS_PULLDOWN_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1521
+    .line 1537
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1520
+    .line 1536
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->QS_SHOW_BRIGHTNESS_SLIDER_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1531
+    .line 1547
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1530
+    .line 1546
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->STATUS_BAR_BRIGHTNESS_CONTROL_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1541
+    .line 1557
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1540
+    .line 1556
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->VOLBTN_MUSIC_CONTROLS_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1551
+    .line 1567
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1550
+    .line 1566
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->USE_EDGE_SERVICE_FOR_GESTURES_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1560
+    .line 1576
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1559
+    .line 1575
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->STATUS_BAR_NOTIF_COUNT_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1572
+    .line 1588
     new-instance v0, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;
 
     invoke-direct {v0, v5, v7}, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;-><init>(II)V
 
-    .line 1571
+    .line 1587
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->CALL_RECORDING_FORMAT_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1583
+    .line 1599
     new-instance v0, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;
 
     const/16 v1, 0xff
 
     invoke-direct {v0, v7, v1}, Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;-><init>(II)V
 
-    .line 1582
+    .line 1598
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1594
+    .line 1610
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1593
+    .line 1609
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_MULTIPLE_LEDS_ENABLE_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1605
+    .line 1621
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1604
+    .line 1620
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_SCREEN_ON_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1615
+    .line 1631
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get2()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1614
+    .line 1630
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_PULSE_DEFAULT_COLOR_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1625
+    .line 1641
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get3()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1624
+    .line 1640
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_ON_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1635
+    .line 1651
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get3()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1634
+    .line 1650
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_OFF_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1645
+    .line 1661
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get2()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1644
+    .line 1660
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_PULSE_CALL_COLOR_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1655
+    .line 1671
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get3()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1654
+    .line 1670
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_PULSE_CALL_LED_ON_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1665
+    .line 1681
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get3()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1664
+    .line 1680
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_PULSE_CALL_LED_OFF_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1675
+    .line 1691
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get2()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1674
+    .line 1690
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_PULSE_VMAIL_COLOR_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1685
+    .line 1701
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get3()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1684
+    .line 1700
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_PULSE_VMAIL_LED_ON_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1695
+    .line 1711
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get3()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1694
+    .line 1710
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_PULSE_VMAIL_LED_OFF_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1706
+    .line 1722
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1705
+    .line 1721
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1722
-    invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get0()Lcyanogenmod/providers/CMSettings$Validator;
-
-    move-result-object v0
-
-    sput-object v0, Lcyanogenmod/providers/CMSettings$System;->HEADS_UP_CUSTOM_VALUES_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
-
     .line 1732
-    invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get0()Lcyanogenmod/providers/CMSettings$Validator;
-
-    move-result-object v0
-
-    sput-object v0, Lcyanogenmod/providers/CMSettings$System;->HEADS_UP_BLACKLIST_VALUES_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
-
-    .line 1742
-    invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get0()Lcyanogenmod/providers/CMSettings$Validator;
-
-    move-result-object v0
-
-    sput-object v0, Lcyanogenmod/providers/CMSettings$System;->HEADS_UP_WHITELIST_VALUES_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
-
-    .line 1746
     new-instance v0, Lcyanogenmod/providers/CMSettings$System$3;
 
     invoke-direct {v0}, Lcyanogenmod/providers/CMSettings$System$3;-><init>()V
 
-    .line 1745
+    .line 1731
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1819
+    .line 1805
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1818
+    .line 1804
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_COLOR_AUTO_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1835
+    .line 1813
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1834
+    sput-object v0, Lcyanogenmod/providers/CMSettings$System;->HEADSET_CONNECT_PLAYER_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
+
+    .line 1823
+    invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get1()Lcyanogenmod/providers/CMSettings$Validator;
+
+    move-result-object v0
+
+    .line 1822
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->TOUCHSCREEN_GESTURE_HAPTIC_FEEDBACK_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1850
+    .line 1833
+    new-instance v0, Lcyanogenmod/providers/CMSettings$System$4;
+
+    invoke-direct {v0}, Lcyanogenmod/providers/CMSettings$System$4;-><init>()V
+
+    .line 1832
+    sput-object v0, Lcyanogenmod/providers/CMSettings$System;->DISPLAY_PICTURE_ADJUSTMENT_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
+
+    .line 1863
     invoke-static {}, Lcyanogenmod/providers/CMSettings;->-get0()Lcyanogenmod/providers/CMSettings$Validator;
 
     move-result-object v0
 
-    .line 1849
+    .line 1862
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->__MAGICAL_TEST_PASSING_ENABLER_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1855
-    const/16 v0, 0x56
+    .line 1868
+    const/16 v0, 0x57
 
     new-array v0, v0, [Ljava/lang/String;
 
-    .line 1856
+    .line 1869
     const-string/jumbo v1, "nav_buttons"
 
     aput-object v1, v0, v5
 
-    .line 1857
+    .line 1870
     const-string/jumbo v1, "key_home_long_press_action"
 
     aput-object v1, v0, v7
 
-    .line 1858
+    .line 1871
     const-string/jumbo v1, "key_home_double_tap_action"
 
     aput-object v1, v0, v8
 
-    .line 1859
+    .line 1872
     const-string/jumbo v1, "back_wake_screen"
 
     aput-object v1, v0, v9
 
-    .line 1860
+    .line 1873
     const-string/jumbo v1, "menu_wake_screen"
 
     const/4 v2, 0x4
 
     aput-object v1, v0, v2
 
-    .line 1861
+    .line 1874
     const-string/jumbo v1, "volume_wake_screen"
 
     const/4 v2, 0x5
 
     aput-object v1, v0, v2
 
-    .line 1862
+    .line 1875
     const-string/jumbo v1, "key_menu_action"
 
     const/4 v2, 0x6
 
     aput-object v1, v0, v2
 
-    .line 1863
+    .line 1876
     const-string/jumbo v1, "key_menu_long_press_action"
 
     const/4 v2, 0x7
 
     aput-object v1, v0, v2
 
-    .line 1864
+    .line 1877
     const-string/jumbo v1, "key_assist_action"
 
     aput-object v1, v0, v6
 
-    .line 1865
+    .line 1878
     const-string/jumbo v1, "key_assist_long_press_action"
 
     const/16 v2, 0x9
 
     aput-object v1, v0, v2
 
-    .line 1866
+    .line 1879
     const-string/jumbo v1, "key_app_switch_action"
 
     const/16 v2, 0xa
 
     aput-object v1, v0, v2
 
-    .line 1867
+    .line 1880
     const-string/jumbo v1, "key_app_switch_long_press_action"
 
     const/16 v2, 0xb
 
     aput-object v1, v0, v2
 
-    .line 1868
+    .line 1881
     const-string/jumbo v1, "home_wake_screen"
 
     const/16 v2, 0xc
 
     aput-object v1, v0, v2
 
-    .line 1869
+    .line 1882
     const-string/jumbo v1, "assist_wake_screen"
 
     const/16 v2, 0xd
 
     aput-object v1, v0, v2
 
-    .line 1870
+    .line 1883
     const-string/jumbo v1, "app_switch_wake_screen"
 
     const/16 v2, 0xe
 
     aput-object v1, v0, v2
 
-    .line 1871
+    .line 1884
     const-string/jumbo v1, "camera_wake_screen"
 
     const/16 v2, 0xf
 
     aput-object v1, v0, v2
 
-    .line 1872
+    .line 1885
     const-string/jumbo v1, "camera_sleep_on_release"
 
     const/16 v2, 0x10
 
     aput-object v1, v0, v2
 
-    .line 1873
+    .line 1886
     const-string/jumbo v1, "camera_launch"
 
     const/16 v2, 0x11
 
     aput-object v1, v0, v2
 
-    .line 1874
+    .line 1887
     const-string/jumbo v1, "swap_volume_keys_on_rotation"
 
     const/16 v2, 0x12
 
     aput-object v1, v0, v2
 
-    .line 1875
+    .line 1888
     const-string/jumbo v1, "battery_light_enabled"
 
     const/16 v2, 0x13
 
     aput-object v1, v0, v2
 
-    .line 1876
+    .line 1889
     const-string/jumbo v1, "battery_light_pulse"
 
     const/16 v2, 0x14
 
     aput-object v1, v0, v2
 
-    .line 1877
+    .line 1890
     const-string/jumbo v1, "battery_light_low_color"
 
     const/16 v2, 0x15
 
     aput-object v1, v0, v2
 
-    .line 1878
+    .line 1891
     const-string/jumbo v1, "battery_light_medium_color"
 
     const/16 v2, 0x16
 
     aput-object v1, v0, v2
 
-    .line 1879
+    .line 1892
     const-string/jumbo v1, "battery_light_full_color"
 
     const/16 v2, 0x17
 
     aput-object v1, v0, v2
 
-    .line 1880
+    .line 1893
     const-string/jumbo v1, "enable_mwi_notification"
 
     const/16 v2, 0x18
 
     aput-object v1, v0, v2
 
-    .line 1881
+    .line 1894
     const-string/jumbo v1, "proximity_on_wake"
 
     const/16 v2, 0x19
 
     aput-object v1, v0, v2
 
-    .line 1882
+    .line 1895
     const-string/jumbo v1, "enable_forward_lookup"
 
     const/16 v2, 0x1a
 
     aput-object v1, v0, v2
 
-    .line 1883
+    .line 1896
     const-string/jumbo v1, "enable_people_lookup"
 
     const/16 v2, 0x1b
 
     aput-object v1, v0, v2
 
-    .line 1884
+    .line 1897
     const-string/jumbo v1, "enable_reverse_lookup"
 
     const/16 v2, 0x1c
 
     aput-object v1, v0, v2
 
-    .line 1885
+    .line 1898
     const-string/jumbo v1, "forward_lookup_provider"
 
     const/16 v2, 0x1d
 
     aput-object v1, v0, v2
 
-    .line 1886
+    .line 1899
     const-string/jumbo v1, "people_lookup_provider"
 
     const/16 v2, 0x1e
 
     aput-object v1, v0, v2
 
-    .line 1887
+    .line 1900
     const-string/jumbo v1, "reverse_lookup_provider"
 
     const/16 v2, 0x1f
 
     aput-object v1, v0, v2
 
-    .line 1888
+    .line 1901
     const-string/jumbo v1, "dialer_opencnam_account_sid"
 
     const/16 v2, 0x20
 
     aput-object v1, v0, v2
 
-    .line 1889
+    .line 1902
     const-string/jumbo v1, "dialer_opencnam_auth_token"
 
     const/16 v2, 0x21
 
     aput-object v1, v0, v2
 
-    .line 1890
+    .line 1903
     const-string/jumbo v1, "display_temperature_day"
 
     const/16 v2, 0x22
 
     aput-object v1, v0, v2
 
-    .line 1891
+    .line 1904
     const-string/jumbo v1, "display_temperature_night"
 
     const/16 v2, 0x23
 
     aput-object v1, v0, v2
 
-    .line 1892
+    .line 1905
     const-string/jumbo v1, "display_temperature_mode"
 
     const/16 v2, 0x24
 
     aput-object v1, v0, v2
 
-    .line 1893
+    .line 1906
     const-string/jumbo v1, "display_auto_outdoor_mode"
 
     const/16 v2, 0x25
 
     aput-object v1, v0, v2
 
-    .line 1894
+    .line 1907
     const-string/jumbo v1, "display_low_power"
 
     const/16 v2, 0x26
 
     aput-object v1, v0, v2
 
-    .line 1895
+    .line 1908
     const-string/jumbo v1, "display_color_enhance"
 
     const/16 v2, 0x27
 
     aput-object v1, v0, v2
 
-    .line 1896
+    .line 1909
     const-string/jumbo v1, "display_color_adjustment"
 
     const/16 v2, 0x28
 
     aput-object v1, v0, v2
 
-    .line 1897
+    .line 1910
     const-string/jumbo v1, "live_display_hinted"
 
     const/16 v2, 0x29
 
     aput-object v1, v0, v2
 
-    .line 1898
+    .line 1911
     const-string/jumbo v1, "double_tap_sleep_gesture"
 
     const/16 v2, 0x2a
 
     aput-object v1, v0, v2
 
-    .line 1899
+    .line 1912
     const-string/jumbo v1, "status_bar_show_weather"
 
     const/16 v2, 0x2b
 
     aput-object v1, v0, v2
 
-    .line 1900
+    .line 1913
     const-string/jumbo v1, "recents_show_search_bar"
 
     const/16 v2, 0x2c
 
     aput-object v1, v0, v2
 
-    .line 1901
+    .line 1914
     const-string/jumbo v1, "navigation_bar_left"
 
     const/16 v2, 0x2d
 
     aput-object v1, v0, v2
 
-    .line 1902
+    .line 1915
     const-string/jumbo v1, "t9_search_input_locale"
 
     const/16 v2, 0x2e
 
     aput-object v1, v0, v2
 
-    .line 1903
+    .line 1916
     const-string/jumbo v1, "bluetooth_accept_all_files"
 
     const/16 v2, 0x2f
 
     aput-object v1, v0, v2
 
-    .line 1904
+    .line 1917
     const-string/jumbo v1, "lockscreen_scramble_pin_layout"
 
     const/16 v2, 0x30
 
     aput-object v1, v0, v2
 
-    .line 1905
+    .line 1918
     const-string/jumbo v1, "show_alarm_icon"
 
     const/16 v2, 0x31
 
     aput-object v1, v0, v2
 
-    .line 1906
+    .line 1919
     const-string/jumbo v1, "status_bar_ime_switcher"
 
     const/16 v2, 0x32
 
     aput-object v1, v0, v2
 
-    .line 1907
+    .line 1920
     const-string/jumbo v1, "qs_show_brightness_slider"
 
     const/16 v2, 0x33
 
     aput-object v1, v0, v2
 
-    .line 1908
+    .line 1921
     const-string/jumbo v1, "status_bar_brightness_control"
 
     const/16 v2, 0x34
 
     aput-object v1, v0, v2
 
-    .line 1909
+    .line 1922
     const-string/jumbo v1, "volbtn_music_controls"
 
     const/16 v2, 0x35
 
     aput-object v1, v0, v2
 
-    .line 1910
+    .line 1923
     const-string/jumbo v1, "swap_volume_keys_on_rotation"
 
     const/16 v2, 0x36
 
     aput-object v1, v0, v2
 
-    .line 1911
+    .line 1924
     const-string/jumbo v1, "edge_service_for_gestures"
 
     const/16 v2, 0x37
 
     aput-object v1, v0, v2
 
-    .line 1912
+    .line 1925
     const-string/jumbo v1, "status_bar_notif_count"
 
     const/16 v2, 0x38
 
     aput-object v1, v0, v2
 
-    .line 1913
+    .line 1926
     const-string/jumbo v1, "call_recording_format"
 
     const/16 v2, 0x39
 
     aput-object v1, v0, v2
 
-    .line 1914
+    .line 1927
     const-string/jumbo v1, "notification_light_brightness_level"
 
     const/16 v2, 0x3a
 
     aput-object v1, v0, v2
 
-    .line 1915
+    .line 1928
     const-string/jumbo v1, "notification_light_multiple_leds_enable"
 
     const/16 v2, 0x3b
 
     aput-object v1, v0, v2
 
-    .line 1916
+    .line 1929
     const-string/jumbo v1, "notification_light_screen_on_enable"
 
     const/16 v2, 0x3c
 
     aput-object v1, v0, v2
 
-    .line 1917
+    .line 1930
     const-string/jumbo v1, "notification_light_pulse_default_color"
 
     const/16 v2, 0x3d
 
     aput-object v1, v0, v2
 
-    .line 1918
+    .line 1931
     const-string/jumbo v1, "notification_light_pulse_default_led_on"
 
     const/16 v2, 0x3e
 
     aput-object v1, v0, v2
 
-    .line 1919
+    .line 1932
     const-string/jumbo v1, "notification_light_pulse_default_led_off"
 
     const/16 v2, 0x3f
 
     aput-object v1, v0, v2
 
-    .line 1920
+    .line 1933
     const-string/jumbo v1, "notification_light_pulse_call_color"
 
     const/16 v2, 0x40
 
     aput-object v1, v0, v2
 
-    .line 1921
+    .line 1934
     const-string/jumbo v1, "notification_light_pulse_call_led_on"
 
     const/16 v2, 0x41
 
     aput-object v1, v0, v2
 
-    .line 1922
+    .line 1935
     const-string/jumbo v1, "notification_light_pulse_call_led_off"
 
     const/16 v2, 0x42
 
     aput-object v1, v0, v2
 
-    .line 1923
+    .line 1936
     const-string/jumbo v1, "notification_light_pulse_vmail_color"
 
     const/16 v2, 0x43
 
     aput-object v1, v0, v2
 
-    .line 1924
+    .line 1937
     const-string/jumbo v1, "notification_light_pulse_vmail_led_on"
 
     const/16 v2, 0x44
 
     aput-object v1, v0, v2
 
-    .line 1925
+    .line 1938
     const-string/jumbo v1, "notification_light_pulse_vmail_led_off"
 
     const/16 v2, 0x45
 
     aput-object v1, v0, v2
 
-    .line 1926
+    .line 1939
     const-string/jumbo v1, "notification_light_pulse_custom_enable"
 
     const/16 v2, 0x46
 
     aput-object v1, v0, v2
 
-    .line 1927
+    .line 1940
     const-string/jumbo v1, "notification_light_pulse_custom_values"
 
     const/16 v2, 0x47
 
     aput-object v1, v0, v2
 
-    .line 1928
+    .line 1941
     const-string/jumbo v1, "qs_quick_pulldown"
 
     const/16 v2, 0x48
 
     aput-object v1, v0, v2
 
-    .line 1929
+    .line 1942
     const-string/jumbo v1, "volume_adjust_sounds_enabled"
 
     const/16 v2, 0x49
 
     aput-object v1, v0, v2
 
-    .line 1930
+    .line 1943
     const-string/jumbo v1, "system_profiles_enabled"
 
     const/16 v2, 0x4a
 
     aput-object v1, v0, v2
 
-    .line 1931
+    .line 1944
     const-string/jumbo v1, "increasing_ring"
 
     const/16 v2, 0x4b
 
     aput-object v1, v0, v2
 
-    .line 1932
+    .line 1945
     const-string/jumbo v1, "increasing_ring_start_vol"
 
     const/16 v2, 0x4c
 
     aput-object v1, v0, v2
 
-    .line 1933
+    .line 1946
     const-string/jumbo v1, "increasing_ring_ramp_up_time"
 
     const/16 v2, 0x4d
 
     aput-object v1, v0, v2
 
-    .line 1934
+    .line 1947
     const-string/jumbo v1, "status_bar_clock"
 
     const/16 v2, 0x4e
 
     aput-object v1, v0, v2
 
-    .line 1935
+    .line 1948
     const-string/jumbo v1, "status_bar_am_pm"
 
     const/16 v2, 0x4f
 
     aput-object v1, v0, v2
 
-    .line 1936
+    .line 1949
     const-string/jumbo v1, "status_bar_battery_style"
 
     const/16 v2, 0x50
 
     aput-object v1, v0, v2
 
-    .line 1937
+    .line 1950
     const-string/jumbo v1, "status_bar_show_battery_percent"
 
     const/16 v2, 0x51
 
     aput-object v1, v0, v2
 
-    .line 1938
+    .line 1951
     const-string/jumbo v1, "volume_keys_control_ring_stream"
 
     const/16 v2, 0x52
 
     aput-object v1, v0, v2
 
-    .line 1939
+    .line 1952
     const-string/jumbo v1, "navigation_bar_menu_arrow_keys"
 
     const/16 v2, 0x53
 
     aput-object v1, v0, v2
 
-    .line 1940
-    const-string/jumbo v1, "allow_lights"
+    .line 1953
+    const-string/jumbo v1, "headset_connect_player"
 
     const/16 v2, 0x54
 
     aput-object v1, v0, v2
 
-    .line 1941
-    const-string/jumbo v1, "touchscreen_gesture_haptic_feedback"
+    .line 1954
+    const-string/jumbo v1, "allow_lights"
 
     const/16 v2, 0x55
 
     aput-object v1, v0, v2
 
-    .line 1855
+    .line 1955
+    const-string/jumbo v1, "touchscreen_gesture_haptic_feedback"
+
+    const/16 v2, 0x56
+
+    aput-object v1, v0, v2
+
+    .line 1868
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->LEGACY_SYSTEM_SETTINGS:[Ljava/lang/String;
 
-    .line 1968
+    .line 1990
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
-    .line 1967
+    .line 1989
     sput-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
-    .line 1970
+    .line 1992
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "notification_play_queue"
@@ -1947,18 +1962,18 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1971
+    .line 1993
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "high_touch_sensitivity_enable"
 
-    .line 1972
+    .line 1994
     sget-object v2, Lcyanogenmod/providers/CMSettings$System;->HIGH_TOUCH_SENSITIVITY_ENABLE_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1971
+    .line 1993
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1973
+    .line 1995
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "system_profiles_enabled"
@@ -1967,7 +1982,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1974
+    .line 1996
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "status_bar_clock"
@@ -1976,7 +1991,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1975
+    .line 1997
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "status_bar_am_pm"
@@ -1985,7 +2000,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1976
+    .line 1998
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "status_bar_battery_style"
@@ -1994,18 +2009,18 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1977
+    .line 1999
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "status_bar_show_battery_percent"
 
-    .line 1978
+    .line 2000
     sget-object v2, Lcyanogenmod/providers/CMSettings$System;->STATUS_BAR_SHOW_BATTERY_PERCENT_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1977
+    .line 1999
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1979
+    .line 2001
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "increasing_ring"
@@ -2014,40 +2029,40 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1980
+    .line 2002
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "increasing_ring_start_vol"
 
-    .line 1981
+    .line 2003
     sget-object v2, Lcyanogenmod/providers/CMSettings$System;->INCREASING_RING_START_VOLUME_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1980
+    .line 2002
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1982
+    .line 2004
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "increasing_ring_ramp_up_time"
 
-    .line 1983
+    .line 2005
     sget-object v2, Lcyanogenmod/providers/CMSettings$System;->INCREASING_RING_RAMP_UP_TIME_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1982
+    .line 2004
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1984
+    .line 2006
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "volume_adjust_sounds_enabled"
 
-    .line 1985
+    .line 2007
     sget-object v2, Lcyanogenmod/providers/CMSettings$System;->VOLUME_ADJUST_SOUNDS_ENABLED_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1984
+    .line 2006
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1986
+    .line 2008
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "nav_buttons"
@@ -2056,29 +2071,29 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1987
+    .line 2009
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "volume_keys_control_ring_stream"
 
-    .line 1988
+    .line 2010
     sget-object v2, Lcyanogenmod/providers/CMSettings$System;->VOLUME_KEYS_CONTROL_RING_STREAM_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1987
+    .line 2009
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1989
+    .line 2011
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "navigation_bar_menu_arrow_keys"
 
-    .line 1990
+    .line 2012
     sget-object v2, Lcyanogenmod/providers/CMSettings$System;->NAVIGATION_BAR_MENU_ARROW_KEYS_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1989
+    .line 2011
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1991
+    .line 2013
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "key_home_long_press_action"
@@ -2087,7 +2102,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1992
+    .line 2014
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "key_home_double_tap_action"
@@ -2096,7 +2111,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1993
+    .line 2015
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "back_wake_screen"
@@ -2105,7 +2120,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1994
+    .line 2016
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "menu_wake_screen"
@@ -2114,7 +2129,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1995
+    .line 2017
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "volume_wake_screen"
@@ -2123,7 +2138,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1996
+    .line 2018
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "key_menu_action"
@@ -2132,7 +2147,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1997
+    .line 2019
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "key_menu_long_press_action"
@@ -2141,7 +2156,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1998
+    .line 2020
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "key_assist_action"
@@ -2150,18 +2165,18 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1999
+    .line 2021
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "key_assist_long_press_action"
 
-    .line 2000
+    .line 2022
     sget-object v2, Lcyanogenmod/providers/CMSettings$System;->KEY_ASSIST_LONG_PRESS_ACTION_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 1999
+    .line 2021
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2001
+    .line 2023
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "key_app_switch_action"
@@ -2170,18 +2185,18 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2002
+    .line 2024
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "key_app_switch_long_press_action"
 
-    .line 2003
+    .line 2025
     sget-object v2, Lcyanogenmod/providers/CMSettings$System;->KEY_APP_SWITCH_LONG_PRESS_ACTION_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 2002
+    .line 2024
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2004
+    .line 2026
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "home_wake_screen"
@@ -2190,7 +2205,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2005
+    .line 2027
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "assist_wake_screen"
@@ -2199,7 +2214,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2006
+    .line 2028
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "app_switch_wake_screen"
@@ -2208,7 +2223,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2007
+    .line 2029
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "camera_wake_screen"
@@ -2217,7 +2232,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2008
+    .line 2030
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "camera_sleep_on_release"
@@ -2226,7 +2241,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2009
+    .line 2031
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "camera_launch"
@@ -2235,18 +2250,18 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2010
+    .line 2032
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "swap_volume_keys_on_rotation"
 
-    .line 2011
+    .line 2033
     sget-object v2, Lcyanogenmod/providers/CMSettings$System;->SWAP_VOLUME_KEYS_ON_ROTATION_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 2010
+    .line 2032
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2012
+    .line 2034
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "battery_light_enabled"
@@ -2255,7 +2270,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2013
+    .line 2035
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "battery_light_pulse"
@@ -2264,7 +2279,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2014
+    .line 2036
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "battery_light_low_color"
@@ -2273,7 +2288,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2015
+    .line 2037
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "battery_light_medium_color"
@@ -2282,7 +2297,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2016
+    .line 2038
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "battery_light_full_color"
@@ -2291,7 +2306,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2017
+    .line 2039
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "enable_mwi_notification"
@@ -2300,7 +2315,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2018
+    .line 2040
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "proximity_on_wake"
@@ -2309,7 +2324,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2019
+    .line 2041
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "enable_forward_lookup"
@@ -2318,7 +2333,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2020
+    .line 2042
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "enable_people_lookup"
@@ -2327,7 +2342,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2021
+    .line 2043
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "enable_reverse_lookup"
@@ -2336,7 +2351,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2022
+    .line 2044
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "forward_lookup_provider"
@@ -2345,7 +2360,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2023
+    .line 2045
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "people_lookup_provider"
@@ -2354,7 +2369,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2024
+    .line 2046
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "reverse_lookup_provider"
@@ -2363,18 +2378,18 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2025
+    .line 2047
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "dialer_opencnam_account_sid"
 
-    .line 2026
+    .line 2048
     sget-object v2, Lcyanogenmod/providers/CMSettings$System;->DIALER_OPENCNAM_ACCOUNT_SID_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 2025
+    .line 2047
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2027
+    .line 2049
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "dialer_opencnam_auth_token"
@@ -2383,7 +2398,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2028
+    .line 2050
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "display_temperature_day"
@@ -2392,7 +2407,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2029
+    .line 2051
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "display_temperature_night"
@@ -2401,7 +2416,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2030
+    .line 2052
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "display_temperature_mode"
@@ -2410,7 +2425,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2031
+    .line 2053
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "display_auto_contrast"
@@ -2419,7 +2434,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2032
+    .line 2054
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "display_auto_outdoor_mode"
@@ -2428,7 +2443,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2033
+    .line 2055
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "display_low_power"
@@ -2437,7 +2452,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2034
+    .line 2056
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "display_color_enhance"
@@ -2446,7 +2461,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2035
+    .line 2057
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "display_color_adjustment"
@@ -2455,7 +2470,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2036
+    .line 2058
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "live_display_hinted"
@@ -2464,7 +2479,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2037
+    .line 2059
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "double_tap_sleep_gesture"
@@ -2473,7 +2488,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2038
+    .line 2060
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "status_bar_show_weather"
@@ -2482,7 +2497,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2039
+    .line 2061
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "recents_show_search_bar"
@@ -2491,7 +2506,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2040
+    .line 2062
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "navigation_bar_left"
@@ -2500,7 +2515,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2041
+    .line 2063
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "t9_search_input_locale"
@@ -2509,7 +2524,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2042
+    .line 2064
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "bluetooth_accept_all_files"
@@ -2518,18 +2533,18 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2043
+    .line 2065
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "lockscreen_scramble_pin_layout"
 
-    .line 2044
+    .line 2066
     sget-object v2, Lcyanogenmod/providers/CMSettings$System;->LOCKSCREEN_PIN_SCRAMBLE_LAYOUT_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 2043
+    .line 2065
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2045
+    .line 2067
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "lockscreen_rotation"
@@ -2538,7 +2553,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2046
+    .line 2068
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "show_alarm_icon"
@@ -2547,7 +2562,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2047
+    .line 2069
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "status_bar_ime_switcher"
@@ -2556,18 +2571,18 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2048
+    .line 2070
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "qs_quick_pulldown"
 
-    .line 2049
+    .line 2071
     sget-object v2, Lcyanogenmod/providers/CMSettings$System;->STATUS_BAR_QUICK_QS_PULLDOWN_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 2048
+    .line 2070
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2050
+    .line 2072
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "qs_show_brightness_slider"
@@ -2576,18 +2591,18 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2051
+    .line 2073
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "status_bar_brightness_control"
 
-    .line 2052
+    .line 2074
     sget-object v2, Lcyanogenmod/providers/CMSettings$System;->STATUS_BAR_BRIGHTNESS_CONTROL_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 2051
+    .line 2073
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2053
+    .line 2075
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "volbtn_music_controls"
@@ -2596,18 +2611,18 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2054
+    .line 2076
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "edge_service_for_gestures"
 
-    .line 2055
+    .line 2077
     sget-object v2, Lcyanogenmod/providers/CMSettings$System;->USE_EDGE_SERVICE_FOR_GESTURES_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 2054
+    .line 2076
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2056
+    .line 2078
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "status_bar_notif_count"
@@ -2616,7 +2631,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2057
+    .line 2079
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "call_recording_format"
@@ -2625,134 +2640,13 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2058
+    .line 2080
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "notification_light_brightness_level"
 
-    .line 2059
-    sget-object v2, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
-
-    .line 2058
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 2060
-    sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
-
-    const-string/jumbo v1, "notification_light_multiple_leds_enable"
-
-    .line 2061
-    sget-object v2, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_MULTIPLE_LEDS_ENABLE_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
-
-    .line 2060
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 2062
-    sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
-
-    const-string/jumbo v1, "notification_light_screen_on_enable"
-
-    .line 2063
-    sget-object v2, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_SCREEN_ON_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
-
-    .line 2062
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 2064
-    sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
-
-    const-string/jumbo v1, "notification_light_pulse_default_color"
-
-    .line 2065
-    sget-object v2, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_PULSE_DEFAULT_COLOR_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
-
-    .line 2064
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 2066
-    sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
-
-    const-string/jumbo v1, "notification_light_pulse_default_led_on"
-
-    .line 2067
-    sget-object v2, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_ON_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
-
-    .line 2066
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 2068
-    sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
-
-    const-string/jumbo v1, "notification_light_pulse_default_led_off"
-
-    .line 2069
-    sget-object v2, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_OFF_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
-
-    .line 2068
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 2070
-    sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
-
-    const-string/jumbo v1, "notification_light_pulse_call_color"
-
-    .line 2071
-    sget-object v2, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_PULSE_CALL_COLOR_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
-
-    .line 2070
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 2072
-    sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
-
-    const-string/jumbo v1, "notification_light_pulse_call_led_on"
-
-    .line 2073
-    sget-object v2, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_PULSE_CALL_LED_ON_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
-
-    .line 2072
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 2074
-    sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
-
-    const-string/jumbo v1, "notification_light_pulse_call_led_off"
-
-    .line 2075
-    sget-object v2, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_PULSE_CALL_LED_OFF_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
-
-    .line 2074
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 2076
-    sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
-
-    const-string/jumbo v1, "notification_light_pulse_vmail_color"
-
-    .line 2077
-    sget-object v2, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_PULSE_VMAIL_COLOR_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
-
-    .line 2076
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 2078
-    sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
-
-    const-string/jumbo v1, "notification_light_pulse_vmail_led_on"
-
-    .line 2079
-    sget-object v2, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_PULSE_VMAIL_LED_ON_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
-
-    .line 2078
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 2080
-    sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
-
-    const-string/jumbo v1, "notification_light_pulse_vmail_led_off"
-
     .line 2081
-    sget-object v2, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_PULSE_VMAIL_LED_OFF_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
+    sget-object v2, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
     .line 2080
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -2760,10 +2654,10 @@
     .line 2082
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
-    const-string/jumbo v1, "notification_light_pulse_custom_enable"
+    const-string/jumbo v1, "notification_light_multiple_leds_enable"
 
     .line 2083
-    sget-object v2, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
+    sget-object v2, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_MULTIPLE_LEDS_ENABLE_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
     .line 2082
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -2771,10 +2665,10 @@
     .line 2084
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
-    const-string/jumbo v1, "notification_light_pulse_custom_values"
+    const-string/jumbo v1, "notification_light_screen_on_enable"
 
     .line 2085
-    sget-object v2, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
+    sget-object v2, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_SCREEN_ON_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
     .line 2084
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -2782,42 +2676,145 @@
     .line 2086
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
-    const-string/jumbo v1, "heads_up_custom_values"
-
-    sget-object v2, Lcyanogenmod/providers/CMSettings$System;->HEADS_UP_CUSTOM_VALUES_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
-
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    const-string/jumbo v1, "notification_light_pulse_default_color"
 
     .line 2087
-    sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
+    sget-object v2, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_PULSE_DEFAULT_COLOR_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    const-string/jumbo v1, "heads_up_blacklist_values"
-
-    sget-object v2, Lcyanogenmod/providers/CMSettings$System;->HEADS_UP_BLACKLIST_VALUES_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
-
+    .line 2086
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 2088
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
-    const-string/jumbo v1, "heads_up_whitelist_values"
-
-    sget-object v2, Lcyanogenmod/providers/CMSettings$System;->HEADS_UP_WHITELIST_VALUES_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
-
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    const-string/jumbo v1, "notification_light_pulse_default_led_on"
 
     .line 2089
+    sget-object v2, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_ON_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
+
+    .line 2088
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 2090
+    sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
+
+    const-string/jumbo v1, "notification_light_pulse_default_led_off"
+
+    .line 2091
+    sget-object v2, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_OFF_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
+
+    .line 2090
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 2092
+    sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
+
+    const-string/jumbo v1, "notification_light_pulse_call_color"
+
+    .line 2093
+    sget-object v2, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_PULSE_CALL_COLOR_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
+
+    .line 2092
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 2094
+    sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
+
+    const-string/jumbo v1, "notification_light_pulse_call_led_on"
+
+    .line 2095
+    sget-object v2, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_PULSE_CALL_LED_ON_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
+
+    .line 2094
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 2096
+    sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
+
+    const-string/jumbo v1, "notification_light_pulse_call_led_off"
+
+    .line 2097
+    sget-object v2, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_PULSE_CALL_LED_OFF_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
+
+    .line 2096
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 2098
+    sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
+
+    const-string/jumbo v1, "notification_light_pulse_vmail_color"
+
+    .line 2099
+    sget-object v2, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_PULSE_VMAIL_COLOR_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
+
+    .line 2098
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 2100
+    sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
+
+    const-string/jumbo v1, "notification_light_pulse_vmail_led_on"
+
+    .line 2101
+    sget-object v2, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_PULSE_VMAIL_LED_ON_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
+
+    .line 2100
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 2102
+    sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
+
+    const-string/jumbo v1, "notification_light_pulse_vmail_led_off"
+
+    .line 2103
+    sget-object v2, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_PULSE_VMAIL_LED_OFF_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
+
+    .line 2102
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 2104
+    sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
+
+    const-string/jumbo v1, "notification_light_pulse_custom_enable"
+
+    .line 2105
+    sget-object v2, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
+
+    .line 2104
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 2106
+    sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
+
+    const-string/jumbo v1, "notification_light_pulse_custom_values"
+
+    .line 2107
+    sget-object v2, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
+
+    .line 2106
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 2108
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "notification_light_color_auto"
 
-    .line 2090
+    .line 2109
     sget-object v2, Lcyanogenmod/providers/CMSettings$System;->NOTIFICATION_LIGHT_COLOR_AUTO_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 2089
+    .line 2108
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2091
+    .line 2110
+    sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
+
+    const-string/jumbo v1, "headset_connect_player"
+
+    sget-object v2, Lcyanogenmod/providers/CMSettings$System;->HEADSET_CONNECT_PLAYER_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 2111
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "allow_lights"
@@ -2826,7 +2823,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2092
+    .line 2112
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "zen_priority_allow_lights"
@@ -2835,26 +2832,37 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2093
+    .line 2113
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "touchscreen_gesture_haptic_feedback"
 
-    .line 2094
+    .line 2114
     sget-object v2, Lcyanogenmod/providers/CMSettings$System;->TOUCHSCREEN_GESTURE_HAPTIC_FEEDBACK_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 2093
+    .line 2113
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2095
+    .line 2115
+    sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
+
+    const-string/jumbo v1, "display_picture_adjustment"
+
+    .line 2116
+    sget-object v2, Lcyanogenmod/providers/CMSettings$System;->DISPLAY_PICTURE_ADJUSTMENT_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
+
+    .line 2115
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 2117
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->VALIDATORS:Ljava/util/Map;
 
     const-string/jumbo v1, "___magical_test_passing_enabler"
 
-    .line 2096
+    .line 2118
     sget-object v2, Lcyanogenmod/providers/CMSettings$System;->__MAGICAL_TEST_PASSING_ENABLER_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
 
-    .line 2095
+    .line 2117
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 430
@@ -2891,18 +2899,18 @@
     .end annotation
 
     .prologue
-    .line 467
+    .line 474
     invoke-static {p0, p1}, Lcyanogenmod/providers/CMSettings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 468
+    .line 475
     .local v1, "baseString":Ljava/lang/String;
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 469
+    .line 476
     .local v3, "list":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -2910,7 +2918,7 @@
 
     if-nez v4, :cond_1
 
-    .line 470
+    .line 477
     invoke-static {p2}, Ljava/util/regex/Pattern;->quote(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
@@ -2919,7 +2927,7 @@
 
     move-result-object v0
 
-    .line 471
+    .line 478
     .local v0, "array":[Ljava/lang/String;
     const/4 v4, 0x0
 
@@ -2930,7 +2938,7 @@
 
     aget-object v2, v0, v4
 
-    .line 472
+    .line 479
     .local v2, "item":Ljava/lang/String;
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -2938,19 +2946,19 @@
 
     if-eqz v6, :cond_0
 
-    .line 471
+    .line 478
     :goto_1
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 475
+    .line 482
     :cond_0
     invoke-interface {v3, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
-    .line 478
+    .line 485
     .end local v0    # "array":[Ljava/lang/String;
     .end local v2    # "item":Ljava/lang/String;
     :cond_1
@@ -2968,7 +2976,7 @@
     .end annotation
 
     .prologue
-    .line 745
+    .line 762
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -2987,7 +2995,7 @@
     .param p2, "def"    # F
 
     .prologue
-    .line 711
+    .line 728
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -3007,12 +3015,12 @@
     .param p3, "userId"    # I
 
     .prologue
-    .line 717
+    .line 734
     invoke-static {p0, p1, p3}, Lcyanogenmod/providers/CMSettings$System;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 719
+    .line 736
     .local v1, "v":Ljava/lang/String;
     if-eqz v1, :cond_0
 
@@ -3027,12 +3035,12 @@
     :cond_0
     return p2
 
-    .line 720
+    .line 737
     .restart local p2    # "def":F
     :catch_0
     move-exception v0
 
-    .line 721
+    .line 738
     .local v0, "e":Ljava/lang/NumberFormatException;
     return p2
 .end method
@@ -3049,23 +3057,23 @@
     .end annotation
 
     .prologue
-    .line 751
+    .line 768
     invoke-static {p0, p1, p2}, Lcyanogenmod/providers/CMSettings$System;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 752
+    .line 769
     .local v1, "v":Ljava/lang/String;
     if-nez v1, :cond_0
 
-    .line 753
+    .line 770
     new-instance v2, Lcyanogenmod/providers/CMSettings$CMSettingNotFoundException;
 
     invoke-direct {v2, p1}, Lcyanogenmod/providers/CMSettings$CMSettingNotFoundException;-><init>(Ljava/lang/String;)V
 
     throw v2
 
-    .line 756
+    .line 773
     :cond_0
     :try_start_0
     invoke-static {v1}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
@@ -3076,11 +3084,11 @@
 
     return v2
 
-    .line 757
+    .line 774
     :catch_0
     move-exception v0
 
-    .line 758
+    .line 775
     .local v0, "e":Ljava/lang/NumberFormatException;
     new-instance v2, Lcyanogenmod/providers/CMSettings$CMSettingNotFoundException;
 
@@ -3100,7 +3108,7 @@
     .end annotation
 
     .prologue
-    .line 572
+    .line 589
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -3119,7 +3127,7 @@
     .param p2, "def"    # I
 
     .prologue
-    .line 539
+    .line 556
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -3143,12 +3151,12 @@
     .end annotation
 
     .prologue
-    .line 578
+    .line 595
     invoke-static {p0, p1, p2}, Lcyanogenmod/providers/CMSettings$System;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 580
+    .line 597
     .local v1, "v":Ljava/lang/String;
     :try_start_0
     invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -3159,11 +3167,11 @@
 
     return v2
 
-    .line 581
+    .line 598
     :catch_0
     move-exception v0
 
-    .line 582
+    .line 599
     .local v0, "e":Ljava/lang/NumberFormatException;
     new-instance v2, Lcyanogenmod/providers/CMSettings$CMSettingNotFoundException;
 
@@ -3180,12 +3188,12 @@
     .param p3, "userId"    # I
 
     .prologue
-    .line 544
+    .line 561
     invoke-static {p0, p1, p3}, Lcyanogenmod/providers/CMSettings$System;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 546
+    .line 563
     .local v1, "v":Ljava/lang/String;
     if-eqz v1, :cond_0
 
@@ -3200,12 +3208,12 @@
     :cond_0
     return p2
 
-    .line 547
+    .line 564
     .restart local p2    # "def":I
     :catch_0
     move-exception v0
 
-    .line 548
+    .line 565
     .local v0, "e":Ljava/lang/NumberFormatException;
     return p2
 .end method
@@ -3221,7 +3229,7 @@
     .end annotation
 
     .prologue
-    .line 659
+    .line 676
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -3240,7 +3248,7 @@
     .param p2, "def"    # J
 
     .prologue
-    .line 624
+    .line 641
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -3264,12 +3272,12 @@
     .end annotation
 
     .prologue
-    .line 665
+    .line 682
     invoke-static {p0, p1, p2}, Lcyanogenmod/providers/CMSettings$System;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 667
+    .line 684
     .local v1, "valString":Ljava/lang/String;
     :try_start_0
     invoke-static {v1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
@@ -3280,11 +3288,11 @@
 
     return-wide v2
 
-    .line 668
+    .line 685
     :catch_0
     move-exception v0
 
-    .line 669
+    .line 686
     .local v0, "e":Ljava/lang/NumberFormatException;
     new-instance v2, Lcyanogenmod/providers/CMSettings$CMSettingNotFoundException;
 
@@ -3301,12 +3309,12 @@
     .param p4, "userId"    # I
 
     .prologue
-    .line 630
+    .line 647
     invoke-static {p0, p1, p4}, Lcyanogenmod/providers/CMSettings$System;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 633
+    .line 650
     .local v1, "valString":Ljava/lang/String;
     if-eqz v1, :cond_0
 
@@ -3317,12 +3325,12 @@
 
     move-result-wide v2
 
-    .line 637
+    .line 654
     .local v2, "value":J
     :goto_0
     return-wide v2
 
-    .line 633
+    .line 650
     .end local v2    # "value":J
     :cond_0
     move-wide v2, p2
@@ -3330,12 +3338,12 @@
     .restart local v2    # "value":J
     goto :goto_0
 
-    .line 634
+    .line 651
     .end local v2    # "value":J
     :catch_0
     move-exception v0
 
-    .line 635
+    .line 652
     .local v0, "e":Ljava/lang/NumberFormatException;
     move-wide v2, p2
 
@@ -3349,7 +3357,7 @@
     .param p1, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 498
+    .line 505
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -3362,13 +3370,67 @@
 .end method
 
 .method public static getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
-    .locals 1
+    .locals 3
     .param p0, "resolver"    # Landroid/content/ContentResolver;
     .param p1, "name"    # Ljava/lang/String;
     .param p2, "userId"    # I
 
     .prologue
-    .line 504
+    .line 511
+    sget-object v0, Lcyanogenmod/providers/CMSettings$System;->MOVED_TO_SECURE:Landroid/util/ArraySet;
+
+    invoke-virtual {v0, p1}, Landroid/util/ArraySet;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 512
+    const-string/jumbo v0, "CMSettings"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "Setting "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string/jumbo v2, " has moved from CMSettings.System"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    .line 513
+    const-string/jumbo v2, " to CMSettings.Secure, value is unchanged."
+
+    .line 512
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 514
+    invoke-static {p0, p1, p2}, Lcyanogenmod/providers/CMSettings$Secure;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+
+    .line 516
+    :cond_0
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->sNameValueCache:Lcyanogenmod/providers/CMSettings$NameValueCache;
 
     invoke-virtual {v0, p0, p1, p2}, Lcyanogenmod/providers/CMSettings$NameValueCache;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
@@ -3383,7 +3445,7 @@
     .param p0, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 488
+    .line 495
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-static {v0, p0}, Landroid/provider/Settings$NameValueTable;->getUriFor(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
@@ -3398,7 +3460,7 @@
     .param p0, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 1948
+    .line 1962
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->LEGACY_SYSTEM_SETTINGS:[Ljava/lang/String;
 
     invoke-static {v0, p0}, Lcom/android/internal/util/ArrayUtils;->contains([Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -3415,7 +3477,7 @@
     .param p2, "value"    # F
 
     .prologue
-    .line 776
+    .line 793
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -3435,7 +3497,7 @@
     .param p3, "userId"    # I
 
     .prologue
-    .line 782
+    .line 799
     invoke-static {p2}, Ljava/lang/Float;->toString(F)Ljava/lang/String;
 
     move-result-object v0
@@ -3454,7 +3516,7 @@
     .param p2, "value"    # I
 
     .prologue
-    .line 600
+    .line 617
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -3474,7 +3536,7 @@
     .param p3, "userId"    # I
 
     .prologue
-    .line 606
+    .line 623
     invoke-static {p2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
@@ -3505,17 +3567,17 @@
     .end annotation
 
     .prologue
-    .line 453
+    .line 460
     .local p3, "list":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-static {p2, p3}, Landroid/text/TextUtils;->join(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 454
+    .line 461
     .local v0, "store":Ljava/lang/String;
     invoke-static {p0, p1, v0}, Lcyanogenmod/providers/CMSettings$System;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 452
+    .line 459
     return-void
 .end method
 
@@ -3526,7 +3588,7 @@
     .param p2, "value"    # J
 
     .prologue
-    .line 687
+    .line 704
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -3546,7 +3608,7 @@
     .param p4, "userId"    # I
 
     .prologue
-    .line 693
+    .line 710
     invoke-static {p2, p3}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
     move-result-object v0
@@ -3565,7 +3627,7 @@
     .param p2, "value"    # Ljava/lang/String;
 
     .prologue
-    .line 515
+    .line 527
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -3578,14 +3640,66 @@
 .end method
 
 .method public static putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
-    .locals 1
+    .locals 3
     .param p0, "resolver"    # Landroid/content/ContentResolver;
     .param p1, "name"    # Ljava/lang/String;
     .param p2, "value"    # Ljava/lang/String;
     .param p3, "userId"    # I
 
     .prologue
-    .line 521
+    .line 533
+    sget-object v0, Lcyanogenmod/providers/CMSettings$System;->MOVED_TO_SECURE:Landroid/util/ArraySet;
+
+    invoke-virtual {v0, p1}, Landroid/util/ArraySet;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 534
+    const-string/jumbo v0, "CMSettings"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "Setting "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string/jumbo v2, " has moved from CMSettings.System"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    .line 535
+    const-string/jumbo v2, " to CMSettings.Secure, value is unchanged."
+
+    .line 534
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 536
+    const/4 v0, 0x0
+
+    return v0
+
+    .line 538
+    :cond_0
     sget-object v0, Lcyanogenmod/providers/CMSettings$System;->sNameValueCache:Lcyanogenmod/providers/CMSettings$NameValueCache;
 
     invoke-virtual {v0, p0, p1, p2, p3}, Lcyanogenmod/providers/CMSettings$NameValueCache;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
@@ -3600,12 +3714,33 @@
     .param p0, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 1955
+    .line 1969
     const-string/jumbo v0, "system_profiles_enabled"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 1974
+    :cond_0
+    const/4 v0, 0x1
+
+    return v0
+
+    .line 1969
+    :cond_1
+    const-string/jumbo v0, "dev_force_show_navbar"
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 1976
+    const/4 v0, 0x0
 
     return v0
 .end method

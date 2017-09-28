@@ -585,7 +585,7 @@
     if-eqz p1, :cond_0
 
     .line 1126
-    const v2, 0x1020048
+    const v2, 0x1020046
 
     invoke-virtual {p1, v2}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
@@ -2122,7 +2122,7 @@
     invoke-direct {v3, v0}, Ljava/lang/Integer;-><init>(I)V
 
     .line 1197
-    const v4, 0x1020048
+    const v4, 0x1020046
 
     move-object/from16 v0, v20
 

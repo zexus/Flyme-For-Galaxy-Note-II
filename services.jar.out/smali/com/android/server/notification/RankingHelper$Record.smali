@@ -23,8 +23,6 @@
 
 .field mFlymeRemind:Z
 
-.field halo:Z
-
 .field keyguard:I
 
 .field peekable:Z
@@ -43,12 +41,12 @@
     .locals 1
 
     .prologue
-    .line 511
+    .line 482
     const/16 v0, -0x2710
 
     sput v0, Lcom/android/server/notification/RankingHelper$Record;->UNKNOWN_UID:I
 
-    .line 510
+    .line 481
     return-void
 .end method
 
@@ -75,8 +73,6 @@
     iput v0, p0, Lcom/android/server/notification/RankingHelper$Record;->visibility:I
 
     iput v1, p0, Lcom/android/server/notification/RankingHelper$Record;->keyguard:I
-
-    iput-boolean v1, p0, Lcom/android/server/notification/RankingHelper$Record;->halo:Z
 
     invoke-direct/range {p0 .. p0}, Lcom/android/server/notification/RankingHelper$Record;->initFlymeExtraFields()V
 

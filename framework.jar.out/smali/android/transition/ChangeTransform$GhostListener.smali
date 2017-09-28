@@ -66,14 +66,14 @@
     .line 482
     iget-object v0, p0, Landroid/transition/ChangeTransform$GhostListener;->mView:Landroid/view/View;
 
-    const v1, 0x1020054
+    const v1, 0x1020052
 
     invoke-virtual {v0, v1, v2}, Landroid/view/View;->setTagInternal(ILjava/lang/Object;)V
 
     .line 483
     iget-object v0, p0, Landroid/transition/ChangeTransform$GhostListener;->mView:Landroid/view/View;
 
-    const v1, 0x1020055
+    const v1, 0x1020053
 
     invoke-virtual {v0, v1, v2}, Landroid/view/View;->setTagInternal(ILjava/lang/Object;)V
 

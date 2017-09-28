@@ -135,14 +135,6 @@
     .end annotation
 .end method
 
-.method public abstract setBackgroundBitmap(Landroid/graphics/Bitmap;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract setCurrentUser(I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

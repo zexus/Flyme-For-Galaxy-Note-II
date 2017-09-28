@@ -43,8 +43,6 @@
 
 .field public static final FINGERPRINT_FIND_SENSOR_SETUP:I = 0xf7
 
-.field public static final HALO_SETTINGS:I = 0x101
-
 
 # direct methods
 .method public constructor <init>()V
@@ -63,12 +61,12 @@
     .param p1, "category"    # I
 
     .prologue
-    .line 80
+    .line 79
     const-string/jumbo v0, ""
 
     invoke-static {p0, p1, v0}, Lcom/android/internal/logging/MetricsLogger;->action(Landroid/content/Context;ILjava/lang/String;)V
 
-    .line 79
+    .line 78
     return-void
 .end method
 
@@ -79,14 +77,14 @@
     .param p2, "value"    # I
 
     .prologue
-    .line 84
+    .line 83
     invoke-static {p2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {p0, p1, v0}, Lcom/android/internal/logging/MetricsLogger;->action(Landroid/content/Context;ILjava/lang/String;)V
 
-    .line 83
+    .line 82
     return-void
 .end method
 
@@ -97,14 +95,14 @@
     .param p2, "pkg"    # Ljava/lang/String;
 
     .prologue
-    .line 92
+    .line 91
     sget-boolean v0, Landroid/os/Build;->IS_DEBUGGABLE:Z
 
     if-eqz v0, :cond_0
 
     if-nez p1, :cond_0
 
-    .line 93
+    .line 92
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "Must define metric category"
@@ -113,11 +111,11 @@
 
     throw v0
 
-    .line 95
+    .line 94
     :cond_0
     invoke-static {p1, p2}, Lcom/android/internal/logging/EventLogTags;->writeSysuiAction(ILjava/lang/String;)V
 
-    .line 91
+    .line 90
     return-void
 .end method
 
@@ -128,14 +126,14 @@
     .param p2, "value"    # Z
 
     .prologue
-    .line 88
+    .line 87
     invoke-static {p2}, Ljava/lang/Boolean;->toString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {p0, p1, v0}, Lcom/android/internal/logging/MetricsLogger;->action(Landroid/content/Context;ILjava/lang/String;)V
 
-    .line 87
+    .line 86
     return-void
 .end method
 
@@ -146,10 +144,10 @@
     .param p2, "value"    # I
 
     .prologue
-    .line 100
+    .line 99
     invoke-static {p1, p2}, Lcom/android/internal/logging/EventLogTags;->writeSysuiCount(Ljava/lang/String;I)V
 
-    .line 99
+    .line 98
     return-void
 .end method
 
@@ -166,14 +164,14 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 59
+    .line 58
     sget-boolean v0, Landroid/os/Build;->IS_DEBUGGABLE:Z
 
     if-eqz v0, :cond_0
 
     if-nez p1, :cond_0
 
-    .line 60
+    .line 59
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "Must define metric category"
@@ -182,11 +180,11 @@
 
     throw v0
 
-    .line 62
+    .line 61
     :cond_0
     invoke-static {p1, v1}, Lcom/android/internal/logging/EventLogTags;->writeSysuiViewVisibility(II)V
 
-    .line 58
+    .line 57
     return-void
 .end method
 
@@ -197,10 +195,10 @@
     .param p2, "bucket"    # I
 
     .prologue
-    .line 105
+    .line 104
     invoke-static {p1, p2}, Lcom/android/internal/logging/EventLogTags;->writeSysuiHistogram(Ljava/lang/String;I)V
 
-    .line 104
+    .line 103
     return-void
 .end method
 
@@ -218,7 +216,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 76
+    .line 75
     if-nez p2, :cond_0
 
     const/4 v0, 0x1
@@ -226,7 +224,7 @@
     :cond_0
     invoke-static {p0, p1, v0}, Lcom/android/internal/logging/MetricsLogger;->visibility(Landroid/content/Context;IZ)V
 
-    .line 75
+    .line 74
     return-void
 .end method
 
@@ -242,17 +240,17 @@
     .end annotation
 
     .prologue
-    .line 67
+    .line 66
     if-eqz p2, :cond_0
 
-    .line 68
+    .line 67
     invoke-static {p0, p1}, Lcom/android/internal/logging/MetricsLogger;->visible(Landroid/content/Context;I)V
 
-    .line 66
+    .line 65
     :goto_0
     return-void
 
-    .line 70
+    .line 69
     :cond_0
     invoke-static {p0, p1}, Lcom/android/internal/logging/MetricsLogger;->hidden(Landroid/content/Context;I)V
 
@@ -270,14 +268,14 @@
     .end annotation
 
     .prologue
-    .line 52
+    .line 51
     sget-boolean v0, Landroid/os/Build;->IS_DEBUGGABLE:Z
 
     if-eqz v0, :cond_0
 
     if-nez p1, :cond_0
 
-    .line 53
+    .line 52
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "Must define metric category"
@@ -286,12 +284,12 @@
 
     throw v0
 
-    .line 55
+    .line 54
     :cond_0
     const/16 v0, 0x64
 
     invoke-static {p1, v0}, Lcom/android/internal/logging/EventLogTags;->writeSysuiViewVisibility(II)V
 
-    .line 51
+    .line 50
     return-void
 .end method

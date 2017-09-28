@@ -344,7 +344,7 @@
     iput v3, v2, Landroid/view/WindowManager$LayoutParams;->format:I
 
     .line 253
-    const v3, 0x1030319
+    const v3, 0x10302f2
 
     iput v3, v2, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
@@ -382,12 +382,12 @@
 
     .line 262
     .local v1, "inflater":Landroid/view/LayoutInflater;
-    const v3, 0x1090107
+    const v3, 0x1090104
 
     invoke-virtual {v1, v3, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     .line 264
-    const v3, 0x102042a
+    const v3, 0x102041b
 
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 

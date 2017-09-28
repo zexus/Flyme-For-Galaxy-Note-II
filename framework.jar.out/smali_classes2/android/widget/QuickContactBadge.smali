@@ -836,7 +836,7 @@
     .line 175
     iget-object v0, p0, Landroid/widget/QuickContactBadge;->mContext:Landroid/content/Context;
 
-    const v1, 0x108035d
+    const v1, 0x108032b
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

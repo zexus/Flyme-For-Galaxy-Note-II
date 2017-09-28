@@ -1000,7 +1000,7 @@
     iget-object v4, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
 
     .line 391
-    const v5, 0x1040561
+    const v5, 0x1040545
 
     .line 390
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -1141,7 +1141,7 @@
     move-result-object v5
 
     .line 408
-    const v6, 0x1040562
+    const v6, 0x1040546
 
     .line 407
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;

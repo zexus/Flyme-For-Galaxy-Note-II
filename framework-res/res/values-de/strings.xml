@@ -151,33 +151,6 @@
     <string name="time_of_day" formatted="false">%H:%M:%S</string>
     <string name="date_and_time" formatted="false">%d.%m.%Y, %H:%M:%S</string>
     <string name="date_time">%1$s, %2$s</string>
-    <string name="reboot_systemui">SystemUI neustarten</string>
-    <string name="animation_fade">Verblassen</string>
-    <string name="animation_slide_right">Von rechts einblenden</string>
-    <string name="animation_slide_left">Von links einblenden</string>
-    <string name="animation_slide_right_no_fade">Von rechts einblenden (ohne Verblassen)</string>
-    <string name="animation_slide_left_no_fade">Von links einblenden (ohne Verblassen)</string>
-    <string name="animation_slide_up">Von unten einblenden</string>
-    <string name="animation_slide_down">Von oben einblenden</string>
-    <string name="animation_default">Standart</string>
-    <string name="animation_translucent">Transparent</string>
-    <string name="animation_grow_shrink">Einblenden (Oben)</string>
-    <string name="animation_grow_shrink_center">einblenden (aus der Mitte)</string>
-    <string name="animation_grow_shrink_bottom">Einblenden (von unten)</string>
-    <string name="animation_grow_shrink_left">einblenden (von links)</string>
-    <string name="animation_grow_shrink_right">Einblenden (von rechts)</string>
-    <string name="action_null">Leer</string>
-    <string name="default_string">Standard</string>
-    <string name="global_action_onthego">On-The-Go Modus</string>
-    <string name="global_action_torch">Taschenlampe</string>
-    <string name="floating_window_snap_top">Oben anheften</string>
-    <string name="floating_window_snap_bottom">Unten anheften</string>
-    <string name="floating_window_snap_left">Links anheften</string>
-    <string name="floating_window_snap_right">Rechts anheften</string>
-    <string name="floating_window_minimize">Minimieren</string>
-    <string name="adb_not_connected_notification_title">ADB inactive</string>
-    <string name="adb_active_custom_tile_not_connected">inactive</string>
-    <string name="system_error_vendorprint">Your vendor image does not match the system. Please flash the %s vendor image for your device</string>
     <string name="byteShort">B</string>
     <string name="kilobyteShort">KB</string>
     <string name="megabyteShort">MB</string>

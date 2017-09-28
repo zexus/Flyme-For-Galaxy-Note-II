@@ -118,7 +118,7 @@
 
     .line 243
     .local v1, "ocl":Landroid/content/DialogInterface$OnClickListener;
-    const v2, 0x1040592
+    const v2, 0x1040576
 
     invoke-virtual {p1, v2, v1}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -289,7 +289,7 @@
     .line 201
     aput-object v1, v7, v8
 
-    const v8, 0x1040467
+    const v8, 0x104044b
 
     .line 200
     invoke-virtual {v6, v8, v7}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
@@ -380,7 +380,7 @@
     iput-object p5, p0, Landroid/widget/AppSecurityPermissions$PermissionItemView;->mPackageName:Ljava/lang/String;
 
     .line 151
-    const v8, 0x102030f
+    const v8, 0x102030d
 
     invoke-virtual {p0, v8}, Landroid/widget/AppSecurityPermissions$PermissionItemView;->findViewById(I)Landroid/view/View;
 
@@ -390,7 +390,7 @@
 
     .line 152
     .local v5, "permGrpIcon":Landroid/widget/ImageView;
-    const v8, 0x1020310
+    const v8, 0x102030e
 
     invoke-virtual {p0, v8}, Landroid/widget/AppSecurityPermissions$PermissionItemView;->findViewById(I)Landroid/view/View;
 

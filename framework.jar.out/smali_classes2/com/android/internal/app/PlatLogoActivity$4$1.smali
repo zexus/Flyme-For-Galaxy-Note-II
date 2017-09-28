@@ -30,7 +30,7 @@
     .param p2, "val$im"    # Landroid/view/View;
 
     .prologue
-    .line 131
+    .line 135
     iput-object p1, p0, Lcom/android/internal/app/PlatLogoActivity$4$1;->this$1:Lcom/android/internal/app/PlatLogoActivity$4;
 
     iput-object p2, p0, Lcom/android/internal/app/PlatLogoActivity$4$1;->val$im:Landroid/view/View;
@@ -49,7 +49,7 @@
     .prologue
     const-wide/16 v4, 0x0
 
-    .line 134
+    .line 138
     iget-object v2, p0, Lcom/android/internal/app/PlatLogoActivity$4$1;->this$1:Lcom/android/internal/app/PlatLogoActivity$4;
 
     iget-object v2, v2, Lcom/android/internal/app/PlatLogoActivity$4;->this$0:Lcom/android/internal/app/PlatLogoActivity;
@@ -64,7 +64,7 @@
 
     return v2
 
-    .line 136
+    .line 140
     :cond_0
     iget-object v2, p0, Lcom/android/internal/app/PlatLogoActivity$4$1;->this$1:Lcom/android/internal/app/PlatLogoActivity$4;
 
@@ -74,7 +74,7 @@
 
     move-result-object v0
 
-    .line 137
+    .line 141
     .local v0, "cr":Landroid/content/ContentResolver;
     const-string/jumbo v2, "egg_mode"
 
@@ -86,21 +86,21 @@
 
     if-nez v2, :cond_1
 
-    .line 142
+    .line 146
     :try_start_0
     const-string/jumbo v2, "egg_mode"
 
-    .line 143
+    .line 147
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v4
 
-    .line 141
+    .line 145
     invoke-static {v0, v2, v4, v5}, Landroid/provider/Settings$System;->putLong(Landroid/content/ContentResolver;Ljava/lang/String;J)Z
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 148
+    .line 152
     :cond_1
     :goto_0
     iget-object v2, p0, Lcom/android/internal/app/PlatLogoActivity$4$1;->val$im:Landroid/view/View;
@@ -111,16 +111,16 @@
 
     invoke-virtual {v2, v3}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 
-    .line 163
+    .line 168
     const/4 v2, 0x1
 
     return v2
 
-    .line 144
+    .line 148
     :catch_0
     move-exception v1
 
-    .line 145
+    .line 149
     .local v1, "e":Ljava/lang/RuntimeException;
     const-string/jumbo v2, "PlatLogoActivity"
 

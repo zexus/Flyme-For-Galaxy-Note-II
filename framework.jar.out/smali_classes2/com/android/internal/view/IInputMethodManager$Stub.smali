@@ -48,8 +48,6 @@
 
 .field static final TRANSACTION_hideSoftInput:I = 0xb
 
-.field static final TRANSACTION_isImeShowing:I = 0x20
-
 .field static final TRANSACTION_notifySuggestionPicked:I = 0x16
 
 .field static final TRANSACTION_notifyUserAction:I = 0x1f
@@ -179,7 +177,7 @@
     .line 44
     sparse-switch p1, :sswitch_data_0
 
-    .line 468
+    .line 460
     invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v3
@@ -1898,48 +1896,7 @@
 
     return v3
 
-    .line 461
-    .end local v11    # "_arg0":I
-    :sswitch_20
-    const-string/jumbo v3, "com.android.internal.view.IInputMethodManager"
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 462
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/view/IInputMethodManager$Stub;->isImeShowing()Z
-
-    move-result v31
-
-    .line 463
-    .restart local v31    # "_result":Z
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 464
-    if-eqz v31, :cond_16
-
-    const/4 v3, 0x1
-
-    :goto_16
-    move-object/from16 v0, p3
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 465
-    const/4 v3, 0x1
-
-    return v3
-
-    .line 464
-    :cond_16
-    const/4 v3, 0x0
-
-    goto :goto_16
-
     .line 44
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
@@ -1973,7 +1930,6 @@
         0x1d -> :sswitch_1d
         0x1e -> :sswitch_1e
         0x1f -> :sswitch_1f
-        0x20 -> :sswitch_20
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

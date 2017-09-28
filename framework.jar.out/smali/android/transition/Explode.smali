@@ -619,7 +619,7 @@
     .local v7, "endY":F
     iget-object v0, p3, Landroid/transition/TransitionValues;->view:Landroid/view/View;
 
-    const v1, 0x1020053
+    const v1, 0x1020051
 
     invoke-virtual {v0, v1}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 

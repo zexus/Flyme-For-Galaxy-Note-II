@@ -16,12 +16,6 @@
 .method public abstract getShowNotificationForPackageOnKeyguard(Ljava/lang/String;I)I
 .end method
 
-.method public abstract isPackageAllowedForHalo(Ljava/lang/String;I)Z
-.end method
-
-.method public abstract setHaloPolicyBlack(Ljava/lang/String;IZ)V
-.end method
-
 .method public abstract setPackagePeekable(Ljava/lang/String;IZ)V
 .end method
 

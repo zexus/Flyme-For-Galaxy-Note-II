@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 290
+    .line 379
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 292
+    .line 381
     new-instance v0, Lcyanogenmod/hardware/LiveDisplayConfig;
 
     const/4 v1, 0x0
@@ -60,7 +60,7 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 291
+    .line 380
     invoke-virtual {p0, p1}, Lcyanogenmod/hardware/LiveDisplayConfig$1;->createFromParcel(Landroid/os/Parcel;)Lcyanogenmod/hardware/LiveDisplayConfig;
 
     move-result-object v0
@@ -73,7 +73,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 297
+    .line 386
     new-array v0, p1, [Lcyanogenmod/hardware/LiveDisplayConfig;
 
     return-object v0
@@ -84,7 +84,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 296
+    .line 385
     invoke-virtual {p0, p1}, Lcyanogenmod/hardware/LiveDisplayConfig$1;->newArray(I)[Lcyanogenmod/hardware/LiveDisplayConfig;
 
     move-result-object v0

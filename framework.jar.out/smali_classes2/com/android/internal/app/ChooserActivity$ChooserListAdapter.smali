@@ -892,7 +892,7 @@
     iget-object v0, p0, Lcom/android/internal/app/ChooserActivity$ChooserListAdapter;->mInflater:Landroid/view/LayoutInflater;
 
     .line 793
-    const v1, 0x10900c0
+    const v1, 0x10900be
 
     const/4 v2, 0x0
 

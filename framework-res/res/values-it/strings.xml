@@ -151,33 +151,6 @@
     <string name="time_of_day" formatted="false">%H:%M:%S</string>
     <string name="date_and_time" formatted="false">%H:%M:%S %d/%b/%Y</string>
     <string name="date_time">%2$s %1$s</string>
-    <string name="reboot_systemui">Riavvia \"SystemUI\"</string>
-    <string name="animation_fade">Dissolvenza</string>
-    <string name="animation_slide_right">Scorri da destra</string>
-    <string name="animation_slide_left">Scorri da sinistra</string>
-    <string name="animation_slide_right_no_fade">Scorri da destra (senza dissolvenza)</string>
-    <string name="animation_slide_left_no_fade">Scorri da sinistra (senza dissolvenza)</string>
-    <string name="animation_slide_up">Scorrimento dal basso</string>
-    <string name="animation_slide_down">"Scorrimento dall'alto"</string>
-    <string name="animation_default">Predefinito</string>
-    <string name="animation_translucent">Traslucido</string>
-    <string name="animation_grow_shrink">"Espandi (dall'alto)"</string>
-    <string name="animation_grow_shrink_center">Espandi (dal centro)</string>
-    <string name="animation_grow_shrink_bottom">Espandi (dal basso)</string>
-    <string name="animation_grow_shrink_left">Espandi (da sinistra)</string>
-    <string name="animation_grow_shrink_right">Espandi (da destra)</string>
-    <string name="action_null">Vuoto</string>
-    <string name="default_string">Predefinito</string>
-    <string name="global_action_onthego">Modalità On-The-Go</string>
-    <string name="global_action_torch">Torcia</string>
-    <string name="floating_window_snap_top">Posiziona in alto</string>
-    <string name="floating_window_snap_bottom">Posiziona in basso</string>
-    <string name="floating_window_snap_left">Posiziona a sinistra</string>
-    <string name="floating_window_snap_right">Posiziona a destra</string>
-    <string name="floating_window_minimize">Riduci</string>
-    <string name="adb_not_connected_notification_title">ADB inactive</string>
-    <string name="adb_active_custom_tile_not_connected">inactive</string>
-    <string name="system_error_vendorprint">Your vendor image does not match the system. Please flash the %s vendor image for your device</string>
     <string name="byteShort">B</string>
     <string name="kilobyteShort">KB</string>
     <string name="megabyteShort">MB</string>

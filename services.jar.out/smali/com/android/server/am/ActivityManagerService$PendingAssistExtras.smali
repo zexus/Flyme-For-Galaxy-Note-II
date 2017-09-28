@@ -55,44 +55,44 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 539
+    .line 540
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$PendingAssistExtras;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-direct {p0}, Landroid/os/Binder;-><init>()V
 
-    .line 535
+    .line 536
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/am/ActivityManagerService$PendingAssistExtras;->haveResult:Z
 
-    .line 536
+    .line 537
     iput-object v1, p0, Lcom/android/server/am/ActivityManagerService$PendingAssistExtras;->result:Landroid/os/Bundle;
 
-    .line 537
+    .line 538
     iput-object v1, p0, Lcom/android/server/am/ActivityManagerService$PendingAssistExtras;->structure:Landroid/app/assist/AssistStructure;
 
-    .line 538
+    .line 539
     iput-object v1, p0, Lcom/android/server/am/ActivityManagerService$PendingAssistExtras;->content:Landroid/app/assist/AssistContent;
 
-    .line 541
+    .line 542
     iput-object p2, p0, Lcom/android/server/am/ActivityManagerService$PendingAssistExtras;->activity:Lcom/android/server/am/ActivityRecord;
 
-    .line 542
+    .line 543
     iput-object p3, p0, Lcom/android/server/am/ActivityManagerService$PendingAssistExtras;->extras:Landroid/os/Bundle;
 
-    .line 543
+    .line 544
     iput-object p4, p0, Lcom/android/server/am/ActivityManagerService$PendingAssistExtras;->intent:Landroid/content/Intent;
 
-    .line 544
+    .line 545
     iput-object p5, p0, Lcom/android/server/am/ActivityManagerService$PendingAssistExtras;->hint:Ljava/lang/String;
 
-    .line 545
+    .line 546
     iput-object p6, p0, Lcom/android/server/am/ActivityManagerService$PendingAssistExtras;->receiver:Lcom/android/internal/os/IResultReceiver;
 
-    .line 546
+    .line 547
     iput p7, p0, Lcom/android/server/am/ActivityManagerService$PendingAssistExtras;->userHandle:I
 
-    .line 540
+    .line 541
     return-void
 .end method
 
@@ -102,7 +102,7 @@
     .locals 3
 
     .prologue
-    .line 550
+    .line 551
     const-string/jumbo v0, "ActivityManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -127,31 +127,31 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 551
+    .line 552
     monitor-enter p0
 
-    .line 552
+    .line 553
     const/4 v0, 0x1
 
     :try_start_0
     iput-boolean v0, p0, Lcom/android/server/am/ActivityManagerService$PendingAssistExtras;->haveResult:Z
 
-    .line 553
+    .line 554
     invoke-virtual {p0}, Lcom/android/server/am/ActivityManagerService$PendingAssistExtras;->notifyAll()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
-    .line 555
+    .line 556
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$PendingAssistExtras;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-virtual {v0, p0}, Lcom/android/server/am/ActivityManagerService;->pendingAssistExtrasTimedOut(Lcom/android/server/am/ActivityManagerService$PendingAssistExtras;)V
 
-    .line 549
+    .line 550
     return-void
 
-    .line 551
+    .line 552
     :catchall_0
     move-exception v0
 

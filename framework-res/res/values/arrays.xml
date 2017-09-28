@@ -451,14 +451,12 @@
         <item>@string/reboot_soft</item>
         <item>@string/reboot_recovery</item>
         <item>@string/reboot_bootloader</item>
-        <item>@string/reboot_systemui</item>
     </string-array>
     <string-array name="shutdown_reboot_actions">
         <item></item>
         <item>soft_reboot</item>
         <item>recovery</item>
         <item>bootloader</item>
-        <item>systemui_reboot</item>
     </string-array>
     <array name="non_themeable_packages" />
     <string-array name="app_ops_labels">
@@ -536,6 +534,7 @@
         <item>com.cyanogen.ambient.core</item>
         <item>com.cyanogen.ambient.updater</item>
         <item>com.cyngn.devicemanager</item>
+        <item>com.cyngn.discovery</item>
     </string-array>
     <string-array name="config_statusBarIcons">
         <item>managed_profile</item>
@@ -550,7 +549,6 @@
         <item>nfc</item>
         <item>tty</item>
         <item>speakerphone</item>
-        <item>headset</item>
         <item>zen</item>
         <item>mute</item>
         <item>volume</item>
@@ -903,38 +901,6 @@
         <item>3</item>
     </integer-array>
     <array name="common_nicknames" />
-    <string-array name="anim_controls_entries">
-        <item>@string/animation_default</item>
-        <item>@string/animation_fade</item>
-        <item>@string/animation_slide_right</item>
-        <item>@string/animation_slide_left</item>
-        <item>@string/animation_slide_right_no_fade</item>
-        <item>@string/animation_slide_left_no_fade</item>
-        <item>@string/animation_slide_up</item>
-        <item>@string/animation_slide_down</item>
-        <item>@string/animation_translucent</item>
-        <item>@string/animation_grow_shrink</item>
-        <item>@string/animation_grow_shrink_center</item>
-        <item>@string/animation_grow_shrink_bottom</item>
-        <item>@string/animation_grow_shrink_left</item>
-        <item>@string/animation_grow_shrink_right</item>
-    </string-array>
-    <string-array name="anim_controls_values">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-        <item>11</item>
-        <item>12</item>
-        <item>13</item>
-    </string-array>
     <array name="wfcOperatorErrorCodes" />
     <array name="wfcOperatorErrorAlertMessages" />
     <array name="wfcOperatorErrorNotificationMessages" />

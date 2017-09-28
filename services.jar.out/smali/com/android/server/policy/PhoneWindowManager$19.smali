@@ -1,11 +1,14 @@
 .class Lcom/android/server/policy/PhoneWindowManager$19;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Object;
 .source "PhoneWindowManager.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/server/policy/PhoneWindowManager;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/server/policy/PhoneWindowManager;->finishPostLayoutPolicyLw()I
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,89 +27,27 @@
     .param p1, "this$0"    # Lcom/android/server/policy/PhoneWindowManager;
 
     .prologue
-    .line 6817
+    .line 5318
     iput-object p1, p0, Lcom/android/server/policy/PhoneWindowManager$19;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 6
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
+.method public run()V
+    .locals 1
 
     .prologue
-    const/4 v3, 0x0
+    .line 5321
+    iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$19;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    const/4 v5, 0x1
+    iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mKeyguardDelegate:Lcom/android/server/policy/keyguard/KeyguardServiceDelegate;
 
-    .line 6819
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/android/server/policy/keyguard/KeyguardServiceDelegate;->dismiss()V
 
-    move-result-object v0
-
-    .line 6820
-    .local v0, "action":Ljava/lang/String;
-    const-string/jumbo v2, "org.codeaurora.intent.action.WIFI_DISPLAY_VIDEO"
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    .line 6821
-    const-string/jumbo v2, "state"
-
-    invoke-virtual {p2, v2, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
-
-    move-result v1
-
-    .line 6822
-    .local v1, "state":I
-    if-ne v1, v5, :cond_1
-
-    .line 6823
-    iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager$19;->this$0:Lcom/android/server/policy/PhoneWindowManager;
-
-    iput-boolean v5, v2, Lcom/android/server/policy/PhoneWindowManager;->mWifiDisplayConnected:Z
-
-    .line 6827
-    :goto_0
-    iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager$19;->this$0:Lcom/android/server/policy/PhoneWindowManager;
-
-    .line 6828
-    const-string/jumbo v3, "wfd_UIBC_rot"
-
-    const/4 v4, -0x1
-
-    invoke-virtual {p2, v3, v4}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
-
-    move-result v3
-
-    .line 6827
-    iput v3, v2, Lcom/android/server/policy/PhoneWindowManager;->mWifiDisplayCustomRotation:I
-
-    .line 6829
-    iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager$19;->this$0:Lcom/android/server/policy/PhoneWindowManager;
-
-    invoke-virtual {v2, v5}, Lcom/android/server/policy/PhoneWindowManager;->updateRotation(Z)V
-
-    .line 6818
-    .end local v1    # "state":I
-    :cond_0
+    .line 5320
     return-void
-
-    .line 6825
-    .restart local v1    # "state":I
-    :cond_1
-    iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager$19;->this$0:Lcom/android/server/policy/PhoneWindowManager;
-
-    iput-boolean v3, v2, Lcom/android/server/policy/PhoneWindowManager;->mWifiDisplayConnected:Z
-
-    goto :goto_0
 .end method

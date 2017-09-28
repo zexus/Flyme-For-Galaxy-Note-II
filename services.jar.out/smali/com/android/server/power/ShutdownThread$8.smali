@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/power/ShutdownThread;->shutdownRadios(I)V
+    value = Lcom/android/server/power/ShutdownThread;->uncrypt()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,28 +19,18 @@
 
 .field final synthetic val$done:[Z
 
-.field final synthetic val$endTime:J
-
-.field final synthetic val$timeout:I
-
 
 # direct methods
-.method constructor <init>(Lcom/android/server/power/ShutdownThread;JI[Z)V
+.method constructor <init>(Lcom/android/server/power/ShutdownThread;[Z)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/power/ShutdownThread;
-    .param p2, "val$endTime"    # J
-    .param p4, "val$timeout"    # I
-    .param p5, "val$done"    # [Z
+    .param p2, "val$done"    # [Z
 
     .prologue
-    .line 865
+    .line 856
     iput-object p1, p0, Lcom/android/server/power/ShutdownThread$8;->this$0:Lcom/android/server/power/ShutdownThread;
 
-    iput-wide p2, p0, Lcom/android/server/power/ShutdownThread$8;->val$endTime:J
-
-    iput p4, p0, Lcom/android/server/power/ShutdownThread$8;->val$timeout:I
-
-    iput-object p5, p0, Lcom/android/server/power/ShutdownThread$8;->val$done:[Z
+    iput-object p2, p0, Lcom/android/server/power/ShutdownThread$8;->val$done:[Z
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
@@ -50,504 +40,492 @@
 
 # virtual methods
 .method public run()V
-    .locals 14
+    .locals 19
 
     .prologue
-    .line 872
-    const-string/jumbo v10, "nfc"
+    .line 860
+    new-instance v11, Ljava/io/File;
 
-    invoke-static {v10}, Landroid/os/ServiceManager;->checkService(Ljava/lang/String;)Landroid/os/IBinder;
+    const-string/jumbo v12, "/cache/recovery/uncrypt_status"
 
-    move-result-object v10
+    invoke-direct {v11, v12}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v10}, Landroid/nfc/INfcAdapter$Stub;->asInterface(Landroid/os/IBinder;)Landroid/nfc/INfcAdapter;
+    invoke-virtual {v11}, Ljava/io/File;->delete()Z
 
-    move-result-object v5
-
-    .line 874
-    .local v5, "nfc":Landroid/nfc/INfcAdapter;
-    const-string/jumbo v10, "phone"
-
-    invoke-static {v10}, Landroid/os/ServiceManager;->checkService(Ljava/lang/String;)Landroid/os/IBinder;
-
-    move-result-object v10
-
-    invoke-static {v10}, Lcom/android/internal/telephony/ITelephony$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/telephony/ITelephony;
-
-    move-result-object v7
-
-    .line 877
-    .local v7, "phone":Lcom/android/internal/telephony/ITelephony;
-    const-string/jumbo v10, "bluetooth_manager"
-
-    .line 876
-    invoke-static {v10}, Landroid/os/ServiceManager;->checkService(Ljava/lang/String;)Landroid/os/IBinder;
-
-    move-result-object v10
-
-    invoke-static {v10}, Landroid/bluetooth/IBluetoothManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/bluetooth/IBluetoothManager;
-
-    move-result-object v0
-
-    .line 880
-    .local v0, "bluetooth":Landroid/bluetooth/IBluetoothManager;
-    if-eqz v5, :cond_0
-
+    .line 862
     :try_start_0
-    invoke-interface {v5}, Landroid/nfc/INfcAdapter;->getState()I
+    const-string/jumbo v11, "/cache/recovery/uncrypt_status"
 
-    move-result v10
+    const/16 v12, 0x180
 
-    const/4 v11, 0x1
-
-    if-ne v10, v11, :cond_9
-
-    :cond_0
-    const/4 v6, 0x1
-
-    .line 881
-    .local v6, "nfcOff":Z
-    :goto_0
-    if-nez v6, :cond_1
-
-    .line 882
-    const-string/jumbo v10, "ShutdownThread"
-
-    const-string/jumbo v11, "Turning off NFC..."
-
-    invoke-static {v10, v11}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 883
-    const/4 v10, 0x0
-
-    invoke-interface {v5, v10}, Landroid/nfc/INfcAdapter;->disable(Z)Z
+    invoke-static {v11, v12}, Landroid/system/Os;->mkfifo(Ljava/lang/String;I)V
     :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Landroid/system/ErrnoException; {:try_start_0 .. :try_end_0} :catch_2
 
-    .line 891
-    :cond_1
-    :goto_1
-    if-eqz v0, :cond_a
+    .line 868
+    :goto_0
+    const-string/jumbo v11, "ctl.start"
 
-    :try_start_1
-    invoke-interface {v0}, Landroid/bluetooth/IBluetoothManager;->isEnabled()Z
+    const-string/jumbo v12, "uncrypt"
 
-    move-result v10
+    invoke-static {v11, v12}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    if-eqz v10, :cond_a
-
-    const/4 v1, 0x0
-
-    .line 892
-    .local v1, "bluetoothOff":Z
-    :goto_2
-    if-nez v1, :cond_2
-
-    .line 893
-    const-string/jumbo v10, "ShutdownThread"
-
-    const-string/jumbo v11, "Disabling Bluetooth..."
-
-    invoke-static {v10, v11}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 894
-    const/4 v10, 0x0
-
-    invoke-interface {v0, v10}, Landroid/bluetooth/IBluetoothManager;->disable(Z)Z
-    :try_end_1
-    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_1
-
-    .line 902
-    :cond_2
-    :goto_3
-    if-eqz v7, :cond_b
-
-    :try_start_2
-    invoke-interface {v7}, Lcom/android/internal/telephony/ITelephony;->needMobileRadioShutdown()Z
-
-    move-result v10
-
-    if-eqz v10, :cond_b
-
-    const/4 v8, 0x0
-
-    .line 903
-    .local v8, "radioOff":Z
-    :goto_4
-    if-nez v8, :cond_3
-
-    .line 904
-    const-string/jumbo v10, "ShutdownThread"
-
-    const-string/jumbo v11, "Turning off cellular radios..."
-
-    invoke-static {v10, v11}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 905
-    invoke-interface {v7}, Lcom/android/internal/telephony/ITelephony;->shutdownMobileRadios()V
-    :try_end_2
-    .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_2
-
-    .line 912
-    :cond_3
-    :goto_5
-    const-string/jumbo v10, "ShutdownThread"
-
-    const-string/jumbo v11, "Waiting for NFC, Bluetooth and Radio..."
-
-    invoke-static {v10, v11}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 914
-    iget-wide v10, p0, Lcom/android/server/power/ShutdownThread$8;->val$endTime:J
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v12
-
-    sub-long v2, v10, v12
-
-    .line 915
-    .local v2, "delay":J
-    :goto_6
-    const-wide/16 v10, 0x0
-
-    cmp-long v10, v2, v10
-
-    if-lez v10, :cond_8
-
-    .line 916
-    invoke-static {}, Lcom/android/server/power/ShutdownThread;->-get4()Z
-
-    move-result v10
-
-    if-eqz v10, :cond_4
-
-    .line 917
-    iget v10, p0, Lcom/android/server/power/ShutdownThread$8;->val$timeout:I
-
-    int-to-long v10, v10
-
-    sub-long/2addr v10, v2
-
-    long-to-double v10, v10
-
-    const-wide/high16 v12, 0x3ff0000000000000L    # 1.0
-
-    mul-double/2addr v10, v12
-
-    .line 918
-    const-wide/high16 v12, 0x4028000000000000L    # 12.0
-
-    .line 917
-    mul-double/2addr v10, v12
-
-    .line 918
-    iget v12, p0, Lcom/android/server/power/ShutdownThread$8;->val$timeout:I
-
-    int-to-double v12, v12
-
-    .line 917
-    div-double/2addr v10, v12
-
-    double-to-int v9, v10
-
-    .line 919
-    .local v9, "status":I
-    add-int/lit8 v9, v9, 0x6
-
-    .line 920
-    invoke-static {}, Lcom/android/server/power/ShutdownThread;->-get5()Lcom/android/server/power/ShutdownThread;
-
-    move-result-object v10
-
-    const/4 v11, 0x0
-
-    invoke-static {v10, v9, v11}, Lcom/android/server/power/ShutdownThread;->-wrap1(Lcom/android/server/power/ShutdownThread;ILjava/lang/CharSequence;)V
-
-    .line 923
-    .end local v9    # "status":I
-    :cond_4
-    if-nez v1, :cond_5
-
-    .line 925
-    :try_start_3
-    invoke-interface {v0}, Landroid/bluetooth/IBluetoothManager;->isEnabled()Z
-    :try_end_3
-    .catch Landroid/os/RemoteException; {:try_start_3 .. :try_end_3} :catch_3
-
-    move-result v10
-
-    if-eqz v10, :cond_c
-
-    const/4 v1, 0x0
-
-    .line 930
-    :goto_7
-    if-eqz v1, :cond_5
-
-    .line 931
-    const-string/jumbo v10, "ShutdownThread"
-
-    const-string/jumbo v11, "Bluetooth turned off."
-
-    invoke-static {v10, v11}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 934
-    :cond_5
-    if-nez v8, :cond_6
-
-    .line 936
-    :try_start_4
-    invoke-interface {v7}, Lcom/android/internal/telephony/ITelephony;->needMobileRadioShutdown()Z
-    :try_end_4
-    .catch Landroid/os/RemoteException; {:try_start_4 .. :try_end_4} :catch_4
-
-    move-result v10
-
-    if-eqz v10, :cond_d
-
-    const/4 v8, 0x0
-
-    .line 941
-    :goto_8
-    if-eqz v8, :cond_6
-
-    .line 942
-    const-string/jumbo v10, "ShutdownThread"
-
-    const-string/jumbo v11, "Radio turned off."
-
-    invoke-static {v10, v11}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 945
-    :cond_6
-    if-nez v6, :cond_7
-
-    .line 947
-    :try_start_5
-    invoke-interface {v5}, Landroid/nfc/INfcAdapter;->getState()I
-    :try_end_5
-    .catch Landroid/os/RemoteException; {:try_start_5 .. :try_end_5} :catch_5
-
-    move-result v10
-
-    const/4 v11, 0x1
-
-    if-ne v10, v11, :cond_e
-
-    const/4 v6, 0x1
-
-    .line 952
-    :goto_9
-    if-eqz v6, :cond_7
-
-    .line 953
-    const-string/jumbo v10, "ShutdownThread"
-
-    const-string/jumbo v11, "NFC turned off."
-
-    invoke-static {v10, v11}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 957
-    :cond_7
-    if-eqz v8, :cond_f
-
-    if-eqz v1, :cond_f
-
-    if-eqz v6, :cond_f
-
-    .line 958
-    const-string/jumbo v10, "ShutdownThread"
-
-    const-string/jumbo v11, "NFC, Radio and Bluetooth shutdown complete."
-
-    invoke-static {v10, v11}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 959
-    iget-object v10, p0, Lcom/android/server/power/ShutdownThread$8;->val$done:[Z
-
-    const/4 v11, 0x1
-
+    .line 871
     const/4 v12, 0x0
 
-    aput-boolean v11, v10, v12
+    const/4 v5, 0x0
 
-    .line 866
-    :cond_8
-    return-void
+    .local v5, "reader":Ljava/io/BufferedReader;
+    :try_start_1
+    new-instance v6, Ljava/io/BufferedReader;
 
-    .line 880
-    .end local v1    # "bluetoothOff":Z
-    .end local v2    # "delay":J
-    .end local v6    # "nfcOff":Z
-    .end local v8    # "radioOff":Z
-    :cond_9
-    const/4 v6, 0x0
+    .line 872
+    new-instance v11, Ljava/io/FileReader;
 
-    .restart local v6    # "nfcOff":Z
-    goto/16 :goto_0
+    const-string/jumbo v13, "/cache/recovery/uncrypt_status"
 
-    .line 885
-    .end local v6    # "nfcOff":Z
-    :catch_0
-    move-exception v4
+    invoke-direct {v11, v13}, Ljava/io/FileReader;-><init>(Ljava/lang/String;)V
+
+    .line 871
+    invoke-direct {v6, v11}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
+    :try_end_1
+    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_7
+    .catchall {:try_start_1 .. :try_end_1} :catchall_2
+
+    .line 874
+    .end local v5    # "reader":Ljava/io/BufferedReader;
+    .local v6, "reader":Ljava/io/BufferedReader;
+    const/high16 v3, -0x80000000
+
+    .line 876
+    .local v3, "lastStatus":I
+    :cond_0
+    :goto_1
+    :try_start_2
+    invoke-virtual {v6}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
+    :try_end_2
+    .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_3
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    move-result-object v8
+
+    .line 878
+    .local v8, "str":Ljava/lang/String;
+    :try_start_3
+    invoke-static {v8}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v7
+
+    .line 881
+    .local v7, "status":I
+    if-ne v7, v3, :cond_1
+
+    const/high16 v11, -0x80000000
+
+    if-ne v3, v11, :cond_0
+
+    .line 884
+    :cond_1
+    move v3, v7
 
     .line 886
-    .local v4, "ex":Landroid/os/RemoteException;
-    const-string/jumbo v10, "ShutdownThread"
+    if-ltz v7, :cond_3
 
-    const-string/jumbo v11, "RemoteException during NFC shutdown"
+    const/16 v11, 0x64
 
-    invoke-static {v10, v11, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    if-ge v7, v11, :cond_3
 
-    .line 887
-    const/4 v6, 0x1
+    .line 888
+    const-string/jumbo v11, "ShutdownThread"
 
-    .restart local v6    # "nfcOff":Z
-    goto/16 :goto_1
+    new-instance v13, Ljava/lang/StringBuilder;
+
+    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v14, "uncrypt read status: "
+
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    invoke-virtual {v13, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-static {v11, v13}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 890
+    int-to-double v14, v7
+
+    const-wide/high16 v16, 0x4054000000000000L    # 80.0
+
+    mul-double v14, v14, v16
+
+    const-wide/high16 v16, 0x4059000000000000L    # 100.0
+
+    div-double v14, v14, v16
+
+    double-to-int v7, v14
 
     .line 891
-    .end local v4    # "ex":Landroid/os/RemoteException;
-    :cond_a
-    const/4 v1, 0x1
+    add-int/lit8 v7, v7, 0x14
 
-    .restart local v1    # "bluetoothOff":Z
-    goto/16 :goto_2
+    .line 892
+    move-object/from16 v0, p0
 
-    .line 896
-    .end local v1    # "bluetoothOff":Z
-    :catch_1
-    move-exception v4
+    iget-object v11, v0, Lcom/android/server/power/ShutdownThread$8;->this$0:Lcom/android/server/power/ShutdownThread;
 
-    .line 897
-    .restart local v4    # "ex":Landroid/os/RemoteException;
-    const-string/jumbo v10, "ShutdownThread"
+    invoke-static {v11}, Lcom/android/server/power/ShutdownThread;->-get1(Lcom/android/server/power/ShutdownThread;)Landroid/content/Context;
 
-    const-string/jumbo v11, "RemoteException during bluetooth shutdown"
+    move-result-object v11
 
-    invoke-static {v10, v11, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    .line 893
+    const v13, 0x1040183
 
-    .line 898
-    const/4 v1, 0x1
+    .line 892
+    invoke-virtual {v11, v13}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
-    .restart local v1    # "bluetoothOff":Z
-    goto/16 :goto_3
+    move-result-object v4
 
-    .line 902
-    .end local v4    # "ex":Landroid/os/RemoteException;
-    :cond_b
-    const/4 v8, 0x1
+    .line 894
+    .local v4, "msg":Ljava/lang/CharSequence;
+    invoke-static {}, Lcom/android/server/power/ShutdownThread;->-get6()Lcom/android/server/power/ShutdownThread;
 
-    .restart local v8    # "radioOff":Z
-    goto/16 :goto_4
+    move-result-object v11
+
+    invoke-static {v11, v7, v4}, Lcom/android/server/power/ShutdownThread;->-wrap2(Lcom/android/server/power/ShutdownThread;ILjava/lang/CharSequence;)V
+    :try_end_3
+    .catch Ljava/lang/NumberFormatException; {:try_start_3 .. :try_end_3} :catch_0
+    .catch Ljava/lang/Throwable; {:try_start_3 .. :try_end_3} :catch_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    goto :goto_1
 
     .line 907
-    .end local v8    # "radioOff":Z
-    :catch_2
-    move-exception v4
+    .end local v4    # "msg":Ljava/lang/CharSequence;
+    .end local v7    # "status":I
+    :catch_0
+    move-exception v10
 
     .line 908
-    .restart local v4    # "ex":Landroid/os/RemoteException;
-    const-string/jumbo v10, "ShutdownThread"
+    .local v10, "unused":Ljava/lang/NumberFormatException;
+    :try_start_4
+    const-string/jumbo v11, "ShutdownThread"
 
-    const-string/jumbo v11, "RemoteException during radio shutdown"
+    new-instance v13, Ljava/lang/StringBuilder;
 
-    invoke-static {v10, v11, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 909
-    const/4 v8, 0x1
+    const-string/jumbo v14, "uncrypt invalid status received: "
 
-    .restart local v8    # "radioOff":Z
-    goto/16 :goto_5
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 925
-    .end local v4    # "ex":Landroid/os/RemoteException;
-    .restart local v2    # "delay":J
-    :cond_c
-    const/4 v1, 0x1
+    move-result-object v13
 
+    invoke-virtual {v13, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-static {v11, v13}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_4
+    .catch Ljava/lang/Throwable; {:try_start_4 .. :try_end_4} :catch_3
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+
+    .line 914
+    .end local v10    # "unused":Ljava/lang/NumberFormatException;
+    :goto_2
+    if-eqz v6, :cond_2
+
+    :try_start_5
+    invoke-virtual {v6}, Ljava/io/BufferedReader;->close()V
+    :try_end_5
+    .catch Ljava/lang/Throwable; {:try_start_5 .. :try_end_5} :catch_5
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_1
+
+    :cond_2
+    :goto_3
+    if-eqz v12, :cond_6
+
+    :try_start_6
+    throw v12
+    :try_end_6
+    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_1
+
+    .line 912
+    :catch_1
+    move-exception v9
+
+    .local v9, "unused":Ljava/io/IOException;
+    move-object v5, v6
+
+    .line 913
+    .end local v3    # "lastStatus":I
+    .end local v6    # "reader":Ljava/io/BufferedReader;
+    .end local v8    # "str":Ljava/lang/String;
+    :goto_4
+    const-string/jumbo v11, "ShutdownThread"
+
+    const-string/jumbo v12, "IOException when reading \"/cache/recovery/uncrypt_status\"."
+
+    invoke-static {v11, v12}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 915
+    .end local v9    # "unused":Ljava/io/IOException;
+    :goto_5
+    move-object/from16 v0, p0
+
+    iget-object v11, v0, Lcom/android/server/power/ShutdownThread$8;->val$done:[Z
+
+    const/4 v12, 0x1
+
+    const/4 v13, 0x0
+
+    aput-boolean v12, v11, v13
+
+    .line 858
+    return-void
+
+    .line 863
+    :catch_2
+    move-exception v2
+
+    .line 864
+    .local v2, "e":Landroid/system/ErrnoException;
+    const-string/jumbo v11, "ShutdownThread"
+
+    new-instance v12, Ljava/lang/StringBuilder;
+
+    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v13, "ErrnoException when creating named pipe \"/cache/recovery/uncrypt_status\": "
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    .line 865
+    invoke-virtual {v2}, Landroid/system/ErrnoException;->getMessage()Ljava/lang/String;
+
+    move-result-object v13
+
+    .line 864
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-static {v11, v12}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto/16 :goto_0
+
+    .line 895
+    .end local v2    # "e":Landroid/system/ErrnoException;
+    .restart local v3    # "lastStatus":I
+    .restart local v6    # "reader":Ljava/io/BufferedReader;
+    .restart local v7    # "status":I
+    .restart local v8    # "str":Ljava/lang/String;
+    :cond_3
+    const/16 v11, 0x64
+
+    if-ne v7, v11, :cond_5
+
+    .line 896
+    :try_start_7
+    const-string/jumbo v11, "ShutdownThread"
+
+    const-string/jumbo v13, "uncrypt successfully finished."
+
+    invoke-static {v11, v13}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 897
+    move-object/from16 v0, p0
+
+    iget-object v11, v0, Lcom/android/server/power/ShutdownThread$8;->this$0:Lcom/android/server/power/ShutdownThread;
+
+    invoke-static {v11}, Lcom/android/server/power/ShutdownThread;->-get1(Lcom/android/server/power/ShutdownThread;)Landroid/content/Context;
+
+    move-result-object v11
+
+    .line 898
+    const v13, 0x1040184
+
+    .line 897
+    invoke-virtual {v11, v13}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
+
+    move-result-object v4
+
+    .line 899
+    .restart local v4    # "msg":Ljava/lang/CharSequence;
+    invoke-static {}, Lcom/android/server/power/ShutdownThread;->-get6()Lcom/android/server/power/ShutdownThread;
+
+    move-result-object v11
+
+    invoke-static {v11, v7, v4}, Lcom/android/server/power/ShutdownThread;->-wrap2(Lcom/android/server/power/ShutdownThread;ILjava/lang/CharSequence;)V
+    :try_end_7
+    .catch Ljava/lang/NumberFormatException; {:try_start_7 .. :try_end_7} :catch_0
+    .catch Ljava/lang/Throwable; {:try_start_7 .. :try_end_7} :catch_3
+    .catchall {:try_start_7 .. :try_end_7} :catchall_1
+
+    goto :goto_2
+
+    .line 914
+    .end local v4    # "msg":Ljava/lang/CharSequence;
+    .end local v7    # "status":I
+    .end local v8    # "str":Ljava/lang/String;
+    :catch_3
+    move-exception v11
+
+    move-object v5, v6
+
+    .end local v3    # "lastStatus":I
+    .end local v6    # "reader":Ljava/io/BufferedReader;
+    :goto_6
+    :try_start_8
+    throw v11
+    :try_end_8
+    .catchall {:try_start_8 .. :try_end_8} :catchall_0
+
+    :catchall_0
+    move-exception v12
+
+    move-object/from16 v18, v12
+
+    move-object v12, v11
+
+    move-object/from16 v11, v18
+
+    :goto_7
+    if-eqz v5, :cond_4
+
+    :try_start_9
+    invoke-virtual {v5}, Ljava/io/BufferedReader;->close()V
+    :try_end_9
+    .catch Ljava/lang/Throwable; {:try_start_9 .. :try_end_9} :catch_6
+    .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_4
+
+    :cond_4
+    :goto_8
+    if-eqz v12, :cond_8
+
+    :try_start_a
+    throw v12
+    :try_end_a
+    .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_4
+
+    .line 912
+    :catch_4
+    move-exception v9
+
+    .restart local v9    # "unused":Ljava/io/IOException;
+    goto :goto_4
+
+    .line 904
+    .end local v9    # "unused":Ljava/io/IOException;
+    .restart local v3    # "lastStatus":I
+    .restart local v6    # "reader":Ljava/io/BufferedReader;
+    .restart local v7    # "status":I
+    .restart local v8    # "str":Ljava/lang/String;
+    :cond_5
+    :try_start_b
+    const-string/jumbo v11, "ShutdownThread"
+
+    new-instance v13, Ljava/lang/StringBuilder;
+
+    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v14, "uncrypt failed with status: "
+
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    invoke-virtual {v13, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-static {v11, v13}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_b
+    .catch Ljava/lang/NumberFormatException; {:try_start_b .. :try_end_b} :catch_0
+    .catch Ljava/lang/Throwable; {:try_start_b .. :try_end_b} :catch_3
+    .catchall {:try_start_b .. :try_end_b} :catchall_1
+
+    goto/16 :goto_2
+
+    .line 914
+    .end local v7    # "status":I
+    .end local v8    # "str":Ljava/lang/String;
+    :catchall_1
+    move-exception v11
+
+    move-object v5, v6
+
+    .end local v6    # "reader":Ljava/io/BufferedReader;
+    .local v5, "reader":Ljava/io/BufferedReader;
     goto :goto_7
 
-    .line 926
-    :catch_3
-    move-exception v4
+    .end local v5    # "reader":Ljava/io/BufferedReader;
+    .restart local v6    # "reader":Ljava/io/BufferedReader;
+    .restart local v8    # "str":Ljava/lang/String;
+    :catch_5
+    move-exception v12
 
-    .line 927
-    .restart local v4    # "ex":Landroid/os/RemoteException;
-    const-string/jumbo v10, "ShutdownThread"
+    goto/16 :goto_3
 
-    const-string/jumbo v11, "RemoteException during bluetooth shutdown"
+    :cond_6
+    move-object v5, v6
 
-    invoke-static {v10, v11, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    .end local v6    # "reader":Ljava/io/BufferedReader;
+    .restart local v5    # "reader":Ljava/io/BufferedReader;
+    goto/16 :goto_5
 
-    .line 928
-    const/4 v1, 0x1
+    .end local v3    # "lastStatus":I
+    .end local v5    # "reader":Ljava/io/BufferedReader;
+    .end local v8    # "str":Ljava/lang/String;
+    :catch_6
+    move-exception v13
 
-    goto/16 :goto_7
+    if-nez v12, :cond_7
 
-    .line 936
-    .end local v4    # "ex":Landroid/os/RemoteException;
-    :cond_d
-    const/4 v8, 0x1
+    move-object v12, v13
 
     goto :goto_8
 
-    .line 937
-    :catch_4
-    move-exception v4
+    :cond_7
+    if-eq v12, v13, :cond_4
 
-    .line 938
-    .restart local v4    # "ex":Landroid/os/RemoteException;
-    const-string/jumbo v10, "ShutdownThread"
+    :try_start_c
+    invoke-virtual {v12, v13}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
 
-    const-string/jumbo v11, "RemoteException during radio shutdown"
+    goto :goto_8
 
-    invoke-static {v10, v11, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    :cond_8
+    throw v11
+    :try_end_c
+    .catch Ljava/io/IOException; {:try_start_c .. :try_end_c} :catch_4
 
-    .line 939
-    const/4 v8, 0x1
+    .local v5, "reader":Ljava/io/BufferedReader;
+    :catchall_2
+    move-exception v11
 
-    goto/16 :goto_8
+    goto :goto_7
 
-    .line 947
-    .end local v4    # "ex":Landroid/os/RemoteException;
-    :cond_e
-    const/4 v6, 0x0
+    :catch_7
+    move-exception v11
 
-    goto :goto_9
-
-    .line 948
-    :catch_5
-    move-exception v4
-
-    .line 949
-    .restart local v4    # "ex":Landroid/os/RemoteException;
-    const-string/jumbo v10, "ShutdownThread"
-
-    const-string/jumbo v11, "RemoteException during NFC shutdown"
-
-    invoke-static {v10, v11, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    .line 950
-    const/4 v6, 0x1
-
-    goto :goto_9
-
-    .line 962
-    .end local v4    # "ex":Landroid/os/RemoteException;
-    :cond_f
-    const-wide/16 v10, 0x1f4
-
-    invoke-static {v10, v11}, Landroid/os/SystemClock;->sleep(J)V
-
-    .line 964
-    iget-wide v10, p0, Lcom/android/server/power/ShutdownThread$8;->val$endTime:J
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v12
-
-    sub-long v2, v10, v12
-
-    goto/16 :goto_6
+    goto :goto_6
 .end method

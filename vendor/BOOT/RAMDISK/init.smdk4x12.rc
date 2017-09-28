@@ -1,18 +1,14 @@
-# Init for devices built on Samsung SMDK4412 platform
+﻿# Init for devices built on Samsung SMDK4412 platform
 
-import init.target.rc
-import init.smdk4x12.usb.rc
-
-on early-init
-    mount debugfs /sys/kernel/debug /sys/kernel/debug
-    write /sys/block/mmcblk0/queue/scheduler noop
+import /init.target.rc
+import /init.smdk4x12.usb.rc
 
 on early-init
     write /sys/block/mmcblk0/queue/scheduler noop
 
 on init
 
-    # Support legacy paths
+# Support legacy paths
     symlink /sdcard /mnt/sdcard
     symlink /sdcard /storage/sdcard0
 
@@ -25,12 +21,9 @@ on fs
     mount_all /fstab.smdk4x12
     swapon_all /fstab.smdk4x12
 
+
     chown radio system /efs
     chmod 0771 /efs
-
-# exfat module
-    insmod /system/lib/modules/exfat_core.ko
-    insmod /system/lib/modules/exfat_fs.ko
 
 on charger
 # CPU Frequency Governor
@@ -86,7 +79,7 @@ on post-fs-data
     chmod 0644 /efs/h2k.dat
 
 # Camera firmware
-    mkdir /data/cfw 0775 system system
+	mkdir /data/cfw 0775 system system
     chown system media /data/cfw/SlimISP_GD.bin
     chmod 0775 /data/cfw/SlimISP_GD.bin
     chown system media /data/cfw/SlimISP_ZD.bin
@@ -275,19 +268,19 @@ on post-fs-data
     chown system radio /sys/class/sec/tsp/cmd
 
 # Permissions for Touchkey
-    chown system radio /sys/class/sec/sec_touchkey/enable_disable
-    chown system radio /sys/class/sec/sec_touchkey/touchkey_brightness
-    chown system radio /sys/class/sec/sec_touchkey/touchkey_menu
-    chown system radio /sys/class/sec/sec_touchkey/touchkey_back
-    chown system radio /sys/class/sec/sec_touchkey/touch_update
-    chown system radio /sys/class/sec/sec_touchkey/touch_version
-    chown system radio /sys/class/sec/sec_touchkey/touchkey_firm_version_panel
-    chown system radio /sys/class/sec/sec_touchkey/touchkey_firm_version_phone
-    chown system radio /sys/class/sec/sec_touchkey/touchkey_firm_update_status
-    chown system radio /sys/class/sec/sec_touchkey/touchkey_firm_update
-    chown system radio /sys/class/sec/sec_touchkey/touch_sensitivity
-    chown system radio /sys/class/sec/sec_touchkey/touchkey_threshold
-    chown system system /sys/devices/virtual/sec/sec_touchkey/brightness
+	chown system radio /sys/class/sec/sec_touchkey/enable_disable
+	chown system radio /sys/class/sec/sec_touchkey/touchkey_brightness
+	chown system radio /sys/class/sec/sec_touchkey/touchkey_menu
+	chown system radio /sys/class/sec/sec_touchkey/touchkey_back
+	chown system radio /sys/class/sec/sec_touchkey/touch_update
+	chown system radio /sys/class/sec/sec_touchkey/touch_version
+	chown system radio /sys/class/sec/sec_touchkey/touchkey_firm_version_panel
+	chown system radio /sys/class/sec/sec_touchkey/touchkey_firm_version_phone
+	chown system radio /sys/class/sec/sec_touchkey/touchkey_firm_update_status
+	chown system radio /sys/class/sec/sec_touchkey/touchkey_firm_update
+	chown system radio /sys/class/sec/sec_touchkey/touch_sensitivity
+	chown system radio /sys/class/sec/sec_touchkey/touchkey_threshold
+	chown system system /sys/devices/virtual/sec/sec_touchkey/brightness
 
 # Permissions for gpio_keys
     chown radio system /sys/class/sec/sec_key/wakeup_keys
@@ -300,26 +293,26 @@ on post-fs-data
     chown system radio /sys/class/sec/switch/adc
 
 # SVC LED
-    chown system system /sys/class/sec/led/led_r
-    chown system system /sys/class/sec/led/led_g
-    chown system system /sys/class/sec/led/led_b
+	chown system system /sys/class/sec/led/led_r
+	chown system system /sys/class/sec/led/led_g
+	chown system system /sys/class/sec/led/led_b
 
-    chown system system /sys/class/leds/led_r/brightness
-    chown system system /sys/class/leds/led_g/brightness
-    chown system system /sys/class/leds/led_b/brightness
-    chown system system /sys/class/leds/led_r/delay_on
-    chown system system /sys/class/leds/led_g/delay_on
-    chown system system /sys/class/leds/led_b/delay_on
-    chown system system /sys/class/leds/led_r/delay_off
-    chown system system /sys/class/leds/led_g/delay_off
-    chown system system /sys/class/leds/led_b/delay_off
-    chown system system /sys/class/leds/led_r/blink
-    chown system system /sys/class/leds/led_g/blink
-    chown system system /sys/class/leds/led_b/blink
+	chown system system /sys/class/leds/led_r/brightness
+	chown system system /sys/class/leds/led_g/brightness
+	chown system system /sys/class/leds/led_b/brightness
+	chown system system /sys/class/leds/led_r/delay_on
+	chown system system /sys/class/leds/led_g/delay_on
+	chown system system /sys/class/leds/led_b/delay_on
+	chown system system /sys/class/leds/led_r/delay_off
+	chown system system /sys/class/leds/led_g/delay_off
+	chown system system /sys/class/leds/led_b/delay_off
+	chown system system /sys/class/leds/led_r/blink
+	chown system system /sys/class/leds/led_g/blink
+	chown system system /sys/class/leds/led_b/blink
 
-    chown system system /sys/class/sec/led/led_pattern
-    chown system system /sys/class/sec/led/led_blink
-    chown system system /sys/class/sec/led/led_br_lev
+	chown system system /sys/class/sec/led/led_pattern
+	chown system system /sys/class/sec/led/led_blink
+	chown system system /sys/class/sec/led/led_br_lev
 
 # <Sensors & NFC>
 # Input Events
@@ -410,6 +403,8 @@ on post-fs-data
     setprop vold.post_fs_data_done 1
 
 on boot
+    mount debugfs /sys/kernel/debug /sys/kernel/debug
+
     setprop ro.build.product smdk4x12
     setprop ro.product.device smdk4x12
     setprop wifi.interface wlan0
@@ -428,8 +423,8 @@ on boot
     rm /data/app/tlcd_sock
 
 # serial keyboard port
-    chown root system /dev/ttySAC2
-    chmod 0660 /dev/ttySAC2
+	chown root system /dev/ttySAC2
+	chmod 0660 /dev/ttySAC2
 
 # touchscreen
     chown radio system /sys/class/sec/tsp/cmd
@@ -450,12 +445,12 @@ on property:sys.boot_completed=1
 
 # serial keyboard daemon
 service sec_keyboard /system/bin/sec_keyboard /dev/ttySAC2
-    class late_start
-    disabled
-    group system
+	class late_start
+	disabled
+	group system
 
 on property:ro.uart_debug=0
-    start sec_keyboard
+	start sec_keyboard
 
 service charger /sbin/healthd -c
     class charger
@@ -502,14 +497,9 @@ service dhcpcd_p2p /system/bin/dhcpcd -aABKL
     oneshot
 
 service dhcpcd_bt-pan /system/bin/dhcpcd -ABKL
-    class main
-    disabled
-    oneshot
-
-service dhcpcd_eth0 /system/bin/dhcpcd -aABDKL
-    class late_start
-    disabled
-    oneshot
+	class main
+	disabled
+	oneshot
 
 service iprenew_wlan0 /system/bin/dhcpcd -n
     class main
@@ -522,14 +512,9 @@ service iprenew_p2p /system/bin/dhcpcd -n
     oneshot
 
 service iprenew_bt-pan /system/bin/dhcpcd -n
-    class main
-    disabled
-    oneshot
-
-service iprenew_eth0 /system/bin/dhcpcd -n
-    class late_start
-    disabled
-    oneshot
+	class main
+	disabled
+	oneshot
 
 service macloader /system/bin/macloader
     class late_start

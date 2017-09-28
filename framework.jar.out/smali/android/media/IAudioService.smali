@@ -271,14 +271,6 @@
     .end annotation
 .end method
 
-.method public abstract isVisualizerLocked(Ljava/lang/String;)Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract loadSoundEffects()Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -495,14 +487,6 @@
     .end annotation
 .end method
 
-.method public abstract setStreamMaxVolume(II)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract setStreamVolume(IIILjava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -512,14 +496,6 @@
 .end method
 
 .method public abstract setVibrateSetting(II)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setVisualizerLocked(Z)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

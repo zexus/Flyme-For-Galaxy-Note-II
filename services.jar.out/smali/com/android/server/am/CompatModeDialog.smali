@@ -73,7 +73,7 @@
     invoke-virtual {p0, v0}, Lcom/android/server/am/CompatModeDialog;->setContentView(I)V
 
     .line 51
-    const v0, 0x102030b
+    const v0, 0x1020309
 
     invoke-virtual {p0, v0}, Lcom/android/server/am/CompatModeDialog;->findViewById(I)Landroid/view/View;
 
@@ -93,7 +93,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/Switch;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
     .line 64
-    const v0, 0x102030c
+    const v0, 0x102030a
 
     invoke-virtual {p0, v0}, Lcom/android/server/am/CompatModeDialog;->findViewById(I)Landroid/view/View;
 
@@ -113,7 +113,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
     .line 75
-    const v0, 0x102030d
+    const v0, 0x102030b
 
     invoke-virtual {p0, v0}, Lcom/android/server/am/CompatModeDialog;->findViewById(I)Landroid/view/View;
 

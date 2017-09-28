@@ -60,8 +60,6 @@
     <item type="id" name="accessibilityActionScrollDown" />
     <item type="id" name="accessibilityActionScrollRight" />
     <item type="id" name="accessibilityActionContextClick" />
-    <item type="id" name="monitor_box" />
-    <item type="id" name="seek_bar" />
     <item type="id" name="icon_badge" />
     <item type="id" name="left_icon" />
     <item type="id" name="menu" />
@@ -125,10 +123,6 @@
     <item type="id" name="permission_list">false</item>
     <item type="id" name="no_permissions">false</item>
     <item type="id" name="perms_list">false</item>
-    <item type="id" name="dexopt_icon">false</item>
-    <item type="id" name="dexopt_message">false</item>
-    <item type="id" name="dexopt_message_detail">false</item>
-    <item type="id" name="dexopt_progress">false</item>
     <item type="id" name="breadcrumb_section">false</item>
     <item type="id" name="month_name">false</item>
     <item type="id" name="day_names">false</item>
@@ -159,15 +153,6 @@
     <item type="id" name="keyguard_click_area">false</item>
     <item type="id" name="keyguard_message_area">false</item>
     <item type="id" name="expanded_menu">false</item>
-    <item type="id" name="floating_window_background">false</item>
-    <item type="id" name="floating_window_titlebar">false</item>
-    <item type="id" name="floating_window_close">false</item>
-    <item type="id" name="floating_window_min">false</item>
-    <item type="id" name="floating_window_max">false</item>
-    <item type="id" name="floating_window_label">false</item>
-    <item type="id" name="floating_window_control">false</item>
-    <item type="id" name="floating_window_more">false</item>
-    <item type="id" name="floating_window_line">false</item>
     <item type="id" name="status">false</item>
     <item type="id" name="option1">false</item>
     <item type="id" name="option2">false</item>

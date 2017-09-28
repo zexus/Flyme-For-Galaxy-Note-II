@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/server/policy/PhoneWindowManager;
 
     .prologue
-    .line 1629
+    .line 3935
     iput-object p1, p0, Lcom/android/server/policy/PhoneWindowManager$8;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,43 +41,46 @@
     .locals 3
 
     .prologue
-    const/4 v2, 0x1
-
-    .line 1632
+    .line 3938
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$8;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mWindowManagerFuncs:Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
 
-    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-interface {v0}, Landroid/view/WindowManagerPolicy$WindowManagerFuncs;->getWindowManagerLock()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    .line 1633
-    const-string/jumbo v1, "screen_record_shortcut"
+    monitor-enter v1
 
-    .line 1632
-    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v0
-
-    if-ne v0, v2, :cond_0
-
-    .line 1634
+    .line 3940
+    :try_start_0
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$8;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    invoke-static {v0}, Lcom/android/server/policy/PhoneWindowManager;->-wrap16(Lcom/android/server/policy/PhoneWindowManager;)V
+    iget v2, v0, Lcom/android/server/policy/PhoneWindowManager;->mForceClearedSystemUiFlags:I
 
-    .line 1631
-    :goto_0
+    and-int/lit8 v2, v2, -0x3
+
+    iput v2, v0, Lcom/android/server/policy/PhoneWindowManager;->mForceClearedSystemUiFlags:I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit v1
+
+    .line 3943
+    iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$8;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+
+    iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mWindowManagerFuncs:Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
+
+    invoke-interface {v0}, Landroid/view/WindowManagerPolicy$WindowManagerFuncs;->reevaluateStatusBarVisibility()V
+
+    .line 3937
     return-void
 
-    .line 1636
-    :cond_0
-    const-string/jumbo v0, "WindowManager"
+    .line 3938
+    :catchall_0
+    move-exception v0
 
-    const-string/jumbo v1, "ScreenRecord Shortcut Disabled"
+    monitor-exit v1
 
-    invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
+    throw v0
 .end method

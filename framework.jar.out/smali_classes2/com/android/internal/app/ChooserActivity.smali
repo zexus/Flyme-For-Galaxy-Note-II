@@ -544,7 +544,7 @@
 
     .prologue
     .line 275
-    const v0, 0x1090043
+    const v0, 0x1090042
 
     return v0
 .end method
@@ -1006,7 +1006,7 @@
     if-nez v4, :cond_9
 
     .line 183
-    const v5, 0x10403f7
+    const v5, 0x10403db
 
     .line 185
     :cond_9

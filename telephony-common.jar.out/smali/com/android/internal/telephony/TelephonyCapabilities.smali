@@ -52,7 +52,7 @@
     if-ne v0, v1, :cond_0
 
     .line 106
-    const v0, 0x104012e
+    const v0, 0x1040112
 
     return v0
 
@@ -67,7 +67,7 @@
     if-ne v0, v1, :cond_1
 
     .line 108
-    const v0, 0x104012f
+    const v0, 0x1040113
 
     return v0
 

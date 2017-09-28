@@ -31,26 +31,26 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 118
+    .line 120
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 119
+    .line 121
     iput-boolean v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;->mLowPowerMode:Z
 
-    .line 120
+    .line 122
     iput-boolean v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;->mScreenOn:Z
 
-    .line 121
+    .line 123
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;->mMode:I
 
-    .line 122
+    .line 124
     const/4 v0, 0x0
 
     iput-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;->mTwilight:Lcom/android/server/twilight/TwilightState;
 
-    .line 118
+    .line 120
     return-void
 .end method
 
@@ -60,15 +60,15 @@
     .locals 4
 
     .prologue
-    .line 127
+    .line 129
     const-string/jumbo v1, "[mLowPowerMode=%b, mScreenOn=%b, mMode=%d, mTwilight=%s"
 
-    .line 126
+    .line 128
     const/4 v0, 0x4
 
     new-array v2, v0, [Ljava/lang/Object;
 
-    .line 128
+    .line 130
     iget-boolean v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;->mLowPowerMode:Z
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -99,7 +99,7 @@
 
     aput-object v0, v2, v3
 
-    .line 129
+    .line 131
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;->mTwilight:Lcom/android/server/twilight/TwilightState;
 
     if-nez v0, :cond_0
@@ -111,14 +111,14 @@
 
     aput-object v0, v2, v3
 
-    .line 126
+    .line 128
     invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
-    .line 129
+    .line 131
     :cond_0
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;->mTwilight:Lcom/android/server/twilight/TwilightState;
 

@@ -39,26 +39,26 @@
     .param p6, "caller"    # Ljava/lang/String;
 
     .prologue
-    .line 3918
+    .line 3808
     iput-object p1, p0, Lcom/android/server/audio/AudioService$WiredDeviceConnectionState;->this$0:Lcom/android/server/audio/AudioService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3920
+    .line 3810
     iput p2, p0, Lcom/android/server/audio/AudioService$WiredDeviceConnectionState;->mType:I
 
-    .line 3921
+    .line 3811
     iput p3, p0, Lcom/android/server/audio/AudioService$WiredDeviceConnectionState;->mState:I
 
-    .line 3922
+    .line 3812
     iput-object p4, p0, Lcom/android/server/audio/AudioService$WiredDeviceConnectionState;->mAddress:Ljava/lang/String;
 
-    .line 3923
+    .line 3813
     iput-object p5, p0, Lcom/android/server/audio/AudioService$WiredDeviceConnectionState;->mName:Ljava/lang/String;
 
-    .line 3924
+    .line 3814
     iput-object p6, p0, Lcom/android/server/audio/AudioService$WiredDeviceConnectionState;->mCaller:Ljava/lang/String;
 
-    .line 3919
+    .line 3809
     return-void
 .end method
