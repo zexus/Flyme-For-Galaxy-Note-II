@@ -1,0 +1,7 @@
+.method public toggleOrientationListener(Z)V
+    .locals 1
+    .param p1, "enable"    # Z
+
+    .prologue
+    return-void
+.end method

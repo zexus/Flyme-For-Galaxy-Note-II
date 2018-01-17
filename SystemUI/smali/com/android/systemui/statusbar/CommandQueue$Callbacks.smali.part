@@ -1,0 +1,2 @@
+.method public abstract toggleOrientationListener(Z)V
+.end method
